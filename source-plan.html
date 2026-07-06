@@ -183,6 +183,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .link-arrow{transition:color .12s;cursor:pointer;}
 .link-arrow:hover{color:var(--purple-dark);}
 
+/* ── GATED CHECKLIST COVER ── */
+.checklist-cover{background:var(--purple-deep);border-radius:var(--radius-xl);padding:32px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;}
+.checklist-cover-circle{position:absolute;border-radius:50%;background:var(--purple);pointer-events:none;}
+.checklist-cover-circle--1{width:150px;height:150px;top:-50px;right:-40px;opacity:.18;}
+.checklist-cover-circle--2{width:70px;height:70px;top:20px;right:30px;opacity:.35;}
+.checklist-cover-lock{margin-top:auto;align-self:flex-start;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:6px 12px;font-size:11px;color:white;position:relative;}
+
 /* ── HARDWARE PILLS ── */
 .hw-pill{padding:10px 18px;background:white;border:1px solid var(--border-soft);box-shadow:0 3px 10px rgba(116,88,253,0.08);border-radius:20px;font-size:13px;font-weight:500;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:default;}
 .hw-pill:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(116,88,253,0.16);border-color:var(--purple-mid);}
@@ -402,7 +409,7 @@ textarea{resize:vertical;min-height:90px;}
     <div class="nav-item" id="dd-tools">
       <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="window.open('https://www.purple.ai/en-gb/tools/guest-wifi-feature-checklist','_blank')">Guest WiFi checklist</div>
         <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
         <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
         <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
@@ -1563,28 +1570,29 @@ tools: () => `
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Qualification tool</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Guest WiFi feature checklist</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">A feature-by-feature checklist to help you qualify guest WiFi opportunities and identify the right Purple plan for each customer. Walk through it on discovery calls to surface what they're missing and make the case for upgrading.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">A technical requirements checklist written for IT and network departments evaluating guest WiFi platforms. Share it early to pre-empt technical objections and show customers exactly what Purple covers.</p>
       <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px;">
-        ${['Covers all three plan tiers: Connect, Capture, Engage','Highlights gaps in your customer\'s current setup','Framed for partner-led conversations, not end-customer self-service'].map(f=>`
+        ${['Covers platform management, technical architecture, captive portal, and data protection & security','Written for IT and network stakeholders, not end customers','Gated download - full requirements list unlocks after a short form'].map(f=>`
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-mid);">
             <div style="width:18px;height:18px;background:var(--purple-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>${f}
           </div>`).join('')}
       </div>
-      <button class="btn-primary" onclick="navigate('tools')">Open checklist →</button>
+      <button class="btn-primary" onclick="window.open('https://www.purple.ai/en-gb/tools/guest-wifi-feature-checklist','_blank')">Open checklist →</button>
     </div>
-    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
-      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Guest WiFi feature checklist, preview</div>
-      ${[['Branded captive portal','Connect+','✓'],['Visitor analytics dashboard','Capture+','✓'],['Marketing automation','Engage','✓'],['CRM integration','Capture+','✓'],['Custom data fields','Capture+','—'],['API access','Engage','—']].map(([f,t,s])=>`
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">${f}</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">${t}</span>
-            <span style="font-size:13px;color:${s==='✓'?'var(--teal)':'var(--ink-light)'};">${s}</span>
-          </div>
-        </div>`).join('')}
-      <div style="margin-top:14px;font-size:11px;color:var(--ink-light);">Showing 6 of 24 features</div>
+    <div class="checklist-cover">
+      <div class="checklist-cover-circle checklist-cover-circle--1"></div>
+      <div class="checklist-cover-circle checklist-cover-circle--2"></div>
+      <img src="brand/purple-logo-white.svg" alt="Purple" style="height:20px;width:auto;position:relative;">
+      <div style="position:relative;margin-top:28px;">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:26px;color:var(--purple-mid);line-height:1.15;">Guest WiFi<br>Checklist</div>
+        <div style="font-size:14px;color:white;margin-top:10px;">For IT &amp; Network Departments</div>
+      </div>
+      <div class="checklist-cover-lock">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.3" stroke="white" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Gated resource
+      </div>
     </div>
   </div>
 

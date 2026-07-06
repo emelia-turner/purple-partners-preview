@@ -52,7 +52,7 @@
     <div class="nav-item" id="dd-tools">
       <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="window.open('https://www.purple.ai/en-gb/tools/guest-wifi-feature-checklist','_blank')">Guest WiFi checklist</div>
         <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
         <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
         <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
@@ -96,73 +96,39 @@
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Qualification tool</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Guest WiFi feature checklist</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">A feature-by-feature checklist to help you qualify guest WiFi opportunities and identify the right Purple plan for each customer. Walk through it on discovery calls to surface what they're missing and make the case for upgrading.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">A technical requirements checklist written for IT and network departments evaluating guest WiFi platforms. Share it early to pre-empt technical objections and show customers exactly what Purple covers.</p>
       <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px;">
         
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-mid);">
             <div style="width:18px;height:18px;background:var(--purple-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>Covers all three plan tiers: Connect, Capture, Engage
+            </div>Covers platform management, technical architecture, captive portal, and data protection & security
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-mid);">
             <div style="width:18px;height:18px;background:var(--purple-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>Highlights gaps in your customer's current setup
+            </div>Written for IT and network stakeholders, not end customers
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-mid);">
             <div style="width:18px;height:18px;background:var(--purple-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>Framed for partner-led conversations, not end-customer self-service
+            </div>Gated download - full requirements list unlocks after a short form
           </div>
       </div>
-      <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Open checklist <span class="arr">→</span></button>
+      <button class="btn-primary" onclick="window.open('https://www.purple.ai/en-gb/tools/guest-wifi-feature-checklist','_blank')">Open checklist <span class="arr">→</span></button>
     </div>
-    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
-      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Guest WiFi feature checklist, preview</div>
-      
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">Branded captive portal</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Connect+</span>
-            <span style="font-size:13px;color:var(--teal);">✓</span>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">Visitor analytics dashboard</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Capture+</span>
-            <span style="font-size:13px;color:var(--teal);">✓</span>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">Marketing automation</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Engage</span>
-            <span style="font-size:13px;color:var(--teal);">✓</span>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">CRM integration</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Capture+</span>
-            <span style="font-size:13px;color:var(--teal);">✓</span>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">Custom data fields</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Capture+</span>
-            <span style="font-size:13px;color:var(--ink-light);">—</span>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
-          <span style="color:var(--ink);">API access</span>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:11px;color:var(--ink-light);">Engage</span>
-            <span style="font-size:13px;color:var(--ink-light);">—</span>
-          </div>
-        </div>
-      <div style="margin-top:14px;font-size:11px;color:var(--ink-light);">Showing 6 of 24 features</div>
+    <div class="checklist-cover">
+      <div class="checklist-cover-circle checklist-cover-circle--1"></div>
+      <div class="checklist-cover-circle checklist-cover-circle--2"></div>
+      <img src="brand/purple-logo-white.svg" alt="Purple" style="height:20px;width:auto;position:relative;">
+      <div style="position:relative;margin-top:28px;">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:26px;color:var(--purple-mid);line-height:1.15;">Guest WiFi<br>Checklist</div>
+        <div style="font-size:14px;color:white;margin-top:10px;">For IT &amp; Network Departments</div>
+      </div>
+      <div class="checklist-cover-lock">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.3" stroke="white" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Gated resource
+      </div>
     </div>
   </div>
 

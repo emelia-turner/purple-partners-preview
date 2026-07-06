@@ -57,10 +57,10 @@ scriptText = scriptText.split(REGISTER_BTN).join(`<button class="btn-primary" on
 
 // Tools page: buttons that just re-navigated to the same page. Every one sits behind
 // "available to registered partners" copy, so routing them to the signup section is the
-// sensible placeholder rather than a no-op page reload - except hardware compatibility,
-// which has a real destination (the support article).
+// sensible placeholder rather than a no-op page reload - except hardware compatibility
+// and the guest WiFi checklist, which have real destinations (external resources).
 const toolsLabels = [
-  "Open checklist →", "Browse integrations →",
+  "Browse integrations →",
   "Open calculator →", "Browse case studies →", "Read the guide →",
 ];
 for (const label of toolsLabels) {
