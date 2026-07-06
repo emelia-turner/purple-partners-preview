@@ -108,6 +108,19 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .dash-mt{font-size:10px;color:var(--teal);margin-top:2px;}
 .dash-chart{background:white;border:1px solid var(--border-soft);border-radius:8px;padding:12px;}
 .dash-chart-lbl{font-size:10px;color:var(--ink-light);margin-bottom:8px;}
+
+/* Partner portal mockup (hero) */
+.portal-mock-nav{background:var(--purple-deep);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
+.portal-mock-logo{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:white;}
+.portal-mock-logo span{color:var(--purple-mid);font-weight:400;}
+.portal-mock-nav-icons{display:flex;gap:8px;}
+.portal-mock-nav-icons span{width:12px;height:12px;border-radius:3px;background:rgba(255,255,255,.15);}
+.portal-mock-label{font-size:12px;font-weight:600;color:var(--ink);margin:14px 0 8px;}
+.portal-mock-action{display:flex;align-items:center;gap:10px;background:white;border:1px solid var(--border-soft);border-radius:8px;padding:9px 12px;margin-bottom:6px;}
+.portal-mock-action-icon{width:22px;height:22px;background:var(--purple-light);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.portal-mock-action-text{display:flex;flex-direction:column;gap:1px;}
+.portal-mock-action-text strong{font-size:11px;font-weight:500;color:var(--ink);}
+.portal-mock-action-text span{font-size:10px;color:var(--ink-light);}
 .bars{display:flex;align-items:flex-end;gap:3px;height:44px;}
 .bar{flex:1;border-radius:2px 2px 0 0;background:var(--purple-mid);opacity:.55;}
 .bar.hi{background:var(--purple);opacity:1;}
