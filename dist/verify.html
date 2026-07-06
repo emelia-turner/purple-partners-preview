@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Verify | Purple Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="verify">
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
+    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
+    <span class="brand-divider"></span>
+    <span class="brand-partners-text">Partners</span>
+  </div>
+
+  <div class="nav-links">
+    <div class="nav-item" id="dd-wifi">
+      <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
+        <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
+        <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
+        <div class="dd-item" onclick="navigate('shield')"><strong>Shield</strong><span>Content filtering &amp; threat protection</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('app')"><strong>The Purple app</strong><span>One app for identity, guests, and residents</span></div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('benefits')">Benefits</div>
+
+    <div class="nav-item" id="dd-sectors">
+      <div class="nav-link" onclick="navigate('sectors')">Sectors <span class="chev" onclick="event.stopPropagation();toggleDD('dd-sectors')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('sector-hospitality')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospitality</div>
+        <div class="dd-item" onclick="navigate('sector-retail')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Retail</div>
+        <div class="dd-item" onclick="navigate('sector-healthcare')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Healthcare</div>
+        <div class="dd-item" onclick="navigate('sector-education')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Education</div>
+        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; MDU</div>
+        <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
+        <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport &amp; venues</div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="dd-tools">
+      <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
+        <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
+        <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
+        <div class="dd-item" onclick="location.href='tools.html#case-studies'">Case studies</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('marketing')">Marketing support</div>
+
+    <div class="nav-item" id="dd-portal">
+      <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
+        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('blog')">Blog</div>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="navigate('home')">Register a deal</button>
+    <button class="btn-solid" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+  </div>
+</nav>
+
+<div id="page-content">
+<div class="container">
+  <div class="prod-hero">
+    <div>
+      <div class="tag">Verify</div>
+      <h1>Real, reachable contacts from every <em>WiFi login.</em></h1>
+      <p class="hero-sub">Fake and disposable email addresses dilute a customer's database, skew their metrics, and waste marketing budget on contacts that don't exist. Verify checks every email in real time at the point of guest WiFi login, so only genuine addresses ever reach the database.</p>
+      <div class="prod-hero-actions">
+        <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Register as a partner</button>
+        
+      </div>
+      <div class="feature-list">
+        
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Real-time validation at login</strong>Built into the captive portal flow, with no manual cleanup and no third-party tools.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Catches fake and disposable addresses</strong>Misspelled, throwaway, and invalid emails are blocked before they ever reach the CRM.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Available with Capture and Engage</strong>Layers directly onto Purple's existing data capture flows, no extra integration work.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>A reliable first-party data engine</strong>Every opt-in is valid, so every campaign your customer runs is built on contacts that are real.</div>
+          </div>
+      </div>
+    </div>
+    <div class="prod-visual">
+      <div class="prod-vis-badge">Validation active</div>
+      <div class="prod-vis-title">Department store, London - guest WiFi login</div>
+      <div class="prod-vis-sub">Email validation enabled, last 30 days</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">41.6k</div><div class="pvs-lbl">Logins checked</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">37%</div><div class="pvs-lbl">Emails flagged invalid</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Valid contacts to CRM</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">Validation report available for download. Last exported: today</div>
+    </div>
+  </div>
+</div>
+<div style="background:white;border-top:1px solid var(--border-soft);padding:80px 0;"><div class="container">
+  <div class="eyebrow">Where it fits</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">The data quality angle your customers need.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+    
+      <div class="card"><div class="card-title" style="font-size:16px;">High footfall retail</div><p class="card-body">One London department store had 37% of guest emails flagged as invalid before Verify was added to the login flow.</p></div>
+      <div class="card"><div class="card-title" style="font-size:16px;">Quick-service and hospitality chains</div><p class="card-body">A US fast-food chain with around 250 sites blocks roughly 3,000 invalid emails every month.</p></div>
+      <div class="card"><div class="card-title" style="font-size:16px;">Travel and transport hubs</div><p class="card-body">A UK airport group blocks 8,500 invalid emails a month, protecting the value of every campaign built on that data.</p></div>
+  </div>
+  <div style="margin-top:32px;background:var(--warm-white);border-radius:var(--radius-lg);padding:24px;font-size:13px;color:var(--ink-mid);line-height:1.7;">Industry research puts the cost of bad data at around 21% of marketing budgets wasted on contacts that were never reachable in the first place. Verify removes that cost at the source, before a single bad address enters the system.</div>
+</div></div>
+
+<div class="cta-band">
+  <h2>Ready to add Purple to your portfolio?</h2>
+  <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
+  <div class="cta-band-btns">
+    <button class="btn-white" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+  </div>
+</div></div>
+<div id="footer-wrap">
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="brand/purple-logo-white.svg" alt="Purple" class="brand-logo">
+        <span class="brand-divider" style="background:rgba(255,255,255,.2);"></span>
+        <span class="brand-partners-text" style="color:white;">Partners</span>
+      </div>
+      <div class="footer-desc">Purple Partners, the channel program for resellers, MSPs, and systems integrators selling identity-based WiFi solutions.</div>
+      <div class="footer-social"><div class="s-btn">in</div><div class="s-btn">tw</div></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('app')">The Purple app</div><div class="footer-link" onclick="navigate('staff-wifi')">Staff WiFi</div><div class="footer-link" onclick="navigate('guest-wifi')">Guest WiFi</div><div class="footer-link" onclick="navigate('multi-tenant')">Multi-tenant WiFi</div><div class="footer-link" onclick="navigate('verify')">Verify</div><div class="footer-link" onclick="navigate('shield')">Shield</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Partner</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Become a partner</div><div class="footer-link" onclick="navigate('benefits')">Benefits</div><div class="footer-link" onclick="navigate('sectors')">Sectors</div><div class="footer-link" onclick="navigate('marketing')">Marketing support</div><div class="footer-link" onclick="navigate('blog')">Blog</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('tools')">Tools</div><div class="footer-link" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div><div class="footer-link" onclick="navigate('tools')">Integrations library</div><div class="footer-link" onclick="navigate('home')">Privacy policy</div><div class="footer-link" onclick="navigate('home')">Legal</div>
+      </div>
+    </div>
+  </div>
+</footer></div>
+
+<script src="site.js"></script>
+</body>
+</html>

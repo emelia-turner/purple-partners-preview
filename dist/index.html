@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Purple Partners | Channel partner program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
+    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
+    <span class="brand-divider"></span>
+    <span class="brand-partners-text">Partners</span>
+  </div>
+
+  <div class="nav-links">
+    <div class="nav-item" id="dd-wifi">
+      <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
+        <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
+        <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
+        <div class="dd-item" onclick="navigate('shield')"><strong>Shield</strong><span>Content filtering &amp; threat protection</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('app')"><strong>The Purple app</strong><span>One app for identity, guests, and residents</span></div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('benefits')">Benefits</div>
+
+    <div class="nav-item" id="dd-sectors">
+      <div class="nav-link" onclick="navigate('sectors')">Sectors <span class="chev" onclick="event.stopPropagation();toggleDD('dd-sectors')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('sector-hospitality')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospitality</div>
+        <div class="dd-item" onclick="navigate('sector-retail')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Retail</div>
+        <div class="dd-item" onclick="navigate('sector-healthcare')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Healthcare</div>
+        <div class="dd-item" onclick="navigate('sector-education')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Education</div>
+        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; MDU</div>
+        <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
+        <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport &amp; venues</div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="dd-tools">
+      <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
+        <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
+        <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
+        <div class="dd-item" onclick="location.href='tools.html#case-studies'">Case studies</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('marketing')">Marketing support</div>
+
+    <div class="nav-item" id="dd-portal">
+      <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
+        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('blog')">Blog</div>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="navigate('home')">Register a deal</button>
+    <button class="btn-solid" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+  </div>
+</nav>
+
+<div id="page-content">
+<div style="background:var(--off-white)">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="tag">Partner program</div>
+        <h1>The missing piece that helps you win <em>bigger deals.</em></h1>
+        <p class="hero-sub">WiFi hardware is commoditized. The way people connect to it is changing fast. Purple gives you the platform that turns every connection into recurring revenue.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+          <button class="btn-secondary" onclick="navigate('home')">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1"/><path d="M5 4L8.5 6.5 5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+            Book a call
+          </button>
+        </div>
+        <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
+          <div class="stat-cell"><div class="stat-num">80k+</div><div class="stat-lbl">live venues</div></div>
+          <div class="stat-cell"><div class="stat-num">1.9m</div><div class="stat-lbl">daily engaged users</div></div>
+          <div class="stat-cell"><div class="stat-num">90+</div><div class="stat-lbl">countries</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="dash-wrap">
+          <div class="dash-bar"><div class="dash-dots"><div class="dash-dot" style="background:#ff5f57"></div><div class="dash-dot" style="background:#febc2e"></div><div class="dash-dot" style="background:#28c840"></div></div><div class="dash-url">eu.wifi.purple.ai, partner portal</div></div>
+          <img src="brand/dashboard-screenshot.webp" alt="Purple WiFi dashboard showing visitor analytics and captive portal branding" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:48px;">
+    <div class="logo-strip">
+      <div class="ls-label">Trusted partners</div>
+      <div class="ls-marquee">
+        <div class="ls-track">
+          
+            <div class="ls-logo-item"><span class="ls-logo-text">Boldyn Networks</span></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/ideal.png" alt="Ideal"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/focus.svg" alt="Focus"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/softcat.png" alt="Softcat"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/boxxe.svg" alt="Boxxe"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/natilik.png" alt="Natilik"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/kcom.svg" alt="KCOM"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/redcentric.svg" alt="RedCentric"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/evolve.svg" alt="Evolve"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/logicalis.png" alt="Logicalis"></div>
+            <div class="ls-logo-item"><span class="ls-logo-text">Boldyn Networks</span></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/ideal.png" alt="Ideal"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/focus.svg" alt="Focus"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/softcat.png" alt="Softcat"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/boxxe.svg" alt="Boxxe"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/natilik.png" alt="Natilik"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/kcom.svg" alt="KCOM"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/redcentric.svg" alt="RedCentric"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/evolve.svg" alt="Evolve"></div>
+            <div class="ls-logo-item"><img class="ls-logo-img" src="logos/logicalis.png" alt="Logicalis"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">WiFi solutions</div>
+    <h2 class="section-title">A platform, not just a product.</h2>
+    <p class="section-sub">By moving customers to identity-based networks, you stop selling connections and start delivering a platform that earns recurring revenue at every renewal.</p>
+    <div class="sol-grid">
+      <div class="sol-card" onclick="navigate('staff-wifi')">
+        <div class="sol-card-img"><img src="images/staff-wifi-image.webp" alt="Staff WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Staff WiFi</div>
+          <div class="card-title">Passwordless zero-trust access</div>
+          <p class="card-body">WPA3-Enterprise with automatic device provisioning and revocation tied to your customer's identity provider, via the Purple app. No shared passwords, no manual IT overhead.</p>
+          <div class="sol-checklist">
+            
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Works with Entra ID, Google & Okta</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">WPA3-Enterprise, 802.1X</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Automated JML</div></div>
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('staff-wifi')">Learn more</button>
+        </div>
+      </div>
+      <div class="sol-card" onclick="navigate('guest-wifi')">
+        <div class="sol-card-img"><img src="images/guest-wifi-image.webp" alt="Guest WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Guest WiFi</div>
+          <div class="card-title">Frictionless visitor access</div>
+          <p class="card-body">Branded portal or seamless connection via the Purple app, with built-in analytics, marketing automation, and first-party data capture. The layer that turns WiFi into a revenue tool.</p>
+          <div class="sol-checklist">
+            
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Branded captive portal or seamless connection</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Visitor analytics & footfall</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Marketing automation</div></div>
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('guest-wifi')">Learn more</button>
+        </div>
+      </div>
+      <div class="sol-card" onclick="navigate('multi-tenant')">
+        <div class="sol-card-img"><img src="images/mtn-image.webp" alt="Multi-tenant WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Multi-tenant WiFi</div>
+          <div class="card-title">Private at-home experience</div>
+          <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+          <div class="sol-checklist">
+            
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Per-unit network isolation</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">A network pass in the Purple app</div></div>
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Browserless device support</div></div>
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('multi-tenant')">Learn more</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+        <div>
+          <div class="eyebrow">The Purple app</div>
+          <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">One app. Every kind of connection.</h2>
+          <p class="section-sub" style="margin-bottom:24px;">Staff, guests, and residents all connect through the same app. It's the authentication engine behind Staff WiFi, the friction remover behind Guest WiFi, and the resident's remote control behind Multi-tenant WiFi.</p>
+          <button class="btn-primary" onclick="navigate('app')">See how the app works <span class="arr">→</span></button>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;">
+          <img src="brand/app-mockup.webp" alt="The Purple app" style="width:130px;height:auto;display:block;filter:drop-shadow(0 16px 28px rgba(116,88,253,0.28));">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            
+              <div style="background:var(--warm-white);border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;font-weight:500;color:var(--ink);">Staff</div><div style="font-size:12px;color:var(--ink-light);line-height:1.5;">SSO sign-in, certificate-based profile, access on every device</div>
+              </div>
+              <div style="background:var(--warm-white);border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;font-weight:500;color:var(--ink);">Guests</div><div style="font-size:12px;color:var(--ink-light);line-height:1.5;">Opt in once, reconnect automatically on every future visit</div>
+              </div>
+              <div style="background:var(--warm-white);border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;font-weight:500;color:var(--ink);">Residents</div><div style="font-size:12px;color:var(--ink-light);line-height:1.5;">Provision a network pass, devices auto-connect and isolate</div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-section">
+    <div class="container">
+      <div class="eyebrow">Sectors</div>
+      <h2 class="section-title">Sell into the right conversation.</h2>
+      <p class="section-sub">Every sector has a different buyer, a different pain point, and a different entry angle.</p>
+      <div class="sectors-grid">
+        
+          <div class="sector-card" onclick="navigate('sector-hospitality')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="sector-name">Hospitality</div>
+            <div class="sector-hint">Hotels, restaurants, pubs. Guest WiFi + POS integrations.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-retail')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
+            <div class="sector-name">Retail</div>
+            <div class="sector-hint">Footfall analytics, return rates, first-party data.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-healthcare')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
+            <div class="sector-name">Healthcare</div>
+            <div class="sector-hint">GDPR compliance, staff WiFi, patient guest access.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-education')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
+            <div class="sector-name">Education</div>
+            <div class="sector-hint">IdP sync, Shield for safeguarding, BYOD management.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-residential')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
+            <div class="sector-name">Residential & MDU</div>
+            <div class="sector-hint">BTR, student, aparthotels. Per-unit private networks.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-enterprise')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg></span></div>
+            <div class="sector-name">Enterprise</div>
+            <div class="sector-hint">Zero trust, JML automation, NAC replacement.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+          <div class="sector-card" onclick="navigate('sector-transport')">
+            <div class="sector-icon-badge"><span class="sector-em"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></span></div>
+            <div class="sector-name">Transport & venues</div>
+            <div class="sector-hint">Airports, arenas, stations. Scale + compliance.</div>
+            <div class="sector-arr">Explore <span class="arr">›</span></div>
+          </div>
+        <div class="sector-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;" onclick="navigate('sectors')">
+          <div style="font-size:11px;color:rgba(255,255,255,.25);text-align:center;">Browse all<br>sectors <span class="arr">›</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">Partner benefits</div>
+    <h2 class="section-title">Numbers that close deals.</h2>
+    <p class="section-sub" style="margin-bottom:48px;">Independent research across our partner network.</p>
+    <div class="why-grid">
+      <div><div class="why-num">12%</div><div class="why-lbl">Increased win rate</div><div class="why-desc">Partners consistently win more deals when Purple is in the mix.</div></div>
+      <div><div class="why-num">15x</div><div class="why-lbl">Return per £1 of Purple sold</div><div class="why-desc">Hardware, installation, managed services, Purple unlocks it all.</div></div>
+      <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
+      <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
+    </div>
+
+    <!-- VISUAL BREAK: hardware logos -->
+    <div style="margin-top:56px;background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:32px;">
+      <div style="font-size:11px;color:var(--ink-light);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Works with your customer's existing infrastructure</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+        
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Cisco</div>
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Cisco Meraki</div>
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Aruba Networks (HPE)</div>
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Ruckus Wireless (CommScope)</div>
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Mist</div>
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Ubiquiti</div>
+      </div>
+      <div style="margin-top:16px;font-size:12px;color:var(--ink-light);">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple);" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware <span class="arr">→</span></span></div>
+    </div>
+  </div></div>
+
+  <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+        <div>
+          <div class="eyebrow">Marketing support</div>
+          <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">We help you go to market, not just to product.</h2>
+          <p class="section-sub">Co-branded assets, campaign packs, MDF, and bespoke support. Request what you need, when you need it.</p>
+          <button class="btn-primary" onclick="navigate('marketing')">Explore marketing support</button>
+        </div>
+        <div class="mktg-tiles">
+          
+            <div class="mktg-tile"><div class="mktg-tile-title">Asset library</div><div class="mktg-tile-desc">Logos, one-pagers, banners</div></div>
+            <div class="mktg-tile"><div class="mktg-tile-title">Co-branded templates</div><div class="mktg-tile-desc">Email, social, print</div></div>
+            <div class="mktg-tile"><div class="mktg-tile-title">Campaign packs</div><div class="mktg-tile-desc">Sector-specific, ready to deploy</div></div>
+            <div class="mktg-tile"><div class="mktg-tile-title">Request MDF</div><div class="mktg-tile-desc">Bespoke support, fast turnaround</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div class="eyebrow">Partner voices</div>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Don't just take our word for it.</h2>
+        <p class="section-sub" style="margin-bottom:0;">We provide WiFi for over 80,000 venues worldwide, with some of the biggest brands choosing Purple.</p>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
+        <div class="quote-attr"><div class="quote-av">BT</div><div><div class="quote-name">BT Business</div><div class="quote-role">Technology partner</div></div></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">Frequently asked questions.</h2>
+    <p class="section-sub">Answers to what partners ask us most.</p>
+    <div class="faq-list">
+      
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Can we white-label Purple's WiFi solution?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>Yes! We offer partners the opportunity to sell Purple WiFi under their own branding, as well as owning the customer relationship directly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Does Purple integrate with my client's existing WiFi infrastructure?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>The Purple platform is designed to be hardware agnostic and integrates as a cloud-based overlay with your client's existing WiFi infrastructure. This means that in most cases, no additional hardware is required to deploy the solution.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How long does implementation usually take?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>We like to make things as quick and easy as possible. The time it takes to implement a Purple WiFi solution varies from a few minutes for the initial setup steps to a few hours or longer for the physical installation, depending on existing infrastructure and required customisation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What data does Purple capture from guests?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>With our Guest WiFi, Purple provides invaluable insights for enhancing the guest experience by analyzing behavior, footfall, and return rates within the venue. Custom fields can be used for collecting specific guest-volunteered information, and your clients can also choose to conduct surveys to gather real-time customer feedback. Importantly, you can rest assured that all collected data is handled with the utmost care and security.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Does Purple offer dedicated partner support or training?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>Yes! We understand the importance of maximizing the potential of our platform for both you and your clients. That's why we offer comprehensive training for our WiFi resellers. Our partner portal features an extensive collection of guides and resources, ensuring you have all the tools necessary to succeed with Purple. In addition, our dedicated support team is always available to assist you with any queries you may have.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is there a minimum revenue commitment or target?</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>No, there are no sales targets required when partnering with Purple. During the onboarding and discovery process, we may discuss your projected annual recurring revenue (ARR) through Purple products in the first year. This is simply to ensure you're paired with the most suitable sales or partner representative who can best support your needs. However, there is no obligation to meet any specific sales targets.</p></div>
+        </div>
+    </div>
+  </div></div>
+</div>
+<div class="container"><div class="section" id="become-a-partner" style="scroll-margin-top:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <div class="eyebrow">Become a partner</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Join the program.</h2>
+      <p class="section-sub">No targets, no minimums. Tell us a bit about your business and a partner manager will be in touch within two working days.</p>
+    </div>
+    <div class="form-wrap" style="max-width:none;">
+      <div id="signup-form">
+        <div class="form-title">Partner application</div>
+        <div class="form-sub">This is a preview form with no live backend yet.</div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="+44 ..."></div>
+          <div class="form-field full"><label>Company type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Reseller</option>
+              <option>MSP</option>
+              <option>Systems integrator</option>
+              <option>Network hardware vendor</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>What are you hoping to sell?</label>
+            <textarea placeholder="Tell us about your customer base and which Purple products you're interested in..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitPartnerSignup()">Submit application</button>
+      </div>
+      <div class="form-success" id="signup-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Application received</h3>
+        <p>A partner manager will be in touch within two working days.</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="cta-band">
+  <h2>Ready to add Purple to your portfolio?</h2>
+  <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
+  <div class="cta-band-btns">
+    <button class="btn-white" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+  </div>
+</div></div>
+<div id="footer-wrap">
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="brand/purple-logo-white.svg" alt="Purple" class="brand-logo">
+        <span class="brand-divider" style="background:rgba(255,255,255,.2);"></span>
+        <span class="brand-partners-text" style="color:white;">Partners</span>
+      </div>
+      <div class="footer-desc">Purple Partners, the channel program for resellers, MSPs, and systems integrators selling identity-based WiFi solutions.</div>
+      <div class="footer-social"><div class="s-btn">in</div><div class="s-btn">tw</div></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('app')">The Purple app</div><div class="footer-link" onclick="navigate('staff-wifi')">Staff WiFi</div><div class="footer-link" onclick="navigate('guest-wifi')">Guest WiFi</div><div class="footer-link" onclick="navigate('multi-tenant')">Multi-tenant WiFi</div><div class="footer-link" onclick="navigate('verify')">Verify</div><div class="footer-link" onclick="navigate('shield')">Shield</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Partner</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Become a partner</div><div class="footer-link" onclick="navigate('benefits')">Benefits</div><div class="footer-link" onclick="navigate('sectors')">Sectors</div><div class="footer-link" onclick="navigate('marketing')">Marketing support</div><div class="footer-link" onclick="navigate('blog')">Blog</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('tools')">Tools</div><div class="footer-link" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div><div class="footer-link" onclick="navigate('tools')">Integrations library</div><div class="footer-link" onclick="navigate('home')">Privacy policy</div><div class="footer-link" onclick="navigate('home')">Legal</div>
+      </div>
+    </div>
+  </div>
+</footer></div>
+
+<script src="site.js"></script>
+</body>
+</html>

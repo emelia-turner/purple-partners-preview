@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purple Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#7458fd;--purple-dark:#5d3fd6;--purple-deep:#011638;
+  --purple-light:#f3f1ff;--purple-mid:#bfb2fe;--purple-200:#ddd4ff;
+  --teal:#059669;--teal-light:#ecfdf5;
+  --coral:#dc2626;--coral-light:#fef2f2;
+  --off-white:#f8fafc;--warm-white:#f1f5f9;
+  --ink:#011638;--ink-mid:#334155;--ink-light:#64748b;
+  --border:rgba(116,88,253,0.14);--border-soft:rgba(1,22,56,0.08);
+  --radius:9999px;--radius-lg:16px;--radius-xl:22px;
+}
+body{font-family:'Poppins',Arial,sans-serif;background:var(--off-white);color:var(--ink);font-size:15px;line-height:1.6;min-height:100vh;}
+h1,h2,h3,h4{font-family:'Poppins',Arial,sans-serif;font-weight:600;line-height:1.15;letter-spacing:-0.01em;}
+[style*="Poppins"]{font-weight:600;}
+a{text-decoration:none;color:inherit;}
+button{font-family:'Poppins',Arial,sans-serif;cursor:pointer;}
+img{max-width:100%;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:var(--purple-mid);border-radius:3px;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;padding:0 48px;gap:0;}
+.nav-logo{display:flex;align-items:center;gap:8px;margin-right:36px;cursor:pointer;}
+.logo-mark{width:28px;height:28px;background:var(--purple);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-text{font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;color:var(--ink);}
+.logo-text span{color:var(--purple);}
+.brand-logo{height:20px;width:auto;display:block;}
+.brand-divider{width:1px;height:20px;background:rgba(1,22,56,.15);}
+.brand-partners-text{font-family:'Poppins',sans-serif;font-size:17px;font-weight:400;color:var(--ink);}
+.nav-links{display:flex;align-items:center;gap:2px;flex:1;}
+.nav-item{position:relative;}
+.nav-link{padding:6px 11px;font-size:13px;color:var(--ink-mid);border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:background .12s,color .12s;white-space:nowrap;user-select:none;}
+.nav-link:hover,.nav-link.active{background:var(--purple-light);color:var(--purple-dark);}
+.nav-link .chev{font-size:9px;opacity:.5;transition:transform .2s;}
+.nav-item.open .chev{transform:rotate(180deg);}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(116,88,253,0.12);padding:8px;min-width:220px;z-index:300;}
+.nav-item.open .dropdown{display:block;}
+.nav-item:hover .dropdown{display:block;}
+.dd-item{padding:9px 12px;border-radius:7px;cursor:pointer;font-size:13px;color:var(--ink-mid);transition:background .1s,color .1s,transform .1s;}
+.dd-item:hover{background:var(--purple-light);color:var(--purple-dark);transform:translateX(2px);}
+.dd-item strong{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:1px;}
+.dd-item span{font-size:11px;color:var(--ink-light);}
+.dd-divider{height:1px;background:var(--border);margin:5px 0;}
+.nav-actions{margin-left:auto;display:flex;gap:8px;align-items:center;}
+.btn-ghost{padding:7px 15px;font-size:13px;color:var(--purple);background:transparent;border:1px solid var(--purple-mid);border-radius:var(--radius);transition:background .12s,transform .12s;}
+.btn-ghost:hover{background:var(--purple-light);transform:translateY(-1px);}
+.btn-solid{padding:7px 15px;font-size:13px;color:white;background:var(--purple);border:1px solid var(--purple);border-radius:var(--radius);transition:background .12s,transform .12s;}
+.btn-solid:hover{background:var(--purple-dark);transform:translateY(-1px);}
+
+/* ── SHARED LAYOUT ── */
+.container{max-width:1160px;margin:0 auto;padding:0 48px;}
+.section{padding:80px 0;}
+.section-sm{padding:56px 0;}
+.eyebrow{font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;}
+.section-title{font-size:42px;margin-bottom:14px;}
+.section-title-sm{font-size:32px;margin-bottom:12px;}
+.section-sub{font-size:15px;color:var(--ink-mid);line-height:1.7;max-width:520px;margin-bottom:40px;}
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);border:1px solid var(--purple-mid);padding:4px 10px;border-radius:20px;margin-bottom:20px;}
+.tag::before{content:'';width:5px;height:5px;background:var(--purple);border-radius:50%;}
+
+/* ── BUTTONS ── */
+.btn-primary{padding:11px 24px;font-size:14px;font-weight:500;color:white;background:var(--purple);border:none;border-radius:var(--radius);transition:background .12s,transform .1s;}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-1px);}
+.btn-secondary{padding:11px 24px;font-size:14px;color:var(--ink-mid);background:transparent;border:1px solid rgba(0,0,0,0.14);border-radius:var(--radius);display:flex;align-items:center;gap:7px;transition:background .12s,transform .12s;}
+.btn-secondary:hover{background:white;transform:translateY(-1px);}
+.btn-secondary:hover svg{transform:translateX(2px);}
+.btn-secondary svg{transition:transform .2s cubic-bezier(.455,.03,.515,.955);}
+.btn-purple-outline{padding:11px 24px;font-size:14px;color:var(--purple);background:transparent;border:1px solid var(--purple-mid);border-radius:var(--radius);transition:background .12s,transform .12s;}
+.btn-purple-outline:hover{background:var(--purple-light);transform:translateY(-1px);}
+
+/* ── CARDS ── */
+.card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:28px;transition:transform .15s,box-shadow .15s;}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(116,88,253,0.09);}
+.card-tag{display:inline-block;font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);padding:4px 11px;border-radius:20px;margin-bottom:12px;}
+.card-title{font-family:'Poppins',sans-serif;font-size:18px;margin-bottom:8px;color:var(--ink);}
+.card-body{font-size:13px;color:var(--ink-mid);line-height:1.65;margin-bottom:16px;}
+.pill{display:inline-block;font-size:10px;padding:3px 8px;border-radius:20px;background:var(--purple-light);color:var(--purple-dark);border:1px solid var(--purple-200);margin:2px;}
+
+/* ── HERO ── */
+.hero{padding:72px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;}
+.hero-left{}
+.hero h1{font-size:54px;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--purple);}
+.hero-sub{font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:460px;}
+.hero-actions{display:flex;gap:12px;margin-bottom:48px;}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);overflow:hidden;}
+.stat-cell{padding:16px 18px;border-right:1px solid var(--border-soft);}
+.stat-cell:last-child{border-right:none;}
+.stat-num{font-family:'Poppins',sans-serif;font-size:26px;line-height:1;margin-bottom:3px;}
+.stat-lbl{font-size:11px;color:var(--ink-light);}
+
+/* Dashboard mockup */
+.dash-wrap{background:white;border:1px solid var(--border-soft);border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -4px 40px rgba(116,88,253,0.1);}
+.dash-bar{background:var(--purple-deep);padding:11px 16px;display:flex;align-items:center;gap:10px;}
+.dash-dots{display:flex;gap:5px;}
+.dash-dot{width:8px;height:8px;border-radius:50%;opacity:.5;}
+.dash-url{flex:1;background:rgba(255,255,255,0.07);border-radius:4px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.4);font-family:monospace;}
+.dash-body{padding:18px;background:var(--warm-white);}
+.dash-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.dash-title{font-size:13px;font-weight:500;}
+.dash-live{font-size:10px;background:var(--teal-light);color:var(--teal);padding:3px 8px;border-radius:20px;font-weight:500;}
+.dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.dash-m{background:white;border:1px solid var(--border-soft);border-radius:8px;padding:11px;}
+.dash-mv{font-family:'Poppins',sans-serif;font-size:20px;line-height:1;}
+.dash-ml{font-size:10px;color:var(--ink-light);margin-top:2px;}
+.dash-mt{font-size:10px;color:var(--teal);margin-top:2px;}
+.dash-chart{background:white;border:1px solid var(--border-soft);border-radius:8px;padding:12px;}
+.dash-chart-lbl{font-size:10px;color:var(--ink-light);margin-bottom:8px;}
+.bars{display:flex;align-items:flex-end;gap:3px;height:44px;}
+.bar{flex:1;border-radius:2px 2px 0 0;background:var(--purple-mid);opacity:.55;}
+.bar.hi{background:var(--purple);opacity:1;}
+
+/* ── LOGO STRIP (sliding marquee) ── */
+.logo-strip{border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:26px 0;display:flex;align-items:center;gap:32px;}
+.ls-label{font-size:11px;color:var(--ink-light);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;min-width:110px;}
+.ls-marquee{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 48px,black calc(100% - 48px),transparent);mask-image:linear-gradient(to right,transparent,black 48px,black calc(100% - 48px),transparent);}
+.ls-track{display:flex;align-items:center;gap:48px;width:max-content;animation:ls-scroll 26s linear infinite;}
+.ls-marquee:hover .ls-track{animation-play-state:paused;}
+.ls-logo-item{display:flex;align-items:center;justify-content:center;width:104px;height:32px;flex-shrink:0;}
+.ls-logo-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.5;transition:opacity .15s,filter .15s;}
+.ls-logo-item:hover .ls-logo-img{filter:grayscale(0);opacity:1;}
+.ls-logo-text{font-size:10.5px;font-weight:500;color:var(--ink-light);opacity:.55;white-space:nowrap;text-align:center;transition:opacity .15s,color .15s;}
+.ls-logo-item:hover .ls-logo-text{opacity:1;color:var(--purple);}
+@keyframes ls-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){.ls-track{animation:none;}}
+
+/* ── SOLUTIONS GRID ── */
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.sol-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);position:relative;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;}
+.sol-card-img{height:180px;overflow:hidden;}
+.sol-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+.sol-card:hover .sol-card-img img{transform:scale(1.05);}
+.sol-card-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+.sol-checklist{display:flex;flex-direction:column;gap:10px;margin:2px 0 22px;}
+.sol-card-cta{width:100%;margin-top:auto;background:var(--purple);border:none;border-radius:var(--radius);padding:11px 20px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:white;cursor:pointer;transition:background .12s,transform .12s;}
+.sol-card-cta:hover{background:var(--purple-dark);transform:translateY(-1px);}
+.sol-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(116,88,253,0.09);}
+
+/* ── DARK SECTION ── */
+.dark-section{background:var(--purple-deep);padding:80px 0;}
+.dark-section .eyebrow{color:var(--purple-mid);}
+.dark-section .section-title{color:white;}
+.dark-section .section-sub{color:rgba(255,255,255,.5);}
+
+/* ── SECTORS GRID ── */
+.sectors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.sector-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;cursor:pointer;transition:background .15s,transform .15s;}
+.sector-card:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+.sector-icon-badge{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background .2s,transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-em{display:inline-flex;color:white;}
+.sector-card:hover .sector-icon-badge{background:rgba(255,255,255,.22);transform:scale(1.1) rotate(-4deg);}
+.sector-name{font-size:13px;font-weight:500;color:white;margin-bottom:4px;}
+.sector-hint{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;}
+.sector-arr{font-size:11px;color:var(--purple-mid);margin-top:8px;}
+/* ── ARROW / ICON NUDGE ON HOVER ── */
+.arr{display:inline-block;transition:transform .2s cubic-bezier(.455,.03,.515,.955);}
+.btn-primary:hover .arr,.btn-purple-outline:hover .arr,.link-arrow:hover .arr,.sector-card:hover .arr,.sol-card:hover .arr,.sector-page-card:hover .arr{transform:translateX(3px);}
+.link-arrow{transition:color .12s;cursor:pointer;}
+.link-arrow:hover{color:var(--purple-dark);}
+
+/* ── WHY GRID ── */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.why-num{font-family:'Poppins',sans-serif;font-size:44px;color:var(--purple);line-height:1;margin-bottom:6px;}
+.why-lbl{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;}
+.why-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;}
+
+/* ── QUOTE CARD ── */
+.quote-card{background:var(--purple-deep);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.quote-card::before{content:'\201C';position:absolute;top:-10px;left:20px;font-family:'Poppins',sans-serif;font-size:120px;color:rgba(255,255,255,.07);line-height:1;pointer-events:none;}
+.quote-text{font-family:'Poppins',sans-serif;font-size:18px;color:white;line-height:1.55;margin-bottom:22px;position:relative;}
+.quote-attr{display:flex;align-items:center;gap:12px;}
+.quote-av{width:34px;height:34px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:white;}
+.quote-name{font-size:13px;font-weight:500;color:white;}
+.quote-role{font-size:11px;color:rgba(255,255,255,.4);}
+.quote-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);}
+.qs-val{font-family:'Poppins',sans-serif;font-size:28px;color:white;line-height:1;}
+.qs-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;}
+
+/* ── FAQ ACCORDION ── */
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border-soft);max-width:760px;}
+.faq-item{border-bottom:1px solid var(--border-soft);}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 4px;background:none;border:none;text-align:left;font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;transition:color .15s;}
+.faq-q:hover{color:var(--purple);}
+.faq-icon{position:relative;width:16px;height:16px;flex-shrink:0;}
+.faq-icon span{position:absolute;background:var(--purple);border-radius:2px;transition:transform .3s cubic-bezier(.455,.03,.515,.955),opacity .3s;}
+.faq-icon span:nth-child(1){width:100%;height:2px;top:50%;left:0;margin-top:-1px;}
+.faq-icon span:nth-child(2){width:2px;height:100%;left:50%;top:0;margin-left:-1px;}
+.faq-item.open .faq-icon span:nth-child(2){transform:rotate(90deg);opacity:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:320px;}
+.faq-a p{padding:0 4px 22px;font-size:14px;color:var(--ink-mid);line-height:1.7;max-width:680px;}
+
+/* ── MARKETING TILES ── */
+.mktg-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;}
+.mktg-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.mktg-tile{background:white;border:1px solid var(--border-soft);border-radius:12px;padding:20px;transition:transform .15s,box-shadow .15s;}
+.mktg-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.mktg-tile-icon{transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.mktg-tile:hover .mktg-tile-icon{transform:scale(1.12) rotate(-4deg);}
+.mktg-tile-icon{width:30px;height:30px;background:var(--purple-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.mktg-tile-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.mktg-tile-desc{font-size:11px;color:var(--ink-light);line-height:1.5;}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--purple);padding:64px 0;text-align:center;}
+.cta-band h2{font-family:'Poppins',sans-serif;font-size:38px;color:white;margin-bottom:12px;}
+.cta-band p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:30px;}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;}
+.btn-white{padding:11px 26px;font-size:14px;font-weight:500;color:var(--purple);background:white;border:none;border-radius:var(--radius);transition:background .12s,transform .12s,box-shadow .12s;}
+.btn-white:hover{background:var(--purple-light);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12);}
+.btn-outline-w{padding:11px 26px;font-size:14px;color:white;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:var(--radius);transition:background .12s,transform .12s,border-color .12s;}
+.btn-outline-w:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:52px 0;display:grid;}
+.footer-inner{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;margin:14px 0 18px;max-width:240px;}
+.footer-social{display:flex;gap:8px;}
+.s-btn{width:30px;height:30px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(255,255,255,.4);cursor:pointer;transition:background .15s,transform .15s,color .15s;}
+.s-btn:hover{background:var(--purple);color:white;transform:translateY(-2px);}
+.footer-col-title{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px;}
+.footer-links{display:flex;flex-direction:column;gap:9px;}
+.footer-link{font-size:13px;color:rgba(255,255,255,.45);cursor:pointer;transition:color .12s,transform .12s;display:inline-block;}
+.footer-link:hover{color:white;transform:translateX(3px);}
+
+/* ── PAGE-SPECIFIC ── */
+/* Product page hero */
+.prod-hero{padding:72px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.prod-hero h1{font-size:44px;margin-bottom:16px;}
+.prod-hero h1 em{font-style:italic;color:var(--purple);}
+.prod-hero .hero-sub{margin-bottom:28px;}
+.prod-hero-actions{display:flex;gap:12px;}
+.feature-list{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+.feature-item{display:flex;gap:12px;align-items:flex-start;}
+.feature-check{width:20px;height:20px;background:var(--purple-light);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:background .15s,transform .15s;}
+.feature-item:hover .feature-check{background:var(--purple);transform:scale(1.12);}
+.feature-item:hover .feature-check svg path{stroke:white;}
+.feature-text{font-size:13px;color:var(--ink-mid);line-height:1.5;}
+.feature-text strong{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.prod-visual{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:32px;display:flex;flex-direction:column;gap:16px;}
+.prod-vis-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;background:var(--teal-light);color:var(--teal);padding:4px 10px;border-radius:20px;margin-bottom:4px;}
+.prod-vis-title{font-family:'Poppins',sans-serif;font-size:22px;color:var(--ink);margin-bottom:4px;}
+.prod-vis-sub{font-size:12px;color:var(--ink-light);margin-bottom:8px;}
+.prod-vis-row{display:flex;gap:10px;}
+.prod-vis-stat{flex:1;background:var(--warm-white);border-radius:8px;padding:12px;}
+.pvs-val{font-family:'Poppins',sans-serif;font-size:22px;color:var(--ink);}
+.pvs-lbl{font-size:10px;color:var(--ink-light);margin-top:2px;}
+
+/* Benefits */
+.benefits-hero{padding:72px 0 64px;max-width:680px;}
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:60px;}
+.benefit-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:28px;transition:transform .15s,box-shadow .15s;}
+.benefit-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.benefit-card:hover .benefit-num{transform:scale(1.08);}
+.benefit-num{display:inline-block;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.benefit-num{font-family:'Poppins',sans-serif;font-size:48px;color:var(--purple);line-height:1;margin-bottom:8px;}
+.benefit-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.benefit-desc{font-size:13px;color:var(--ink-mid);line-height:1.65;}
+
+/* Tools */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.tool-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.tool-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.tool-tag{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:12px;}
+.tool-tag.existing{background:var(--purple-light);color:var(--purple-dark);}
+.tool-tag.new-t{background:var(--teal-light);color:var(--teal);}
+.tool-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.tool-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:14px;}
+.tool-link{font-size:13px;color:var(--purple);display:flex;align-items:center;gap:5px;}
+
+/* Marketing / request form */
+.mktg-hero{padding:72px 0 64px;max-width:640px;}
+.form-wrap{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:36px;max-width:640px;}
+.form-title{font-family:'Poppins',sans-serif;font-size:24px;margin-bottom:6px;}
+.form-sub{font-size:13px;color:var(--ink-mid);margin-bottom:28px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-field{display:flex;flex-direction:column;gap:5px;}
+.form-field.full{grid-column:1/-1;}
+label{font-size:12px;font-weight:500;color:var(--ink-mid);}
+input,select,textarea{font-family:'Poppins',sans-serif;font-size:13px;padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:7px;background:white;color:var(--ink);transition:border-color .12s;outline:none;width:100%;}
+input:focus,select:focus,textarea:focus{border-color:var(--purple);}
+textarea{resize:vertical;min-height:90px;}
+.checkbox-group{display:flex;flex-direction:column;gap:8px;}
+.check-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-mid);cursor:pointer;}
+.check-item input[type=checkbox]{width:15px;height:15px;cursor:pointer;accent-color:var(--purple);}
+.form-submit{width:100%;padding:12px;font-size:14px;font-weight:500;color:white;background:var(--purple);border:none;border-radius:var(--radius);margin-top:20px;transition:background .12s,transform .12s;}
+.form-submit:hover{background:var(--purple-dark);transform:translateY(-1px);}
+.form-success{display:none;text-align:center;padding:32px 0;}
+.form-success-icon{width:48px;height:48px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.form-success h3{font-family:'Poppins',sans-serif;font-size:22px;margin-bottom:8px;}
+.form-success p{font-size:13px;color:var(--ink-mid);}
+
+/* Blog */
+.blog-filter-btn{padding:6px 14px;font-size:13px;font-family:'Poppins',sans-serif;border-radius:20px;cursor:pointer;border:1px solid rgba(0,0,0,.12);background:transparent;color:var(--ink-mid);transition:background .12s,border-color .12s,color .12s;}
+.blog-filter-btn:hover{border-color:var(--purple-mid);}
+.blog-filter-btn.active{border-color:var(--purple);background:var(--purple-light);color:var(--purple);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.blog-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.blog-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.blog-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:28px;}
+.blog-content{padding:20px;}
+.blog-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.blog-cat{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-light);padding:2px 7px;border-radius:20px;}
+.blog-date{font-size:11px;color:var(--ink-light);}
+.blog-title{font-family:'Poppins',sans-serif;font-size:17px;color:var(--ink);margin-bottom:8px;line-height:1.3;}
+.blog-excerpt{font-size:12px;color:var(--ink-mid);line-height:1.6;}
+
+/* Sectors page */
+.sectors-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.sector-page-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:26px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.sector-page-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.sector-page-em{color:var(--purple);margin-bottom:14px;display:inline-flex;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-page-card:hover .sector-page-em{transform:scale(1.15) rotate(-4deg);}
+.sector-page-name{font-family:'Poppins',sans-serif;font-size:20px;color:var(--ink);margin-bottom:6px;}
+.sector-page-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:16px;}
+.sector-products{display:flex;flex-wrap:wrap;gap:4px;}
+
+/* Page transition */
+#page-content{animation:fadein .2s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
+    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
+    <span class="brand-divider"></span>
+    <span class="brand-partners-text">Partners</span>
+  </div>
+
+  <div class="nav-links">
+    <div class="nav-item" id="dd-wifi">
+      <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
+        <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
+        <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
+        <div class="dd-item" onclick="navigate('shield')"><strong>Shield</strong><span>Content filtering &amp; threat protection</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('app')"><strong>The Purple app</strong><span>One app for identity, guests, and residents</span></div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('benefits')">Benefits</div>
+
+    <div class="nav-item" id="dd-sectors">
+      <div class="nav-link" onclick="navigate('sectors')">Sectors <span class="chev" onclick="event.stopPropagation();toggleDD('dd-sectors')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('sector-hospitality')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospitality</div>
+        <div class="dd-item" onclick="navigate('sector-retail')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Retail</div>
+        <div class="dd-item" onclick="navigate('sector-healthcare')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Healthcare</div>
+        <div class="dd-item" onclick="navigate('sector-education')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Education</div>
+        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; MDU</div>
+        <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
+        <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport &amp; venues</div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="dd-tools">
+      <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
+        <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
+        <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
+        <div class="dd-item" onclick="location.href='tools.html#case-studies'">Case studies</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('marketing')">Marketing support</div>
+
+    <div class="nav-item" id="dd-portal">
+      <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
+        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('blog')">Blog</div>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="navigate('home')">Register a deal</button>
+    <button class="btn-solid" onclick="navigate('home')">Become a partner</button>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div id="page-content"></div>
+
+<!-- FOOTER TEMPLATE -->
+<div id="footer-wrap"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────
+
+// [name, logo filename in /logos] - Boldyn Networks has no clean redistributable
+// logo asset available, so it falls back to a styled text wordmark instead of a fake image.
+const PARTNER_LOGOS = [
+  ['Boldyn Networks', null],
+  ['Ideal', 'ideal.png'],
+  ['Focus', 'focus.svg'],
+  ['Softcat', 'softcat.png'],
+  ['Boxxe', 'boxxe.svg'],
+  ['Natilik', 'natilik.png'],
+  ['KCOM', 'kcom.svg'],
+  ['RedCentric', 'redcentric.svg'],
+  ['Evolve', 'evolve.svg'],
+  ['Logicalis', 'logicalis.png'],
+];
+
+// Ported from the live partners.purple.ai FAQ accordion (JSON-LD FAQPage schema).
+const FAQS = [
+  ["Can we white-label Purple's WiFi solution?",
+   "Yes! We offer partners the opportunity to sell Purple WiFi under their own branding, as well as owning the customer relationship directly."],
+  ["Does Purple integrate with my client's existing WiFi infrastructure?",
+   "The Purple platform is designed to be hardware agnostic and integrates as a cloud-based overlay with your client's existing WiFi infrastructure. This means that in most cases, no additional hardware is required to deploy the solution."],
+  ["How long does implementation usually take?",
+   "We like to make things as quick and easy as possible. The time it takes to implement a Purple WiFi solution varies from a few minutes for the initial setup steps to a few hours or longer for the physical installation, depending on existing infrastructure and required customisation."],
+  ["What data does Purple capture from guests?",
+   "With our Guest WiFi, Purple provides invaluable insights for enhancing the guest experience by analyzing behavior, footfall, and return rates within the venue. Custom fields can be used for collecting specific guest-volunteered information, and your clients can also choose to conduct surveys to gather real-time customer feedback. Importantly, you can rest assured that all collected data is handled with the utmost care and security."],
+  ["Does Purple offer dedicated partner support or training?",
+   "Yes! We understand the importance of maximizing the potential of our platform for both you and your clients. That's why we offer comprehensive training for our WiFi resellers. Our partner portal features an extensive collection of guides and resources, ensuring you have all the tools necessary to succeed with Purple. In addition, our dedicated support team is always available to assist you with any queries you may have."],
+  ["Is there a minimum revenue commitment or target?",
+   "No, there are no sales targets required when partnering with Purple. During the onboarding and discovery process, we may discuss your projected annual recurring revenue (ARR) through Purple products in the first year. This is simply to ensure you're paired with the most suitable sales or partner representative who can best support your needs. However, there is no obligation to meet any specific sales targets."],
+];
+
+// ── SECTOR LANDING PAGE DATA ─────────────────────────────────────
+const ALL_PRODUCTS = {
+  "staff-wifi": { name: "Staff WiFi", short: "Passwordless, identity-based access for personnel, provisioned through the Purple app and revoked automatically the moment someone leaves." },
+  "guest-wifi": { name: "Guest WiFi", short: "A branded login with built-in analytics and CRM sync. The Purple app keeps repeat visitors reconnecting without a portal." },
+  "multi-tenant": { name: "Multi-tenant WiFi", short: "A private network bubble per resident or unit, provisioned and managed entirely through the Purple app." },
+  "verify": { name: "Verify", short: "Real-time email validation at login, so every contact captured is one your customer can actually use." },
+  "shield": { name: "Shield", short: "DNS-layer filtering and threat protection, with exportable reports for auditors and governors." }
+};
+const PRODUCT_ORDER = ["staff-wifi","guest-wifi","multi-tenant","verify","shield"];
+
+// Simple currentColor line icons replacing emoji glyphs - inherits whatever
+// text color the surrounding context sets, works on light and dark backgrounds alike.
+const ICON_PATHS = {
+  hospitality: '<path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>',
+  retail: '<path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+  healthcare: '<rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+  education: '<path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+  residential: '<rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+  enterprise: '<rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/>',
+  transport: '<path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>',
+  lock: '<rect x="3.5" y="7" width="9" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+  envelope: '<rect x="1.5" y="3.5" width="13" height="9" rx="1.3" stroke="currentColor" stroke-width="1.3"/><path d="M2 4.5 8 9l6-4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>',
+  chart: '<path d="M2 13.5h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="3.5" y="8.5" width="2.2" height="5" stroke="currentColor" stroke-width="1.2"/><rect x="6.9" y="5.5" width="2.2" height="8" stroke="currentColor" stroke-width="1.2"/><rect x="10.3" y="2.5" width="2.2" height="11" stroke="currentColor" stroke-width="1.2"/>',
+  calendar: '<rect x="2" y="3" width="12" height="11" rx="1.3" stroke="currentColor" stroke-width="1.3"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>',
+};
+function icon(key, size) {
+  size = size || 16;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;">${ICON_PATHS[key]}</svg>`;
+}
+
+const SECTOR_DATA = {
+  hospitality: {
+    icon: icon('hospitality', 14),
+    name: "Hospitality",
+    tag: "Hospitality",
+    hook: "The free WiFi line item your hospitality customers can finally make money from.",
+    sub: "Hotels, restaurants, pubs, and cafes already pay for WiFi. Purple turns it from a cost center into a branded, data-capturing channel, with the Purple app keeping every returning guest reconnecting without friction.",
+    quickWins: ["Branded captive portal live in days, not months","Every login becomes a consented, reachable contact","Returning guests reconnect automatically through the app"],
+    challenges: [
+      { title: "An unmanaged network doing nothing for the business", body: "Most venues already have WiFi. What they don't have is a branded login, a way to capture data from the people already on site, or a reason to think of WiFi as anything other than a cost.", key: "guest-wifi" },
+      { title: "Data that never reaches a usable database", body: "Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.", key: "verify" },
+      { title: "No reason for a guest to come back", body: "Once a visitor opts in through the Purple app, reconnection on every future visit is automatic, and that repeat recognition is what turns a one-off connection into a loyalty channel.", key: "guest-wifi" }
+    ],
+    recommended: ["guest-wifi","verify","staff-wifi"],
+    proof: {
+      stat: "90%", label: "fewer on-site IT visits",
+      title: "McDonald's Belgium turned guest WiFi into a data and app-growth engine.",
+      body: "Purple was deployed alongside Cisco Meraki and Socialspot, with OneClick and Facebook login and language-specific splash pages built in LogicFlow. The result: 8 million visits, 2.5 million unique records, and a jump in campaign-linked app downloads, with 90% fewer on-site IT visits.",
+      stats: [["8m","visits"],["2.5m","unique records"],["90%","fewer IT visits"]]
+    },
+    quote: {
+      text: "Purple's solution is integral to our overall business strategies. It lets us tailor the user's journey by venue and collect valuable, rich data that would otherwise have been unknown to the business, driving visits with tailored communications and an ROI that pays for the software itself, and then some.",
+      name: "Stonegate Pub Company", role: "CRM Manager"
+    }
+  },
+  retail: {
+    icon: icon('retail', 14),
+    name: "Retail",
+    tag: "Retail",
+    hook: "Turn footfall into a first-party database your customers actually own.",
+    sub: "Third-party cookies are gone and attribution from physical visits is harder than ever. Purple gives retail customers a consented, first-party data set built from every guest WiFi login, with the Purple app powering opt-in and repeat recognition.",
+    quickWins: ["A consented, first-party database built from every login","Loyalty sign-up routed straight from the splash page","Repeat shoppers recognized automatically in-app"],
+    challenges: [
+      { title: "No reliable way to collect consented data at scale", body: "Third-party cookies are gone, and there's no dependable way to capture first-party data from people physically in a store. Guest WiFi closes that gap at the point of connection.", key: "guest-wifi" },
+      { title: "An attribution gap between online and in-store", body: "Marketing teams struggle to prove that spend is working when there's no link between a campaign and a physical visit. A clean, validated WiFi database gives them that link.", key: "verify" },
+      { title: "The same message sent to everyone", body: "Without real segmentation, every shopper gets the same email. Purple's Guest WiFi plans build the behavioral data needed to personalize, with the Purple app recognizing returning shoppers automatically.", key: "guest-wifi" }
+    ],
+    recommended: ["guest-wifi","verify","staff-wifi"],
+    proof: {
+      stat: "57X", label: "ROI on the original investment",
+      title: "Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.",
+      body: "A splash question routed affirmatives straight to a pre-filled Rewards sign-up. The result: 38% of guests opted into marketing, 4,453 new Rewards sign-ups, and 6,657 of those guests went on to purchase.",
+      stats: [["57X","ROI"],["581k","unique users / yr"],["3.6m","contact database"]]
+    },
+    quote: null
+  },
+  healthcare: {
+    icon: icon('healthcare', 14),
+    name: "Healthcare",
+    tag: "Healthcare",
+    hook: "Secure, compliant WiFi for staff and patients, without adding to IT's workload.",
+    sub: "Hospitals, GP surgeries, and care homes need staff and guest networks that satisfy auditors and don't create more tickets. Purple overlays onto existing infrastructure and proves itself in weeks, with the Purple app handling identity for staff and reconnection for patients and visitors.",
+    quickWins: ["Staff access tied to identity, revoked automatically on leaving","A branded guest network live for patients and visitors in weeks","Audit-ready filtering reports for governors and regulators"],
+    challenges: [
+      { title: "Responsible for a network with no visibility over who's on it", body: "IT teams are accountable for a network anyone can connect to, with real exposure at audit if it isn't fully compliant. Staff WiFi ties access to identity through the Purple app, so the joiner-mover-leaver problem is solved automatically.", key: "staff-wifi" },
+      { title: "Patients and visitors with no proper guest network", body: "Many sites still only offer WiFi in a single area, like a coffee shop, leaving wards and waiting rooms without coverage. A branded guest network changes that without new hardware.", key: "guest-wifi" },
+      { title: "No evidence to show auditors and governors", body: "CQC and NHS Digital guidance both expect demonstrable network security measures. Shield gives a visible layer of protection with exportable reports built for exactly that conversation.", key: "shield" }
+    ],
+    recommended: ["staff-wifi","guest-wifi","shield"],
+    proof: {
+      stat: "2 wks", label: "to go live",
+      title: "Queen Elizabeth Hospital took guest WiFi from a single coffee shop to every ward.",
+      body: "Purple overlaid onto existing kit and went live in two weeks. The branded splash page is now used to distribute health communications across the hospital.",
+      stats: [["250k","sessions / yr"],["60k","users to CRM / yr"],["2 wks","to go live"]]
+    },
+    quote: {
+      text: "The feedback from patients about the WiFi has been very positive. Our main demographic is elderly patients and many believed this age category wouldn't use the service, but they do. This information is useful to justify usage amongst our largest demographic.",
+      name: "Queen Elizabeth Hospital", role: "Head of ICT"
+    }
+  },
+  education: {
+    icon: icon('education', 14),
+    name: "Education",
+    tag: "Education",
+    hook: "Give every student their own private network, without flooding the helpdesk on move-in day.",
+    sub: "Schools, colleges, and universities need staff access that's identity-led and student accommodation that doesn't generate a queue of tickets. The Purple app provisions both, from staff sign-in to a student's private network bubble.",
+    quickWins: ["Staff sign-in tied to the identity provider, not a shared password","A private network bubble per student, set up in the app","Browserless devices, consoles, TVs, connect without a portal"],
+    challenges: [
+      { title: "A flood of helpdesk tickets every move-in week", body: "Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.", key: "multi-tenant" },
+      { title: "Staff and student networks that aren't properly separated", body: "Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.", key: "staff-wifi" },
+      { title: "No safeguarding evidence to show when it's asked for", body: "Ofsted and governing bodies expect demonstrable internet safety measures. Shield gives schools and colleges the filtering evidence they need, with reporting built for exactly that purpose.", key: "shield" }
+    ],
+    recommended: ["multi-tenant","staff-wifi","shield"],
+    proof: {
+      stat: "60%", label: "fewer move-in tickets",
+      title: "A US higher education customer cut move-in tickets by 60% across 40 housing buildings.",
+      body: "Splash Access iPSK and a self-service SSO portal gave every student their own device bubble, working across both Catalyst and Meraki estates. The partner went on to win a long-term managed-services contract on the back of it.",
+      stats: [["60%","fewer move-in tickets"],["40","housing buildings"]]
+    },
+    quote: null
+  },
+  residential: {
+    icon: icon('residential', 14),
+    name: "Residential & MDU",
+    tag: "Residential & MDU",
+    hook: "A private network bubble for every resident, without 500 router configs.",
+    sub: "BTR developments, aparthotels, and multi-dwelling units need WiFi that feels like home broadband. Residents provision and manage their connection through the Purple app, with no operator having to manage a router per unit.",
+    quickWins: ["Every resident gets a true private network, not a shared one","Browserless devices supported via iPSK, no portal needed","A new ancillary revenue stream from tiered, paid access"],
+    challenges: [
+      { title: "A shared building network with no privacy between units", body: "Without per-unit isolation, every resident's traffic shares the same risk and the same congestion. Multi-tenant WiFi gives each unit a genuine Private Area Network instead.", key: "multi-tenant" },
+      { title: "Captive portals that frustrate residents on every reconnect", body: "Residents shouldn't have to log in again every time they come home. Once a network pass is provisioned in the Purple app, devices reconnect automatically, every time.", key: "multi-tenant" },
+      { title: "Per-unit routers that are expensive and interfere with each other", body: "Managing 500 individual router configurations doesn't scale. iPSK on one unified fabric replaces that entirely, and opens the door to a paid premium tier as an ancillary revenue stream.", key: "multi-tenant" }
+    ],
+    recommended: ["multi-tenant","staff-wifi"],
+    proof: {
+      stat: "500", label: "units, one fabric",
+      title: "A US multi-dwelling unit operator replaced 500 router configs with one fabric.",
+      body: "Splash Access iPSK MDU with Follow-Me roaming gave every unit a private bubble on one unified Cisco fabric, with a Stripe gateway enabling instant premium upgrades and a new ancillary revenue stream for the operator.",
+      stats: [["500","units, one fabric"],["Tiered","WiFi revenue"]]
+    },
+    quote: null
+  },
+  enterprise: {
+    icon: icon('enterprise', 14),
+    name: "Enterprise",
+    tag: "Enterprise",
+    hook: "Zero trust at the WiFi layer, with the leaver problem solved for good.",
+    sub: "Office campuses and co-working spaces are still managing a shared WiFi password and offboarding leavers by hand. Staff WiFi removes both, with the Purple app as the engine behind every connection.",
+    quickWins: ["No shared passwords to rotate, share, or forget","Access revoked automatically the moment someone leaves the IdP","Built on the same platform already trusted by 80,000 venues"],
+    challenges: [
+      { title: "A shared password that never changes", body: "Ex-staff often still have network access long after they've left, because revoking a shared password means resetting it for everyone. Identity-based access through the Purple app removes that entirely.", key: "staff-wifi" },
+      { title: "Constant turnover that makes access a daily burden", body: "Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.", key: "staff-wifi" },
+      { title: "No separation between staff and guest traffic", body: "Visitors and personnel often share a network with no real boundary between them. Staff WiFi and Guest WiFi run as genuinely separate layers, each provisioned through the Purple app.", key: "guest-wifi" }
+    ],
+    recommended: ["staff-wifi"],
+    proof: {
+      stat: "80k+", label: "venues already on the platform",
+      title: "Built on the same identity infrastructure trusted by 80,000 venues.",
+      body: "Staff WiFi is new, but the platform underneath it isn't. The identity infrastructure is proven at scale already, ISO 27001 and GDPR and CCPA compliant, with 99.99% uptime, so the credibility conversation starts from a strong position.",
+      stats: [["80k+","venues worldwide"],["99.99%","platform uptime"],["13yr","Purple in market"]]
+    },
+    quote: null
+  },
+  transport: {
+    icon: icon('transport', 14),
+    name: "Transport & venues",
+    tag: "Transport & venues",
+    hook: "Scale and compliance, proven at some of the busiest venues in the world.",
+    sub: "Airports, train operators, arenas, and stadiums need WiFi that handles huge passenger and fan volumes while still delivering clean, usable data, with the Purple app keeping frequent travelers reconnecting without friction.",
+    quickWins: ["Tiered free and premium access that scales to millions of connections","Every email validated, so campaign data is never wasted","Frequent visitors reconnect automatically through the app"],
+    challenges: [
+      { title: "High footfall, but no booking-stage data capture", body: "Unlike airlines, most transport and venue operators have no equivalent of a booking record. Guest WiFi captures that data at the point of connection instead, at volume.", key: "guest-wifi" },
+      { title: "One-size-fits-all connectivity for very different audiences", body: "Fans, shoppers, and corporate partners all need a different experience from the same network. Logic-based journeys route each group differently from the same WiFi platform.", key: "guest-wifi" },
+      { title: "No way to prove the value of a sponsorship or partnership", body: "Without engagement data, it's hard to prove what a partnership is actually worth. Validated, first-party data from every login gives operators something concrete to show partners.", key: "verify" }
+    ],
+    recommended: ["guest-wifi","verify","staff-wifi"],
+    proof: {
+      stat: "842%", label: "ROI",
+      title: "AGS Airports turned WiFi into a revenue line and a clean, verified passenger database.",
+      body: "Tiered WiFi, a free first hour and a paid premium tier, plus Verify across three sites, generated £284k in revenue and a verified database the marketing team could actually use.",
+      stats: [["£284k","premium WiFi revenue"],["842%","ROI"],["5.6m","connections / yr"]]
+    },
+    quote: {
+      text: "I've never had a supplier who so thoroughly understands our needs and objectives. Purple showed an intricate understanding of the ticket-sales model and that an on-board portal was critical to reaching that huge untapped base.",
+      name: "c2c Rail", role: "Senior CRM Executive"
+    }
+  }
+};
+
+const SECTOR_IMAGES = {
+  hospitality: 'hospitality.webp', retail: 'retail.webp', healthcare: 'healthcare.webp',
+  education: 'education.webp', residential: 'residential.webp', enterprise: 'enterprise.webp',
+  transport: 'transport.webp',
+};
+
+function renderSectorPage(slug) {
+  const s = SECTOR_DATA[slug];
+  const orderedProducts = PRODUCT_ORDER.slice().sort((a,b) => {
+    const ra = s.recommended.indexOf(a), rb = s.recommended.indexOf(b);
+    const wa = ra === -1 ? 99 : ra, wb = rb === -1 ? 99 : rb;
+    return wa - wb;
+  });
+  return `
+<div style="background:var(--purple-deep);padding:72px 0 56px;position:relative;overflow:hidden;">
+  <img src="sectors/${SECTOR_IMAGES[slug]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,var(--purple-deep) 30%,rgba(1,22,56,.5));"></div>
+  <div class="container" style="position:relative;">
+    <div class="eyebrow" style="color:var(--purple-mid);">${s.icon} ${s.tag}</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:44px;color:white;margin-bottom:16px;max-width:660px;">${s.hook}</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.55);max-width:580px;line-height:1.7;margin-bottom:24px;">${s.sub}</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px;max-width:480px;">
+      ${s.quickWins.map(w => `
+        <div style="display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:16px;height:16px;background:rgba(255,255,255,.1);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span style="font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;">${w}</span>
+        </div>`).join('')}
+    </div>
+    <button class="btn-white" onclick="navigate('home')">Register as a partner</button>
+  </div>
+</div>
+
+<div class="container"><div class="section">
+  <div class="eyebrow">The conversation</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">What your customer is dealing with right now.</h2>
+  <div style="display:flex;flex-direction:column;gap:0;">
+    ${s.challenges.map((c,i) => `
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;${i < s.challenges.length-1 ? 'border-bottom:1px solid var(--border-soft);' : ''}">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">${c.title}</h3>
+        <div>
+          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">${c.body}</p>
+          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('${c.key}')">Learn about ${ALL_PRODUCTS[c.key].name} →</span>
+        </div>
+      </div>`).join('')}
+  </div>
+</div></div>
+
+<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+  <div class="container">
+    <div class="eyebrow">Where Purple fits</div>
+    <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:8px;">The full platform, with the right entry point for ${s.tag.toLowerCase()}.</h2>
+    <p class="section-sub" style="margin-bottom:32px;">Every product is available to sell into ${s.tag.toLowerCase()}. The ones below tend to open the conversation fastest, but the platform doesn't stop there.</p>
+    <div class="sol-grid" style="grid-template-columns:repeat(3,1fr);">
+      ${orderedProducts.map(key => {
+        const p = ALL_PRODUCTS[key];
+        const isRec = s.recommended.indexOf(key) !== -1;
+        return `
+      <div class="sol-card" onclick="navigate('${key}')" style="${isRec ? '' : 'opacity:.75;'}">
+        <div class="sol-card-body">
+          ${isRec ? '<div class="tag" style="margin-bottom:10px;">Recommended</div>' : ''}
+          <div class="card-tag">${p.name}</div>
+          <p class="card-body">${p.short}</p>
+        </div>
+      </div>`;
+      }).join('')}
+    </div>
+    <div style="margin-top:18px;font-size:12px;color:var(--ink-light);">Every product above runs on the same Purple app, for identity, guests, or residents. <span class="link-arrow" style="color:var(--purple);" onclick="navigate('app')">See how the app works →</span></div>
+  </div>
+</div>
+
+<div class="container"><div class="section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div style="display:flex;justify-content:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2Funnamed.webp&w=640&q=75" alt="The Purple app" style="width:100%;max-width:220px;border-radius:18px;box-shadow:0 14px 40px rgba(116,88,253,0.16);display:block;">
+    </div>
+    <div>
+      <div class="eyebrow">Powered by the Purple app</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:12px;">Every login in ${s.tag.toLowerCase()} runs through the same app.</h2>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">Whichever product opens the deal, staff sign-in, a guest's first connection, or a resident provisioning their network, it all happens in the same Purple app. That's one engine to explain, one experience to demo, and one channel that keeps paying off after the first login.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="container"><div class="section">
+  <div class="eyebrow">Proof point</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">${s.proof.title}</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;">${s.proof.body}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(${s.proof.stats.length},1fr);gap:14px;">
+      ${s.proof.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
+    </div>
+  </div>
+</div></div>
+
+${s.quote ? `
+<div class="dark-section"><div class="container">
+  <div class="quote-card" style="max-width:680px;">
+    <div class="quote-text">"${s.quote.text}"</div>
+    <div class="quote-attr"><div class="quote-av">${s.quote.name.slice(0,2).toUpperCase()}</div><div><div class="quote-name">${s.quote.name}</div><div class="quote-role">${s.quote.role}</div></div></div>
+  </div>
+</div></div>` : ''}
+
+<div style="background:white;border-top:1px solid var(--border-soft);padding:64px 0;">
+  <div class="container">
+    <div style="background:var(--warm-white);border-radius:var(--radius-xl);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;">
+      <div>
+        <div class="eyebrow">Marketing support</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-size:24px;margin-bottom:8px;">Need co-branded materials for ${s.tag.toLowerCase()}?</h2>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">Request sector-specific campaign packs, one-pagers, and co-branded assets for ${s.tag.toLowerCase()} deals, including Purple app collateral you can hand straight to a prospect.</p>
+      </div>
+      <div style="text-align:right;">
+        <button class="btn-primary" onclick="navigate('marketing')">Request marketing support →</button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+}
+
+
+
+const PAGES = {
+
+// ═══════════════════════════════════════
+// HOME
+// ═══════════════════════════════════════
+// ═══════════════════════════════════════
+// THE PURPLE APP
+// ═══════════════════════════════════════
+app: () => `
+<div class="container">
+  <div class="prod-hero">
+    <div>
+      <div class="tag">The Purple app</div>
+      <h1>One app. <em>Every kind of connection.</em></h1>
+      <p class="hero-sub">Staff, guests, and residents all connect through the same Purple app. It's the engine behind identity-based access, the layer that removes captive-portal friction, and the channel that keeps every connection going after the first login.</p>
+      <div class="feature-list" style="margin-top:0;">
+        ${[['One app, three jobs','The same app authenticates staff, recognizes returning guests, and provisions resident networks, depending on which Purple product is deployed.'],['Nothing for IT to install','The app lives on the end user\'s own device. There\'s no agent to roll out and no extra hardware to manage.'],['Built on identity, not passwords','Every connection through the app is tied to a verified identity, not a shared credential that has to be rotated or reset.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2Funnamed.webp&w=640&q=75" alt="The Purple app" style="width:100%;max-width:280px;border-radius:20px;box-shadow:0 16px 48px rgba(116,88,253,0.18);display:block;">
+    </div>
+  </div>
+</div>
+
+<div class="dark-section"><div class="container">
+  <div class="eyebrow">Where the app shows up</div>
+  <h2 class="section-title" style="margin-bottom:32px;">Three products. One app underneath all of them.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${[
+      ['Staff WiFi','The authentication engine','Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.'],
+      ['Guest WiFi','The friction remover','Captive portals still frustrate visitors with forms. The app replaces that with seamless connectivity and a conscious opt-in, done once. From then on, the app recognizes returning visitors automatically, and becomes a channel for offers and loyalty to people who are physically in the venue.'],
+      ['Multi-tenant WiFi','The resident\'s remote control','Residents provision a network pass directly in the app. Devices auto-connect and isolate, and reconnect automatically on every future visit, to any property in the chain. The app doubles as an engagement channel: surveys, location-aware content, notifications, and rewards.']
+    ].map(([n,t,d])=>`
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:8px;">${n}</div>
+        <div style="font-size:15px;font-weight:500;color:white;margin-bottom:10px;">${t}</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;">${d}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
+
+<div class="container"><div class="section">
+  <div class="eyebrow">Why it matters to a sale</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">One conversation, three upsells.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${[['A familiar engine','A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn\'t change, just what the app is being used for.'],['Less for IT to manage','Nothing for a customer\'s IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.'],['A channel that keeps paying off','Every opted-in connection through the app is a contact a customer can message again, whether that\'s a loyalty offer to a guest or a notification to a resident.']].map(([t,d])=>`
+      <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body">${d}</p></div>`).join('')}
+  </div>
+</div></div>
+`,
+
+home: () => `
+<div style="background:var(--off-white)">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="tag">Partner program</div>
+        <h1>The missing piece that helps you win <em>bigger deals.</em></h1>
+        <p class="hero-sub">WiFi hardware is commoditized. The way people connect to it is changing fast. Purple gives you the platform that turns every connection into recurring revenue.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="navigate('home')">Become a partner</button>
+          <button class="btn-secondary" onclick="navigate('home')">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1"/><path d="M5 4L8.5 6.5 5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+            Book a call
+          </button>
+        </div>
+        <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
+          <div class="stat-cell"><div class="stat-num">80k+</div><div class="stat-lbl">live venues</div></div>
+          <div class="stat-cell"><div class="stat-num">1.9m</div><div class="stat-lbl">daily engaged users</div></div>
+          <div class="stat-cell"><div class="stat-num">90+</div><div class="stat-lbl">countries</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="dash-wrap">
+          <div class="dash-bar"><div class="dash-dots"><div class="dash-dot" style="background:#ff5f57"></div><div class="dash-dot" style="background:#febc2e"></div><div class="dash-dot" style="background:#28c840"></div></div><div class="dash-url">eu.wifi.purple.ai, partner portal</div></div>
+          <img src="brand/dashboard-screenshot.webp" alt="Purple WiFi dashboard showing visitor analytics and captive portal branding" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:48px;">
+    <div class="logo-strip">
+      <div class="ls-label">Trusted partners</div>
+      <div class="ls-marquee">
+        <div class="ls-track">
+          ${Array(2).fill(PARTNER_LOGOS).flat().map(([name,file])=>`
+            <div class="ls-logo-item">${file ? `<img class="ls-logo-img" src="logos/${file}" alt="${name}">` : `<span class="ls-logo-text">${name}</span>`}</div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">WiFi solutions</div>
+    <h2 class="section-title">A platform, not just a product.</h2>
+    <p class="section-sub">By moving customers to identity-based networks, you stop selling connections and start delivering a platform that earns recurring revenue at every renewal.</p>
+    <div class="sol-grid">
+      <div class="sol-card" onclick="navigate('staff-wifi')">
+        <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FStaff-Wifi-Image.webp&w=1200&q=85" alt="Staff WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Staff WiFi</div>
+          <div class="card-title">Passwordless zero-trust access</div>
+          <p class="card-body">WPA3-Enterprise with automatic device provisioning and revocation tied to your customer's identity provider, via the Purple app. No shared passwords, no manual IT overhead.</p>
+          <div class="sol-checklist">
+            ${['Works with Entra ID, Google & Okta','WPA3-Enterprise, 802.1X','Automated JML'].map(t=>`
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('staff-wifi')">Learn more</button>
+        </div>
+      </div>
+      <div class="sol-card" onclick="navigate('guest-wifi')">
+        <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85" alt="Guest WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Guest WiFi</div>
+          <div class="card-title">Frictionless visitor access</div>
+          <p class="card-body">Branded portal or seamless connection via the Purple app, with built-in analytics, marketing automation, and first-party data capture. The layer that turns WiFi into a revenue tool.</p>
+          <div class="sol-checklist">
+            ${['Branded captive portal or seamless connection','Visitor analytics & footfall','Marketing automation'].map(t=>`
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('guest-wifi')">Learn more</button>
+        </div>
+      </div>
+      <div class="sol-card" onclick="navigate('multi-tenant')">
+        <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85" alt="Multi-tenant WiFi"></div>
+        <div class="sol-card-body">
+          <div class="card-tag">Multi-tenant WiFi</div>
+          <div class="card-title">Private at-home experience</div>
+          <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+          <div class="sol-checklist">
+            ${['Per-unit network isolation','A network pass in the Purple app','Browserless device support'].map(t=>`
+              <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+          </div>
+          <button class="sol-card-cta" onclick="event.stopPropagation();navigate('multi-tenant')">Learn more</button>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+        <div>
+          <div class="eyebrow">The Purple app</div>
+          <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">One app. Every kind of connection.</h2>
+          <p class="section-sub" style="margin-bottom:24px;">Staff, guests, and residents all connect through the same app. It's the authentication engine behind Staff WiFi, the friction remover behind Guest WiFi, and the resident's remote control behind Multi-tenant WiFi.</p>
+          <button class="btn-primary" onclick="navigate('app')">See how the app works →</button>
+        </div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;">
+          <img src="brand/app-mockup.webp" alt="The Purple app" style="width:130px;height:auto;display:block;filter:drop-shadow(0 16px 28px rgba(116,88,253,0.28));">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            ${[['Staff','SSO sign-in, certificate-based profile, access on every device'],['Guests','Opt in once, reconnect automatically on every future visit'],['Residents','Provision a network pass, devices auto-connect and isolate']].map(([t,d])=>`
+              <div style="background:var(--warm-white);border-radius:10px;padding:14px 16px;">
+                <div style="font-size:13px;font-weight:500;color:var(--ink);">${t}</div><div style="font-size:12px;color:var(--ink-light);line-height:1.5;">${d}</div>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-section">
+    <div class="container">
+      <div class="eyebrow">Sectors</div>
+      <h2 class="section-title">Sell into the right conversation.</h2>
+      <p class="section-sub">Every sector has a different buyer, a different pain point, and a different entry angle.</p>
+      <div class="sectors-grid">
+        ${[[icon('hospitality',18),'Hospitality','Hotels, restaurants, pubs. Guest WiFi + POS integrations.','sector-hospitality'],[icon('retail',18),'Retail','Footfall analytics, return rates, first-party data.','sector-retail'],[icon('healthcare',18),'Healthcare','GDPR compliance, staff WiFi, patient guest access.','sector-healthcare'],[icon('education',18),'Education','IdP sync, Shield for safeguarding, BYOD management.','sector-education'],[icon('residential',18),'Residential & MDU','BTR, student, aparthotels. Per-unit private networks.','sector-residential'],[icon('enterprise',18),'Enterprise','Zero trust, JML automation, NAC replacement.','sector-enterprise'],[icon('transport',18),'Transport & venues','Airports, arenas, stations. Scale + compliance.','sector-transport']].map(([e,n,h,slug])=>`
+          <div class="sector-card" onclick="navigate('${slug}')">
+            <div class="sector-icon-badge"><span class="sector-em">${e}</span></div>
+            <div class="sector-name">${n}</div>
+            <div class="sector-hint">${h}</div>
+            <div class="sector-arr">Explore ›</div>
+          </div>`).join('')}
+        <div class="sector-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;" onclick="navigate('sectors')">
+          <div style="font-size:11px;color:rgba(255,255,255,.25);text-align:center;">Browse all<br>sectors ›</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">Partner benefits</div>
+    <h2 class="section-title">Numbers that close deals.</h2>
+    <p class="section-sub" style="margin-bottom:48px;">Independent research across our partner network.</p>
+    <div class="why-grid">
+      <div><div class="why-num">12%</div><div class="why-lbl">Increased win rate</div><div class="why-desc">Partners consistently win more deals when Purple is in the mix.</div></div>
+      <div><div class="why-num">15x</div><div class="why-lbl">Return per £1 of Purple sold</div><div class="why-desc">Hardware, installation, managed services, Purple unlocks it all.</div></div>
+      <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
+      <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
+    </div>
+
+    <!-- VISUAL BREAK: hardware logos -->
+    <div style="margin-top:56px;background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:32px;">
+      <div style="font-size:11px;color:var(--ink-light);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Works with your customer's existing infrastructure</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+        ${['Cisco','Cisco Meraki','Aruba Networks (HPE)','Ruckus Wireless (CommScope)','Mist','Ubiquiti'].map(v=>`
+          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">${v}</div>`).join('')}
+      </div>
+      <div style="margin-top:16px;font-size:12px;color:var(--ink-light);">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple);" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware →</span></div>
+    </div>
+  </div></div>
+
+  <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
+        <div>
+          <div class="eyebrow">Marketing support</div>
+          <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">We help you go to market, not just to product.</h2>
+          <p class="section-sub">Co-branded assets, campaign packs, MDF, and bespoke support. Request what you need, when you need it.</p>
+          <button class="btn-primary" onclick="navigate('marketing')">Explore marketing support</button>
+        </div>
+        <div class="mktg-tiles">
+          ${[['Asset library','Logos, one-pagers, banners'],['Co-branded templates','Email, social, print'],['Campaign packs','Sector-specific, ready to deploy'],['Request MDF','Bespoke support, fast turnaround']].map(([t,d])=>`
+            <div class="mktg-tile"><div class="mktg-tile-title">${t}</div><div class="mktg-tile-desc">${d}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><div class="section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div class="eyebrow">Partner voices</div>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Don't just take our word for it.</h2>
+        <p class="section-sub" style="margin-bottom:0;">We provide WiFi for over 80,000 venues worldwide, with some of the biggest brands choosing Purple.</p>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
+        <div class="quote-attr"><div class="quote-av">BT</div><div><div class="quote-name">BT Business</div><div class="quote-role">Technology partner</div></div></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="container"><div class="section">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">Frequently asked questions.</h2>
+    <p class="section-sub">Answers to what partners ask us most.</p>
+    <div class="faq-list">
+      ${FAQS.map(([q,a])=>`
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>${q}</span>
+            <span class="faq-icon"><span></span><span></span></span>
+          </button>
+          <div class="faq-a"><p>${a}</p></div>
+        </div>`).join('')}
+    </div>
+  </div></div>
+</div>
+`,
+
+// ═══════════════════════════════════════
+// STAFF WIFI
+// ═══════════════════════════════════════
+'staff-wifi': () => `
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:0;">
+    <div>
+      <div class="tag">Staff WiFi</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Passwordless zero-trust access, <em>automated.</em></h1>
+      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Your customers are still managing shared WiFi passwords and manually offboarding leavers. Staff WiFi fixes all of that with the Purple app, without new hardware.</p>
+      <div style="display:flex;gap:12px;margin-bottom:0;">
+        <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
+      </div>
+    </div>
+    <div style="align-self:end;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FStaff-Wifi-Image.webp&w=1200&q=85" alt="Staff WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
+    <div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
+      <div class="prod-hero-actions" style="margin-bottom:0;">
+      </div>
+      <div class="feature-list">
+        ${[['The Purple app as the engine','Staff authenticate once with their existing SSO credentials and get a unique, unshareable certificate-based profile in the app.'],['WPA3-Enterprise, 802.1X','Certificate-based authentication. No passwords to share, rotate, or forget.'],['Automated JML','When a user leaves the IdP, they lose network access automatically. No manual intervention.'],['Identity-based VLANs','Each user gets the right access for their role, automatically, on any device.'],['Works with Entra ID, Google & Okta','Any cloud RADIUS vendor supported. Listed vendors auto-sync.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="prod-visual" style="position:sticky;top:80px;">
+      <div class="prod-vis-badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#1D9E75" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg>
+        Zero trust active
+      </div>
+      <div class="prod-vis-title">Acme Corp, staff network</div>
+      <div class="prod-vis-sub">Connected via Entra ID · 247 active devices</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">247</div><div class="pvs-lbl">Active devices</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">0</div><div class="pvs-lbl">Manual interventions (30d)</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">12</div><div class="pvs-lbl">Auto-revocations (30d)</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">
+        <div style="font-weight:500;color:var(--ink);margin-bottom:8px;">Recent activity</div>
+        ${[['J. Smith, Marketing','Device enrolled via Entra ID','2m ago'],['T. Patel, IT','VLAN: Engineering assigned','8m ago'],['C. Okafor, HR','Access revoked (JML)','1h ago']].map(([n,a,t])=>`
+          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-soft);">
+            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">${n}</div><div style="font-size:11px;">${a}</div></div>
+            <div style="font-size:11px;color:var(--ink-light);">${t}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-section"><div class="container">
+  <div class="eyebrow">Who your customer's buyer is</div>
+  <h2 class="section-title" style="margin-bottom:16px;">Who your customer's buyer is.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+    ${[['IT & network managers','The primary contact. They own the shared-password problem, fear an audit, and are looking for a solution that doesn\'t create more work.'],['CISOs & security leads','Zero trust and identity-based access are already on their agenda. Staff WiFi gives them a quick, demonstrable win on network security posture.'],['HR & operations','Feel the JML pain directly. Every leaver is a manual process and a potential security risk, Staff WiFi removes it entirely.']].map(([t,d])=>`
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
+        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">${t}</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">${d}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// GUEST WIFI
+// ═══════════════════════════════════════
+'guest-wifi': () => `
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:0;">
+    <div>
+      <div class="tag">Guest WiFi</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Give your customers a WiFi that <em>works for them</em>, not just their guests.</h1>
+      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
+      <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
+    </div>
+    <div style="align-self:end;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85" alt="Guest WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
+    <div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
+      <div class="feature-list">
+        ${[['Branded captive portal or seamless connection','Fully customizable login experience, from full portal to Passpoint auto-connect.'],['The Purple app for returning visitors','Once a visitor opts in via the app, reconnection is automatic on every future visit, no portal, no re-entering details.'],['Visitor analytics & footfall','Dwell time, return rates, peak hours, demographic insight. Data your customers can act on.'],['Marketing automation','Automated emails, SMS, and CRM sync triggered by WiFi behavior, including in-app offers and loyalty for opted-in visitors.'],['GDPR & CCPA compliant','Data handling built to the standard, not retrofitted.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="prod-visual" style="position:sticky;top:80px;">
+      <div class="prod-vis-badge" style="background:rgba(29,158,117,.1);color:var(--teal);">Guest portal active</div>
+      <div class="prod-vis-title">Stonegate Pub Co., guest analytics</div>
+      <div class="prod-vis-sub">Last 30 days · 47 venues</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">186k</div><div class="pvs-lbl">Total connections</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">68%</div><div class="pvs-lbl">Data capture rate</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">34%</div><div class="pvs-lbl">Return visitor rate</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
+        <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top connection methods</div>
+        ${[['Email login','54%',100],['Social login','28%',52],['Phone number','18%',33]].map(([l,v,w])=>`
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span>${l}</span><span style="color:var(--ink-light);">${v}</span></div>
+            <div style="height:4px;background:var(--purple-light);border-radius:2px;"><div style="height:100%;width:${w}%;background:var(--purple);border-radius:2px;"></div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-section"><div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <div class="eyebrow">Captive portal</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">A branded captive portal, built in.</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px;">The portal overlays directly onto a customer's existing hardware, with no infrastructure changes and nothing to rip out.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        ${[['Fully branded splash pages','Logo, colors, and imagery match the customer\'s brand, not Purple\'s.'],['25+ supported languages','One portal, ready for visitors in their own language out of the box.'],['Live in hours','Deploys as a cloud overlay on supported hardware. No new access points, no rip-and-replace.'],['Security built in','Verify and Shield sit underneath the portal, so the login isn\'t just branded, it\'s clean and protected too.']].map(([t,d])=>`
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:18px;height:18px;background:rgba(255,255,255,.1);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><div style="font-size:13px;font-weight:500;color:white;margin-bottom:2px;">${t}</div><div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">${d}</div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div style="background:white;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.25);">
+      <div style="background:var(--purple-deep);padding:10px 14px;display:flex;align-items:center;gap:8px;">
+        <div style="display:flex;gap:5px;"><div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div><div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div><div style="width:7px;height:7px;border-radius:50%;background:#28c840;"></div></div>
+        <div style="flex:1;background:rgba(255,255,255,.07);border-radius:4px;padding:3px 9px;font-size:10px;color:rgba(255,255,255,.4);font-family:monospace;">connect.stonegatepubs.co.uk</div>
+      </div>
+      <div style="padding:32px 24px;text-align:center;">
+        <div style="width:36px;height:36px;background:var(--purple-light);border-radius:9px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="#7458fd" opacity=".9"/><circle cx="8" cy="8" r="2.5" fill="white"/></svg></div>
+        <div style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin-bottom:4px;">Welcome to Stonegate WiFi</div>
+        <div style="font-size:12px;color:var(--ink-light);margin-bottom:20px;">Connect free in under 10 seconds</div>
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:220px;margin:0 auto;">
+          <div style="background:var(--purple);color:white;font-size:12px;padding:9px;border-radius:7px;">Continue with email</div>
+          <div style="background:var(--warm-white);color:var(--ink-mid);font-size:12px;padding:9px;border-radius:7px;border:1px solid var(--border-soft);">Continue with Facebook</div>
+          <div style="background:var(--warm-white);color:var(--ink-mid);font-size:12px;padding:9px;border-radius:7px;border:1px solid var(--border-soft);">Continue with Google</div>
+        </div>
+        <div style="font-size:10px;color:var(--ink-light);margin-top:16px;">By connecting you agree to our WiFi terms</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+  <div class="container">
+    <div class="eyebrow">Proof point</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.</h2>
+        <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">By improving and optimizing the guest WiFi experience, Harrods built a data and engagement layer that changed how the business understood and communicated with its visitors. <a href="https://www.purple.ai/en-gb/guest-wifi" style="color:var(--purple);" target="_blank">See the Guest WiFi platform behind it.</a></p>
+        <button class="btn-primary" onclick="navigate('home')">Read the case study</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        ${[['57X','ROI on the original investment, Harrods'],['13yr','Purple in market'],['80k+','venues worldwide'],['99.99%','platform uptime']].map(([v,l])=>`
+          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+`,
+
+// ═══════════════════════════════════════
+// MULTI-TENANT
+// ═══════════════════════════════════════
+'multi-tenant': () => `
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:0;">
+    <div>
+      <div class="tag">Multi-tenant WiFi</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Every resident. Their own private <em>network.</em></h1>
+      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">From BTR developments to student accommodation and aparthotels, Purple's multi-tenant WiFi gives every occupant a secure, isolated connection that feels like home broadband, provisioned through the Purple app.</p>
+      <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
+    </div>
+    <div style="align-self:end;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85" alt="Multi-tenant WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
+    <div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
+      <div class="feature-list">
+        ${[['Per-unit network isolation','Each resident\'s traffic is completely isolated. No shared risk, no shared bandwidth contention.'],['A network pass in the Purple app','Residents provision their pass in-app, devices auto-connect and isolate, and reconnect automatically on every return visit to any property in the chain.'],['Browserless device support','Consoles, TVs, smart home devices, they all connect via iPSK without a captive portal.'],['The app as an engagement channel','Surveys, location-aware content, notifications, and rewards delivered directly to residents and guests through the app.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="prod-visual" style="position:sticky;top:80px;">
+      <div class="prod-vis-badge">192 active units</div>
+      <div class="prod-vis-title">Riverside Quarter, BTR development</div>
+      <div class="prod-vis-sub">240 units · Building-wide managed WiFi</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">192</div><div class="pvs-lbl">Active units</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">847</div><div class="pvs-lbl">Connected devices</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Unit isolation</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;">
+        <div style="font-weight:500;color:var(--ink);margin-bottom:8px;font-size:12px;">Unit overview</div>
+        ${[['Unit 14A','J. Kimura, 4 devices','Active'],['Unit 22B','S. Osei, 7 devices','Active'],['Unit 31C','Vacant','Provisioned']].map(([u,r,s])=>`
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border-soft);">
+            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">${u}</div><div style="font-size:11px;color:var(--ink-light);">${r}</div></div>
+            <div style="font-size:10px;padding:2px 7px;border-radius:20px;background:${s==='Active'?'var(--teal-light)':'var(--purple-light)'};color:${s==='Active'?'var(--teal)':'var(--purple)'};">${s}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-section"><div class="container">
+  <div class="eyebrow">Where to sell it</div>
+  <h2 class="section-title" style="margin-bottom:32px;">Built for residential and extended-stay.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+    ${[[icon('residential',20),'Built to rent','Developers and operators who want WiFi as an amenity, not an afterthought.'],[icon('education',20),'Student accommodation','High-density, high-turnover. iPSK makes move-in day frictionless.'],[icon('hospitality',20),'Aparthotels','Extended-stay guests need a proper home connection, not hotel WiFi.'],[icon('residential',20),'Social housing','Managed connectivity for local authorities and housing associations.']].map(([e,n,d])=>`
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;">
+        <div style="color:white;margin-bottom:10px;">${e}</div>
+        <div style="font-size:13px;font-weight:500;color:white;margin-bottom:6px;">${n}</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">${d}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// VERIFY
+// ═══════════════════════════════════════
+verify: () => `
+<div class="container">
+  <div class="prod-hero">
+    <div>
+      <div class="tag">Verify</div>
+      <h1>Real, reachable contacts from every <em>WiFi login.</em></h1>
+      <p class="hero-sub">Fake and disposable email addresses dilute a customer's database, skew their metrics, and waste marketing budget on contacts that don't exist. Verify checks every email in real time at the point of guest WiFi login, so only genuine addresses ever reach the database.</p>
+      <div class="prod-hero-actions">
+        <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
+        
+      </div>
+      <div class="feature-list">
+        ${[['Real-time validation at login','Built into the captive portal flow, with no manual cleanup and no third-party tools.'],['Catches fake and disposable addresses','Misspelled, throwaway, and invalid emails are blocked before they ever reach the CRM.'],['Available with Capture and Engage','Layers directly onto Purple\'s existing data capture flows, no extra integration work.'],['A reliable first-party data engine','Every opt-in is valid, so every campaign your customer runs is built on contacts that are real.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="prod-visual">
+      <div class="prod-vis-badge">Validation active</div>
+      <div class="prod-vis-title">Department store, London - guest WiFi login</div>
+      <div class="prod-vis-sub">Email validation enabled, last 30 days</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">41.6k</div><div class="pvs-lbl">Logins checked</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">37%</div><div class="pvs-lbl">Emails flagged invalid</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Valid contacts to CRM</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">Validation report available for download. Last exported: today</div>
+    </div>
+  </div>
+</div>
+<div style="background:white;border-top:1px solid var(--border-soft);padding:80px 0;"><div class="container">
+  <div class="eyebrow">Where it fits</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">The data quality angle your customers need.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+    ${[['High footfall retail','One London department store had 37% of guest emails flagged as invalid before Verify was added to the login flow.'],['Quick-service and hospitality chains','A US fast-food chain with around 250 sites blocks roughly 3,000 invalid emails every month.'],['Travel and transport hubs','A UK airport group blocks 8,500 invalid emails a month, protecting the value of every campaign built on that data.']].map(([t,d])=>`
+      <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body">${d}</p></div>`).join('')}
+  </div>
+  <div style="margin-top:32px;background:var(--warm-white);border-radius:var(--radius-lg);padding:24px;font-size:13px;color:var(--ink-mid);line-height:1.7;">Industry research puts the cost of bad data at around 21% of marketing budgets wasted on contacts that were never reachable in the first place. Verify removes that cost at the source, before a single bad address enters the system.</div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// SHIELD
+// ═══════════════════════════════════════
+shield: () => `
+<div class="container">
+  <div class="prod-hero">
+    <div>
+      <div class="tag">Shield</div>
+      <h1>Network-level protection your customers can actually <em>show.</em></h1>
+      <p class="hero-sub">DNS-layer content filtering and real-time threat blocking, built into the WiFi platform. Add a compelling compliance and safeguarding story to education, healthcare, and public sector deals.</p>
+      <div class="prod-hero-actions">
+        <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
+        
+      </div>
+      <div class="feature-list">
+        ${[['DNS-layer filtering','Block harmful content categories at the network level, before it reaches any device.'],['Real-time threat intelligence','Continuously updated threat feeds. Zero-day domains blocked automatically.'],['Customisable category controls','Customers choose what\'s blocked, by network, by VLAN, by time of day.'],['Reporting for governors & auditors','Exportable reports showing filtering activity. Evidence for Ofsted, CQC, and council audits.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="prod-visual">
+      <div class="prod-vis-badge" style="background:rgba(29,158,117,.1);color:var(--teal);">Shield active</div>
+      <div class="prod-vis-title">Northside Academy, network protection</div>
+      <div class="prod-vis-sub">Last 24 hours · Staff + student networks</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">14.2k</div><div class="pvs-lbl">DNS queries</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">847</div><div class="pvs-lbl">Threats blocked</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">312</div><div class="pvs-lbl">Category blocks</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
+        <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top blocked categories</div>
+        ${[['Malware & phishing','847','var(--coral)'],['Adult content','199','var(--purple)'],['Social media (pupil VLAN)','113','var(--ink-light)']].map(([l,v,c])=>`
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border-soft);">
+            <span style="font-size:12px;">${l}</span><span style="font-size:12px;font-weight:500;color:${c};">${v}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-section"><div class="container">
+  <div class="eyebrow">Sectors</div>
+  <h2 class="section-title" style="margin-bottom:32px;">Where Shield opens doors.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    ${[['Education','Ofsted requires demonstrable internet safety measures. Shield gives schools, colleges, and universities the filtering evidence they need.'],['Healthcare','CQC and NHS Digital guidance around network security. Shield adds a visible layer of protection with reporting for auditors.'],['Public sector','Councils, libraries, and leisure centers with public WiFi have a duty of care. Shield makes compliance straightforward.']].map(([t,d])=>`
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
+        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">${t}</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">${d}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// BENEFITS
+// ═══════════════════════════════════════
+benefits: () => `
+<div class="container">
+  <div class="benefits-hero">
+    <div class="eyebrow">Partner benefits</div>
+    <h1 class="section-title">What's in it for you.</h1>
+    <p class="section-sub">Purple's dedicated partner team helps you stand out, win more, and close faster, with the numbers to prove it.</p>
+  </div>
+  <div class="benefits-grid">
+    ${[['12%','Increased win rate','Partners consistently win more deals when Purple is in the mix. Our solution is easy to explain, easy to demo, and solves a problem every customer has.'],['15x','Return per £1 of Purple sold','For every pound of Purple software you sell, partners typically generate 15x in total deal value, hardware, installation, managed services, and ongoing support.'],['20%','Faster time to close','You\'re not doing this alone. Our partner team is on hand to join calls, support demos, and help you handle technical objections.'],['18%','Larger average deal size','Purple opens conversations about network identity that naturally expand scope. Upsell opportunities appear at every renewal across every product line.']].map(([n,t,d])=>`
+      <div class="benefit-card">
+        <div class="benefit-num">${n}</div>
+        <div class="benefit-title">${t}</div>
+        <div class="benefit-desc">${d}</div>
+      </div>`).join('')}
+  </div>
+  <!-- VISUAL: certifications and trust signals -->
+  <div style="background:var(--ink);border-radius:var(--radius-xl);padding:36px;margin-bottom:80px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;align-items:center;">
+      ${[['ISO 27001','Information security certified'],['ISO 9001','Quality management certified'],['GDPR & CCPA','Data privacy compliant'],['99.99%','Platform uptime SLA']].map(([v,l])=>`
+        <div style="text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,.07);">
+          <div style="font-family:'Poppins',sans-serif;font-size:22px;color:white;margin-bottom:5px;">${v}</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;">${l}</div>
+        </div>`).join('')}
+    </div>
+  </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;">
+      <div class="quote-card" style="height:100%;">
+        <div class="quote-text">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
+        <div class="quote-attr"><div class="quote-av">BT</div><div><div class="quote-name">BT Business</div><div class="quote-role">Technology partner</div></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+          <div class="eyebrow" style="margin-bottom:8px;">No barriers to entry</div>
+          <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">No minimum revenue commitments. No sales targets. No upfront investment. We pair you with the right partner manager based on your expected ARR in year one, and then we help you hit it.</p>
+        </div>
+        <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+          <div class="eyebrow" style="margin-bottom:8px;">Hardware-agnostic</div>
+          <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">Purple works as a cloud overlay on your customer's existing infrastructure. Cisco, Cisco Meraki, Aruba, Ruckus, Mist, Ubiquiti, it works with what they already have. No rip-and-replace conversations.</p>
+        </div>
+        <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+          <div class="eyebrow" style="margin-bottom:8px;">White-label available</div>
+          <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">Sell Purple under your own brand, own the customer relationship, and build your managed service proposition on top.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+
+// ═══════════════════════════════════════
+// SECTORS
+// ═══════════════════════════════════════
+'sector-hospitality': () => renderSectorPage('hospitality'),
+'sector-retail': () => renderSectorPage('retail'),
+'sector-healthcare': () => renderSectorPage('healthcare'),
+'sector-education': () => renderSectorPage('education'),
+'sector-residential': () => renderSectorPage('residential'),
+'sector-enterprise': () => renderSectorPage('enterprise'),
+'sector-transport': () => renderSectorPage('transport'),
+
+sectors: () => `
+<div style="background:var(--purple-deep);padding:72px 0 56px;">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--purple-mid);">Sectors</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:48px;color:white;margin-bottom:16px;max-width:600px;">Sell into the right <em style="font-style:italic;color:var(--purple-200);">conversation.</em></h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.5);max-width:520px;line-height:1.7;margin-bottom:36px;">Every sector has a different buyer, a different pain point, and a different entry angle. Use these pages to qualify faster and pitch smarter.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      ${[['Hospitality','sector-hospitality'],['Retail','sector-retail'],['Healthcare','sector-healthcare'],['Education','sector-education'],['Residential & MDU','sector-residential'],['Enterprise','sector-enterprise'],['Transport & venues','sector-transport']].map(([s,p])=>`
+        <div style="padding:6px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:12px;color:rgba(255,255,255,.6);cursor:pointer;" onclick="navigate('${p}')">${s}</div>`).join('')}
+    </div>
+  </div>
+</div>
+<div class="container"><div class="section">
+  <div class="sectors-page-grid">
+    ${[
+      [icon('hospitality',26),'Hospitality','Hotels, restaurants, pubs, and cafes. Guest WiFi is the entry point, but the data capture and POS integration story is what makes it compelling.','Guest WiFi','Verify','sector-hospitality'],
+      [icon('retail',26),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail'],
+      [icon('healthcare',26),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare'],
+      [icon('education',26),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education'],
+      [icon('residential',26),'Residential & MDU','BTR, student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential'],
+      [icon('enterprise',26),'Enterprise','Office campuses and co-working spaces. The IBN platform pitch, zero trust, automated JML, NAC replacement, and identity-based access across every site.','Staff WiFi','Multi-tenant','sector-enterprise'],
+      [icon('transport',26),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport'],
+    ].map(([e,n,d,p1,p2,slug])=>`
+      <div class="sector-page-card" onclick="navigate('${slug}')">
+        <div class="sector-page-em">${e}</div>
+        <div class="sector-page-name">${n}</div>
+        <div class="sector-page-desc">${d}</div>
+        <div class="sector-products"><span class="pill">${p1}</span><span class="pill">${p2}</span></div>
+      </div>`).join('')}
+  </div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// TOOLS
+// ═══════════════════════════════════════
+tools: () => `
+<div style="background:var(--purple-deep);padding:72px 0 56px;">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--purple-mid);">Partner tools</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:48px;color:white;margin-bottom:16px;">Everything you need to <em style="font-style:italic;color:var(--purple-200);">qualify, pitch, and close.</em></h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.55);max-width:520px;line-height:1.7;">Resources built for partner conversations, not end-customer ones. All tools are available to registered partners.</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:80px;padding-bottom:80px;">
+
+  <!-- TOOL 1: CHECKLIST -->
+  <div id="checklist" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Qualification tool</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Guest WiFi feature checklist</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">A feature-by-feature checklist to help you qualify guest WiFi opportunities and identify the right Purple plan for each customer. Walk through it on discovery calls to surface what they're missing and make the case for upgrading.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px;">
+        ${['Covers all three plan tiers: Connect, Capture, Engage','Highlights gaps in your customer\'s current setup','Framed for partner-led conversations, not end-customer self-service'].map(f=>`
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-mid);">
+            <div style="width:18px;height:18px;background:var(--purple-light);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>${f}
+          </div>`).join('')}
+      </div>
+      <button class="btn-primary" onclick="navigate('tools')">Open checklist →</button>
+    </div>
+    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
+      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Guest WiFi feature checklist, preview</div>
+      ${[['Branded captive portal','Connect+','✓'],['Visitor analytics dashboard','Capture+','✓'],['Marketing automation','Engage','✓'],['CRM integration','Capture+','✓'],['Custom data fields','Capture+','—'],['API access','Engage','—']].map(([f,t,s])=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
+          <span style="color:var(--ink);">${f}</span>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:11px;color:var(--ink-light);">${t}</span>
+            <span style="font-size:13px;color:${s==='✓'?'var(--teal)':'var(--ink-light)'};">${s}</span>
+          </div>
+        </div>`).join('')}
+      <div style="margin-top:14px;font-size:11px;color:var(--ink-light);">Showing 6 of 24 features</div>
+    </div>
+  </div>
+
+  <!-- TOOL 2: INTEGRATIONS -->
+  <div id="integrations" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
+      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Integration categories</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        ${[[icon('hospitality',16),'POS systems','Toast, Lightspeed, NCR, Square'],[icon('envelope',16),'CRM & email','Salesforce, HubSpot, Mailchimp'],[icon('lock',16),'Identity providers','Entra ID, Okta, Google'],[icon('chart',16),'Analytics','GA4, Segment, Mixpanel'],[icon('retail',16),'eCommerce','Shopify, WooCommerce'],[icon('calendar',16),'Reservations','Tock, Eat App, Zenchef']].map(([e,n,d])=>`
+          <div style="background:var(--warm-white);border-radius:9px;padding:12px;">
+            <div style="color:var(--purple);margin-bottom:5px;">${e}</div>
+            <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:2px;">${n}</div>
+            <div style="font-size:11px;color:var(--ink-light);">${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Reference tool</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">WiFi integrations library</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Full list of Purple's integrations across POS, CRM, identity, analytics, eCommerce, and reservation platforms. Use this in proposals to show customers what Purple connects to, and how it fits into their existing stack.</p>
+      <button class="btn-primary" onclick="navigate('tools')">Browse integrations →</button>
+    </div>
+  </div>
+
+  <!-- TOOL 3: HARDWARE -->
+  <div id="hardware" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Technical resource</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Compatible hardware</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Supported access points, controllers, and infrastructure. Check this before you scope a deployment to qualify hardware compatibility and flag potential issues early, before they become problems on-site.</p>
+      <button class="btn-primary" onclick="navigate('tools')">Check hardware compatibility →</button>
+    </div>
+    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
+      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Supported vendors, quick reference</div>
+      ${[['Cisco','Catalyst, Aironet','✓ Supported'],['Cisco Meraki','MR, MS series','✓ Supported'],['Aruba Networks (HPE)','InstantOn, Central','✓ Supported'],['Ruckus Wireless (CommScope)','SmartZone, Cloud','✓ Supported'],['Mist','Juniper Mist AI','✓ Supported'],['Ubiquiti','UniFi','✓ Supported']].map(([v,m,s])=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-soft);font-size:13px;">
+          <div><div style="font-weight:500;color:var(--ink);">${v}</div><div style="font-size:11px;color:var(--ink-light);">${m}</div></div>
+          <span style="font-size:11px;color:var(--teal);background:var(--teal-light);padding:2px 8px;border-radius:20px;">${s}</span>
+        </div>`).join('')}
+      <div style="margin-top:12px;font-size:11px;color:var(--ink-light);">Full list includes 40+ vendors and controller versions</div>
+    </div>
+  </div>
+
+  <!-- TOOL 4: PRICE CALCULATOR -->
+  <div id="calculator" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+    <div style="background:var(--purple-deep);border-radius:var(--radius-xl);padding:32px;">
+      <div style="font-size:12px;color:var(--purple-mid);margin-bottom:14px;">Price calculator, preview</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(255,255,255,.06);border-radius:9px;padding:14px;">
+          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Number of venues</div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;"><div style="width:40%;height:100%;background:var(--purple-mid);border-radius:2px;"></div></div>
+            <span style="font-size:14px;font-weight:500;color:white;">4</span>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border-radius:9px;padding:14px;">
+          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;">Products</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            ${['Staff WiFi','Guest WiFi'].map(p=>`<span style="font-size:11px;padding:3px 9px;border-radius:20px;background:var(--purple);color:white;">${p}</span>`).join('')}
+            ${['Multi-tenant','Verify','Shield'].map(p=>`<span style="font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);">${p}</span>`).join('')}
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:16px;display:flex;justify-content:space-between;align-items:center;">
+          <div><div style="font-size:11px;color:rgba(255,255,255,.4);">Indicative annual value</div><div style="font-family:'Poppins',sans-serif;font-size:32px;color:white;">£14,400</div></div>
+          <div style="text-align:right;"><div style="font-size:11px;color:rgba(255,255,255,.4);">Partner margin</div><div style="font-size:20px;font-weight:500;color:var(--purple-200);">~£2,880</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tool-tag new-t" style="margin-bottom:14px;">New tool</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Price calculator</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Build accurate indicative quotes for partner deals. Input the number of venues, product mix, and contract term to generate pricing and an estimate of your partner margin. Use it in proposals or on discovery calls to anchor value early.</p>
+      <button class="btn-primary" onclick="navigate('tools')">Open calculator →</button>
+    </div>
+  </div>
+
+  <!-- TOOL 5: CASE STUDIES -->
+  <div id="case-studies" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Sales enablement</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Case studies</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">End-customer proof points across hospitality, retail, education, healthcare, and more. Use these in proposals, on sales calls, or to help a prospect visualize the outcome, not just the product.</p>
+      <button class="btn-primary" onclick="navigate('tools')">Browse case studies →</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      ${[['Harrods','Hospitality','57X ROI on the original guest WiFi investment','#F5F3EF'],['McDonald\'s','Hospitality','Data capture at scale across 1,300+ UK sites','#EEF4FF'],['AGS Airports','Transport','Passenger analytics across 3 Scottish airports','#EFF9F5'],['NHS Trust','Healthcare','Improved patient experience and engagement data','#FEF5EE']].map(([n,s,d,bg])=>`
+        <div style="background:${bg};border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:18px;">
+          <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--purple);margin-bottom:6px;">${s}</div>
+          <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;">${n}</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.5;">${d}</div>
+        </div>`).join('')}
+    </div>
+  </div>
+
+  <!-- TOOL 6: PORTAL GUIDE -->
+  <div id="portal-guide" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
+      <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Partner portal, what's inside</div>
+      ${[['Deal registration','Log and protect new opportunities'],['Customer management','Manage all your Purple deployments'],['Reporting & analytics','MRR, renewals, and usage by customer'],['Training resources','Product and sales enablement content'],['Marketing assets','Co-branded materials and campaign packs']].map(([t,d])=>`
+        <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border-soft);">
+          <div style="width:7px;height:7px;background:var(--purple);border-radius:2px;flex-shrink:0;margin-top:5px;"></div>
+          <div><div style="font-size:13px;font-weight:500;color:var(--ink);">${t}</div><div style="font-size:12px;color:var(--ink-light);">${d}</div></div>
+        </div>`).join('')}
+    </div>
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Getting started</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Portal setup guide</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Step-by-step guide to getting up and running in the partner portal, deal registration, customer management, reporting, and accessing your marketing assets. Takes about 15 minutes to complete.</p>
+      <button class="btn-primary" onclick="navigate('tools')">Read the guide →</button>
+    </div>
+  </div>
+
+</div>
+`,
+
+// ═══════════════════════════════════════
+// MARKETING SUPPORT
+// ═══════════════════════════════════════
+marketing: () => `
+<div class="container">
+  <div class="mktg-hero">
+    <div class="eyebrow">Marketing support</div>
+    <h1 class="section-title">We help you go to market, not just to product.</h1>
+    <p class="section-sub">Co-branded assets, sector-specific campaign packs, MDF, and bespoke support. Everything is available to registered partners, request what you need below.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:64px;">
+    ${[['Asset library','Logos, product imagery, one-pagers, and presentation templates, all ready to co-brand.'],['Co-branded templates','Email, social, digital ads, and print templates with your logo alongside Purple.'],['Campaign-in-a-box','Sector-specific campaign packs for hospitality, retail, education, healthcare, and more.'],['Bespoke support','Need something specific? Request custom creative, landing pages, or event collateral.']].map(([t,d])=>`
+      <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:22px;">
+        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px;">${t}</div>
+        <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;">${d}</div>
+      </div>`).join('')}
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:80px;">
+    <div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:28px;margin-bottom:10px;">Request marketing support</h2>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">Tell us what you need and your partner manager will get back to you within two working days.</p>
+    </div>
+    <div class="form-wrap" id="mdf-form-wrap">
+      <div id="mdf-form">
+        <div class="form-title">Marketing support request</div>
+        <div class="form-sub">For registered partners only. Not yet a partner? <span style="color:var(--purple);cursor:pointer;" onclick="navigate('home')">Apply here.</span></div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Partner ID (optional)</label><input type="text" placeholder="PP-12345"></div>
+          <div class="form-field full"><label>Type of support needed</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Co-branded assets</option>
+              <option>Email templates</option>
+              <option>Social media templates</option>
+              <option>Campaign-in-a-box</option>
+              <option>MDF request</option>
+              <option>Bespoke creative</option>
+              <option>Event support</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Target sector(s)</label>
+            <div class="checkbox-group" style="margin-top:4px;">
+              ${['Hospitality','Retail','Healthcare','Education','Residential / MDU','Enterprise','Transport & venues'].map(s=>`<label class="check-item"><input type="checkbox"> ${s}</label>`).join('')}
+            </div>
+          </div>
+          <div class="form-field full"><label>Timescale</label>
+            <select><option>Within 1 week</option><option>Within 2 weeks</option><option>Within a month</option><option>No fixed deadline</option></select>
+          </div>
+          <div class="form-field full"><label>Brief / additional details</label>
+            <textarea placeholder="Tell us what you're trying to achieve, the audience, and any specific requirements..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitMDF()">Submit request</button>
+      </div>
+      <div class="form-success" id="mdf-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Request received</h3>
+        <p>Your partner manager will be in touch within two working days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+
+// ═══════════════════════════════════════
+// BLOG
+// ═══════════════════════════════════════
+blog: () => `
+<div class="container"><div class="section">
+  <div class="eyebrow">Partner blog</div>
+  <h1 class="section-title">Insights for partners.</h1>
+  <p class="section-sub">Sales tips, product updates, sector guides, and partner news.</p>
+  <div style="display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap;" id="blog-filters">
+    ${['All','Product update','Sales & marketing','Sector guide','Partner news'].map((c,i)=>`<button class="blog-filter-btn${i===0?' active':''}" data-cat="${c}" onclick="filterBlog('${c}',this)">${c==='All'?c:c+(c.endsWith('s')?'':'s')}</button>`).join('')}
+  </div>
+  <div class="blog-grid" id="blog-grid">
+    ${[
+      ['images/staff-wifi-image.webp','Product update','May 2025','Staff WiFi now supports Linux device enrollment','Automatic certificate provisioning is now available for Ubuntu and Debian, expanding zero-trust coverage to engineering and developer teams.'],
+      ['images/guest-wifi-image.webp','Sector guide','Apr 2025','How to sell Guest WiFi into hospitality in 2025','The buying conversation has shifted. It\'s no longer about connectivity, it\'s about data. Here\'s how to reframe your pitch.'],
+      ['images/mtn-image.webp','Product update','Apr 2025','Shield now includes AI-powered threat detection','Real-time classification of malicious domains, updated every 15 minutes. Available to all Shield customers from today.'],
+      ['images/staff-wifi-image.webp','Sector guide','Mar 2025','Education sector guide: selling into schools and colleges','Safeguarding, Ofsted compliance, and the BYOD problem. A practical guide to winning education deals with Purple.'],
+      ['images/guest-wifi-image.webp','Sales & marketing','Mar 2025','How partners are generating 15x return with Purple','Three partner case studies, from an MSP to a network reseller, showing how Purple fits their sales motion and what they\'ve won.'],
+      ['images/mtn-image.webp','Partner news','Feb 2025','New campaign-in-a-box packs now available','Hospitality and retail sector packs are live in the marketing support section. Ready-to-use campaigns for your next prospect push.'],
+    ].map(([img,cat,date,title,excerpt])=>`
+      <div class="blog-card" data-cat="${cat}">
+        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="${img}" style="width:100%;height:160px;object-fit:cover;display:block;" alt="${cat}"></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-cat">${cat}</span><span class="blog-date">${date}</span></div>
+          <div class="blog-title">${title}</div>
+          <div class="blog-excerpt">${excerpt}</div>
+        </div>
+      </div>`).join('')}
+  </div>
+  <p id="blog-empty" style="display:none;font-size:14px;color:var(--ink-light);">No posts in this category yet.</p>
+</div></div>
+`,
+
+};
+
+// ── FOOTER ────────────────────────────────────────────────────────
+function renderFooter() {
+  return `
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="brand/purple-logo-white.svg" alt="Purple" class="brand-logo">
+        <span class="brand-divider" style="background:rgba(255,255,255,.2);"></span>
+        <span class="brand-partners-text" style="color:white;">Partners</span>
+      </div>
+      <div class="footer-desc">Purple Partners, the channel program for resellers, MSPs, and systems integrators selling identity-based WiFi solutions.</div>
+      <div class="footer-social"><div class="s-btn">in</div><div class="s-btn">tw</div></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        ${['The Purple app','Staff WiFi','Guest WiFi','Multi-tenant WiFi','Verify','Shield'].map((p,i)=>`<div class="footer-link" onclick="navigate('${['app','staff-wifi','guest-wifi','multi-tenant','verify','shield'][i]}')">${p}</div>`).join('')}
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Partner</div>
+      <div class="footer-links">
+        ${[['Become a partner','https://onboarding.purple.ai/partner',true],['Benefits','benefits'],['Sectors','sectors'],['Marketing support','marketing'],['Blog','blog']].map(([l,p,external])=>`<div class="footer-link" onclick="${external ? `window.open('${p}','_blank')` : `navigate('${p}')`}">${l}</div>`).join('')}
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <div class="footer-links">
+        ${[['Tools','tools'],['Compatible hardware','https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware',true],['Integrations library','tools'],['Privacy policy','home'],['Legal','home']].map(([l,p,external])=>`<div class="footer-link" onclick="${external ? `window.open('${p}','_blank')` : `navigate('${p}')`}">${l}</div>`).join('')}
+      </div>
+    </div>
+  </div>
+</footer>`;
+}
+
+// ── ROUTING ───────────────────────────────────────────────────────
+let current = 'home';
+
+function navigate(page) {
+  closeAllDD();
+  if (!PAGES[page]) page = 'home';
+  current = page;
+  const content = document.getElementById('page-content');
+  content.style.animation = 'none';
+  content.offsetHeight;
+  content.style.animation = '';
+  content.innerHTML = PAGES[page]() + renderCTA();
+  document.getElementById('footer-wrap').innerHTML = renderFooter();
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateActiveNav(page);
+}
+
+function renderCTA() {
+  return `
+<div class="cta-band">
+  <h2>Ready to add Purple to your portfolio?</h2>
+  <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
+  <div class="cta-band-btns">
+    <button class="btn-white" onclick="navigate('home')">Become a partner</button>
+    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+  </div>
+</div>`;
+}
+
+function updateActiveNav(page) {
+  document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+  const map = {'app':'WiFi','staff-wifi':'WiFi','guest-wifi':'WiFi','multi-tenant':'WiFi','verify':'WiFi','shield':'WiFi','benefits':'Benefits','sectors':'Sectors','sector-hospitality':'Sectors','sector-retail':'Sectors','sector-healthcare':'Sectors','sector-education':'Sectors','sector-residential':'Sectors','sector-enterprise':'Sectors','sector-transport':'Sectors','tools':'Tools','marketing':'Marketing support','blog':'Blog'};
+  if (map[page]) {
+    document.querySelectorAll('.nav-link').forEach(el => {
+      if (el.textContent.trim().startsWith(map[page])) el.classList.add('active');
+    });
+  }
+}
+
+// ── DROPDOWNS ─────────────────────────────────────────────────────
+function toggleDD(id) {
+  const el = document.getElementById(id);
+  const isOpen = el.classList.contains('open');
+  closeAllDD();
+  if (!isOpen) el.classList.add('open');
+}
+
+function closeAllDD() {
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('open'));
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-item')) closeAllDD();
+});
+
+// ── FORM ──────────────────────────────────────────────────────────
+function submitMDF() {
+  document.getElementById('mdf-form').style.display = 'none';
+  document.getElementById('mdf-success').style.display = 'block';
+}
+
+// ── INIT ──────────────────────────────────────────────────────────
+navigate('home');
+</script>
+</body>
+</html>
