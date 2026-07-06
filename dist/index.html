@@ -314,18 +314,24 @@
     </div>
 
     <!-- VISUAL BREAK: hardware logos -->
-    <div style="margin-top:56px;background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:32px;">
-      <div style="font-size:11px;color:var(--ink-light);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Works with your customer's existing infrastructure</div>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
-        
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Cisco</div>
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Cisco Meraki</div>
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Aruba Networks (HPE)</div>
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Ruckus Wireless (CommScope)</div>
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Mist</div>
-          <div style="padding:8px 16px;background:var(--warm-white);border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-mid);">Ubiquiti</div>
+    <div style="margin-top:56px;background:linear-gradient(135deg,var(--purple-light),white 65%);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--purple);opacity:.07;border-radius:50%;pointer-events:none;"></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;position:relative;">
+        <div style="width:30px;height:30px;background:var(--purple);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M4 8a7 7 0 0 1 10 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M6.2 10.4a3.8 3.8 0 0 1 5.6 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="white"/></svg>
+        </div>
+        <div class="eyebrow" style="margin-bottom:0;">Works with your customer's existing infrastructure</div>
       </div>
-      <div style="margin-top:16px;font-size:12px;color:var(--ink-light);">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple);" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware <span class="arr">→</span></span></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;position:relative;">
+        
+          <div class="hw-pill">Cisco</div>
+          <div class="hw-pill">Cisco Meraki</div>
+          <div class="hw-pill">Aruba Networks (HPE)</div>
+          <div class="hw-pill">Ruckus Wireless (CommScope)</div>
+          <div class="hw-pill">Mist</div>
+          <div class="hw-pill">Ubiquiti</div>
+      </div>
+      <div style="margin-top:20px;font-size:12px;color:var(--ink-mid);position:relative;">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple);font-weight:500;" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware <span class="arr">→</span></span></div>
     </div>
   </div></div>
 
@@ -338,12 +344,36 @@
           <p class="section-sub">Co-branded assets, campaign packs, MDF, and bespoke support. Request what you need, when you need it.</p>
           <button class="btn-primary" onclick="navigate('marketing')">Explore marketing support</button>
         </div>
-        <div class="mktg-tiles">
-          
-            <div class="mktg-tile"><div class="mktg-tile-title">Asset library</div><div class="mktg-tile-desc">Logos, one-pagers, banners</div></div>
-            <div class="mktg-tile"><div class="mktg-tile-title">Co-branded templates</div><div class="mktg-tile-desc">Email, social, print</div></div>
-            <div class="mktg-tile"><div class="mktg-tile-title">Campaign packs</div><div class="mktg-tile-desc">Sector-specific, ready to deploy</div></div>
-            <div class="mktg-tile"><div class="mktg-tile-title">Request MDF</div><div class="mktg-tile-desc">Bespoke support, fast turnaround</div></div>
+        <div class="mktg-folder">
+          <svg viewBox="0 0 400 260" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="340" cy="55" r="70" fill="var(--purple)" opacity="0.06"/>
+            <rect x="50" y="55" width="110" height="26" rx="8" fill="var(--purple-deep)"/>
+            <rect x="30" y="75" width="340" height="165" rx="16" fill="var(--purple-deep)"/>
+            <g transform="rotate(-12 110 100)">
+              <rect x="65" y="40" width="90" height="120" rx="10" fill="white"/>
+              <rect x="78" y="53" width="64" height="46" rx="6" fill="var(--purple-light)"/>
+              <rect x="78" y="107" width="50" height="6" rx="3" fill="var(--purple-200)"/>
+              <rect x="78" y="120" width="36" height="6" rx="3" fill="var(--purple-200)"/>
+            </g>
+            <g transform="rotate(3 200 85)">
+              <rect x="155" y="25" width="90" height="120" rx="10" fill="white"/>
+              <circle cx="178" cy="50" r="12" fill="var(--purple)"/>
+              <rect x="200" y="44" width="34" height="6" rx="3" fill="var(--purple-mid)"/>
+              <rect x="200" y="56" width="26" height="6" rx="3" fill="var(--purple-200)"/>
+              <rect x="170" y="80" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+              <rect x="170" y="93" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+              <rect x="170" y="106" width="44" height="6" rx="3" fill="var(--purple-light)"/>
+            </g>
+            <g transform="rotate(13 290 105)">
+              <rect x="245" y="45" width="90" height="120" rx="10" fill="white"/>
+              <rect x="258" y="58" width="20" height="20" rx="5" fill="var(--purple)"/>
+              <rect x="282" y="58" width="20" height="20" rx="5" fill="var(--teal)"/>
+              <rect x="306" y="58" width="20" height="20" rx="5" fill="var(--coral)"/>
+              <rect x="258" y="90" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+              <rect x="258" y="103" width="44" height="6" rx="3" fill="var(--purple-light)"/>
+            </g>
+            <rect x="15" y="140" width="370" height="105" rx="18" fill="var(--purple)"/>
+          </svg>
         </div>
       </div>
     </div>
