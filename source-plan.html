@@ -194,7 +194,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .why-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;}
 
 /* ── QUOTE CARD ── */
-.quote-card{background:var(--purple-deep);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.quote-card{background:linear-gradient(135deg,var(--purple),var(--purple-deep) 75%);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.quote-slides{position:relative;}
+.quote-slides .quote-card{display:none;animation:quoteFade .4s ease;}
+.quote-slides .quote-card.active{display:flex;}
+@keyframes quoteFade{from{opacity:0;}to{opacity:1;}}
+.quote-dots{display:flex;gap:8px;justify-content:center;margin-top:16px;}
+.quote-dot{width:8px;height:8px;border-radius:50%;background:var(--purple-mid);border:none;padding:0;cursor:pointer;opacity:.4;transition:opacity .2s,transform .2s;}
+.quote-dot:hover{opacity:.7;}
+.quote-dot.active{opacity:1;transform:scale(1.3);}
 .quote-card::before{content:'\201C';position:absolute;top:-10px;left:20px;font-family:'Poppins',sans-serif;font-size:120px;color:rgba(255,255,255,.07);line-height:1;pointer-events:none;}
 .quote-text{font-family:'Poppins',sans-serif;font-size:18px;color:white;line-height:1.55;margin-bottom:22px;position:relative;}
 .quote-attr{display:flex;align-items:center;gap:12px;}
@@ -444,6 +452,13 @@ const PARTNER_LOGOS = [
   ['RedCentric', 'redcentric.svg'],
   ['Evolve', 'evolve.svg'],
   ['Logicalis', 'logicalis.png'],
+];
+
+const TESTIMONIALS = [
+  { initials: 'BT', name: 'BT Business', role: 'Technology partner',
+    text: "Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications." },
+  { initials: 'TE', name: 'TELUS', role: 'Partner',
+    text: "The purple team has been very collaborative, versatile and easy to work with. Our teams have been impressed by the quick enablement and organization of sales, marketing, implementation, and overall partner support. Together, TELUS and Purple have been able to figure out where each of our strengths lie in entering the Canadian market and push efforts forward accordingly." },
 ];
 
 // Ported from the live partners.purple.ai FAQ accordion (JSON-LD FAQPage schema).
@@ -1066,9 +1081,17 @@ home: () => `
         <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Don't just take our word for it.</h2>
         <p class="section-sub" style="margin-bottom:0;">We provide WiFi for over 80,000 venues worldwide, with some of the biggest brands choosing Purple.</p>
       </div>
-      <div class="quote-card">
-        <div class="quote-text">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
-        <div class="quote-attr"><div class="quote-av">BT</div><div><div class="quote-name">BT Business</div><div class="quote-role">Technology partner</div></div></div>
+      <div class="quote-carousel">
+        <div class="quote-slides">
+          ${TESTIMONIALS.map((q,i)=>`
+            <div class="quote-card${i===0?' active':''}">
+              <div class="quote-text">"${q.text}"</div>
+              <div class="quote-attr"><div class="quote-av">${q.initials}</div><div><div class="quote-name">${q.name}</div><div class="quote-role">${q.role}</div></div></div>
+            </div>`).join('')}
+        </div>
+        <div class="quote-dots">
+          ${TESTIMONIALS.map((_,i)=>`<button class="quote-dot${i===0?' active':''}" onclick="goToTestimonial(${i})" aria-label="Testimonial ${i+1}"></button>`).join('')}
+        </div>
       </div>
     </div>
   </div></div>
