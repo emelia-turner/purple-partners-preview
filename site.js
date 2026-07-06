@@ -1,6 +1,28 @@
 // Purple Partners preview - shared client behaviour for every static page.
 // Real per-page navigation replaces the original single-file client-side router.
 
+// ── TESTIMONIAL CAROUSEL ─────────────────────────────────────────
+let testimonialTimer = null;
+function goToTestimonial(i) {
+  const slides = document.querySelectorAll('.quote-slides .quote-card');
+  const dots = document.querySelectorAll('.quote-dot');
+  if (!slides.length) return;
+  slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+  dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  startTestimonialAutoplay();
+}
+function startTestimonialAutoplay() {
+  const slides = document.querySelectorAll('.quote-slides .quote-card');
+  if (slides.length <= 1) return;
+  clearInterval(testimonialTimer);
+  testimonialTimer = setInterval(() => {
+    const current = document.querySelector('.quote-slides .quote-card.active');
+    const idx = [...slides].indexOf(current);
+    goToTestimonial((idx + 1) % slides.length);
+  }, 6000);
+}
+document.addEventListener('DOMContentLoaded', startTestimonialAutoplay);
+
 function navigate(page) {
   closeAllDD();
   location.href = (page === 'home' ? 'index' : page) + '.html';
