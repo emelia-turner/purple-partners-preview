@@ -254,7 +254,7 @@ footer{background:var(--ink);padding:52px 0;display:grid;}
 
 /* ── PAGE-SPECIFIC ── */
 /* Product page hero */
-.prod-hero{padding:72px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.prod-hero{padding:72px 0 56px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .prod-hero h1{font-size:44px;margin-bottom:16px;}
 .prod-hero h1 em{font-style:italic;color:var(--purple);}
 .prod-hero .hero-sub{margin-bottom:28px;}
