@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Guest WiFi | Purple Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="guest-wifi">
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
+    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
+    <span class="brand-divider"></span>
+    <span class="brand-partners-text">Partners</span>
+  </div>
+
+  <div class="nav-links">
+    <div class="nav-item" id="dd-wifi">
+      <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
+        <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
+        <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
+        <div class="dd-item" onclick="navigate('shield')"><strong>Shield</strong><span>Content filtering &amp; threat protection</span></div>
+        <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('app')"><strong>The Purple app</strong><span>One app for identity, guests, and residents</span></div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('benefits')">Benefits</div>
+
+    <div class="nav-item" id="dd-sectors">
+      <div class="nav-link" onclick="navigate('sectors')">Sectors <span class="chev" onclick="event.stopPropagation();toggleDD('dd-sectors')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('sector-hospitality')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M1.5 13V10.5h13V13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 10.5V6.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 10.5V8a1.5 1.5 0 0 0-1.5-1.5H7a1.5 1.5 0 0 0-1.5 1.5v2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospitality</div>
+        <div class="dd-item" onclick="navigate('sector-retail')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Retail</div>
+        <div class="dd-item" onclick="navigate('sector-healthcare')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Healthcare</div>
+        <div class="dd-item" onclick="navigate('sector-education')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Education</div>
+        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; MDU</div>
+        <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
+        <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport &amp; venues</div>
+      </div>
+    </div>
+
+    <div class="nav-item" id="dd-tools">
+      <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="location.href='tools.html#checklist'">Guest WiFi checklist</div>
+        <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
+        <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
+        <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
+        <div class="dd-item" onclick="location.href='tools.html#case-studies'">Case studies</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('marketing')">Marketing support</div>
+
+    <div class="nav-item" id="dd-portal">
+      <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
+      <div class="dropdown">
+        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
+        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
+      </div>
+    </div>
+
+    <div class="nav-link" onclick="navigate('blog')">Blog</div>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="navigate('home')">Register a deal</button>
+    <button class="btn-solid" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+  </div>
+</nav>
+
+<div id="page-content">
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:0;">
+    <div>
+      <div class="tag">Guest WiFi</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Give your customers a WiFi that <em>works for them</em>, not just their guests.</h1>
+      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
+      <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Register as a partner</button>
+    </div>
+    <div style="align-self:end;">
+      <img src="images/guest-wifi-image.webp" alt="Guest WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
+    <div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
+      <div class="feature-list">
+        
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Branded captive portal or seamless connection</strong>Fully customizable login experience, from full portal to Passpoint auto-connect.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>The Purple app for returning visitors</strong>Once a visitor opts in via the app, reconnection is automatic on every future visit, no portal, no re-entering details.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Visitor analytics & footfall</strong>Dwell time, return rates, peak hours, demographic insight. Data your customers can act on.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Marketing automation</strong>Automated emails, SMS, and CRM sync triggered by WiFi behavior, including in-app offers and loyalty for opted-in visitors.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>GDPR & CCPA compliant</strong>Data handling built to the standard, not retrofitted.</div>
+          </div>
+      </div>
+    </div>
+    <div class="prod-visual" style="position:sticky;top:80px;">
+      <div class="prod-vis-badge" style="background:rgba(29,158,117,.1);color:var(--teal);">Guest portal active</div>
+      <div class="prod-vis-title">Stonegate Pub Co., guest analytics</div>
+      <div class="prod-vis-sub">Last 30 days · 47 venues</div>
+      <div class="prod-vis-row">
+        <div class="prod-vis-stat"><div class="pvs-val">186k</div><div class="pvs-lbl">Total connections</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">68%</div><div class="pvs-lbl">Data capture rate</div></div>
+        <div class="prod-vis-stat"><div class="pvs-val">34%</div><div class="pvs-lbl">Return visitor rate</div></div>
+      </div>
+      <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
+        <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top connection methods</div>
+        
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span>Email login</span><span style="color:var(--ink-light);">54%</span></div>
+            <div style="height:4px;background:var(--purple-light);border-radius:2px;"><div style="height:100%;width:100%;background:var(--purple);border-radius:2px;"></div></div>
+          </div>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span>Social login</span><span style="color:var(--ink-light);">28%</span></div>
+            <div style="height:4px;background:var(--purple-light);border-radius:2px;"><div style="height:100%;width:52%;background:var(--purple);border-radius:2px;"></div></div>
+          </div>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span>Phone number</span><span style="color:var(--ink-light);">18%</span></div>
+            <div style="height:4px;background:var(--purple-light);border-radius:2px;"><div style="height:100%;width:33%;background:var(--purple);border-radius:2px;"></div></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-section"><div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <div class="eyebrow">Captive portal</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">A branded captive portal, built in.</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px;">The portal overlays directly onto a customer's existing hardware, with no infrastructure changes and nothing to rip out.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:18px;height:18px;background:rgba(255,255,255,.1);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><div style="font-size:13px;font-weight:500;color:white;margin-bottom:2px;">Fully branded splash pages</div><div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">Logo, colors, and imagery match the customer's brand, not Purple's.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:18px;height:18px;background:rgba(255,255,255,.1);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><div style="font-size:13px;font-weight:500;color:white;margin-bottom:2px;">25+ supported languages</div><div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">One portal, ready for visitors in their own language out of the box.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:18px;height:18px;background:rgba(255,255,255,.1);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><div style="font-size:13px;font-weight:500;color:white;margin-bottom:2px;">Live in hours</div><div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">Deploys as a cloud overlay on supported hardware. No new access points, no rip-and-replace.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:18px;height:18px;background:rgba(255,255,255,.1);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><div style="font-size:13px;font-weight:500;color:white;margin-bottom:2px;">Security built in</div><div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">Verify and Shield sit underneath the portal, so the login isn't just branded, it's clean and protected too.</div></div>
+          </div>
+      </div>
+    </div>
+    <div style="background:white;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.25);">
+      <div style="background:var(--purple-deep);padding:10px 14px;display:flex;align-items:center;gap:8px;">
+        <div style="display:flex;gap:5px;"><div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div><div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div><div style="width:7px;height:7px;border-radius:50%;background:#28c840;"></div></div>
+        <div style="flex:1;background:rgba(255,255,255,.07);border-radius:4px;padding:3px 9px;font-size:10px;color:rgba(255,255,255,.4);font-family:monospace;">connect.stonegatepubs.co.uk</div>
+      </div>
+      <div style="padding:32px 24px;text-align:center;">
+        <div style="width:36px;height:36px;background:var(--purple-light);border-radius:9px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="#7458fd" opacity=".9"/><circle cx="8" cy="8" r="2.5" fill="white"/></svg></div>
+        <div style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin-bottom:4px;">Welcome to Stonegate WiFi</div>
+        <div style="font-size:12px;color:var(--ink-light);margin-bottom:20px;">Connect free in under 10 seconds</div>
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:220px;margin:0 auto;">
+          <div style="background:var(--purple);color:white;font-size:12px;padding:9px;border-radius:7px;">Continue with email</div>
+          <div style="background:var(--warm-white);color:var(--ink-mid);font-size:12px;padding:9px;border-radius:7px;border:1px solid var(--border-soft);">Continue with Facebook</div>
+          <div style="background:var(--warm-white);color:var(--ink-mid);font-size:12px;padding:9px;border-radius:7px;border:1px solid var(--border-soft);">Continue with Google</div>
+        </div>
+        <div style="font-size:10px;color:var(--ink-light);margin-top:16px;">By connecting you agree to our WiFi terms</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+  <div class="container">
+    <div class="eyebrow">Proof point</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.</h2>
+        <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">By improving and optimizing the guest WiFi experience, Harrods built a data and engagement layer that changed how the business understood and communicated with its visitors. <a href="https://www.purple.ai/en-gb/guest-wifi" style="color:var(--purple);" target="_blank">See the Guest WiFi platform behind it.</a></p>
+        <button class="btn-primary" onclick="navigate('home')">Read the case study</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        
+          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">57X</div><div style="font-size:12px;color:var(--ink-light);">ROI on the original investment, Harrods</div></div>
+          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">13yr</div><div style="font-size:12px;color:var(--ink-light);">Purple in market</div></div>
+          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">80k+</div><div style="font-size:12px;color:var(--ink-light);">venues worldwide</div></div>
+          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">99.99%</div><div style="font-size:12px;color:var(--ink-light);">platform uptime</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to add Purple to your portfolio?</h2>
+  <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
+  <div class="cta-band-btns">
+    <button class="btn-white" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
+    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+  </div>
+</div></div>
+<div id="footer-wrap">
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="brand/purple-logo-white.svg" alt="Purple" class="brand-logo">
+        <span class="brand-divider" style="background:rgba(255,255,255,.2);"></span>
+        <span class="brand-partners-text" style="color:white;">Partners</span>
+      </div>
+      <div class="footer-desc">Purple Partners, the channel program for resellers, MSPs, and systems integrators selling identity-based WiFi solutions.</div>
+      <div class="footer-social"><div class="s-btn">in</div><div class="s-btn">tw</div></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('app')">The Purple app</div><div class="footer-link" onclick="navigate('staff-wifi')">Staff WiFi</div><div class="footer-link" onclick="navigate('guest-wifi')">Guest WiFi</div><div class="footer-link" onclick="navigate('multi-tenant')">Multi-tenant WiFi</div><div class="footer-link" onclick="navigate('verify')">Verify</div><div class="footer-link" onclick="navigate('shield')">Shield</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Partner</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Become a partner</div><div class="footer-link" onclick="navigate('benefits')">Benefits</div><div class="footer-link" onclick="navigate('sectors')">Sectors</div><div class="footer-link" onclick="navigate('marketing')">Marketing support</div><div class="footer-link" onclick="navigate('blog')">Blog</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <div class="footer-links">
+        <div class="footer-link" onclick="navigate('tools')">Tools</div><div class="footer-link" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div><div class="footer-link" onclick="navigate('tools')">Integrations library</div><div class="footer-link" onclick="navigate('home')">Privacy policy</div><div class="footer-link" onclick="navigate('home')">Legal</div>
+      </div>
+    </div>
+  </div>
+</footer></div>
+
+<script src="site.js"></script>
+</body>
+</html>
