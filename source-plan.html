@@ -183,6 +183,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .link-arrow{transition:color .12s;cursor:pointer;}
 .link-arrow:hover{color:var(--purple-dark);}
 
+/* ── STEP FLOW (staff-wifi "how it works") ── */
+.step-flow{display:flex;justify-content:space-between;gap:8px;}
+.step-flow-item{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;}
+.step-flow-num{width:36px;height:36px;border-radius:50%;background:var(--purple);color:white;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;margin-bottom:10px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;}
+.step-flow-item:hover .step-flow-num{transform:scale(1.12);background:var(--purple-dark);}
+.step-flow-label{font-size:12px;font-weight:500;color:var(--ink);line-height:1.3;max-width:110px;}
+
 /* ── HARDWARE PILLS ── */
 .hw-pill{padding:10px 18px;background:white;border:1px solid var(--border-soft);box-shadow:0 3px 10px rgba(116,88,253,0.08);border-radius:20px;font-size:13px;font-weight:500;color:var(--ink);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:default;}
 .hw-pill:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(116,88,253,0.16);border-color:var(--purple-mid);}
@@ -506,6 +513,63 @@ function icon(key, size) {
   size = size || 16;
   return `<svg width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;">${ICON_PATHS[key]}</svg>`;
 }
+
+// Reusable FAQ accordion for individual product pages, sharing the same
+// .faq-item/.faq-q/.faq-a markup and toggleFaq() JS as the home page.
+function productFaq(faqs) {
+  return `
+<div class="container"><div class="section">
+  <div class="eyebrow">FAQ</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">Frequently asked questions.</h2>
+  <div class="faq-list">
+    ${faqs.map(([q,a])=>`
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>${q}</span>
+          <span class="faq-icon"><span></span><span></span></span>
+        </button>
+        <div class="faq-a"><p>${a}</p></div>
+      </div>`).join('')}
+  </div>
+</div></div>`;
+}
+
+// Curated from the real FAQPage schema on each purple.ai product page -
+// picking the questions most relevant to a partner audience, not the full list.
+const STAFF_WIFI_FAQS = [
+  ["What is staff WiFi and how is it different from guest WiFi?",
+   "Staff WiFi is an employee-only wireless network authenticated per-user, isolated from the guest and payment networks. Where guest WiFi optimizes for low-friction sign-up, staff WiFi optimizes for identity - each employee authenticates with their own credential via 802.1X against a RADIUS server, and their access can be revoked the moment they leave the company without touching anyone else on the network."],
+  ["Do I need my own RADIUS server?",
+   "No. Purple operates the RADIUS server as a cloud service - RADIUS-as-a-Service - with multi-region failover and a 99.999% uptime SLA. Your access points point at Purple, Purple validates credentials against your identity provider, and no one on the customer's team operates RADIUS infrastructure."],
+  ["Can I revoke one employee's WiFi access without disrupting others?",
+   "Yes, instantly. Because staff WiFi is per-user, disabling the employee in the identity provider revokes their WiFi access at the next authentication attempt. Compare this to a shared WiFi password, where one departing employee forces a company-wide password rotation."],
+  ["Does Purple staff WiFi work with existing access points?",
+   "Yes. Purple runs on any enterprise-grade access point that speaks RADIUS - Cisco Meraki, Cisco Catalyst, Aruba, Ruckus, Juniper Mist, Ubiquiti UniFi, Cambium, Extreme, Fortinet FortiAP, and more. No hardware replacement, just SSID reconfiguration to authenticate via Purple."],
+  ["Does Purple staff WiFi work across multiple sites and locations?",
+   "Yes - multi-site estates are where Purple fits best. Because the cloud RADIUS service and identity-provider integration are centralized, customers roll out the same passwordless 802.1X policy across every site from a single dashboard, with no per-site RADIUS hardware to ship or maintain."],
+];
+const GUEST_WIFI_FAQS = [
+  ["What is guest WiFi and how does it work?",
+   "Guest WiFi is a separate wireless network venues provide to visitors, isolated from the staff and payment networks. A captive portal handles sign-in (social login, email, SMS, voucher, or SSO), the access point places the device onto a guest-only VLAN, and optional analytics track footfall, dwell, and repeat visits."],
+  ["Is guest WiFi secure? What encryption does Purple use?",
+   "Yes, when deployed properly. Purple supports WPA2-Enterprise and WPA3-Enterprise on managed SSIDs, OpenRoaming / Passpoint for automatic secure onboarding, and a captive portal on an open-but-monitored SSID as the fallback path. Guest traffic is segmented from staff and payment networks at the VLAN level."],
+  ["Do I need a RADIUS server for guest WiFi?",
+   "Only for per-user authentication (WPA2/3-Enterprise, 802.1X) or per-device keys (iPSK). Basic captive-portal guest WiFi doesn't require RADIUS. If a customer needs RADIUS without running one, Purple offers it as a cloud service."],
+  ["Can I integrate guest WiFi with my CRM or marketing automation?",
+   "Yes. Purple ships native connectors for HubSpot, Salesforce, Mailchimp, Microsoft Dynamics 365, and dozens more, plus webhook support for anything else. Sign-up events and marketing consent can trigger downstream automation."],
+  ["How long does it take to deploy Purple guest WiFi?",
+   "Hours for a single venue, weeks for a multi-site rollout. Because Purple runs as a cloud overlay, there's no access point replacement - just RADIUS and walled-garden settings on the existing hardware, and the portal is designed in the dashboard."],
+];
+const MULTI_TENANT_FAQS = [
+  ["What is Multi-Tenant WiFi?",
+   "Multi-tenant WiFi is a managed internet solution designed for properties with multiple occupants, such as apartment buildings (MDUs), coworking spaces, and shopping centers. It allows a single property-wide network to be segmented into secure, private networks for each tenant."],
+  ["How does tenant isolation work?",
+   "Tenant isolation uses technologies like VLANs, Dynamic PSK (iPSK), and 802.1X to ensure that even though tenants share the same physical access points, their traffic is completely separated. Devices on one tenant's network cannot see or communicate with devices on another's."],
+  ["Can I customize the login experience for each tenant?",
+   "Yes, the platform supports per-tenant branding. Each business or resident can have their own customized splash page, logos, and terms of service when logging into their specific network slice."],
+  ["How is billing handled across multiple tenants?",
+   "The platform offers centralized billing and tiered service plans. Property managers can allocate bandwidth, set up different pricing tiers, and automate billing processes across the entire property portfolio."],
+];
 
 const SECTOR_DATA = {
   hospitality: {
@@ -1133,8 +1197,19 @@ home: () => `
     </div>
   </div>
 </div>
+<div class="container"><div class="section-sm">
+  <div class="eyebrow">How it works</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">One identity. One pass. Every device, every site.</h2>
+  <div class="step-flow">
+    ${['Authenticate','Generate a WiFi pass','Get online','Stay connected','Auto-revocation'].map((s,i)=>`
+      <div class="step-flow-item">
+        <div class="step-flow-num">${i+1}</div>
+        <div class="step-flow-label">${s}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
 <div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:0;padding-bottom:80px;">
     <div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
       <div class="prod-hero-actions" style="margin-bottom:0;">
@@ -1181,6 +1256,7 @@ home: () => `
       </div>`).join('')}
   </div>
 </div></div>
+${productFaq(STAFF_WIFI_FAQS)}
 `,
 
 // ═══════════════════════════════════════
@@ -1205,7 +1281,7 @@ home: () => `
     <div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
       <div class="feature-list">
-        ${[['Branded captive portal or seamless connection','Fully customizable login experience, from full portal to Passpoint auto-connect.'],['The Purple app for returning visitors','Once a visitor opts in via the app, reconnection is automatic on every future visit, no portal, no re-entering details.'],['Visitor analytics & footfall','Dwell time, return rates, peak hours, demographic insight. Data your customers can act on.'],['Marketing automation','Automated emails, SMS, and CRM sync triggered by WiFi behavior, including in-app offers and loyalty for opted-in visitors.'],['GDPR & CCPA compliant','Data handling built to the standard, not retrofitted.']].map(([t,d])=>`
+        ${[['Branded captive portal or seamless connection','Fully customizable login experience, from full portal to Passpoint auto-connect.'],['The Purple app for returning visitors','Once a visitor opts in via the app, reconnection is automatic on every future visit, no portal, no re-entering details.'],['Valuable insights unlocked','Stop chasing bad leads. Every opt-in enriches your customer\'s CRM with clean, GDPR and CCPA compliant, high-intent contact data that maximizes marketing efforts and slashes acquisition costs.'],['Marketing automation','Automated emails, SMS, and CRM sync triggered by WiFi behavior, including in-app offers and loyalty for opted-in visitors.'],['Security locked down','Enterprise-grade protection with WPA2/3 Enterprise encryption and globally compliant, ISO-certified solutions your whole team can depend on, with 99% uptime built in.']].map(([t,d])=>`
           <div class="feature-item">
             <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="feature-text"><strong>${t}</strong>${d}</div>
@@ -1283,6 +1359,7 @@ home: () => `
     </div>
   </div>
 </div>
+${productFaq(GUEST_WIFI_FAQS)}
 `,
 
 // ═══════════════════════════════════════
@@ -1307,7 +1384,7 @@ home: () => `
     <div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
       <div class="feature-list">
-        ${[['Per-unit network isolation','Each resident\'s traffic is completely isolated. No shared risk, no shared bandwidth contention.'],['A network pass in the Purple app','Residents provision their pass in-app, devices auto-connect and isolate, and reconnect automatically on every return visit to any property in the chain.'],['Browserless device support','Consoles, TVs, smart home devices, they all connect via iPSK without a captive portal.'],['The app as an engagement channel','Surveys, location-aware content, notifications, and rewards delivered directly to residents and guests through the app.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard.']].map(([t,d])=>`
+        ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Every user sits in their own micro-segment, so they can only ever see their own devices, essential for a student in Room 101 never seeing the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','Surveys, location-aware content, notifications, and rewards delivered directly to residents and guests through the app.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard.']].map(([t,d])=>`
           <div class="feature-item">
             <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="feature-text"><strong>${t}</strong>${d}</div>
@@ -1346,6 +1423,7 @@ home: () => `
       </div>`).join('')}
   </div>
 </div></div>
+${productFaq(MULTI_TENANT_FAQS)}
 `,
 
 // ═══════════════════════════════════════
