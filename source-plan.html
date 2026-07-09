@@ -593,10 +593,10 @@ const SECTOR_DATA = {
     name: "Retail",
     tag: "Retail",
     hook: "Turn footfall into a first-party database your customers actually own.",
-    sub: "Third-party cookies are gone and attribution from physical visits is harder than ever. Purple gives retail customers a consented, first-party data set built from every guest WiFi login, with the Purple app powering opt-in and repeat recognition.",
+    sub: "Third-party cookies are no longer reliable and attribution from physical visits is harder than ever. Purple gives retail customers a consented, first-party data set built from every guest WiFi login, with the Purple app powering opt-in and repeat recognition.",
     quickWins: ["A consented, first-party database built from every login","Loyalty sign-up routed straight from the splash page","Repeat shoppers recognized automatically in-app"],
     challenges: [
-      { title: "No reliable way to collect consented data at scale", body: "Third-party cookies are gone, and there's no dependable way to capture first-party data from people physically in a store. Guest WiFi closes that gap at the point of connection.", key: "guest-wifi" },
+      { title: "No reliable way to collect consented data at scale", body: "Third-party cookies are no longer reliable, and there's no dependable way to capture first-party data from people physically in a store. Guest WiFi closes that gap at the point of connection.", key: "guest-wifi" },
       { title: "An attribution gap between online and in-store", body: "Marketing teams struggle to prove that spend is working when there's no link between a campaign and a physical visit. A clean, validated WiFi database gives them that link.", key: "verify" },
       { title: "The same message sent to everyone", body: "Without real segmentation, every shopper gets the same email. Purple's Guest WiFi plans build the behavioral data needed to personalize, with the Purple app recognizing returning shoppers automatically.", key: "guest-wifi" }
     ],
@@ -619,7 +619,7 @@ const SECTOR_DATA = {
     challenges: [
       { title: "Responsible for a network with no visibility over who's on it", body: "IT teams are accountable for a network anyone can connect to, with real exposure at audit if it isn't fully compliant. Staff WiFi ties access to identity through the Purple app, so the joiner-mover-leaver problem is solved automatically.", key: "staff-wifi" },
       { title: "Patients and visitors with no proper guest network", body: "Many sites still only offer WiFi in a single area, like a coffee shop, leaving wards and waiting rooms without coverage. A branded guest network changes that without new hardware.", key: "guest-wifi" },
-      { title: "No evidence to show auditors and governors", body: "CQC and NHS Digital guidance both expect demonstrable network security measures. Shield gives a visible layer of protection with exportable reports built for exactly that conversation.", key: "shield" }
+      { title: "No evidence to show auditors and governors", body: "NHS Digital's Data Security and Protection Toolkit expects demonstrable network security measures. Shield gives a visible layer of protection with exportable reports built for exactly that conversation.", key: "shield" }
     ],
     recommended: ["staff-wifi","guest-wifi","shield"],
     proof: {
@@ -643,14 +643,14 @@ const SECTOR_DATA = {
     challenges: [
       { title: "A flood of helpdesk tickets every move-in week", body: "Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.", key: "multi-tenant" },
       { title: "Staff and student networks that aren't properly separated", body: "Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.", key: "staff-wifi" },
-      { title: "No safeguarding evidence to show when it's asked for", body: "Ofsted and governing bodies expect demonstrable internet safety measures. Shield gives schools and colleges the filtering evidence they need, with reporting built for exactly that purpose.", key: "shield" }
+      { title: "No safeguarding evidence to show when it's asked for", body: "Governing bodies expect demonstrable internet safety measures. Shield is IWF and Friendly WiFi certified, giving schools and colleges the filtering evidence they need, with reporting built for exactly that purpose.", key: "shield" }
     ],
     recommended: ["multi-tenant","staff-wifi","shield"],
     proof: {
-      stat: "60%", label: "fewer move-in tickets",
-      title: "A US higher education customer cut move-in tickets by 60% across 40 housing buildings.",
-      body: "Splash Access iPSK and a self-service SSO portal gave every student their own device bubble, working across both Catalyst and Meraki estates. The partner went on to win a long-term managed-services contract on the back of it.",
-      stats: [["60%","fewer move-in tickets"],["40","housing buildings"]]
+      stat: "2025", label: "Splash Access joins Purple",
+      title: "Purple's merger with Splash Access brought dedicated MDU and education iPSK expertise into the platform.",
+      body: "Splash Access specialized in Cisco Meraki iPSK deployments for student accommodation and multi-dwelling units before merging with Purple in November 2025, all staff and the platform stayed in place, adding purpose-built move-in provisioning to the wider Purple stack.",
+      stats: [["Nov 2025","Splash Access merger"],["iPSK","Cisco Meraki specialism"]]
     },
     quote: null
   },
@@ -668,10 +668,10 @@ const SECTOR_DATA = {
     ],
     recommended: ["multi-tenant","staff-wifi"],
     proof: {
-      stat: "500", label: "units, one fabric",
-      title: "A US multi-dwelling unit operator replaced 500 router configs with one fabric.",
-      body: "Splash Access iPSK MDU with Follow-Me roaming gave every unit a private bubble on one unified Cisco fabric, with a Stripe gateway enabling instant premium upgrades and a new ancillary revenue stream for the operator.",
-      stats: [["500","units, one fabric"],["Tiered","WiFi revenue"]]
+      stat: "2025", label: "Splash Access joins Purple",
+      title: "Purple's merger with Splash Access brought dedicated MDU iPSK expertise into the platform.",
+      body: "Splash Access specialized in Cisco Meraki iPSK deployments for multi-dwelling units and build-to-rent before merging with Purple in November 2025, all staff and the platform stayed in place, adding purpose-built per-unit provisioning to the wider Purple stack.",
+      stats: [["Nov 2025","Splash Access merger"],["iPSK","Cisco Meraki specialism"]]
     },
     quote: null
   },
@@ -691,8 +691,8 @@ const SECTOR_DATA = {
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure trusted by 80,000 venues.",
-      body: "Staff WiFi is new, but the platform underneath it isn't. The identity infrastructure is proven at scale already, ISO 27001 and GDPR and CCPA compliant, with 99.99% uptime, so the credibility conversation starts from a strong position.",
-      stats: [["80k+","venues worldwide"],["99.99%","platform uptime"],["13yr","Purple in market"]]
+      body: "Staff WiFi is new, but the platform underneath it isn't. The identity infrastructure is proven at scale already, ISO 27001 and GDPR and CCPA compliant, with a 99.999% cloud RADIUS uptime SLA, so the credibility conversation starts from a strong position.",
+      stats: [["80k+","venues worldwide"],["99.999%","cloud RADIUS uptime"],["2012","Purple founded"]]
     },
     quote: null
   },
@@ -1513,7 +1513,7 @@ shield: () => `
         
       </div>
       <div class="feature-list">
-        ${[['DNS-layer filtering','Block harmful content categories at the network level, before it reaches any device.'],['Real-time threat intelligence','Continuously updated threat feeds. Zero-day domains blocked automatically.'],['Customisable category controls','Customers choose what\'s blocked, by network, by VLAN, by time of day.'],['Reporting for governors & auditors','Exportable reports showing filtering activity. Evidence for Ofsted, CQC, and council audits.']].map(([t,d])=>`
+        ${[['DNS-layer filtering','Block harmful content categories at the network level, before it reaches any device.'],['Real-time threat intelligence','Continuously updated threat feeds. Zero-day domains blocked automatically.'],['Customisable category controls','Customers choose what\'s blocked, by network, by VLAN, by time of day.'],['Reporting for governors & auditors','Exportable reports showing filtering activity. IWF and Friendly WiFi certified, with evidence built for council and regulatory audits.']].map(([t,d])=>`
           <div class="feature-item">
             <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="feature-text"><strong>${t}</strong>${d}</div>
@@ -1543,7 +1543,7 @@ shield: () => `
   <div class="eyebrow">Sectors</div>
   <h2 class="section-title" style="margin-bottom:32px;">Where Shield opens doors.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-    ${[['Education','Ofsted requires demonstrable internet safety measures. Shield gives schools, colleges, and universities the filtering evidence they need.'],['Healthcare','CQC and NHS Digital guidance around network security. Shield adds a visible layer of protection with reporting for auditors.'],['Public sector','Councils, libraries, and leisure centers with public WiFi have a duty of care. Shield makes compliance straightforward.']].map(([t,d])=>`
+    ${[['Education','Governing bodies expect demonstrable internet safety measures. Shield is IWF and Friendly WiFi certified, giving schools, colleges, and universities the filtering evidence they need.'],['Healthcare','NHS Digital guidance around network security. Shield adds a visible layer of protection with reporting for auditors.'],['Public sector','Councils, libraries, and leisure centers with public WiFi have a duty of care. Shield makes compliance straightforward.']].map(([t,d])=>`
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
         <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">${t}</div>
         <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">${d}</div>
