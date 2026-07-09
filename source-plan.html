@@ -1316,12 +1316,20 @@ ${productFaq(STAFF_WIFI_FAQS)}
         <div class="prod-vis-stat"><div class="pvs-val">34%</div><div class="pvs-lbl">Return visitor rate</div></div>
       </div>
       <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
-        <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top connection methods</div>
-        ${[['Email login','54%',100],['Social login','28%',52],['Phone number','18%',33]].map(([l,v,w])=>`
-          <div style="margin-bottom:8px;">
-            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px;"><span>${l}</span><span style="color:var(--ink-light);">${v}</span></div>
-            <div style="height:4px;background:var(--purple-light);border-radius:2px;"><div style="height:100%;width:${w}%;background:var(--purple);border-radius:2px;"></div></div>
-          </div>`).join('')}
+        <div style="font-size:11px;color:var(--ink-light);margin-bottom:12px;">Top connection methods</div>
+        <div style="display:flex;justify-content:space-between;">
+          ${[['Email login',54],['Social login',28],['Phone number',18]].map(([l,v])=>{
+            const r=22, c=2*Math.PI*r, off=c*(1-v/100);
+            return `
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;">
+            <svg width="56" height="56" viewBox="0 0 56 56" style="transform:rotate(-90deg);">
+              <circle cx="28" cy="28" r="${r}" fill="none" stroke="var(--purple-light)" stroke-width="5"/>
+              <circle cx="28" cy="28" r="${r}" fill="none" stroke="var(--purple)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${c.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}"/>
+            </svg>
+            <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--ink);margin-top:-40px;">${v}%</div>
+            <div style="font-size:11px;color:var(--ink-mid);text-align:center;margin-top:10px;">${l}</div>
+          </div>`;}).join('')}
+        </div>
       </div>
     </div>
   </div>
