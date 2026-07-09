@@ -549,12 +549,8 @@ const STAFF_WIFI_FAQS = [
    "Yes - multi-site estates are where Purple fits best. Because the cloud RADIUS service and identity-provider integration are centralized, customers roll out the same passwordless 802.1X policy across every site from a single dashboard, with no per-site RADIUS hardware to ship or maintain."],
 ];
 const GUEST_WIFI_FAQS = [
-  ["What is guest WiFi and how does it work?",
-   "Guest WiFi is a separate wireless network venues provide to visitors, isolated from the staff and payment networks. A captive portal handles sign-in (social login, email, SMS, voucher, or SSO), the access point places the device onto a guest-only VLAN, and optional analytics track footfall, dwell, and repeat visits."],
   ["Is guest WiFi secure? What encryption does Purple use?",
    "Yes, when deployed properly. Purple supports WPA2-Enterprise and WPA3-Enterprise on managed SSIDs, OpenRoaming / Passpoint for automatic secure onboarding, and a captive portal on an open-but-monitored SSID as the fallback path. Guest traffic is segmented from staff and payment networks at the VLAN level."],
-  ["Do I need a RADIUS server for guest WiFi?",
-   "Only for per-user authentication (WPA2/3-Enterprise, 802.1X) or per-device keys (iPSK). Basic captive-portal guest WiFi doesn't require RADIUS. If a customer needs RADIUS without running one, Purple offers it as a cloud service."],
   ["Can I integrate guest WiFi with my CRM or marketing automation?",
    "Yes. Purple ships native connectors for HubSpot, Salesforce, Mailchimp, Microsoft Dynamics 365, and dozens more, plus webhook support for anything else. Sign-up events and marketing consent can trigger downstream automation."],
   ["How long does it take to deploy Purple guest WiFi?",
@@ -1272,6 +1268,32 @@ ${productFaq(STAFF_WIFI_FAQS)}
     </div>
   </div>
 </div>
+<div class="container"><div class="section">
+  <div class="eyebrow">Three tiers, one upgrade path</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:8px;">Connect, Capture, Engage.</h2>
+  <p class="section-sub" style="margin-bottom:32px;">Every customer starts on Connect. As the relationship grows, so does the tier, and so does the reason to check back in.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${[
+      ['Connect','Free','Get visitors online quickly, easily, and securely.',['Fully branded, secure captive portal','Deployed in hours, no infrastructure changes','Seamless login in 25+ languages','Built-in security via Verify and Shield'],false],
+      ['Capture','Most popular','Everything in Connect, plus WiFi analytics and a CRM connector.',['WiFi analytics: footfall, dwell, return visits','Native CRM connector','GDPR and CCPA compliant data capture','The foundation for first-party marketing data'],true],
+      ['Engage','Full platform','Everything in Capture, with the tools to automate tailored journeys.',['Marketing automation triggered by WiFi behavior','Personalized, tailored visitor journeys','In-app offers and loyalty for opted-in visitors','The Purple app as an ongoing engagement channel'],false],
+    ].map(([n,badge,d,feats,pop])=>`
+      <div class="card" style="${pop?'border-color:var(--purple);box-shadow:0 8px 24px rgba(116,88,253,0.12);':''}">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="card-title" style="margin-bottom:0;">${n}</div>
+          <span style="display:inline-flex;align-items:center;font-size:11px;font-weight:500;background:var(--purple-light);color:var(--purple);padding:4px 10px;border-radius:20px;">${badge}</span>
+        </div>
+        <p class="card-body" style="margin-bottom:16px;">${d}</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          ${feats.map(f=>`
+            <div style="display:flex;gap:9px;align-items:flex-start;">
+              <div class="feature-check" style="margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div style="font-size:13px;color:var(--ink-mid);line-height:1.5;">${f}</div>
+            </div>`).join('')}
+        </div>
+      </div>`).join('')}
+  </div>
+</div></div>
 <div class="container">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
     <div>
