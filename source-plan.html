@@ -1352,14 +1352,21 @@ ${productFaq(STAFF_WIFI_FAQS)}
   </div>
 </div></div>
 <div class="container"><div class="section">
-  <div class="eyebrow">Beyond the portal</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:8px;">Or skip the portal entirely: identity-based connectivity via the Purple app.</h2>
-  <p class="section-sub" style="margin-bottom:32px;">Visitors opt in once through the Purple app, and every connection after that is identity-verified and automatic, no login screen, no re-entering details.</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
-    ${[['Identity-verified from the first packet','No open SSIDs, no anonymous access. WPA2/3-Enterprise secures every connection before network access is granted.'],['No portal friction for returners','Once opted in, the app recognizes the visitor automatically on every future visit, to any venue in the chain.'],['Still a verified contact for Capture and Engage','Every identity-based connection is a verified, opted-in contact, feeding the same CRM sync and marketing automation.'],['80% fewer IT support tickets','Eliminating captive-portal login issues removes one of the most common sources of on-site WiFi support requests.']].map(([t,d])=>`
-      <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body" style="margin-bottom:0;">${d}</p></div>`).join('')}
+  <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <div class="eyebrow">Beyond the portal</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:8px;">Or skip the portal entirely: identity-based connectivity via the Purple app.</h2>
+      <p class="section-sub" style="margin-bottom:32px;">Visitors opt in once through the Purple app, and every connection after that is identity-verified and automatic, no login screen, no re-entering details.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+        ${[['Identity-verified from the first packet','No open SSIDs, no anonymous access. WPA2/3-Enterprise secures every connection before network access is granted.'],['No portal friction for returners','Once opted in, the app recognizes the visitor automatically on every future visit, to any venue in the chain.'],['Still a verified contact for Capture and Engage','Every identity-based connection is a verified, opted-in contact, feeding the same CRM sync and marketing automation.'],['80% fewer IT support tickets','Eliminating captive-portal login issues removes one of the most common sources of on-site WiFi support requests.']].map(([t,d])=>`
+          <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body" style="margin-bottom:0;">${d}</p></div>`).join('')}
+      </div>
+      <button class="btn-primary" onclick="window.open('https://www.purple.ai/en-gb/app','_blank')">Learn more about the app</button>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2Funnamed.webp&w=640&q=75" alt="The Purple app WiFi Pass" style="width:100%;max-width:240px;border-radius:18px;box-shadow:0 14px 40px rgba(116,88,253,0.16);display:block;">
+    </div>
   </div>
-  <button class="btn-primary" onclick="window.open('https://www.purple.ai/en-gb/app','_blank')">Learn more about the app</button>
 </div></div>
 <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
   <div class="container">
@@ -2080,11 +2087,11 @@ blog: () => `
   <h1 class="section-title">Insights for partners.</h1>
   <p class="section-sub">Sales tips, product updates, sector guides, and partner news.</p>
   <div style="display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap;" id="blog-filters">
-    ${['All','Product update','Sales & marketing','Sector guide','Partner news'].map((c,i)=>`<button class="blog-filter-btn${i===0?' active':''}" data-cat="${c}" onclick="filterBlog('${c}',this)">${c==='All'?c:c+(c.endsWith('s')?'':'s')}</button>`).join('')}
+    ${[['All','All'],['Product update','Product updates'],['Sales & marketing','Sales & marketing'],['Sector guide','Sector guides'],['Partner news','Partner news']].map(([c,l],i)=>`<button class="blog-filter-btn${i===0?' active':''}" data-cat="${c}" onclick="filterBlog('${c}',this)">${l}</button>`).join('')}
   </div>
   <div class="blog-grid" id="blog-grid">
     ${[
-      ['images/blog/airport-rfp.png','Sales & marketing','Jun 2026','Turning WiFi into Revenue: How one partner won an airport RFP with Purple','A strategy for shifting enterprise WiFi pitches from connectivity to data-driven business intelligence.'],
+      ['images/blog/airport-rfp.png','Partner news','Jun 2026','Turning WiFi into Revenue: How one partner won an airport RFP with Purple','A strategy for shifting enterprise WiFi pitches from connectivity to data-driven business intelligence.'],
       ['images/blog/faster-network.png','Product update','Apr 2026','How to give your customers a faster network without touching the hardware','DNS-level ad and tracker blocking reclaims bandwidth without any device configuration.'],
       ['images/blog/open-to-secure.png','Sales & marketing','Mar 2026','From open to secure: Why your clients\' WiFi can be a huge risk','The security vulnerabilities created by shared WiFi credentials, and how to frame the fix.'],
       ['images/blog/staff-wifi-education.png','Sector guide','Mar 2026','Staff WiFi for schools and universities: A partner\'s vertical guide','A certificate-based WiFi pass tied to the individual, built for education sector deployments.'],
