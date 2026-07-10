@@ -31,10 +31,10 @@ let scriptText = SRC.slice(SRC.indexOf("<script>") + 8, SRC.lastIndexOf("</scrip
 // ── 2. Patch: self-host the purple.ai hotlinked images ──────────────────
 const IMAGE_MAP = new Map(); // remote-name -> local filename
 scriptText = scriptText.replace(
-  /https:\/\/www\.purple\.ai\/_next\/image\?url=%2Fimages%2F([A-Za-z0-9_-]+)\.webp&w=\d+&q=\d+/g,
-  (match, name) => {
-    const local = name.toLowerCase() + ".webp";
-    if (!IMAGE_MAP.has(name)) IMAGE_MAP.set(name, { local, url: match });
+  /https:\/\/www\.purple\.ai\/_next\/image\?url=%2Fimages%2F([A-Za-z0-9_-]+)\.(webp|avif)&w=\d+&q=\d+/g,
+  (match, name, ext) => {
+    const local = name.toLowerCase() + "." + ext;
+    if (!IMAGE_MAP.has(name)) IMAGE_MAP.set(name, { local, ext, url: match });
     return "images/" + local;
   }
 );
@@ -119,6 +119,7 @@ const ROUTES = [
   ["app", "app.html", "The Purple app | Purple Partners"],
   ["staff-wifi", "staff-wifi.html", "Staff WiFi | Purple Partners"],
   ["guest-wifi", "guest-wifi.html", "Guest WiFi | Purple Partners"],
+  ["guest-wifi-plans", "guest-wifi-plans.html", "Guest WiFi plans | Purple Partners"],
   ["multi-tenant", "multi-tenant.html", "Multi-tenant WiFi | Purple Partners"],
   ["verify", "verify.html", "Verify | Purple Partners"],
   ["shield", "shield.html", "Shield | Purple Partners"],
@@ -193,11 +194,11 @@ for (const file of readdirSync(join(__dirname, "assets", "sectors"))) {
 copyFileSync(join(__dirname, "assets", "robots.txt"), join(DIST, "robots.txt"));
 
 // ── 7. Download the self-hosted images ──────────────────────────────────
-const downloads = [...IMAGE_MAP.values()].map(async ({ local, url }) => {
+const downloads = [...IMAGE_MAP.values()].map(async ({ local, url, ext }) => {
   // The Next.js image-optimizer proxy only accepts a fixed set of widths (400s on
   // anything else) - fetch the original source file directly instead.
-  const sourceName = url.match(/%2Fimages%2F([A-Za-z0-9_-]+)\.webp/)[1];
-  const direct = `https://www.purple.ai/images/${sourceName}.webp`;
+  const sourceName = url.match(/%2Fimages%2F([A-Za-z0-9_-]+)\.(webp|avif)/)[1];
+  const direct = `https://www.purple.ai/images/${sourceName}.${ext}`;
   const res = await fetch(direct);
   if (!res.ok) throw new Error(`Failed to fetch ${direct}: ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
