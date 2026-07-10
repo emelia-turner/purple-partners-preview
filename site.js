@@ -23,6 +23,28 @@ function startTestimonialAutoplay() {
 }
 document.addEventListener('DOMContentLoaded', startTestimonialAutoplay);
 
+// ── CASE STUDY CAROUSEL ──────────────────────────────────────────
+let caseStudyTimer = null;
+function goToCaseStudy(i) {
+  const slides = document.querySelectorAll('.cs-slides .cs-slide');
+  const dots = document.querySelectorAll('.cs-dot');
+  if (!slides.length) return;
+  slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+  dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  startCaseStudyAutoplay();
+}
+function startCaseStudyAutoplay() {
+  const slides = document.querySelectorAll('.cs-slides .cs-slide');
+  if (slides.length <= 1) return;
+  clearInterval(caseStudyTimer);
+  caseStudyTimer = setInterval(() => {
+    const current = document.querySelector('.cs-slides .cs-slide.active');
+    const idx = [...slides].indexOf(current);
+    goToCaseStudy((idx + 1) % slides.length);
+  }, 5000);
+}
+document.addEventListener('DOMContentLoaded', startCaseStudyAutoplay);
+
 function navigate(page) {
   closeAllDD();
   location.href = (page === 'home' ? 'index' : page) + '.html';
@@ -78,7 +100,7 @@ function filterBlog(cat, btnEl) {
 
 // ── ACTIVE NAV HIGHLIGHT ──────────────────────────────────────────
 const NAV_MAP = {
-  'app': 'WiFi', 'staff-wifi': 'WiFi', 'guest-wifi': 'WiFi', 'multi-tenant': 'WiFi', 'verify': 'WiFi', 'shield': 'WiFi',
+  'app': 'WiFi', 'staff-wifi': 'WiFi', 'guest-wifi': 'WiFi', 'guest-wifi-plans': 'WiFi', 'multi-tenant': 'WiFi', 'verify': 'WiFi', 'shield': 'WiFi',
   'benefits': 'Benefits',
   'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
   'sector-education': 'Sectors', 'sector-residential': 'Sectors', 'sector-enterprise': 'Sectors', 'sector-transport': 'Sectors',
