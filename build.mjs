@@ -57,11 +57,11 @@ scriptText = scriptText.split(REGISTER_BTN).join(`<button class="btn-primary" on
 
 // Tools page: buttons that just re-navigated to the same page. Every one sits behind
 // "available to registered partners" copy, so routing them to the signup section is the
-// sensible placeholder rather than a no-op page reload - except hardware compatibility
-// and the guest WiFi checklist, which have real destinations (external resources).
+// sensible placeholder rather than a no-op page reload - except hardware compatibility,
+// the guest WiFi checklist, and case studies, which have real destinations.
 const toolsLabels = [
   "Browse integrations →",
-  "Open calculator →", "Browse case studies →", "Read the guide →",
+  "Open calculator →", "Read the guide →",
 ];
 for (const label of toolsLabels) {
   scriptPatches.push([
@@ -107,7 +107,7 @@ const renderCTA = () => `
   <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
   <div class="cta-band-btns">
     <button class="btn-white" onclick="${SIGNUP}">Become a partner</button>
-    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+    <button class="btn-outline-w" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
   </div>
 </div>`;
 
@@ -121,6 +121,7 @@ const ROUTES = [
   ["guest-wifi", "guest-wifi.html", "Guest WiFi | Purple Partners"],
   ["guest-wifi-plans", "guest-wifi-plans.html", "Guest WiFi plans | Purple Partners"],
   ["case-studies", "case-studies.html", "Case studies | Purple Partners"],
+  ["speak-to-an-expert", "speak-to-an-expert.html", "Speak to an expert | Purple Partners"],
   ["multi-tenant", "multi-tenant.html", "Multi-tenant WiFi | Purple Partners"],
   ["verify", "verify.html", "Verify | Purple Partners"],
   ["shield", "shield.html", "Shield | Purple Partners"],
@@ -208,4 +209,28 @@ const downloads = [...IMAGE_MAP.values()].map(async ({ local, url, ext }) => {
 });
 
 await Promise.all(downloads);
+
+// ── 8. Download real blog post images from the live partners.purple.ai (Duda) ──
+mkdirSync(join(DIST, "images", "blog"), { recursive: true });
+const BLOG_IMAGES = {
+  "airport-rfp.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_d983qud983qud983-400w.png",
+  "faster-network.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_7dct147dct147dct-400w.png",
+  "open-to-secure.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_aa7xvzaa7xvzaa7x-0c115474-400w.png",
+  "staff-wifi-education.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_9wz46f9wz46f9wz4-400w.png",
+  "auto-revocation.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_vvjsiuvvjsiuvvjs-400w.png",
+  "contractor-access.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_tyhiletyhiletyhi-400w.png",
+  "sceptical-it-manager.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_eifdwdeifdwdeifd-400w.png",
+  "zero-trust.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_oe8uoeoe8uoeoe8u-400w.png",
+  "three-problems.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_iwayjeiwayjeiway-400w.png",
+  "client-meeting.png": "https://lirp.cdn-website.com/77f83eaf/dms3rep/multi/opt/Gemini_Generated_Image_va0xmhva0xmhva0x-400w.png",
+};
+const blogDownloads = Object.entries(BLOG_IMAGES).map(async ([local, url]) => {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  writeFileSync(join(DIST, "images", "blog", local), buf);
+  console.log("Downloaded blog/" + local, `(${buf.length} bytes)`);
+});
+await Promise.all(blogDownloads);
+
 console.log(`\nBuilt ${ROUTES.length} pages into dist/.`);

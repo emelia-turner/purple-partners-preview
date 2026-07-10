@@ -76,6 +76,11 @@ function submitPartnerSignup() {
   document.getElementById('signup-success').style.display = 'block';
 }
 
+function submitExpertForm() {
+  document.getElementById('expert-form').style.display = 'none';
+  document.getElementById('expert-success').style.display = 'block';
+}
+
 // ── FAQ ACCORDION ─────────────────────────────────────────────────
 function toggleFaq(btnEl) {
   const item = btnEl.closest('.faq-item');

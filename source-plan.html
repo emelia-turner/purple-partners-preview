@@ -935,9 +935,9 @@ home: () => `
         <p class="hero-sub">WiFi hardware is commoditized. The way people connect to it is changing fast. Purple gives you the platform that turns every connection into recurring revenue.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="navigate('home')">Become a partner</button>
-          <button class="btn-secondary" onclick="navigate('home')">
+          <button class="btn-secondary" onclick="navigate('speak-to-an-expert')">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1"/><path d="M5 4L8.5 6.5 5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-            Book a call
+            Speak to an expert
           </button>
         </div>
         <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
@@ -1510,6 +1510,57 @@ ${productFaq(GUEST_WIFI_FAQS)}
 `,
 
 // ═══════════════════════════════════════
+// SPEAK TO AN EXPERT
+// ═══════════════════════════════════════
+'speak-to-an-expert': () => `
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:72px;padding-bottom:80px;">
+    <div>
+      <div class="tag">Get in touch</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:40px;margin-bottom:16px;">Speak to an expert.</h1>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;">Whether you're evaluating the partner program or already have a customer in mind, tell us what you're working on and a member of the Purple team will get back to you.</p>
+    </div>
+    <div class="form-wrap" id="expert-form-wrap">
+      <div id="expert-form">
+        <div class="form-title">Talk to Purple</div>
+        <div class="form-sub">We typically reply within one working day.</div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="+44 7700 900000"></div>
+          <div class="form-field full"><label>What would you like to discuss?</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Becoming a partner</option>
+              <option>Guest WiFi</option>
+              <option>Staff WiFi</option>
+              <option>Multi-tenant WiFi</option>
+              <option>Verify</option>
+              <option>Shield</option>
+              <option>A specific customer opportunity</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Message</label>
+            <textarea placeholder="Tell us a bit about what you're working on..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitExpertForm()">Send message</button>
+      </div>
+      <div class="form-success" id="expert-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Message sent</h3>
+        <p>A member of the Purple team will be in touch within one working day.</p>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+
+// ═══════════════════════════════════════
 // MULTI-TENANT
 // ═══════════════════════════════════════
 'multi-tenant': () => `
@@ -1902,7 +1953,7 @@ tools: () => `
       <div class="tool-tag existing" style="margin-bottom:14px;">Sales enablement</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Case studies</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">End-customer proof points across hospitality, retail, education, healthcare, and more. Use these in proposals, on sales calls, or to help a prospect visualize the outcome, not just the product.</p>
-      <button class="btn-primary" onclick="navigate('tools')">Browse case studies →</button>
+      <button class="btn-primary" onclick="navigate('case-studies')">Browse case studies →</button>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
       ${[['Harrods','Hospitality','57X ROI on the original guest WiFi investment','#F5F3EF'],['McDonald\'s','Hospitality','Data capture at scale across 1,300+ UK sites','#EEF4FF'],['AGS Airports','Transport','Passenger analytics across 3 Scottish airports','#EFF9F5'],['NHS Trust','Healthcare','Improved patient experience and engagement data','#FEF5EE']].map(([n,s,d,bg])=>`
@@ -1918,7 +1969,7 @@ tools: () => `
   <div id="portal-guide" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
     <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
       <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Partner portal, what's inside</div>
-      ${[['Deal registration','Log and protect new opportunities'],['Customer management','Manage all your Purple deployments'],['Reporting & analytics','MRR, renewals, and usage by customer'],['Training resources','Product and sales enablement content'],['Marketing assets','Co-branded materials and campaign packs']].map(([t,d])=>`
+      ${[['Customer management','Create and manage every customer, with visibility into their licenses, addons, groups, venues, and users'],['Branded splash pages','Choose from templates or build your own to match each customer\'s brand'],['Analytics & reporting','Usage and performance reports for every customer'],['Guides & documentation','Step-by-step setup and reseller documentation'],['Dedicated support','Direct access to the Purple support team for any query']].map(([t,d])=>`
         <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border-soft);">
           <div style="width:7px;height:7px;background:var(--purple);border-radius:2px;flex-shrink:0;margin-top:5px;"></div>
           <div><div style="font-size:13px;font-weight:500;color:var(--ink);">${t}</div><div style="font-size:12px;color:var(--ink-light);">${d}</div></div>
@@ -1927,7 +1978,7 @@ tools: () => `
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Getting started</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Portal setup guide</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Step-by-step guide to getting up and running in the partner portal, deal registration, customer management, reporting, and accessing your marketing assets. Takes about 15 minutes to complete.</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Step-by-step guide to getting up and running in the partner portal: adding customers, building branded splash pages, and reading your analytics reports. Takes about 15 minutes to complete.</p>
       <button class="btn-primary" onclick="navigate('tools')">Read the guide →</button>
     </div>
   </div>
@@ -2019,12 +2070,16 @@ blog: () => `
   </div>
   <div class="blog-grid" id="blog-grid">
     ${[
-      ['images/staff-wifi-image.webp','Product update','May 2025','Staff WiFi now supports Linux device enrollment','Automatic certificate provisioning is now available for Ubuntu and Debian, expanding zero-trust coverage to engineering and developer teams.'],
-      ['images/guest-wifi-image.webp','Sector guide','Apr 2025','How to sell Guest WiFi into hospitality in 2025','The buying conversation has shifted. It\'s no longer about connectivity, it\'s about data. Here\'s how to reframe your pitch.'],
-      ['images/mtn-image.webp','Product update','Apr 2025','Shield now includes AI-powered threat detection','Real-time classification of malicious domains, updated every 15 minutes. Available to all Shield customers from today.'],
-      ['images/staff-wifi-image.webp','Sector guide','Mar 2025','Education sector guide: selling into schools and colleges','Safeguarding, Ofsted compliance, and the BYOD problem. A practical guide to winning education deals with Purple.'],
-      ['images/guest-wifi-image.webp','Sales & marketing','Mar 2025','How partners are generating 15x return with Purple','Three partner case studies, from an MSP to a network reseller, showing how Purple fits their sales motion and what they\'ve won.'],
-      ['images/mtn-image.webp','Partner news','Feb 2025','New campaign-in-a-box packs now available','Hospitality and retail sector packs are live in the marketing support section. Ready-to-use campaigns for your next prospect push.'],
+      ['images/blog/airport-rfp.png','Sales & marketing','Jun 2026','Turning WiFi into Revenue: How one partner won an airport RFP with Purple','A strategy for shifting enterprise WiFi pitches from connectivity to data-driven business intelligence.'],
+      ['images/blog/faster-network.png','Product update','Apr 2026','How to give your customers a faster network without touching the hardware','DNS-level ad and tracker blocking reclaims bandwidth without any device configuration.'],
+      ['images/blog/open-to-secure.png','Sales & marketing','Mar 2026','From open to secure: Why your clients\' WiFi can be a huge risk','The security vulnerabilities created by shared WiFi credentials, and how to frame the fix.'],
+      ['images/blog/staff-wifi-education.png','Sector guide','Mar 2026','Staff WiFi for schools and universities: A partner\'s vertical guide','A certificate-based WiFi pass tied to the individual, built for education sector deployments.'],
+      ['images/blog/auto-revocation.png','Sales & marketing','Mar 2026','Auto-revocation: The WiFi feature that closes the deal','Automatic credential removal synced with identity provider changes eliminates manual offboarding.'],
+      ['images/blog/contractor-access.png','Product update','Mar 2026','How Purple handles contractor and time-limited staff WiFi access','Individual credentials for temporary workers, with automatic revocation at contract end.'],
+      ['images/blog/sceptical-it-manager.png','Sales & marketing','Mar 2026','How to sell passwordless WiFi to a sceptical IT manager','A sales framework for addressing IT concerns about identity-based network authentication.'],
+      ['images/blog/zero-trust.png','Sector guide','Feb 2026','Zero Trust networking: What it actually means for WiFi','Connecting identity-based WiFi architecture to zero-trust security framework principles.'],
+      ['images/blog/three-problems.png','Sales & marketing','Feb 2026','The 3 problems Purple solves across every vertical','Shared passwords mean anonymous connections, and anonymous connections mean no control.'],
+      ['images/blog/client-meeting.png','Sales & marketing','Feb 2026','How to introduce identity-based networks in a client meeting','A client conversation framework covering three use cases: staff, guest, and multi-tenant WiFi.'],
     ].map(([img,cat,date,title,excerpt])=>`
       <div class="blog-card" data-cat="${cat}">
         <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="${img}" style="width:100%;height:160px;object-fit:cover;display:block;" alt="${cat}"></div>
@@ -2101,7 +2156,7 @@ function renderCTA() {
   <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
   <div class="cta-band-btns">
     <button class="btn-white" onclick="navigate('home')">Become a partner</button>
-    <button class="btn-outline-w" onclick="navigate('home')">Chat to us</button>
+    <button class="btn-outline-w" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
   </div>
 </div>`;
 }
