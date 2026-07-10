@@ -112,8 +112,6 @@ const renderCTA = () => `
 </div>`;
 
 // ── 5. Assemble each route into a full static HTML document ────────────
-const signupSection = readFileSync(join(__dirname, "assets", "signup-section.html"), "utf8");
-
 const ROUTES = [
   ["home", "index.html", "Purple Partners | Channel partner program"],
   ["app", "app.html", "The Purple app | Purple Partners"],
@@ -150,7 +148,6 @@ function wrapArrows(html) {
 function page(slug, title) {
   if (!PAGES[slug]) throw new Error("Missing PAGES entry for " + slug);
   let content = wrapArrows(PAGES[slug]());
-  if (slug === "home") content += signupSection;
   content += renderCTA();
   const footer = renderFooter();
   return `<!DOCTYPE html>
