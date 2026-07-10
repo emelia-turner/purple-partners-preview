@@ -598,7 +598,8 @@ const SECTOR_DATA = {
       stat: "90%", label: "fewer on-site IT visits",
       title: "McDonald's Belgium turned guest WiFi into a data and app-growth engine.",
       body: "Purple was deployed alongside Cisco Meraki and Socialspot, with OneClick and Facebook login and language-specific splash pages built in LogicFlow. The result: 8 million visits, 2.5 million unique records, and a jump in campaign-linked app downloads, with 90% fewer on-site IT visits.",
-      stats: [["8m","visits"],["2.5m","unique records"],["90%","fewer IT visits"]]
+      stats: [["8m","visits"],["2.5m","unique records"],["90%","fewer IT visits"]],
+      hasCaseStudy: true
     },
     quote: {
       text: "Purple's solution is integral to our overall business strategies. It lets us tailor the user's journey by venue and collect valuable, rich data that would otherwise have been unknown to the business, driving visits with tailored communications and an ROI that pays for the software itself, and then some.",
@@ -622,7 +623,8 @@ const SECTOR_DATA = {
       stat: "57X", label: "ROI on the original investment",
       title: "Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.",
       body: "A splash question routed affirmatives straight to a pre-filled Rewards sign-up. The result: 38% of guests opted into marketing, 4,453 new Rewards sign-ups, and 6,657 of those guests went on to purchase.",
-      stats: [["57X","ROI"],["581k","unique users / yr"],["3.6m","contact database"]]
+      stats: [["57X","ROI"],["581k","unique users / yr"],["3.6m","contact database"]],
+      hasCaseStudy: true
     },
     quote: null
   },
@@ -643,7 +645,8 @@ const SECTOR_DATA = {
       stat: "2 wks", label: "to go live",
       title: "Queen Elizabeth Hospital took guest WiFi from a single coffee shop to every ward.",
       body: "Purple overlaid onto existing kit and went live in two weeks. The branded splash page is now used to distribute health communications across the hospital.",
-      stats: [["250k","sessions / yr"],["60k","users to CRM / yr"],["2 wks","to go live"]]
+      stats: [["250k","sessions / yr"],["60k","users to CRM / yr"],["2 wks","to go live"]],
+      hasCaseStudy: true
     },
     quote: {
       text: "The feedback from patients about the WiFi has been very positive. Our main demographic is elderly patients and many believed this age category wouldn't use the service, but they do. This information is useful to justify usage amongst our largest demographic.",
@@ -730,7 +733,8 @@ const SECTOR_DATA = {
       stat: "842%", label: "ROI",
       title: "AGS Airports turned WiFi into a revenue line and a clean, verified passenger database.",
       body: "Tiered WiFi, a free first hour and a paid premium tier, plus Verify across three sites, generated £284k in revenue and a verified database the marketing team could actually use.",
-      stats: [["£284k","premium WiFi revenue"],["842%","ROI"],["5.6m","connections / yr"]]
+      stats: [["£284k","premium WiFi revenue"],["842%","ROI"],["5.6m","connections / yr"]],
+      hasCaseStudy: true
     },
     quote: {
       text: "I've never had a supplier who so thoroughly understands our needs and objectives. Purple showed an intricate understanding of the ticket-sales model and that an on-board portal was critical to reaching that huge untapped base.",
@@ -829,7 +833,8 @@ function renderSectorPage(slug) {
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
     <div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">${s.proof.title}</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;">${s.proof.body}</p>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:${s.proof.hasCaseStudy?'24px':'0'};">${s.proof.body}</p>
+      ${s.proof.hasCaseStudy ? `<button class="btn-primary" onclick="navigate('case-studies')">Read the case study</button>` : ''}
     </div>
     <div style="display:grid;grid-template-columns:repeat(${s.proof.stats.length},1fr);gap:14px;">
       ${s.proof.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
@@ -1363,7 +1368,7 @@ ${productFaq(STAFF_WIFI_FAQS)}
       <div>
         <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.</h2>
         <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">By improving and optimizing the guest WiFi experience, Harrods built a data and engagement layer that changed how the business understood and communicated with its visitors. <a href="https://www.purple.ai/en-gb/guest-wifi" style="color:var(--purple);" target="_blank">See the Guest WiFi platform behind it.</a></p>
-        <button class="btn-primary" onclick="navigate('home')">Read the case study</button>
+        <button class="btn-primary" onclick="navigate('case-studies')">Read the case study</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         ${[['57X','ROI on the original investment'],['581k','unique users / yr'],['3.6m','contact database'],['4,453','new Rewards sign-ups']].map(([v,l])=>`
@@ -1443,14 +1448,13 @@ ${productFaq(GUEST_WIFI_FAQS)}
         </div>
         <p class="card-body" style="margin-bottom:16px;">${tagline}</p>
         ${includesLabel ? `<div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:12px;">${includesLabel}</div>` : ''}
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
           ${feats.map(f=>`
             <div style="display:flex;gap:9px;align-items:flex-start;">
               <div class="feature-check" style="margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div style="font-size:13px;color:var(--ink-mid);line-height:1.5;">${f}</div>
             </div>`).join('')}
         </div>
-        <button class="btn-primary" style="width:100%;" onclick="navigate('home')">Register as a partner</button>
       </div>`).join('')}
   </div>
 </div></div>
@@ -1462,6 +1466,44 @@ ${productFaq(GUEST_WIFI_FAQS)}
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;">
         <div style="font-size:13px;font-weight:500;color:white;margin-bottom:6px;">${t}</div>
         <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.5;">${d}</div>
+      </div>`).join('')}
+  </div>
+</div></div>
+`,
+
+// ═══════════════════════════════════════
+// CASE STUDIES
+// ═══════════════════════════════════════
+'case-studies': () => `
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="padding-top:72px;padding-bottom:56px;max-width:720px;">
+    <div class="tag">Proof</div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Case studies.</h1>
+    <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;">Real deployments, real numbers. The results your customers can expect, across hospitality, retail, healthcare, transport, and the public sector.</p>
+  </div>
+</div>
+<div class="container"><div class="section">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${[
+      ['Public sector','Newcastle City Council','Building one of the UK\'s most connected cities with free WiFi for local businesses.','2.3m','logins'],
+      ['Events & attractions','Resorts World Birmingham','Drove guest engagement and data capture while reducing manual marketing effort.',null,null],
+      ['Events & attractions','Paignton Zoo','Discovered valuable customer insights through WiFi analytics, live since late 2016.',null,null],
+      ['Hospitality & leisure','Pizza Express UAE','Fast, free, and secure guest WiFi while gathering valuable customer data.',null,null],
+      ['Healthcare','St George\'s Healthcare NHS Trust','Seamless connectivity for patients and visitors at a major NHS hospital.',null,null],
+      ['Healthcare','The Queen Elizabeth Hospital','Took guest WiFi from a single coffee shop to every ward, live in two weeks.','250k','sessions / yr'],
+      ['Travel & transport','Avanti West Coast','Improved long-distance rail passenger connectivity.','463%','ROI'],
+      ['Travel & transport','c2c','Converted WiFi users into a verified, measurable return for the rail operator.','151%','ROI'],
+      ['Hospitality & leisure','Pizza Express','Free, fast, and secure guest WiFi across 470+ restaurants, enhancing the diner experience.','470+','restaurants'],
+      ['Travel & transport','AGS Airports','Tiered bandwidth access turned WiFi into a revenue line across three airports.','842%','ROI'],
+      ['Retail & commercial','Harrods','Converted WiFi logins into a first-party data engine and a strong return on investment.','57X','ROI'],
+      ['Hospitality & leisure','McDonald\'s Belgium','Guest WiFi became a data and app-growth engine across 80 restaurants.','90%','fewer IT visits'],
+      ['Travel & transport','Brussels South Charleroi Airport','Used in-venue surveys to enhance traveler experience and inform new flight routes.',null,null],
+    ].map(([tag,name,snippet,stat,label])=>`
+      <div class="card" style="display:flex;flex-direction:column;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;">${tag}</div>
+        <div class="card-title" style="font-size:17px;">${name}</div>
+        <p class="card-body" style="flex:1;">${snippet}</p>
+        ${stat ? `<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;">${stat}</div><div style="font-size:12px;color:var(--ink-light);">${label}</div></div>` : ''}
       </div>`).join('')}
   </div>
 </div></div>
@@ -2022,7 +2064,7 @@ function renderFooter() {
     <div>
       <div class="footer-col-title">Partner</div>
       <div class="footer-links">
-        ${[['Become a partner','https://onboarding.purple.ai/partner',true],['Benefits','benefits'],['Sectors','sectors'],['Marketing support','marketing'],['Blog','blog']].map(([l,p,external])=>`<div class="footer-link" onclick="${external ? `window.open('${p}','_blank')` : `navigate('${p}')`}">${l}</div>`).join('')}
+        ${[['Become a partner','https://onboarding.purple.ai/partner',true],['Benefits','benefits'],['Sectors','sectors'],['Case studies','case-studies'],['Marketing support','marketing'],['Blog','blog']].map(([l,p,external])=>`<div class="footer-link" onclick="${external ? `window.open('${p}','_blank')` : `navigate('${p}')`}">${l}</div>`).join('')}
       </div>
     </div>
     <div>

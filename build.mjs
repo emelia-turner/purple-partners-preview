@@ -120,6 +120,7 @@ const ROUTES = [
   ["staff-wifi", "staff-wifi.html", "Staff WiFi | Purple Partners"],
   ["guest-wifi", "guest-wifi.html", "Guest WiFi | Purple Partners"],
   ["guest-wifi-plans", "guest-wifi-plans.html", "Guest WiFi plans | Purple Partners"],
+  ["case-studies", "case-studies.html", "Case studies | Purple Partners"],
   ["multi-tenant", "multi-tenant.html", "Multi-tenant WiFi | Purple Partners"],
   ["verify", "verify.html", "Verify | Purple Partners"],
   ["shield", "shield.html", "Shield | Purple Partners"],
