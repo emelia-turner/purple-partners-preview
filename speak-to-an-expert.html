@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>The Purple app | Purple Partners</title>
+<title>Speak to an expert | Purple Partners</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="app">
+<body data-page="speak-to-an-expert">
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
@@ -82,66 +82,50 @@
 
 <div id="page-content">
 <div class="container">
-  <div class="prod-hero">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:72px;padding-bottom:80px;">
     <div>
-      <div class="tag">The Purple app</div>
-      <h1>One app. <em>Every kind of connection.</em></h1>
-      <p class="hero-sub">Staff, guests, and residents all connect through the same Purple app. It's the engine behind identity-based access, the layer that removes captive-portal friction, and the channel that keeps every connection going after the first login.</p>
-      <div class="feature-list" style="margin-top:0;">
-        
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text"><strong>One app, three jobs</strong>The same app authenticates staff, recognizes returning guests, and provisions resident networks, depending on which Purple product is deployed.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text"><strong>Nothing for IT to install</strong>The app lives on the end user's own device. There's no agent to roll out and no extra hardware to manage.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text"><strong>Built on identity, not passwords</strong>Every connection through the app is tied to a verified identity, not a shared credential that has to be rotated or reset.</div>
-          </div>
-      </div>
+      <div class="tag">Get in touch</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:40px;margin-bottom:16px;">Speak to an expert.</h1>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;">Whether you're evaluating the partner program or already have a customer in mind, tell us what you're working on and a member of the Purple team will get back to you.</p>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;">
-      <img src="images/unnamed.webp" alt="The Purple app" style="width:100%;max-width:280px;border-radius:20px;box-shadow:0 16px 48px rgba(116,88,253,0.18);display:block;">
+    <div class="form-wrap" id="expert-form-wrap">
+      <div id="expert-form">
+        <div class="form-title">Talk to Purple</div>
+        <div class="form-sub">We typically reply within one working day.</div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="+44 7700 900000"></div>
+          <div class="form-field full"><label>What would you like to discuss?</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Becoming a partner</option>
+              <option>Guest WiFi</option>
+              <option>Staff WiFi</option>
+              <option>Multi-tenant WiFi</option>
+              <option>Verify</option>
+              <option>Shield</option>
+              <option>A specific customer opportunity</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Message</label>
+            <textarea placeholder="Tell us a bit about what you're working on..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitExpertForm()">Send message</button>
+      </div>
+      <div class="form-success" id="expert-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Message sent</h3>
+        <p>A member of the Purple team will be in touch within one working day.</p>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="dark-section"><div class="container">
-  <div class="eyebrow">Where the app shows up</div>
-  <h2 class="section-title" style="margin-bottom:32px;">Three products. One app underneath all of them.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:10px;">Staff WiFi</div>
-        <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">The authentication engine</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.</div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:10px;">Guest WiFi</div>
-        <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">The friction remover</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Captive portals still frustrate visitors with forms. The app replaces that with seamless connectivity and a conscious opt-in, done once. From then on, the app recognizes returning visitors automatically, and becomes a channel for offers and loyalty to people who are physically in the venue.</div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:10px;">Multi-tenant WiFi</div>
-        <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">The resident's remote control</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Residents provision a network pass directly in the app. Devices auto-connect and isolate, and reconnect automatically on every future visit, to any property in the chain. The app doubles as an engagement channel: surveys, location-aware content, notifications, and rewards.</div>
-      </div>
-  </div>
-</div></div>
-
-<div class="container"><div class="section">
-  <div class="eyebrow">Why it matters to a sale</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">One conversation, three upsells.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    
-      <div class="card"><div class="card-title" style="font-size:16px;">A familiar engine</div><p class="card-body">A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn't change, just what the app is being used for.</p></div>
-      <div class="card"><div class="card-title" style="font-size:16px;">Less for IT to manage</div><p class="card-body">Nothing for a customer's IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.</p></div>
-      <div class="card"><div class="card-title" style="font-size:16px;">A channel that keeps paying off</div><p class="card-body">Every opted-in connection through the app is a contact a customer can message again, whether that's a loyalty offer to a guest or a notification to a resident.</p></div>
-  </div>
-</div></div>
 
 <div class="cta-band">
   <h2>Ready to add Purple to your portfolio?</h2>
