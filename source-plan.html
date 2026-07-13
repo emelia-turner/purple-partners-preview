@@ -165,7 +165,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 /* ── DARK SECTION ── */
 .dark-section{background:var(--purple-deep);padding:80px 0;}
 .dark-section .eyebrow{color:var(--purple-mid);}
-.dark-section .section-title{color:white;}
+.dark-section .section-title,.dark-section .section-title-sm{color:white;}
 .dark-section .section-sub{color:rgba(255,255,255,.5);}
 
 /* ── SECTORS GRID ── */
@@ -1203,19 +1203,21 @@ home: () => `
     </div>
   </div>
 
-  <div class="container"><div class="section">
+  <div class="dark-section"><div class="container">
     <div class="eyebrow">Partner benefits</div>
     <h2 class="section-title">Numbers that close deals.</h2>
     <p class="section-sub" style="margin-bottom:48px;">Independent research across our partner network.</p>
     <div class="why-grid">
-      <div><div class="why-num">12%</div><div class="why-lbl">Increased win rate</div><div class="why-desc">Partners consistently win more deals when Purple is in the mix.</div></div>
-      <div><div class="why-num">15x</div><div class="why-lbl">Return per £1 of Purple sold</div><div class="why-desc">Hardware, installation, managed services, Purple unlocks it all.</div></div>
-      <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
-      <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
+      <div><div class="why-num">12%</div><div class="why-lbl" style="color:white;">Increased win rate</div><div class="why-desc" style="color:rgba(255,255,255,.5);">Partners consistently win more deals when Purple is in the mix.</div></div>
+      <div><div class="why-num">15x</div><div class="why-lbl" style="color:white;">Return per £1 of Purple sold</div><div class="why-desc" style="color:rgba(255,255,255,.5);">Hardware, installation, managed services, Purple unlocks it all.</div></div>
+      <div><div class="why-num">20%</div><div class="why-lbl" style="color:white;">Faster time to close</div><div class="why-desc" style="color:rgba(255,255,255,.5);">Our partner team supports every stage of your sales cycle.</div></div>
+      <div><div class="why-num">18%</div><div class="why-lbl" style="color:white;">Larger average deal size</div><div class="why-desc" style="color:rgba(255,255,255,.5);">Upsell opportunities at every renewal, across every product line.</div></div>
     </div>
+  </div></div>
 
+  <div class="container"><div class="section">
     <!-- VISUAL BREAK: hardware logos -->
-    <div style="margin-top:56px;background:linear-gradient(135deg,var(--purple-light),white 65%);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;">
+    <div style="background:linear-gradient(135deg,var(--purple-light),white 65%);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--purple);opacity:.07;border-radius:50%;pointer-events:none;"></div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;position:relative;">
         <div style="width:30px;height:30px;background:var(--purple);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -1275,7 +1277,7 @@ home: () => `
     </div>
   </div>
 
-  <div class="container"><div class="section">
+  <div class="dark-section"><div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div>
         <div class="eyebrow">Partner voices</div>
