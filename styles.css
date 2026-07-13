@@ -175,6 +175,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .sector-name{font-size:13px;font-weight:500;color:white;margin-bottom:4px;}
 .sector-hint{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;}
 .sector-arr{font-size:11px;color:var(--purple-mid);margin-top:8px;}
+.sector-card-light{background:var(--warm-white);border:1px solid var(--border-soft);border-radius:12px;padding:20px;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;}
+.sector-card-light:hover{background:white;transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.sector-icon-badge-light{width:40px;height:40px;border-radius:50%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background .2s,transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-em-light{display:inline-flex;color:var(--purple);}
+.sector-card-light:hover .sector-icon-badge-light{background:var(--purple-200);transform:scale(1.1) rotate(-4deg);}
+.sector-name-light{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.sector-hint-light{font-size:11px;color:var(--ink-light);line-height:1.4;}
+.sector-arr-light{font-size:11px;color:var(--purple);margin-top:8px;}
 /* ── ARROW / ICON NUDGE ON HOVER ── */
 .arr{display:inline-block;transition:transform .2s cubic-bezier(.455,.03,.515,.955);}
 .btn-primary:hover .arr,.btn-purple-outline:hover .arr,.link-arrow:hover .arr,.sector-card:hover .arr,.sol-card:hover .arr,.sector-page-card:hover .arr{transform:translateX(3px);}
