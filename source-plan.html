@@ -749,6 +749,128 @@ const SECTOR_IMAGES = {
   transport: 'transport.webp',
 };
 
+// Real case studies sourced from purple.ai/case-studies. Each image is the same
+// identity image purple.ai itself uses in that case study's hero (a company logo
+// for most; for Queen Elizabeth Hospital and Brussels South Charleroi Airport,
+// purple.ai uses a photo in that same slot).
+const CASE_STUDY_DATA = {
+  'newcastle': {
+    name: "Newcastle City Council", tag: "Public sector", image: "images/case-studies/newcastle.webp",
+    url: "https://www.purple.ai/en-gb/case-studies/newcastle-cc",
+    teaser: "Building one of the UK's most connected cities with free WiFi for local businesses.",
+    summary: "Newcastle's ageing public WiFi network could no longer serve a growing city, until a major dark-fibre investment linking 175 council sites gave the council a backbone to build on. Purple delivered the city's public WiFi layer, the landing platform, content filtering, security, and real-time analytics, covering major thoroughfares, markets, libraries, and museums. The result is free, single sign-on WiFi for residents, visitors, students, and 1,000 local businesses, plus 40 Purple Hubs bringing connectivity to social housing to tackle digital exclusion.",
+    stats: [["2.3m","logins since launch"],["88%","authentication rate"],["650k","seamless reconnections"],["1,000","local businesses connected"]]
+  },
+  'resorts-world-birmingham': {
+    name: "Resorts World Birmingham", tag: "Events & attractions", image: "images/case-studies/resorts-world-birmingham.webp",
+    url: "https://www.purple.ai/en-gb/case-studies/resorts-world-birmingham",
+    teaser: "Drove guest engagement and data capture while reducing manual marketing effort.",
+    summary: "Resorts World Birmingham had no way to tailor WiFi by venue or audience across its casinos, hotel, spa, and leisure venues, content management was manual, and the business couldn't capture usable marketing data. Purple deployed across 328 Cisco Meraki access points, using LogicFlow for automated audience segmentation and custom splash pages for seasonal campaigns, with data syncing directly into the CRM. Since the July 2022 launch, guest connectivity complaints have been virtually eliminated, and the marketing team saves days of manual effort per campaign.",
+    stats: [["1.7m","logins since launch"],["64%","marketing opt-in rate"],["630k","unique all-time users"],["328","Cisco Meraki access points"]]
+  },
+  'paignton-zoo': {
+    name: "Paignton Zoo", tag: "Events & attractions", image: "images/case-studies/paignton-zoo.png",
+    url: "https://www.purple.ai/en-gb/case-studies/paignton-zoo",
+    teaser: "Discovered valuable customer insights through WiFi analytics, live since late 2016.",
+    summary: "Paignton Zoo, Newquay Zoo, and Living Coasts wanted to improve the visitor experience with free WiFi and gather visitor data for marketing. Purple, deployed via local partner Acronyms, rolled out guest WiFi and a captive portal across all three venues, going live at Paignton Zoo in late 2016. The platform captures email addresses and demographics, age, gender, interests, and visit duration, at login, feeding an existing CRM for automated, targeted campaigns including vouchers and rewards.",
+    stats: [["26k","lines of active customer data"],["45k","schoolchildren visiting annually"],["~1hr","average WiFi session"]]
+  },
+  'pizza-express-uae': {
+    name: "Pizza Express UAE", tag: "Hospitality & leisure", image: "images/case-studies/pizza-express.png",
+    url: "https://www.purple.ai/en-gb/case-studies/pizza-express-uae",
+    teaser: "Fast, free, and secure guest WiFi while gathering valuable customer data.",
+    summary: "Pizza Express UAE's 14 restaurants had a basic guest WiFi setup with patchy coverage and frequent complaints, plus an outdated customer database of around 30,000 emails that wasn't driving sales. Purple, working with Cisco Meraki, Microsoft Office 365, and CDW, deployed guest WiFi with a captive portal, social login, and WiFi analytics across every UAE restaurant. The rollout let the marketing team collect real customer data and social logins, driving measurable engagement and revenue gains.",
+    stats: [["52%","increase in Facebook likes in a month"],["181%","increase in Facebook impressions"],["10k","new active customers captured"]]
+  },
+  'st-georges': {
+    name: "St George's Healthcare NHS Trust", tag: "Healthcare", image: "images/case-studies/st-georges.avif",
+    url: "https://www.purple.ai/en-gb/case-studies/st-georges-healthcare-trust",
+    teaser: "Seamless connectivity for patients and visitors at a major NHS hospital.",
+    summary: "NHS Digital mandated that all NHS sites in England have fully compliant WiFi by the end of 2018, meeting strict criteria for functionality, resilience, and security. Purple deployed a cloud-based software overlay onto St George's existing Cisco wireless network, providing quick guest authentication, content filtering, and enterprise-grade reporting, with custom NHS-branded splash pages. This let the Trust meet the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.",
+    stats: [["783k","WiFi sessions in year one"],["348k","unique patients added to CRM"],["5","custom splash pages"]]
+  },
+  'queen-elizabeth-hospital': {
+    name: "The Queen Elizabeth Hospital", tag: "Healthcare", image: "images/case-studies/queen-elizabeth-hospital.avif",
+    url: "https://www.purple.ai/en-gb/case-studies/the-queen-elizabeth-hospital",
+    teaser: "Took guest WiFi from a single coffee shop to every ward, live in two weeks.",
+    summary: "The Queen Elizabeth Hospital, part of The Queen Elizabeth Hospital King's Lynn NHS Trust, previously only offered WiFi in a privately run coffee shop at the front entrance, leaving wards and waiting rooms unconnected. In July 2016 the trust deployed Purple's WiFi and analytics solution onto 375 existing Cisco access points across the site, going live within roughly two weeks via a branded splash-page login. The rollout gave patients and visitors free guest WiFi across the 1,215-bed hospital, while giving the trust rich visitor analytics.",
+    stats: [["250k","visitors annually"],["60k","unique logins in year one"],["375","existing access points reused"],["2 wks","to go live"]]
+  },
+  'avanti-west-coast': {
+    name: "Avanti West Coast", tag: "Travel & transport", image: "images/case-studies/avanti-west-coast.avif",
+    url: "https://www.purple.ai/en-gb/case-studies/avanti-west-coast",
+    teaser: "Improved long-distance rail passenger connectivity.",
+    summary: "Avanti West Coast wanted to give passengers high-quality, free guest WiFi across its fleet and stations while using the connection to drive commercial value: loyalty sign-ups, upsell revenue, and passenger feedback. Purple deployed its guest WiFi and Micro-Survey platform across the network, and Avanti used the resulting login and survey data to test at-seat ordering and premium-upgrade promotions. The initiative delivered a large jump in survey response rates and a substantial measured return on investment.",
+    stats: [["463%","ROI"],["2.2m","unique visitors"],["10.5m","WiFi logins"],["95%","survey response rate"]]
+  },
+  'c2c': {
+    name: "c2c", tag: "Travel & transport", image: "images/case-studies/c2c.avif",
+    url: "https://www.purple.ai/en-gb/case-studies/c2c",
+    teaser: "Converted WiFi users into a verified, measurable return for the rail operator.",
+    summary: "c2c operates rail services between London Fenchurch Street, Southend, and Shoeburyness across 26 stations and 28 trains. The operator wanted a branded, easy guest WiFi experience that would boost loyalty smartcard subscriptions, cut third-party OTA booking fees, and collect passenger feedback via Purple's Micro-Survey tool. Over the first 9 months, 81,601 unique users logged into the WiFi 343,340 times, and the passenger data let c2c validate a high share of emails and drive strong marketing opt-ins, alongside meaningful savings on OTA fees.",
+    stats: [["151%","ROI"],["81,601","unique users in 9 months"],["£76,809","saved in OTA fees"],["78%","email validation rate"]]
+  },
+  'pizza-express': {
+    name: "Pizza Express", tag: "Hospitality & leisure", image: "images/case-studies/pizza-express.png",
+    url: "https://www.purple.ai/en-gb/case-studies/pizza-express",
+    teaser: "Free, fast, and secure guest WiFi across 470+ restaurants, enhancing the diner experience.",
+    summary: "As part of a digital transformation drive, Pizza Express wanted to boost adoption of its app, including Pay-at-table, and grow a richer CRM database across its restaurant estate. Purple installed its guest WiFi platform on 1,024 Meraki access points across 470+ UK and Northern Ireland restaurants, adding a captive portal and WiFi analytics so the network could capture demographic and behavioural data and support marketing campaigns, including prize draws, app-download promos, and free-pizza offers.",
+    stats: [["470+","restaurants"],["9.2m","customer visits in 2 years"],["3.7m","unique users added to CRM"],["42%","of sessions from new visitors"]]
+  },
+  'ags-airports': {
+    name: "AGS Airports", tag: "Travel & transport", image: "images/case-studies/ags-airports.png",
+    url: "https://www.purple.ai/en-gb/case-studies/ags-airports",
+    teaser: "Tiered bandwidth access turned WiFi into a revenue line across three airports.",
+    summary: "AGS Airports, Aberdeen, Glasgow, and Southampton, wanted a new revenue stream from its guest WiFi and struggled to capture legitimate passenger contact data, since airlines, not airports, normally own that relationship. Purple deployed a tiered WiFi model, a free first hour plus a paid premium tier with faster speed and longer access, across all three sites, alongside Purple's Verify tool to catch invalid or fake email addresses at login.",
+    stats: [["842%","ROI"],["£284k","additional premium WiFi revenue"],["5.6m","passengers connecting annually"]]
+  },
+  'harrods': {
+    name: "Harrods", tag: "Retail & commercial", image: "images/case-studies/harrods.png",
+    url: "https://www.purple.ai/en-gb/case-studies/harrods",
+    teaser: "Converted WiFi logins into a first-party data engine and a strong return on investment.",
+    summary: "Harrods has used Purple's guest WiFi since 2016 to deliver an on-brand, frictionless login experience while capturing rich customer data. A key goal was growing sign-ups to the Harrods Rewards loyalty programme, since members spend more than non-members. Purple's captive portal asked WiFi users a custom question about interest in Harrods Rewards and routed interested users to a pre-filled signup form, removing friction from enrolment.",
+    stats: [["57X","ROI"],["581k","unique logins per year"],["4,453","new Rewards sign-ups"],["3.6m","total contact database"]]
+  },
+  'mcdonalds-belgium': {
+    name: "McDonald's Belgium", tag: "Hospitality & leisure", image: "images/case-studies/mcdonalds.png",
+    url: "https://www.purple.ai/en-gb/case-studies/mcdonalds",
+    teaser: "Guest WiFi became a data and app-growth engine across 80 restaurants.",
+    summary: "McDonald's Belgium wanted to modernise the in-restaurant experience via digital transformation, capturing customer data, promoting campaigns, and driving downloads of its mobile app, while replacing an existing WiFi setup plagued by poor connections and frequent drop-offs. Purple, working alongside Cisco Meraki and Socialspot, rolled out a cloud-based guest WiFi and analytics platform, with login via OneClick or Facebook, across 80 restaurants over three months, using Purple's LogicFlow tool to serve language-specific promotional splash pages.",
+    stats: [["80","restaurants"],["4m","WiFi logins per year"],["2.5m","unique users captured"],["90%","fewer IT site visits"]]
+  },
+  'brussels-south-charleroi-airport': {
+    name: "Brussels South Charleroi Airport", tag: "Travel & transport", image: "images/case-studies/brussels-south-charleroi.png",
+    url: "https://www.purple.ai/en-gb/case-studies/brussels-south-charleroi-airport",
+    teaser: "Used in-venue surveys to enhance traveler experience and inform new flight routes.",
+    summary: "Brussels South Charleroi Airport needed a better way to understand passenger demographics and travel preferences so it could expand its flight route network and sharpen marketing, without relying on slow, costly manual survey methods. Purple deployed its Guest WiFi captive portal along with MicroSurvey and LogicFlow, enabling automated, real-time, multi-language passenger surveys delivered at no extra cost on top of the WiFi platform. The insights let the airport identify its top 5 most-wanted new destinations directly from passenger feedback, feeding into airline partnership discussions and new commercial routes.",
+    stats: [["10,630%","ROI"],["€2.7m","saved vs traditional surveys"],["689k","unique users over 2 years"],["86%","survey open rate"]]
+  },
+};
+
+function renderCaseStudyPage(slug) {
+  const c = CASE_STUDY_DATA[slug];
+  return `
+<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+  <div class="container" style="padding-top:72px;padding-bottom:56px;max-width:760px;">
+    <div class="tag">${c.tag}</div>
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:20px;margin-top:16px;">
+      <div style="width:72px;height:72px;border-radius:50%;background:white;border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+        <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;">
+      </div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:34px;margin:0;">${c.name}</h1>
+    </div>
+    <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;">${c.summary}</p>
+  </div>
+</div>
+<div class="container"><div class="section">
+  <div style="display:grid;grid-template-columns:repeat(${c.stats.length},1fr);gap:14px;margin-bottom:40px;">
+    ${c.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;text-align:center;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
+  </div>
+  <button class="btn-secondary" onclick="navigate('case-studies')">← Back to case studies</button>
+</div></div>
+`;
+}
+
 function renderSectorPage(slug) {
   const s = SECTOR_DATA[slug];
   const orderedProducts = PRODUCT_ORDER.slice().sort((a,b) => {
@@ -1481,6 +1603,20 @@ ${productFaq(GUEST_WIFI_FAQS)}
 // ═══════════════════════════════════════
 // CASE STUDIES
 // ═══════════════════════════════════════
+'case-study-newcastle': () => renderCaseStudyPage('newcastle'),
+'case-study-resorts-world-birmingham': () => renderCaseStudyPage('resorts-world-birmingham'),
+'case-study-paignton-zoo': () => renderCaseStudyPage('paignton-zoo'),
+'case-study-pizza-express-uae': () => renderCaseStudyPage('pizza-express-uae'),
+'case-study-st-georges': () => renderCaseStudyPage('st-georges'),
+'case-study-queen-elizabeth-hospital': () => renderCaseStudyPage('queen-elizabeth-hospital'),
+'case-study-avanti-west-coast': () => renderCaseStudyPage('avanti-west-coast'),
+'case-study-c2c': () => renderCaseStudyPage('c2c'),
+'case-study-pizza-express': () => renderCaseStudyPage('pizza-express'),
+'case-study-ags-airports': () => renderCaseStudyPage('ags-airports'),
+'case-study-harrods': () => renderCaseStudyPage('harrods'),
+'case-study-mcdonalds-belgium': () => renderCaseStudyPage('mcdonalds-belgium'),
+'case-study-brussels-south-charleroi-airport': () => renderCaseStudyPage('brussels-south-charleroi-airport'),
+
 'case-studies': () => `
 <div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
   <div class="container" style="padding-top:72px;padding-bottom:56px;max-width:720px;">
@@ -1491,26 +1627,17 @@ ${productFaq(GUEST_WIFI_FAQS)}
 </div>
 <div class="container"><div class="section">
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    ${[
-      ['Public sector','Newcastle City Council','Building one of the UK\'s most connected cities with free WiFi for local businesses.','2.3m','logins'],
-      ['Events & attractions','Resorts World Birmingham','Drove guest engagement and data capture while reducing manual marketing effort.',null,null],
-      ['Events & attractions','Paignton Zoo','Discovered valuable customer insights through WiFi analytics, live since late 2016.',null,null],
-      ['Hospitality & leisure','Pizza Express UAE','Fast, free, and secure guest WiFi while gathering valuable customer data.',null,null],
-      ['Healthcare','St George\'s Healthcare NHS Trust','Seamless connectivity for patients and visitors at a major NHS hospital.',null,null],
-      ['Healthcare','The Queen Elizabeth Hospital','Took guest WiFi from a single coffee shop to every ward, live in two weeks.','250k','sessions / yr'],
-      ['Travel & transport','Avanti West Coast','Improved long-distance rail passenger connectivity.','463%','ROI'],
-      ['Travel & transport','c2c','Converted WiFi users into a verified, measurable return for the rail operator.','151%','ROI'],
-      ['Hospitality & leisure','Pizza Express','Free, fast, and secure guest WiFi across 470+ restaurants, enhancing the diner experience.','470+','restaurants'],
-      ['Travel & transport','AGS Airports','Tiered bandwidth access turned WiFi into a revenue line across three airports.','842%','ROI'],
-      ['Retail & commercial','Harrods','Converted WiFi logins into a first-party data engine and a strong return on investment.','57X','ROI'],
-      ['Hospitality & leisure','McDonald\'s Belgium','Guest WiFi became a data and app-growth engine across 80 restaurants.','90%','fewer IT visits'],
-      ['Travel & transport','Brussels South Charleroi Airport','Used in-venue surveys to enhance traveler experience and inform new flight routes.',null,null],
-    ].map(([tag,name,snippet,stat,label])=>`
-      <div class="card" style="display:flex;flex-direction:column;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;">${tag}</div>
-        <div class="card-title" style="font-size:17px;">${name}</div>
-        <p class="card-body" style="flex:1;">${snippet}</p>
-        ${stat ? `<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;">${stat}</div><div style="font-size:12px;color:var(--ink-light);">${label}</div></div>` : ''}
+    ${Object.entries(CASE_STUDY_DATA).map(([slug,c])=>`
+      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-${slug}')">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          </div>
+          <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">${c.tag}</div>
+        </div>
+        <div class="card-title" style="font-size:17px;">${c.name}</div>
+        <p class="card-body" style="flex:1;">${c.teaser}</p>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;">${c.stats[0][0]}</div><div style="font-size:12px;color:var(--ink-light);">${c.stats[0][1]}</div></div>
       </div>`).join('')}
   </div>
 </div></div>

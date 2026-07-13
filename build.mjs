@@ -119,6 +119,19 @@ const ROUTES = [
   ["guest-wifi", "guest-wifi.html", "Guest WiFi | Purple Partners"],
   ["guest-wifi-plans", "guest-wifi-plans.html", "Guest WiFi plans | Purple Partners"],
   ["case-studies", "case-studies.html", "Case studies | Purple Partners"],
+  ["case-study-newcastle", "case-study-newcastle.html", "Newcastle City Council | Purple Partners"],
+  ["case-study-resorts-world-birmingham", "case-study-resorts-world-birmingham.html", "Resorts World Birmingham | Purple Partners"],
+  ["case-study-paignton-zoo", "case-study-paignton-zoo.html", "Paignton Zoo | Purple Partners"],
+  ["case-study-pizza-express-uae", "case-study-pizza-express-uae.html", "Pizza Express UAE | Purple Partners"],
+  ["case-study-st-georges", "case-study-st-georges.html", "St George's Healthcare NHS Trust | Purple Partners"],
+  ["case-study-queen-elizabeth-hospital", "case-study-queen-elizabeth-hospital.html", "The Queen Elizabeth Hospital | Purple Partners"],
+  ["case-study-avanti-west-coast", "case-study-avanti-west-coast.html", "Avanti West Coast | Purple Partners"],
+  ["case-study-c2c", "case-study-c2c.html", "c2c | Purple Partners"],
+  ["case-study-pizza-express", "case-study-pizza-express.html", "Pizza Express | Purple Partners"],
+  ["case-study-ags-airports", "case-study-ags-airports.html", "AGS Airports | Purple Partners"],
+  ["case-study-harrods", "case-study-harrods.html", "Harrods | Purple Partners"],
+  ["case-study-mcdonalds-belgium", "case-study-mcdonalds-belgium.html", "McDonald's Belgium | Purple Partners"],
+  ["case-study-brussels-south-charleroi-airport", "case-study-brussels-south-charleroi-airport.html", "Brussels South Charleroi Airport | Purple Partners"],
   ["speak-to-an-expert", "speak-to-an-expert.html", "Speak to an expert | Purple Partners"],
   ["multi-tenant", "multi-tenant.html", "Multi-tenant WiFi | Purple Partners"],
   ["verify", "verify.html", "Verify | Purple Partners"],
@@ -229,5 +242,30 @@ const blogDownloads = Object.entries(BLOG_IMAGES).map(async ([local, url]) => {
   console.log("Downloaded blog/" + local, `(${buf.length} bytes)`);
 });
 await Promise.all(blogDownloads);
+
+// ── 9. Download real case-study logo/identity images from purple.ai ─────
+mkdirSync(join(DIST, "images", "case-studies"), { recursive: true });
+const CASE_STUDY_IMAGES = {
+  "newcastle.webp": "https://www.purple.ai/images/newcastle-city-council-logo.webp",
+  "resorts-world-birmingham.webp": "https://www.purple.ai/images/resorts-world-birmingham-logo.webp",
+  "paignton-zoo.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c72f9e16892136ecf2e_paignton-zoo.png",
+  "pizza-express.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6f84ecd8912fe9d96b_pizzaexpressblack.png",
+  "st-georges.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c702c47f6f72d625151_st-georges-hosp-charity.avif",
+  "queen-elizabeth-hospital.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c7031b6c17b9964fa71_the-queen-elizabeth-hospital.avif",
+  "avanti-west-coast.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6fb683316babd53cfd_avanti_west_coast_logo.svg_-1.avif",
+  "c2c.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6f3f82a39b8a0a3923_c2c_logo.avif",
+  "ags-airports.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6e99613b001ade9b02_ags-airports.png",
+  "harrods.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6c3ba728317fc89d24_harrods.png",
+  "mcdonalds.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6cafa2a2c570d8cddd_mcdonalds-logo-yellow.png",
+  "brussels-south-charleroi.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6c00a614f9cea99a53_brussels-south-charleroi-airport.png",
+};
+const caseStudyDownloads = Object.entries(CASE_STUDY_IMAGES).map(async ([local, url]) => {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  writeFileSync(join(DIST, "images", "case-studies", local), buf);
+  console.log("Downloaded case-studies/" + local, `(${buf.length} bytes)`);
+});
+await Promise.all(caseStudyDownloads);
 
 console.log(`\nBuilt ${ROUTES.length} pages into dist/.`);
