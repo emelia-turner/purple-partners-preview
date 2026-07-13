@@ -56,7 +56,7 @@
         <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
         <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
         <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
-        <div class="dd-item" onclick="location.href='tools.html#case-studies'">Case studies</div>
+        <div class="dd-item" onclick="navigate('case-studies')">Case studies</div>
       </div>
     </div>
 
@@ -81,23 +81,67 @@
 </nav>
 
 <div id="page-content">
-<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
-  <div class="container" style="padding-top:72px;padding-bottom:56px;max-width:760px;">
-    <div class="tag">Hospitality & leisure</div>
-    <div style="display:flex;align-items:center;gap:20px;margin-bottom:20px;margin-top:16px;">
-      <div style="width:72px;height:72px;border-radius:50%;background:white;border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-        <img src="images/case-studies/pizza-express.png" alt="Pizza Express" style="width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;">
+<div style="background:var(--purple-deep);padding:64px 0 0;overflow:hidden;">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--purple-mid);">Hospitality & leisure</div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;">
+      <div style="padding-bottom:48px;">
+        <h1 style="font-family:'Poppins',sans-serif;font-size:38px;color:white;margin-bottom:18px;">Pizza Express</h1>
+        <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px;max-width:520px;">As part of a digital transformation drive, Pizza Express wanted to boost adoption of its app, including Pay-at-table, and grow a richer CRM database across its restaurant estate. Purple installed its guest WiFi platform on 1,024 Meraki access points across 470+ UK and Northern Ireland restaurants, adding a captive portal and WiFi analytics so the network could capture demographic and behavioural data and support marketing campaigns, including prize draws, app-download promos, and free-pizza offers.</p>
+        <a href="https://www.purple.ai/en-gb/case-studies/pizza-express" target="_blank" style="font-size:13px;font-weight:500;color:var(--purple-200);">Read the original case study on purple.ai <span class="arr">→</span></a>
       </div>
-      <h1 style="font-family:'Poppins',sans-serif;font-size:34px;margin:0;">Pizza Express</h1>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-xl) var(--radius-xl) 0 0;padding:28px;position:relative;">
+        <div style="width:56px;height:56px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden;">
+          <img src="images/case-studies/pizza-express.png" alt="Pizza Express" style="width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;">
+        </div>
+        <div style="font-family:'Poppins',sans-serif;font-size:40px;color:white;line-height:1;margin-bottom:6px;">470+</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);">restaurants</div>
+      </div>
     </div>
-    <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;">As part of a digital transformation drive, Pizza Express wanted to boost adoption of its app, including Pay-at-table, and grow a richer CRM database across its restaurant estate. Purple installed its guest WiFi platform on 1,024 Meraki access points across 470+ UK and Northern Ireland restaurants, adding a captive portal and WiFi analytics so the network could capture demographic and behavioural data and support marketing campaigns, including prize draws, app-download promos, and free-pizza offers.</p>
   </div>
 </div>
 <div class="container"><div class="section">
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px;">
-    <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;text-align:center;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">470+</div><div style="font-size:12px;color:var(--ink-light);">restaurants</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;text-align:center;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">9.2m</div><div style="font-size:12px;color:var(--ink-light);">customer visits in 2 years</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;text-align:center;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">3.7m</div><div style="font-size:12px;color:var(--ink-light);">unique users added to CRM</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;text-align:center;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">42%</div><div style="font-size:12px;color:var(--ink-light);">of sessions from new visitors</div></div>
+  <div class="eyebrow">The results</div>
+  <h2 class="section-title-sm" style="margin-bottom:28px;">What Purple delivered.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px;">
+    <div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">470+</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">restaurants</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">9.2m</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">customer visits in 2 years</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">3.7m</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">unique users added to CRM</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">42%</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">of sessions from new visitors</div></div>
   </div>
-  <button class="btn-secondary" onclick="navigate('case-studies')">← Back to case studies</button>
+  <div class="eyebrow">Explore more</div>
+  <h2 class="section-title-sm" style="margin-bottom:24px;">More case studies.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
+    
+      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-pizza-express-uae')">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="images/case-studies/pizza-express.png" alt="Pizza Express UAE" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          </div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Hospitality & leisure</div>
+        </div>
+        <div class="card-title" style="font-size:15px;">Pizza Express UAE</div>
+        <p class="card-body" style="flex:1;font-size:13px;">Fast, free, and secure guest WiFi while gathering valuable customer data.</p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-mcdonalds-belgium')">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="images/case-studies/mcdonalds.png" alt="McDonald's Belgium" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          </div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Hospitality & leisure</div>
+        </div>
+        <div class="card-title" style="font-size:15px;">McDonald's Belgium</div>
+        <p class="card-body" style="flex:1;font-size:13px;">Guest WiFi became a data and app-growth engine across 80 restaurants.</p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-newcastle')">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="images/case-studies/newcastle.webp" alt="Newcastle City Council" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          </div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Public sector</div>
+        </div>
+        <div class="card-title" style="font-size:15px;">Newcastle City Council</div>
+        <p class="card-body" style="flex:1;font-size:13px;">Building one of the UK's most connected cities with free WiFi for local businesses.</p>
+      </div>
+  </div>
+  <button class="btn-secondary" onclick="navigate('case-studies')">← Back to all case studies</button>
 </div></div>
 
 <div class="cta-band">
