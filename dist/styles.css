@@ -143,6 +143,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-dark-frame .dash-wrap{border-radius:10px;}
 .hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease;}
 .hero-float-badge:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,.45);}
+.hero-float-badge-accent{background:var(--purple);border-color:rgba(255,255,255,.25);}
 .hero-float-badge span{font-size:12.5px;font-weight:600;color:white;}
 .hero-float-badge-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
