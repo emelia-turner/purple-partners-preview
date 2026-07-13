@@ -126,6 +126,25 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .bar{flex:1;border-radius:2px 2px 0 0;background:var(--purple-mid);opacity:.55;}
 .bar.hi{background:var(--purple);opacity:1;}
 
+/* Dark hero (home page) */
+.hero-dark-wrap{background:radial-gradient(ellipse 900px 480px at 50% 0%,rgba(116,88,253,.28),transparent 65%),var(--purple-deep);padding:64px 0 0;overflow:hidden;}
+.hero-dark{max-width:640px;margin:0 auto;text-align:center;}
+.hero-dark-logo{height:28px;width:auto;margin-bottom:32px;}
+.hero-dark-title{font-family:'Poppins',sans-serif;font-size:44px;line-height:1.15;color:white;margin-bottom:20px;}
+.hero-dark-title em{font-style:normal;color:var(--purple-mid);}
+.hero-dark-sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:32px;}
+.hero-dark-sub strong{color:white;font-weight:600;}
+.hero-dark-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:56px;}
+.hero-dark-actions .btn-secondary{color:white;border-color:rgba(255,255,255,.3);}
+.hero-dark-actions .btn-secondary:hover{background:rgba(255,255,255,.1);color:white;}
+.hero-dark-frame-wrap{position:relative;max-width:900px;margin:0 auto;}
+.hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;}
+.hero-dark-frame-cam{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);margin:0 auto 16px;}
+.hero-dark-frame .dash-wrap{border-radius:10px;}
+.hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;}
+.hero-float-badge span{font-size:12.5px;font-weight:600;color:white;}
+.hero-float-badge-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
 /* ── LOGO STRIP (sliding marquee) ── */
 .logo-strip{border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:26px 0;display:flex;align-items:center;gap:32px;}
 .ls-label{font-size:11px;color:var(--ink-light);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;min-width:110px;}
