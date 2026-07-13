@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync } fro
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
+import { createHash } from "node:crypto";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SRC = readFileSync(join(__dirname, "source-plan.html"), "utf8");
@@ -21,6 +22,10 @@ mkdirSync(join(DIST, "sectors"), { recursive: true });
 
 // ── 1. Extract the shared pieces from the source file ──────────────────
 const styleBlock = SRC.slice(SRC.indexOf("<style>") + 7, SRC.indexOf("</style>"));
+const hash = (s) => createHash("sha256").update(s).digest("hex").slice(0, 8);
+const CSS_HASH = hash(styleBlock);
+const SITE_JS = readFileSync(join(__dirname, "assets", "site.js"), "utf8");
+const JS_HASH = hash(SITE_JS);
 
 const bodyStart = SRC.indexOf("<body>") + 6;
 const pageContentMarker = '<!-- PAGE CONTENT -->';
@@ -173,7 +178,7 @@ function page(slug, title) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=${CSS_HASH}">
 </head>
 <body data-page="${slug}">
 ${navHtml}
@@ -181,7 +186,7 @@ ${navHtml}
 <div id="page-content">${content}</div>
 <div id="footer-wrap">${footer}</div>
 
-<script src="site.js"></script>
+<script src="site.js?v=${JS_HASH}"></script>
 </body>
 </html>
 `;
