@@ -898,8 +898,8 @@ function renderCaseStudyPage(slug) {
         <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;max-width:480px;">${c.teaser}</p>
       </div>
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-xl);padding:28px;">
-        <div style="width:56px;height:56px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden;">
-          <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;">
+        <div style="width:88px;height:88px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden;">
+          <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;">
         </div>
         <div style="font-family:'Poppins',sans-serif;font-size:40px;color:white;line-height:1;margin-bottom:6px;">${headline[0]}</div>
         <div style="font-size:13px;color:rgba(255,255,255,.5);">${headline[1]}</div>
@@ -926,8 +926,8 @@ function renderCaseStudyPage(slug) {
     ${related.map(([rslug,r])=>`
       <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-${rslug}')">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-            <img src="${r.image}" alt="${r.name}" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="${r.image}" alt="${r.name}" style="width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;">
           </div>
           <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">${r.tag}</div>
         </div>
@@ -1700,8 +1700,8 @@ ${productFaq(GUEST_WIFI_FAQS)}
     ${Object.entries(CASE_STUDY_DATA).map(([slug,c])=>`
       <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-${slug}')">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div style="width:44px;height:44px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-            <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box;">
+          <div style="width:60px;height:60px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
+            <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box;">
           </div>
           <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">${c.tag}</div>
         </div>
