@@ -155,7 +155,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 /* ── DARK SECTION ── */
 .dark-section{background:var(--purple-deep);padding:80px 0;}
 .dark-section .eyebrow{color:var(--purple-mid);}
-.dark-section .section-title{color:white;}
+.dark-section .section-title,.dark-section .section-title-sm{color:white;}
 .dark-section .section-sub{color:rgba(255,255,255,.5);}
 
 /* ── SECTORS GRID ── */
