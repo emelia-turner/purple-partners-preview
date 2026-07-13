@@ -185,6 +185,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .sector-name{font-size:13px;font-weight:500;color:white;margin-bottom:4px;}
 .sector-hint{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;}
 .sector-arr{font-size:11px;color:var(--purple-mid);margin-top:8px;}
+.sector-card-light{background:var(--warm-white);border:1px solid var(--border-soft);border-radius:12px;padding:20px;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;}
+.sector-card-light:hover{background:white;transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.sector-icon-badge-light{width:40px;height:40px;border-radius:50%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background .2s,transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-em-light{display:inline-flex;color:var(--purple);}
+.sector-card-light:hover .sector-icon-badge-light{background:var(--purple-200);transform:scale(1.1) rotate(-4deg);}
+.sector-name-light{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.sector-hint-light{font-size:11px;color:var(--ink-light);line-height:1.4;}
+.sector-arr-light{font-size:11px;color:var(--purple);margin-top:8px;}
 /* ── ARROW / ICON NUDGE ON HOVER ── */
 .arr{display:inline-block;transition:transform .2s cubic-bezier(.455,.03,.515,.955);}
 .btn-primary:hover .arr,.btn-purple-outline:hover .arr,.link-arrow:hover .arr,.sector-card:hover .arr,.sol-card:hover .arr,.sector-page-card:hover .arr{transform:translateX(3px);}
@@ -883,7 +891,6 @@ const CASE_STUDY_DATA = {
 
 function renderCaseStudyPage(slug) {
   const c = CASE_STUDY_DATA[slug];
-  const headline = c.stats[0];
   const related = Object.entries(CASE_STUDY_DATA)
     .filter(([s]) => s !== slug)
     .sort((a,b) => (a[1].tag === c.tag ? -1 : 0) - (b[1].tag === c.tag ? -1 : 0))
@@ -892,19 +899,11 @@ function renderCaseStudyPage(slug) {
 <div style="background:var(--purple-deep);padding:64px 0;">
   <div class="container">
     <div class="eyebrow" style="color:var(--purple-mid);">${c.tag}</div>
-    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;">
-      <div>
-        <h1 style="font-family:'Poppins',sans-serif;font-size:38px;color:white;margin-bottom:16px;">${c.name}</h1>
-        <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;max-width:480px;">${c.teaser}</p>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-xl);padding:28px;">
-        <div style="width:88px;height:88px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden;">
-          <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box;">
-        </div>
-        <div style="font-family:'Poppins',sans-serif;font-size:40px;color:white;line-height:1;margin-bottom:6px;">${headline[0]}</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);">${headline[1]}</div>
-      </div>
+    <div style="width:72px;height:72px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden;">
+      <img src="${c.image}" alt="${c.name}" style="width:100%;height:100%;object-fit:contain;padding:9px;box-sizing:border-box;">
     </div>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:38px;color:white;margin-bottom:16px;">${c.name}</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;max-width:600px;">${c.teaser}</p>
   </div>
 </div>
 <div class="container"><div class="section">
@@ -1117,23 +1116,23 @@ app: () => `
 `,
 
 home: () => `
-<div style="background:var(--purple-deep)">
+<div style="background:var(--off-white)">
   <div class="container">
     <div class="hero">
       <div class="hero-left">
-        <h1 style="color:white;">The missing piece that helps you win <em>bigger deals.</em></h1>
-        <p class="hero-sub" style="color:rgba(255,255,255,.6);">WiFi hardware is commoditized. The way people connect to it is changing fast. Purple gives you the platform that turns every connection into recurring revenue.</p>
+        <h1>The missing piece that helps you win <em>bigger deals.</em></h1>
+        <p class="hero-sub">WiFi hardware is commoditized. The way people connect to it is changing fast. Purple gives you the platform that turns every connection into recurring revenue.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="navigate('home')">Become a partner</button>
-          <button class="btn-secondary" onclick="navigate('speak-to-an-expert')" style="color:white;border-color:rgba(255,255,255,.25);">
+          <button class="btn-secondary" onclick="navigate('speak-to-an-expert')">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1"/><path d="M5 4L8.5 6.5 5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
             Speak to an expert
           </button>
         </div>
         <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
-          <div class="stat-cell" style="border-color:rgba(255,255,255,.12);"><div class="stat-num" style="color:white;">80k+</div><div class="stat-lbl" style="color:rgba(255,255,255,.45);">live venues</div></div>
-          <div class="stat-cell" style="border-color:rgba(255,255,255,.12);"><div class="stat-num" style="color:white;">1.9m</div><div class="stat-lbl" style="color:rgba(255,255,255,.45);">daily engaged users</div></div>
-          <div class="stat-cell" style="border-color:rgba(255,255,255,.12);"><div class="stat-num" style="color:white;">90+</div><div class="stat-lbl" style="color:rgba(255,255,255,.45);">countries</div></div>
+          <div class="stat-cell"><div class="stat-num">80k+</div><div class="stat-lbl">live venues</div></div>
+          <div class="stat-cell"><div class="stat-num">1.9m</div><div class="stat-lbl">daily engaged users</div></div>
+          <div class="stat-cell"><div class="stat-num">90+</div><div class="stat-lbl">countries</div></div>
         </div>
       </div>
       <div class="hero-right">
@@ -1170,7 +1169,7 @@ home: () => `
   </div>
 
   <div class="container" style="margin-top:48px;">
-    <div class="logo-strip logo-strip-dark">
+    <div class="logo-strip">
       <div class="ls-label">Trusted partners</div>
       <div class="ls-marquee">
         <div class="ls-track">
@@ -1250,25 +1249,23 @@ home: () => `
     </div>
   </div>
 
-  <div class="dark-section">
-    <div class="container">
-      <div class="eyebrow">Sectors</div>
-      <h2 class="section-title">Sell into the right conversation.</h2>
-      <p class="section-sub">Every sector has a different buyer, a different pain point, and a different entry angle.</p>
-      <div class="sectors-grid">
-        ${[[icon('hospitality',18),'Hospitality','Hotels, restaurants, pubs. Guest WiFi + POS integrations.','sector-hospitality'],[icon('retail',18),'Retail','Footfall analytics, return rates, first-party data.','sector-retail'],[icon('healthcare',18),'Healthcare','GDPR compliance, staff WiFi, patient guest access.','sector-healthcare'],[icon('education',18),'Education','IdP sync, Shield for safeguarding, BYOD management.','sector-education'],[icon('residential',18),'Residential & MDU','BTR, student, aparthotels. Per-unit private networks.','sector-residential'],[icon('enterprise',18),'Enterprise','Zero trust, JML automation, NAC replacement.','sector-enterprise'],[icon('transport',18),'Transport & venues','Airports, arenas, stations. Scale + compliance.','sector-transport']].map(([e,n,h,slug])=>`
-          <div class="sector-card" onclick="navigate('${slug}')">
-            <div class="sector-icon-badge"><span class="sector-em">${e}</span></div>
-            <div class="sector-name">${n}</div>
-            <div class="sector-hint">${h}</div>
-            <div class="sector-arr">Explore ›</div>
-          </div>`).join('')}
-        <div class="sector-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;" onclick="navigate('sectors')">
-          <div style="font-size:11px;color:rgba(255,255,255,.25);text-align:center;">Browse all<br>sectors ›</div>
-        </div>
+  <div class="container"><div class="section">
+    <div class="eyebrow">Sectors</div>
+    <h2 class="section-title">Sell into the right conversation.</h2>
+    <p class="section-sub">Every sector has a different buyer, a different pain point, and a different entry angle.</p>
+    <div class="sectors-grid">
+      ${[[icon('hospitality',18),'Hospitality','Hotels, restaurants, pubs. Guest WiFi + POS integrations.','sector-hospitality'],[icon('retail',18),'Retail','Footfall analytics, return rates, first-party data.','sector-retail'],[icon('healthcare',18),'Healthcare','GDPR compliance, staff WiFi, patient guest access.','sector-healthcare'],[icon('education',18),'Education','IdP sync, Shield for safeguarding, BYOD management.','sector-education'],[icon('residential',18),'Residential & MDU','BTR, student, aparthotels. Per-unit private networks.','sector-residential'],[icon('enterprise',18),'Enterprise','Zero trust, JML automation, NAC replacement.','sector-enterprise'],[icon('transport',18),'Transport & venues','Airports, arenas, stations. Scale + compliance.','sector-transport']].map(([e,n,h,slug])=>`
+        <div class="sector-card-light" onclick="navigate('${slug}')">
+          <div class="sector-icon-badge-light"><span class="sector-em-light">${e}</span></div>
+          <div class="sector-name-light">${n}</div>
+          <div class="sector-hint-light">${h}</div>
+          <div class="sector-arr-light">Explore ›</div>
+        </div>`).join('')}
+      <div class="sector-card-light" style="display:flex;align-items:center;justify-content:center;border-style:dashed;" onclick="navigate('sectors')">
+        <div style="font-size:11px;color:var(--ink-light);text-align:center;">Browse all<br>sectors ›</div>
       </div>
     </div>
-  </div>
+  </div></div>
 
   <div class="container"><div class="section">
     <div class="eyebrow">Partner benefits</div>
