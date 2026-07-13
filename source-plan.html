@@ -151,7 +151,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;}
 .hero-dark-frame-cam{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);margin:0 auto 16px;}
 .hero-dark-frame .dash-wrap{border-radius:10px;}
-.hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;}
+.hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease;}
+.hero-float-badge:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,.45);}
 .hero-float-badge span{font-size:12.5px;font-weight:600;color:white;}
 .hero-float-badge-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
@@ -1151,15 +1152,23 @@ home: () => `
     </div>
 
     <div class="hero-dark-frame-wrap">
-      <div class="hero-float-badge" style="top:10%;left:-28px;">
+      <div class="hero-float-badge" style="top:4%;left:-28px;">
         <div class="hero-float-badge-icon" style="background:var(--teal);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="white" stroke-width="1.4"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="white" stroke-width="1.4"/></svg></div>
         <span>80k+ live venues</span>
       </div>
-      <div class="hero-float-badge" style="top:40%;right:-28px;">
+      <div class="hero-float-badge" style="top:22%;right:-28px;">
         <div class="hero-float-badge-icon" style="background:var(--coral);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="6" r="2.5" stroke="white" stroke-width="1.3"/><path d="M2 13c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/><circle cx="12" cy="6.5" r="2" stroke="white" stroke-width="1.3"/><path d="M10.5 9.2c1.8.3 3 1.7 3 3.8" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <span>1.9m daily engaged users</span>
       </div>
-      <div class="hero-float-badge" style="bottom:8%;left:-28px;">
+      <div class="hero-float-badge" style="top:38%;left:-28px;">
+        <div class="hero-float-badge-icon" style="background:var(--purple-dark);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11.5 6 7.5 9 10 14 4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 4h3.5v3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span>12% increased win rate</span>
+      </div>
+      <div class="hero-float-badge" style="bottom:20%;right:-28px;">
+        <div class="hero-float-badge-icon" style="background:var(--teal);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8.5" r="6" stroke="white" stroke-width="1.4"/><path d="M8 5v3.5l2.5 1.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 1.5h4" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <span>20% faster time to close</span>
+      </div>
+      <div class="hero-float-badge" style="bottom:4%;left:-28px;">
         <div class="hero-float-badge-icon" style="background:var(--purple);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M4 8a7 7 0 0 1 10 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M6.2 10.4a3.8 3.8 0 0 1 5.6 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="white"/></svg></div>
         <span>90+ countries</span>
       </div>
