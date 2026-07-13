@@ -586,13 +586,13 @@ const SECTOR_DATA = {
     icon: icon('hospitality', 14),
     name: "Hospitality",
     tag: "Hospitality",
-    hook: "The free WiFi line item your hospitality customers can finally make money from.",
-    sub: "Hotels, restaurants, pubs, and cafes already pay for WiFi. Purple turns it from a cost center into a branded, data-capturing channel, with the Purple app keeping every returning guest reconnecting without friction.",
+    hook: "Hotel guest WiFi that builds loyalty from the first login.",
+    sub: "Hotels, restaurants, pubs, and cafes already pay for WiFi. Purple turns it into a branded loyalty engine and a zero-risk staff network, with the Purple app keeping every returning guest reconnecting without friction.",
     quickWins: ["Branded captive portal live in days, not months","Every login becomes a consented, reachable contact","Returning guests reconnect automatically through the app"],
     challenges: [
-      { title: "An unmanaged network doing nothing for the business", body: "Most venues already have WiFi. What they don't have is a branded login, a way to capture data from the people already on site, or a reason to think of WiFi as anything other than a cost.", key: "guest-wifi" },
-      { title: "Data that never reaches a usable database", body: "Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.", key: "verify" },
-      { title: "No reason for a guest to come back", body: "Once a visitor opts in through the Purple app, reconnection on every future visit is automatic, and that repeat recognition is what turns a one-off connection into a loyalty channel.", key: "guest-wifi" }
+      { title: "High staff turnover, zero credential risk", body: "Housekeeping, F&B, front desk, when someone leaves, their hotel WiFi access goes with them. No IT ticket needed. Each role gets the right access from day one, and directory sync means leavers are locked out automatically, no manual process, no security gap.", key: "staff-wifi" },
+      { title: "Turn your hotel guest WiFi into a loyalty engine", body: "A branded portal isn't just a login screen. It's where guests join the rewards programme, leave a review, and get upsold on F&B, automatically, every stay. Business travellers and leisure guests connect once and stay connected throughout their stay.", key: "guest-wifi" },
+      { title: "Data that never reaches a usable database", body: "Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
     proof: {
@@ -611,13 +611,13 @@ const SECTOR_DATA = {
     icon: icon('retail', 14),
     name: "Retail",
     tag: "Retail",
-    hook: "Turn footfall into a first-party database your customers actually own.",
+    hook: "Retail WiFi that turns footfall into customer data and repeat sales.",
     sub: "Third-party cookies are no longer reliable and attribution from physical visits is harder than ever. Purple gives retail customers a consented, first-party data set built from every guest WiFi login, with the Purple app powering opt-in and repeat recognition.",
     quickWins: ["A consented, first-party database built from every login","Loyalty sign-up routed straight from the splash page","Repeat shoppers recognized automatically in-app"],
     challenges: [
-      { title: "No reliable way to collect consented data at scale", body: "Third-party cookies are no longer reliable, and there's no dependable way to capture first-party data from people physically in a store. Guest WiFi closes that gap at the point of connection.", key: "guest-wifi" },
-      { title: "An attribution gap between online and in-store", body: "Marketing teams struggle to prove that spend is working when there's no link between a campaign and a physical visit. A clean, validated WiFi database gives them that link.", key: "verify" },
-      { title: "The same message sent to everyone", body: "Without real segmentation, every shopper gets the same email. Purple's Guest WiFi plans build the behavioral data needed to personalize, with the Purple app recognizing returning shoppers automatically.", key: "guest-wifi" }
+      { title: "Know exactly who your customers are", body: "Purple captures opted-in profile and demographic data the moment shoppers connect, age, gender, interests, and visit behavior, so a customer can build a single customer view and market to it.", key: "guest-wifi" },
+      { title: "See how shoppers move through your stores", body: "Purple tracks the in-store journey from entrance to exit, footfall, dwell time, busiest zones, and visit frequency, so a customer can optimize layout, staffing, and promotions around real behavior.", key: "guest-wifi" },
+      { title: "Understand how customers really feel", body: "Purple captures feedback and reviews on connection, satisfaction, loyalty, and recommendations, so a customer can act on sentiment and improve the experience store by store.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
     proof: {
@@ -633,13 +633,13 @@ const SECTOR_DATA = {
     icon: icon('healthcare', 14),
     name: "Healthcare",
     tag: "Healthcare",
-    hook: "Secure, compliant WiFi for staff and patients, without adding to IT's workload.",
+    hook: "Healthcare WiFi that improves patient experience and protects patient data.",
     sub: "Hospitals, GP surgeries, and care homes need staff and guest networks that satisfy auditors and don't create more tickets. Purple overlays onto existing infrastructure and proves itself in weeks, with the Purple app handling identity for staff and reconnection for patients and visitors.",
     quickWins: ["Staff access tied to identity, revoked automatically on leaving","A branded guest network live for patients and visitors in weeks","Audit-ready filtering reports for governors and regulators"],
     challenges: [
-      { title: "Responsible for a network with no visibility over who's on it", body: "IT teams are accountable for a network anyone can connect to, with real exposure at audit if it isn't fully compliant. Staff WiFi ties access to identity through the Purple app, so the joiner-mover-leaver problem is solved automatically.", key: "staff-wifi" },
-      { title: "Patients and visitors with no proper guest network", body: "Many sites still only offer WiFi in a single area, like a coffee shop, leaving wards and waiting rooms without coverage. A branded guest network changes that without new hardware.", key: "guest-wifi" },
-      { title: "No evidence to show auditors and governors", body: "NHS Digital's Data Security and Protection Toolkit expects demonstrable network security measures. Shield gives a visible layer of protection with exportable reports built for exactly that conversation.", key: "shield" }
+      { title: "Patient WiFi that earns better satisfaction scores", body: "A seamless and secure WiFi connection for patients and visitors is crucial for satisfaction, slow or unreliable internet leads to frustration and negative reviews. Guest WiFi offers easy onboarding, high-speed access, and content filtering to ensure a positive digital experience throughout a stay.", key: "guest-wifi" },
+      { title: "A secure network for staff and medical devices", body: "Healthcare facilities rely on a multitude of connected devices, from staff tablets to critical medical equipment. Staff WiFi ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.", key: "staff-wifi" },
+      { title: "Compliance-ready security that protects patient data", body: "NHS Digital's Data Security and Protection Toolkit expects demonstrable network security measures. Shield gives a visible layer of protection with network segmentation and exportable reports built for exactly that conversation.", key: "shield" }
     ],
     recommended: ["staff-wifi","guest-wifi","shield"],
     proof: {
@@ -658,7 +658,7 @@ const SECTOR_DATA = {
     icon: icon('education', 14),
     name: "Education",
     tag: "Education",
-    hook: "Give every student their own private network, without flooding the helpdesk on move-in day.",
+    hook: "Guest WiFi for education, without flooding the helpdesk on move-in day.",
     sub: "Schools, colleges, and universities need staff access that's identity-led and student accommodation that doesn't generate a queue of tickets. The Purple app provisions both, from staff sign-in to a student's private network bubble.",
     quickWins: ["Staff sign-in tied to the identity provider, not a shared password","A private network bubble per student, set up in the app","Browserless devices, consoles, TVs, connect without a portal"],
     challenges: [
@@ -679,13 +679,13 @@ const SECTOR_DATA = {
     icon: icon('residential', 14),
     name: "Residential & MDU",
     tag: "Residential & MDU",
-    hook: "A private network bubble for every resident, without 500 router configs.",
-    sub: "BTR developments, aparthotels, and multi-dwelling units need WiFi that feels like home broadband. Residents provision and manage their connection through the Purple app, with no operator having to manage a router per unit.",
+    hook: "Build to Rent and student accommodation WiFi that residents expect from day one.",
+    sub: "BTR developments, student halls, and aparthotels need WiFi that feels like home broadband and is ready the day residents move in. Residents provision and manage their connection through the Purple app, with no operator having to manage a router per unit.",
     quickWins: ["Every resident gets a true private network, not a shared one","Browserless devices supported via iPSK, no portal needed","A new ancillary revenue stream from tiered, paid access"],
     challenges: [
-      { title: "A shared building network with no privacy between units", body: "Without per-unit isolation, every resident's traffic shares the same risk and the same congestion. Multi-tenant WiFi gives each unit a genuine Private Area Network instead.", key: "multi-tenant" },
-      { title: "Captive portals that frustrate residents on every reconnect", body: "Residents shouldn't have to log in again every time they come home. Once a network pass is provisioned in the Purple app, devices reconnect automatically, every time.", key: "multi-tenant" },
-      { title: "Per-unit routers that are expensive and interfere with each other", body: "Managing 500 individual router configurations doesn't scale. iPSK on one unified fabric replaces that entirely, and opens the door to a paid premium tier as an ancillary revenue stream.", key: "multi-tenant" }
+      { title: "Resident WiFi that's ready the day they move in", body: "Residents expect fast, reliable WiFi as a standard utility. Providing a high-quality, secure, and easy-to-use internet service across an entire property can be complex and costly to manage, especially at peak move-in times in high-density halls.", key: "multi-tenant" },
+      { title: "A secure staff network separate from residents", body: "Staff need a secure and reliable WiFi network to manage the property efficiently, from maintenance requests to resident communication. This network must be separate from resident and guest networks to ensure security and performance.", key: "staff-wifi" },
+      { title: "Guest WiFi for lobbies, gyms, and co-working areas", body: "Prospective tenants, contractors, and visitors in common areas like lobbies, gyms, and co-working spaces all require internet access. A separate, secure guest network is crucial for security and to ensure the resident experience isn't compromised.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi"],
     proof: {
@@ -700,13 +700,13 @@ const SECTOR_DATA = {
     icon: icon('enterprise', 14),
     name: "Enterprise",
     tag: "Enterprise",
-    hook: "Zero trust at the WiFi layer, with the leaver problem solved for good.",
+    hook: "Corporate office WiFi that's secure, seamless, and enterprise-ready.",
     sub: "Office campuses and co-working spaces are still managing a shared WiFi password and offboarding leavers by hand. Staff WiFi removes both, with the Purple app as the engine behind every connection.",
     quickWins: ["No shared passwords to rotate, share, or forget","Access revoked automatically the moment someone leaves the IdP","Built on the same platform already trusted by 80,000 venues"],
     challenges: [
-      { title: "A shared password that never changes", body: "Ex-staff often still have network access long after they've left, because revoking a shared password means resetting it for everyone. Identity-based access through the Purple app removes that entirely.", key: "staff-wifi" },
-      { title: "Constant turnover that makes access a daily burden", body: "Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.", key: "staff-wifi" },
-      { title: "No separation between staff and guest traffic", body: "Visitors and personnel often share a network with no real boundary between them. Staff WiFi and Guest WiFi run as genuinely separate layers, each provisioned through the Purple app.", key: "guest-wifi" }
+      { title: "Secure, fast staff WiFi that keeps teams productive", body: "Employees need a secure, fast network that just works: reliable speeds even on busy floors, unauthorized devices blocked with locked-down access, and clear visibility and central control of network usage.", key: "staff-wifi" },
+      { title: "Branded guest WiFi that keeps visitors off your corporate network", body: "Visitors, clients, and contractors need easy access that never touches the corporate network. Guests onboard in seconds with a simple branded login, with guest traffic fully isolated from corporate systems.", key: "guest-wifi" },
+      { title: "Constant turnover that makes access a daily burden", body: "Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.", key: "staff-wifi" }
     ],
     recommended: ["staff-wifi"],
     proof: {
@@ -721,13 +721,13 @@ const SECTOR_DATA = {
     icon: icon('transport', 14),
     name: "Transport & venues",
     tag: "Transport & venues",
-    hook: "Scale and compliance, proven at some of the busiest venues in the world.",
+    hook: "Airport and onboard train WiFi that lifts revenue and passenger satisfaction.",
     sub: "Airports, train operators, arenas, and stadiums need WiFi that handles huge passenger and fan volumes while still delivering clean, usable data, with the Purple app keeping frequent travelers reconnecting without friction.",
     quickWins: ["Tiered free and premium access that scales to millions of connections","Every email validated, so campaign data is never wasted","Frequent visitors reconnect automatically through the app"],
     challenges: [
-      { title: "High footfall, but no booking-stage data capture", body: "Unlike airlines, most transport and venue operators have no equivalent of a booking record. Guest WiFi captures that data at the point of connection instead, at volume.", key: "guest-wifi" },
-      { title: "One-size-fits-all connectivity for very different audiences", body: "Fans, shoppers, and corporate partners all need a different experience from the same network. Logic-based journeys route each group differently from the same WiFi platform.", key: "guest-wifi" },
-      { title: "No way to prove the value of a sponsorship or partnership", body: "Without engagement data, it's hard to prove what a partnership is actually worth. Validated, first-party data from every login gives operators something concrete to show partners.", key: "verify" }
+      { title: "Secure staff WiFi across a sprawling terminal estate", body: "From check-in desks to baggage handling and retail, staff depend on secure, reliable connectivity across a large and complex estate, and every device and contractor needs the right level of access, with role-based access and clear visibility of usage across every terminal.", key: "staff-wifi" },
+      { title: "Passenger WiFi that drives concession spend and dwell-time insight", body: "Passengers expect to connect in seconds and stay online through security, the lounge, and the gate. Purple connects passengers fast, builds rich passenger profiles from every login, and lets operators serve targeted, location-aware offers that lift concession and retail spend.", key: "guest-wifi" },
+      { title: "A connected journey passengers actually notice", body: "Passengers expect a seamless and connected journey, with high-speed WiFi, real-time travel information, and on-board entertainment. A branded captive portal can be used to share travel information and promotions, turning every journey into a revenue and engagement opportunity.", key: "guest-wifi" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
     proof: {
