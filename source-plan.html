@@ -1857,23 +1857,8 @@ home: () => `
           </div>`).join('')}
       </div>
     </div>
-    <div class="prod-visual" style="position:sticky;top:80px;">
-      <div class="prod-vis-badge">192 active units</div>
-      <div class="prod-vis-title">Riverside Quarter, BTR development</div>
-      <div class="prod-vis-sub">240 units · Building-wide managed WiFi</div>
-      <div class="prod-vis-row">
-        <div class="prod-vis-stat"><div class="pvs-val">192</div><div class="pvs-lbl">Active units</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">847</div><div class="pvs-lbl">Connected devices</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Unit isolation</div></div>
-      </div>
-      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;">
-        <div style="font-weight:500;color:var(--ink);margin-bottom:8px;font-size:12px;">Unit overview</div>
-        ${[['Unit 14A','J. Kimura, 4 devices','Active'],['Unit 22B','S. Osei, 7 devices','Active'],['Unit 31C','Vacant','Provisioned']].map(([u,r,s])=>`
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border-soft);">
-            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">${u}</div><div style="font-size:11px;color:var(--ink-light);">${r}</div></div>
-            <div style="font-size:10px;padding:2px 7px;border-radius:20px;background:${s==='Active'?'var(--teal-light)':'var(--purple-light)'};color:${s==='Active'?'var(--teal)':'var(--purple)'};">${s}</div>
-          </div>`).join('')}
-      </div>
+    <div style="position:sticky;top:80px;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="A resident viewing their WiFi passes in the Purple app" style="width:100%;border-radius:var(--radius-xl);display:block;">
     </div>
   </div>
 </div>
