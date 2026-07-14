@@ -205,49 +205,6 @@
   </div>
 </div></div>
 
-<div class="container"><div class="section">
-  <div class="eyebrow">FAQ</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">Frequently asked questions.</h2>
-  <div class="faq-list">
-    
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>What is staff WiFi and how is it different from guest WiFi?</span>
-          <span class="faq-icon"><span></span><span></span></span>
-        </button>
-        <div class="faq-a"><p>Staff WiFi is an employee-only wireless network authenticated per-user, isolated from the guest and payment networks. Where guest WiFi optimizes for low-friction sign-up, staff WiFi optimizes for identity - each employee authenticates with their own credential via 802.1X against a RADIUS server, and their access can be revoked the moment they leave the company without touching anyone else on the network.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Do I need my own RADIUS server?</span>
-          <span class="faq-icon"><span></span><span></span></span>
-        </button>
-        <div class="faq-a"><p>No. Purple operates the RADIUS server as a cloud service - RADIUS-as-a-Service - with multi-region failover and a 99.999% uptime SLA. Your access points point at Purple, Purple validates credentials against your identity provider, and no one on the customer's team operates RADIUS infrastructure.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Can I revoke one employee's WiFi access without disrupting others?</span>
-          <span class="faq-icon"><span></span><span></span></span>
-        </button>
-        <div class="faq-a"><p>Yes, instantly. Because staff WiFi is per-user, disabling the employee in the identity provider revokes their WiFi access at the next authentication attempt. Compare this to a shared WiFi password, where one departing employee forces a company-wide password rotation.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Does Purple staff WiFi work with existing access points?</span>
-          <span class="faq-icon"><span></span><span></span></span>
-        </button>
-        <div class="faq-a"><p>Yes. Purple runs on any enterprise-grade access point that speaks RADIUS - Cisco Meraki, Cisco Catalyst, Aruba, Ruckus, Juniper Mist, Ubiquiti UniFi, Cambium, Extreme, Fortinet FortiAP, and more. No hardware replacement, just SSID reconfiguration to authenticate via Purple.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Does Purple staff WiFi work across multiple sites and locations?</span>
-          <span class="faq-icon"><span></span><span></span></span>
-        </button>
-        <div class="faq-a"><p>Yes - multi-site estates are where Purple fits best. Because the cloud RADIUS service and identity-provider integration are centralized, customers roll out the same passwordless 802.1X policy across every site from a single dashboard, with no per-site RADIUS hardware to ship or maintain.</p></div>
-      </div>
-  </div>
-</div></div>
-
 <div class="cta-band">
   <h2>Ready to add Purple to your portfolio?</h2>
   <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
