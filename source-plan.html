@@ -236,6 +236,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .why-num{font-family:'Poppins',sans-serif;font-size:44px;color:var(--purple);line-height:1;margin-bottom:6px;}
 .why-lbl{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;}
 .why-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;}
+.why-grid-dark .why-num{color:var(--purple-mid);}
+.why-grid-dark .why-lbl{color:white;}
+.why-grid-dark .why-desc{color:rgba(255,255,255,.5);}
 
 /* ── QUOTE CARD ── */
 .quote-card{background:linear-gradient(135deg,var(--purple),var(--purple-deep) 75%);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
@@ -1312,17 +1315,19 @@ home: () => `
     </div>
   </div></div>
 
-  <div class="container"><div class="section">
-    <div class="eyebrow">Partner benefits</div>
-    <h2 class="section-title">Numbers that close deals.</h2>
-    <p class="section-sub" style="margin-bottom:48px;">Independent research across our partner network.</p>
-    <div class="why-grid">
-      <div><div class="why-num">12%</div><div class="why-lbl">Increased win rate</div><div class="why-desc">Partners consistently win more deals when Purple is in the mix.</div></div>
-      <div><div class="why-num">15x</div><div class="why-lbl">Return per £1 of Purple sold</div><div class="why-desc">Hardware, installation, managed services, Purple unlocks it all.</div></div>
-      <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
-      <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
+  <div class="dark-section">
+    <div class="container">
+      <div class="eyebrow">Partner benefits</div>
+      <h2 class="section-title">Numbers that close deals.</h2>
+      <p class="section-sub" style="margin-bottom:48px;">Independent research across our partner network.</p>
+      <div class="why-grid why-grid-dark">
+        <div><div class="why-num">12%</div><div class="why-lbl">Increased win rate</div><div class="why-desc">Partners consistently win more deals when Purple is in the mix.</div></div>
+        <div><div class="why-num">15x</div><div class="why-lbl">Return per £1 of Purple sold</div><div class="why-desc">Hardware, installation, managed services, Purple unlocks it all.</div></div>
+        <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
+        <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
+      </div>
     </div>
-  </div></div>
+  </div>
 
   <div class="container"><div class="section">
     <!-- VISUAL BREAK: hardware logos -->
