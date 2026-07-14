@@ -297,6 +297,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .mktg-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .mktg-folder{display:flex;align-items:center;justify-content:center;padding:12px;}
 .mktg-folder svg{max-width:380px;}
+.mktg-asset-card{transition:transform .15s ease,box-shadow .15s ease;}
+.mktg-asset-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(1,22,56,0.08);}
 .mktg-tile{background:white;border:1px solid var(--border-soft);border-radius:12px;padding:20px;transition:transform .15s,box-shadow .15s;}
 .mktg-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
 .mktg-tile-icon{transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
@@ -2310,7 +2312,7 @@ marketing: () => `
 <div class="container">
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:64px;margin-top:56px;">
     ${[['Asset library','Logos, product imagery, one-pagers, and presentation templates, all ready to co-brand.','folder',{bg:'var(--purple-light)',fg:'var(--purple)'}],['Co-branded templates','Email, social, digital ads, and print templates with your logo alongside Purple.','template',{bg:'var(--teal-light)',fg:'var(--teal)'}],['Campaign-in-a-box','Sector-specific campaign packs for hospitality, retail, education, healthcare, and more.','megaphone',{bg:'var(--coral-light)',fg:'var(--coral)'}],['Bespoke support','Need something specific? Request custom creative, landing pages, or event collateral.','gear',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}]].map(([t,d,iconKey,c])=>`
-      <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:22px;">
+      <div class="mktg-asset-card" style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:22px;">
         <div style="width:40px;height:40px;border-radius:10px;background:${c.bg};display:flex;align-items:center;justify-content:center;margin-bottom:14px;">${MKTG_ICONS[iconKey](c.fg)}</div>
         <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px;">${t}</div>
         <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;">${d}</div>
