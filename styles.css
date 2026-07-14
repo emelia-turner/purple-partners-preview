@@ -287,6 +287,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .mktg-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .mktg-folder{display:flex;align-items:center;justify-content:center;padding:12px;}
 .mktg-folder svg{max-width:380px;}
+.mktg-asset-card{transition:transform .15s ease,box-shadow .15s ease;}
+.mktg-asset-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(1,22,56,0.08);}
 .mktg-tile{background:white;border:1px solid var(--border-soft);border-radius:12px;padding:20px;transition:transform .15s,box-shadow .15s;}
 .mktg-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
 .mktg-tile-icon{transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
