@@ -109,7 +109,7 @@ const NAV_MAP = {
   'benefits': 'Benefits',
   'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
   'sector-education': 'Sectors', 'sector-residential': 'Sectors', 'sector-enterprise': 'Sectors', 'sector-transport': 'Sectors',
-  'tools': 'Tools', 'marketing': 'Marketing support', 'blog': 'Blog',
+  'tools': 'Tools', 'marketing': 'Tools', 'blog': 'Blog',
 };
 
 document.addEventListener('DOMContentLoaded', () => {
