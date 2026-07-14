@@ -152,7 +152,7 @@ const ROUTES = [
   ["sector-transport", "sector-transport.html", "Transport & venues | Purple Partners"],
   ["tools", "tools.html", "Partner tools | Purple Partners"],
   ["marketing", "marketing.html", "Marketing support | Purple Partners"],
-  ["call-out-day", "call-out-day.html", "Book a Call Out Day | Purple Partners"],
+  ["call-out-day", "call-out-day.html", "Partner Call-Out Days | Purple Partners"],
   ["blog", "blog.html", "Partner blog | Purple Partners"],
 ];
 
