@@ -81,6 +81,15 @@ function submitExpertForm() {
   document.getElementById('expert-success').style.display = 'block';
 }
 
+function submitNewsletter(btnEl) {
+  btnEl.closest('.newsletter-cta').classList.add('subscribed');
+}
+
+function submitCallOutDay() {
+  document.getElementById('call-out-day-form').style.display = 'none';
+  document.getElementById('call-out-day-success').style.display = 'block';
+}
+
 // ── FAQ ACCORDION ─────────────────────────────────────────────────
 function toggleFaq(btnEl) {
   const item = btnEl.closest('.faq-item');
@@ -109,7 +118,7 @@ const NAV_MAP = {
   'benefits': 'Benefits',
   'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
   'sector-education': 'Sectors', 'sector-residential': 'Sectors', 'sector-enterprise': 'Sectors', 'sector-transport': 'Sectors',
-  'tools': 'Tools', 'marketing': 'Tools', 'blog': 'Blog',
+  'tools': 'Tools', 'marketing': 'Tools', 'call-out-day': 'Tools', 'blog': 'Blog',
 };
 
 document.addEventListener('DOMContentLoaded', () => {

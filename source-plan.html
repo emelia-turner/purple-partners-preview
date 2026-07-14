@@ -299,6 +299,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .mktg-folder svg{max-width:380px;}
 .mktg-asset-card{transition:transform .15s ease,box-shadow .15s ease;}
 .mktg-asset-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(1,22,56,0.08);}
+
+/* Newsletter CTA (scattered across several pages) */
+.newsletter-cta{background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.newsletter-cta-text{flex:1;min-width:240px;}
+.newsletter-cta-form{flex-shrink:0;}
+.newsletter-form-state{display:flex;gap:10px;}
+.newsletter-input{padding:11px 14px;font-size:13px;border:1px solid var(--border-soft);border-radius:var(--radius);min-width:220px;font-family:'Poppins',sans-serif;}
+.newsletter-success-state{display:none;align-items:center;gap:8px;}
+.newsletter-cta.subscribed .newsletter-form-state{display:none;}
+.newsletter-cta.subscribed .newsletter-success-state{display:flex;}
 .mktg-tile{background:white;border:1px solid var(--border-soft);border-radius:12px;padding:20px;transition:transform .15s,box-shadow .15s;}
 .mktg-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
 .mktg-tile-icon{transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
@@ -476,6 +486,7 @@ textarea{resize:vertical;min-height:90px;}
         <div class="dd-item" onclick="location.href='tools.html#calculator'">Price calculator</div>
         <div class="dd-item" onclick="navigate('case-studies')">Case studies</div>
         <div class="dd-item" onclick="navigate('marketing')">Marketing support</div>
+        <div class="dd-item" onclick="navigate('call-out-day')">Book a Call Out Day</div>
       </div>
     </div>
 
@@ -582,6 +593,32 @@ const MKTG_ICONS = {
   megaphone: (c) => `<svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M2 6.2v3.6h1.8l6 2.7V3.5l-6 2.7H2Z" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 6.3a2.1 2.1 0 0 1 0 3.4" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/></svg>`,
   gear: (c) => `<svg width="20" height="20" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.3" stroke="${c}" stroke-width="1.3"/><path d="M8 2.5v1.6M8 11.9v1.6M13.5 8h-1.6M4.1 8H2.5M11.7 4.3l-1.1 1.1M5.4 10.6l-1.1 1.1M11.7 11.7l-1.1-1.1M5.4 5.4 4.3 4.3" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/></svg>`,
 };
+
+// Reusable "join our newsletter" CTA, dropped into several pages across the
+// site. submitNewsletter() (in site.js) swaps state via closest('.newsletter-cta')
+// rather than fixed IDs, so this can safely appear more than once per page.
+function renderNewsletterCTA() {
+  return `
+<div class="container"><div class="section">
+  <div class="newsletter-cta">
+    <div class="newsletter-cta-text">
+      <div class="eyebrow" style="margin-bottom:6px;">Stay in the loop</div>
+      <h3 style="font-family:'Poppins',sans-serif;font-size:22px;margin-bottom:6px;">Join our newsletter</h3>
+      <p style="font-size:13px;color:var(--ink-mid);margin-bottom:0;">Product announcements, new features, and partner updates, straight to your inbox.</p>
+    </div>
+    <div class="newsletter-cta-form">
+      <div class="newsletter-form-state">
+        <input type="email" class="newsletter-input" placeholder="you@company.com">
+        <button class="btn-primary" onclick="submitNewsletter(this)">Subscribe</button>
+      </div>
+      <div class="newsletter-success-state">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-size:13px;color:var(--ink);">You're subscribed, watch your inbox.</span>
+      </div>
+    </div>
+  </div>
+</div></div>`;
+}
 
 // Reusable FAQ accordion for individual product pages, sharing the same
 // .faq-item/.faq-q/.faq-a markup and toggleFaq() JS as the home page.
@@ -1781,6 +1818,7 @@ ${productFaq(GUEST_WIFI_FAQS)}
       </div>`).join('')}
   </div>
 </div></div>
+${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2051,6 +2089,7 @@ benefits: () => `
     </div>
   </div>
 </div></div>
+${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2095,6 +2134,7 @@ sectors: () => `
       </div>`).join('')}
   </div>
 </div></div>
+${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2319,6 +2359,15 @@ marketing: () => `
       </div>`).join('')}
   </div>
 
+  <div style="background:linear-gradient(135deg,var(--purple-light),white 65%);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:64px;">
+    <div style="max-width:520px;">
+      <div class="eyebrow" style="margin-bottom:6px;">In-person support</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:24px;margin-bottom:8px;">Book a Call Out Day.</h2>
+      <p style="font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:0;">Get a dedicated Purple product specialist on-site or virtual for the day, backing up a customer demo, trade show stand, or sales push.</p>
+    </div>
+    <button class="btn-primary" onclick="navigate('call-out-day')">Book a Call Out Day →</button>
+  </div>
+
   <div style="margin-bottom:80px;">
     <div style="max-width:640px;margin-bottom:28px;">
       <h2 style="font-family:'Poppins',sans-serif;font-size:28px;margin-bottom:10px;">Request marketing support</h2>
@@ -2372,6 +2421,63 @@ marketing: () => `
 `,
 
 // ═══════════════════════════════════════
+// CALL OUT DAY
+// ═══════════════════════════════════════
+'call-out-day': () => `
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:72px;padding-bottom:56px;">
+    <div>
+      <div class="tag">Marketing support</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:40px;margin-bottom:16px;">Book a Call Out Day.</h1>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Bring a dedicated Purple product specialist on-site, or virtual, for the day. Use it to back up a customer demo, staff a trade show stand, or run a targeted sales push with your team.</p>
+      <div class="feature-list" style="margin-top:0;">
+        ${[['A dedicated product specialist','A Purple expert joins your team in person or virtually for the full day, no extra cost to you.'],['Live product demos','Real-time demos of Staff WiFi, Guest WiFi, Multi-tenant WiFi, and the Purple app, tailored to the customer in front of you.'],['Co-branded materials','Presentation decks, one-pagers, and signage branded with your logo alongside Purple\'s.'],['Warm-lead follow-up','Every lead generated on the day is logged and followed up jointly by your team and ours.']].map(([t,d])=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>${t}</strong>${d}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="form-wrap" id="call-out-day-form-wrap">
+      <div id="call-out-day-form">
+        <div class="form-title">Book a Call Out Day</div>
+        <div class="form-sub">For registered partners only. Not yet a partner? <span style="color:var(--purple);cursor:pointer;" onclick="navigate('home')">Apply here.</span></div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Preferred date</label><input type="date"></div>
+          <div class="form-field"><label>Format</label>
+            <select><option value="">Select...</option><option>In-person</option><option>Virtual</option></select>
+          </div>
+          <div class="form-field"><label>Event type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Customer demo day</option>
+              <option>Trade show / exhibition</option>
+              <option>Sales team training</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Brief / additional details</label>
+            <textarea placeholder="Tell us about the customer or event, and what you're hoping to achieve..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitCallOutDay()">Request a Call Out Day</button>
+      </div>
+      <div class="form-success" id="call-out-day-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Request received</h3>
+        <p>Your partner manager will follow up to confirm details and lock in a date.</p>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+
+// ═══════════════════════════════════════
 // BLOG
 // ═══════════════════════════════════════
 blog: () => `
@@ -2406,6 +2512,7 @@ blog: () => `
   </div>
   <p id="blog-empty" style="display:none;font-size:14px;color:var(--ink-light);">No posts in this category yet.</p>
 </div></div>
+${renderNewsletterCTA()}
 `,
 
 };
@@ -2477,7 +2584,7 @@ function renderCTA() {
 
 function updateActiveNav(page) {
   document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
-  const map = {'app':'WiFi','staff-wifi':'WiFi','guest-wifi':'WiFi','multi-tenant':'WiFi','verify':'WiFi','shield':'WiFi','benefits':'Benefits','sectors':'Sectors','sector-hospitality':'Sectors','sector-retail':'Sectors','sector-healthcare':'Sectors','sector-education':'Sectors','sector-residential':'Sectors','sector-enterprise':'Sectors','sector-transport':'Sectors','tools':'Tools','marketing':'Tools','blog':'Blog'};
+  const map = {'app':'WiFi','staff-wifi':'WiFi','guest-wifi':'WiFi','multi-tenant':'WiFi','verify':'WiFi','shield':'WiFi','benefits':'Benefits','sectors':'Sectors','sector-hospitality':'Sectors','sector-retail':'Sectors','sector-healthcare':'Sectors','sector-education':'Sectors','sector-residential':'Sectors','sector-enterprise':'Sectors','sector-transport':'Sectors','tools':'Tools','marketing':'Tools','call-out-day':'Tools','blog':'Blog'};
   if (map[page]) {
     document.querySelectorAll('.nav-link').forEach(el => {
       if (el.textContent.trim().startsWith(map[page])) el.classList.add('active');
