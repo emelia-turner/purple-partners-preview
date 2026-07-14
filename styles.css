@@ -289,6 +289,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .mktg-folder svg{max-width:380px;}
 .mktg-asset-card{transition:transform .15s ease,box-shadow .15s ease;}
 .mktg-asset-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(1,22,56,0.08);}
+
+/* Newsletter CTA (scattered across several pages) */
+.newsletter-cta{background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.newsletter-cta-text{flex:1;min-width:240px;}
+.newsletter-cta-form{flex-shrink:0;}
+.newsletter-form-state{display:flex;gap:10px;}
+.newsletter-input{padding:11px 14px;font-size:13px;border:1px solid var(--border-soft);border-radius:var(--radius);min-width:220px;font-family:'Poppins',sans-serif;}
+.newsletter-success-state{display:none;align-items:center;gap:8px;}
+.newsletter-cta.subscribed .newsletter-form-state{display:none;}
+.newsletter-cta.subscribed .newsletter-success-state{display:flex;}
 .mktg-tile{background:white;border:1px solid var(--border-soft);border-radius:12px;padding:20px;transition:transform .15s,box-shadow .15s;}
 .mktg-tile:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
 .mktg-tile-icon{transition:transform .2s cubic-bezier(.34,1.56,.64,1);}

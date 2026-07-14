@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Brussels South Charleroi Airport | Purple Partners</title>
+<title>Book a Call Out Day | Purple Partners</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=e910ea05">
 </head>
-<body data-page="case-study-brussels-south-charleroi-airport">
+<body data-page="call-out-day">
 <!-- NAV -->
 <nav id="main-nav">
  <div class="container nav-inner">
@@ -83,66 +83,69 @@
 </nav>
 
 <div id="page-content">
-<div style="background:var(--purple-deep);padding:64px 0;">
-  <div class="container">
-    <div class="eyebrow" style="color:var(--purple-mid);">Travel & transport</div>
-    <div style="width:72px;height:72px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-top:14px;margin-bottom:20px;overflow:hidden;">
-      <img src="images/case-studies/brussels-south-charleroi.png" alt="Brussels South Charleroi Airport" style="width:100%;height:100%;object-fit:contain;padding:9px;box-sizing:border-box;">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding-top:72px;padding-bottom:56px;">
+    <div>
+      <div class="tag">Marketing support</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:40px;margin-bottom:16px;">Book a Call Out Day.</h1>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Bring a dedicated Purple product specialist on-site, or virtual, for the day. Use it to back up a customer demo, staff a trade show stand, or run a targeted sales push with your team.</p>
+      <div class="feature-list" style="margin-top:0;">
+        
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>A dedicated product specialist</strong>A Purple expert joins your team in person or virtually for the full day, no extra cost to you.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Live product demos</strong>Real-time demos of Staff WiFi, Guest WiFi, Multi-tenant WiFi, and the Purple app, tailored to the customer in front of you.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Co-branded materials</strong>Presentation decks, one-pagers, and signage branded with your logo alongside Purple's.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text"><strong>Warm-lead follow-up</strong>Every lead generated on the day is logged and followed up jointly by your team and ours.</div>
+          </div>
+      </div>
     </div>
-    <h1 style="font-family:'Poppins',sans-serif;font-size:38px;color:white;margin-bottom:16px;">Brussels South Charleroi Airport</h1>
-    <p style="font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;max-width:600px;">Used in-venue surveys to enhance traveler experience and inform new flight routes.</p>
+    <div class="form-wrap" id="call-out-day-form-wrap">
+      <div id="call-out-day-form">
+        <div class="form-title">Book a Call Out Day</div>
+        <div class="form-sub">For registered partners only. Not yet a partner? <span style="color:var(--purple);cursor:pointer;" onclick="location.href='https://onboarding.purple.ai/partner'">Apply here.</span></div>
+        <div class="form-grid">
+          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
+          <div class="form-field"><label>Preferred date</label><input type="date"></div>
+          <div class="form-field"><label>Format</label>
+            <select><option value="">Select...</option><option>In-person</option><option>Virtual</option></select>
+          </div>
+          <div class="form-field"><label>Event type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Customer demo day</option>
+              <option>Trade show / exhibition</option>
+              <option>Sales team training</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full"><label>Brief / additional details</label>
+            <textarea placeholder="Tell us about the customer or event, and what you're hoping to achieve..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitCallOutDay()">Request a Call Out Day</button>
+      </div>
+      <div class="form-success" id="call-out-day-success">
+        <div class="form-success-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Request received</h3>
+        <p>Your partner manager will follow up to confirm details and lock in a date.</p>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container"><div class="section">
-  <div class="eyebrow">The story</div>
-  <h2 class="section-title-sm" style="margin-bottom:28px;">Challenge, solution, result.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
-    <div class="card"><div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">Challenge</div><p class="card-body" style="margin-bottom:0;">Brussels South Charleroi Airport needed a better way to understand passenger demographics and travel preferences so it could expand its flight route network and sharpen marketing, without relying on slow, costly manual survey methods.</p></div>
-    <div class="card"><div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;">Solution</div><p class="card-body" style="margin-bottom:0;">Purple deployed its Guest WiFi captive portal along with MicroSurvey and LogicFlow, enabling automated, real-time, multi-language passenger surveys delivered at no extra cost on top of the WiFi platform.</p></div>
-    <div class="card"><div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Result</div><p class="card-body" style="margin-bottom:0;">The insights let the airport identify its top 5 most-wanted new destinations directly from passenger feedback, feeding into airline partnership discussions and new commercial routes.</p></div>
-  </div>
-  <div class="eyebrow">The numbers</div>
-  <h2 class="section-title-sm" style="margin-bottom:28px;">What Purple delivered.</h2>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px;">
-    <div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">10,630%</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">ROI</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">€2.7m</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">saved vs traditional surveys</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">689k</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">unique users over 2 years</div></div><div style="background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:20px;"><div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;margin-bottom:8px;">86%</div><div style="font-size:12px;color:var(--ink-light);line-height:1.4;">survey open rate</div></div>
-  </div>
-  <div class="eyebrow">Explore more</div>
-  <h2 class="section-title-sm" style="margin-bottom:24px;">More case studies.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
-    
-      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-avanti-west-coast')">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div style="width:56px;height:56px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-            <img src="images/case-studies/avanti-west-coast.avif" alt="Avanti West Coast" style="width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;">
-          </div>
-          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Travel & transport</div>
-        </div>
-        <div class="card-title" style="font-size:15px;">Avanti West Coast</div>
-        <p class="card-body" style="flex:1;font-size:13px;">Improved long-distance rail passenger connectivity.</p>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-c2c')">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div style="width:56px;height:56px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-            <img src="images/case-studies/c2c.avif" alt="c2c" style="width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;">
-          </div>
-          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Travel & transport</div>
-        </div>
-        <div class="card-title" style="font-size:15px;">c2c</div>
-        <p class="card-body" style="flex:1;font-size:13px;">Converted WiFi users into a verified, measurable return for the rail operator.</p>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;cursor:pointer;" onclick="navigate('case-study-ags-airports')">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div style="width:56px;height:56px;border-radius:50%;background:var(--warm-white);border:1px solid var(--border-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;">
-            <img src="images/case-studies/ags-airports.png" alt="AGS Airports" style="width:100%;height:100%;object-fit:contain;padding:7px;box-sizing:border-box;">
-          </div>
-          <div style="font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);">Travel & transport</div>
-        </div>
-        <div class="card-title" style="font-size:15px;">AGS Airports</div>
-        <p class="card-body" style="flex:1;font-size:13px;">Tiered bandwidth access turned WiFi into a revenue line across three airports.</p>
-      </div>
-  </div>
-  <button class="btn-secondary" onclick="navigate('case-studies')">← Back to all case studies</button>
-</div></div>
 
 <div class="cta-band">
   <h2>Ready to add Purple to your portfolio?</h2>
