@@ -31,7 +31,8 @@ img{max-width:100%;}
 ::-webkit-scrollbar-thumb{background:var(--purple-mid);border-radius:3px;}
 
 /* ── NAV ── */
-nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;padding:0 48px;gap:0;}
+nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:60px;}
+.nav-inner{display:flex;align-items:center;height:100%;gap:0;}
 .nav-logo{display:flex;align-items:center;gap:8px;margin-right:36px;cursor:pointer;}
 .logo-mark{width:28px;height:28px;background:var(--purple);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-text{font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;color:var(--ink);}
@@ -427,6 +428,7 @@ textarea{resize:vertical;min-height:90px;}
 
 <!-- NAV -->
 <nav id="main-nav">
+ <div class="container nav-inner">
   <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
     <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
     <span class="brand-divider"></span>
@@ -492,6 +494,7 @@ textarea{resize:vertical;min-height:90px;}
     <button class="btn-ghost" onclick="navigate('home')">Register a deal</button>
     <button class="btn-solid" onclick="navigate('home')">Become a partner</button>
   </div>
+ </div>
 </nav>
 
 <!-- PAGE CONTENT -->
@@ -1114,7 +1117,7 @@ app: () => `
 
 <div class="dark-section"><div class="container">
   <div class="eyebrow">Where the app shows up</div>
-  <h2 class="section-title" style="margin-bottom:32px;">Three products. One app underneath all of them.</h2>
+  <h2 class="section-title" style="margin-bottom:32px;">The same engine, doing three different jobs.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[
       ['Staff WiFi','The authentication engine','Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.'],
@@ -1131,7 +1134,7 @@ app: () => `
 
 <div class="container"><div class="section">
   <div class="eyebrow">Why it matters to a sale</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">One conversation, three upsells.</h2>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">The upsell path is already built in.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[['A familiar engine','A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn\'t change, just what the app is being used for.'],['Less for IT to manage','Nothing for a customer\'s IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.'],['A channel that keeps paying off','Every opted-in connection through the app is a contact a customer can message again, whether that\'s a loyalty offer to a guest or a notification to a resident.']].map(([t,d])=>`
       <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body">${d}</p></div>`).join('')}
@@ -2255,12 +2258,49 @@ tools: () => `
 // MARKETING SUPPORT
 // ═══════════════════════════════════════
 marketing: () => `
-<div class="container">
-  <div class="mktg-hero">
-    <div class="eyebrow">Marketing support</div>
-    <h1 class="section-title">We help you go to market, not just to product.</h1>
-    <p class="section-sub">Co-branded assets, sector-specific campaign packs, MDF, and bespoke support. Everything is available to registered partners, request what you need below.</p>
+<div class="dark-section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="mktg-hero" style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:none;">
+      <div>
+        <div class="eyebrow">Marketing support</div>
+        <h1 class="section-title">We help you go to market, not just to product.</h1>
+        <p class="section-sub">Co-branded assets, sector-specific campaign packs, MDF, and bespoke support. Everything is available to registered partners, request what you need below.</p>
+      </div>
+      <div class="mktg-folder">
+        <svg viewBox="0 0 400 260" width="100%" height="auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="330" cy="70" r="55" fill="var(--purple)" opacity="0.18"/>
+          <rect x="50" y="55" width="110" height="26" rx="8" fill="var(--purple-dark)"/>
+          <rect x="30" y="75" width="340" height="165" rx="16" fill="var(--purple-dark)"/>
+          <g transform="rotate(-12 110 100)">
+            <rect x="65" y="40" width="90" height="120" rx="10" fill="#FAF5EC"/>
+            <rect x="78" y="53" width="64" height="46" rx="6" fill="var(--purple-light)"/>
+            <rect x="78" y="107" width="50" height="6" rx="3" fill="var(--purple-200)"/>
+            <rect x="78" y="120" width="36" height="6" rx="3" fill="var(--purple-200)"/>
+          </g>
+          <g transform="rotate(3 200 85)">
+            <rect x="155" y="25" width="90" height="120" rx="10" fill="#FAF5EC"/>
+            <circle cx="178" cy="50" r="12" fill="var(--purple)"/>
+            <rect x="200" y="44" width="34" height="6" rx="3" fill="var(--purple-mid)"/>
+            <rect x="200" y="56" width="26" height="6" rx="3" fill="var(--purple-200)"/>
+            <rect x="170" y="80" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+            <rect x="170" y="93" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+            <rect x="170" y="106" width="44" height="6" rx="3" fill="var(--purple-light)"/>
+          </g>
+          <g transform="rotate(13 290 105)">
+            <rect x="245" y="45" width="90" height="120" rx="10" fill="#FAF5EC"/>
+            <rect x="258" y="58" width="20" height="20" rx="5" fill="var(--purple)"/>
+            <rect x="282" y="58" width="20" height="20" rx="5" fill="var(--teal)"/>
+            <rect x="306" y="58" width="20" height="20" rx="5" fill="var(--coral)"/>
+            <rect x="258" y="90" width="64" height="6" rx="3" fill="var(--purple-light)"/>
+            <rect x="258" y="103" width="44" height="6" rx="3" fill="var(--purple-light)"/>
+          </g>
+          <rect x="15" y="140" width="370" height="105" rx="18" fill="var(--purple)"/>
+        </svg>
+      </div>
+    </div>
   </div>
+</div>
+<div class="container">
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:64px;">
     ${[['Asset library','Logos, product imagery, one-pagers, and presentation templates, all ready to co-brand.'],['Co-branded templates','Email, social, digital ads, and print templates with your logo alongside Purple.'],['Campaign-in-a-box','Sector-specific campaign packs for hospitality, retail, education, healthcare, and more.'],['Bespoke support','Need something specific? Request custom creative, landing pages, or event collateral.']].map(([t,d])=>`
       <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:22px;">
