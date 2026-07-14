@@ -367,13 +367,13 @@ footer{background:var(--ink);padding:52px 0;display:grid;}
 /* Benefits */
 .benefits-hero{padding:72px 0 64px;max-width:680px;}
 .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:60px;}
-.benefit-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:28px;transition:transform .15s,box-shadow .15s;}
-.benefit-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
+.benefit-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:28px;transition:transform .15s,box-shadow .15s;}
+.benefit-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.25);}
 .benefit-card:hover .benefit-num{transform:scale(1.08);}
 .benefit-num{display:inline-block;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
-.benefit-num{font-family:'Poppins',sans-serif;font-size:48px;color:var(--purple);line-height:1;margin-bottom:8px;}
-.benefit-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
-.benefit-desc{font-size:13px;color:var(--ink-mid);line-height:1.65;}
+.benefit-num{font-family:'Poppins',sans-serif;font-size:48px;color:var(--purple-mid);line-height:1;margin-bottom:8px;}
+.benefit-title{font-size:15px;font-weight:500;color:white;margin-bottom:6px;}
+.benefit-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
 
 /* Tools */
 .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -613,7 +613,7 @@ function renderNewsletterCTA() {
           <input type="text" class="newsletter-input" placeholder="First name">
           <input type="text" class="newsletter-input" placeholder="Last name">
           <input type="text" class="newsletter-input" placeholder="Company">
-          <input type="email" class="newsletter-input" placeholder="you@company.com">
+          <input type="email" class="newsletter-input" placeholder="Email">
         </div>
         <button class="btn-primary" onclick="submitNewsletter(this)">Subscribe</button>
       </div>
@@ -1019,11 +1019,6 @@ function renderCaseStudyPage(slug) {
 
 function renderSectorPage(slug) {
   const s = SECTOR_DATA[slug];
-  const orderedProducts = PRODUCT_ORDER.slice().sort((a,b) => {
-    const ra = s.recommended.indexOf(a), rb = s.recommended.indexOf(b);
-    const wa = ra === -1 ? 99 : ra, wb = rb === -1 ? 99 : rb;
-    return wa - wb;
-  });
   return `
 <div style="background:var(--purple-deep);padding:72px 0 56px;position:relative;overflow:hidden;">
   <img src="sectors/${SECTOR_IMAGES[slug]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;">
@@ -1059,29 +1054,6 @@ function renderSectorPage(slug) {
       </div>`).join('')}
   </div>
 </div></div>
-
-<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
-  <div class="container">
-    <div class="eyebrow">Where Purple fits</div>
-    <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:8px;">The full platform, with the right entry point for ${s.tag.toLowerCase()}.</h2>
-    <p class="section-sub" style="margin-bottom:32px;">Every product is available to sell into ${s.tag.toLowerCase()}. The ones below tend to open the conversation fastest, but the platform doesn't stop there.</p>
-    <div class="sol-grid" style="grid-template-columns:repeat(3,1fr);">
-      ${orderedProducts.map(key => {
-        const p = ALL_PRODUCTS[key];
-        const isRec = s.recommended.indexOf(key) !== -1;
-        return `
-      <div class="sol-card" onclick="navigate('${key}')" style="${isRec ? '' : 'opacity:.75;'}">
-        <div class="sol-card-body">
-          ${isRec ? '<div class="tag" style="margin-bottom:10px;">Recommended</div>' : ''}
-          <div class="card-tag">${p.name}</div>
-          <p class="card-body">${p.short}</p>
-        </div>
-      </div>`;
-      }).join('')}
-    </div>
-    <div style="margin-top:18px;font-size:12px;color:var(--ink-light);">Every product above runs on the same Purple app, for identity, guests, or residents. <span class="link-arrow" style="color:var(--purple);" onclick="navigate('app')">See how the app works →</span></div>
-  </div>
-</div>
 
 <div class="container"><div class="section">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
@@ -2048,7 +2020,7 @@ shield: () => `
 // BENEFITS
 // ═══════════════════════════════════════
 benefits: () => `
-<div class="container">
+<div class="dark-section"><div class="container">
   <div class="benefits-hero">
     <div class="eyebrow">Partner benefits</div>
     <h1 class="section-title">What's in it for you.</h1>
@@ -2062,39 +2034,41 @@ benefits: () => `
         <div class="benefit-desc">${d}</div>
       </div>`).join('')}
   </div>
-</div>
-<div class="dark-section"><div class="container">
+</div></div>
+<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+  <div class="container">
   <div class="eyebrow">Trusted at scale</div>
   <h2 class="section-title" style="margin-bottom:32px;">The certifications and guardrails already in place.</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;align-items:center;margin-bottom:56px;">
     ${[['ISO 27001','Information security certified'],['ISO 9001','Quality management certified'],['GDPR & CCPA','Data privacy compliant'],['99.99%','Platform uptime SLA']].map(([v,l])=>`
-      <div style="text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,.07);">
-        <div style="font-family:'Poppins',sans-serif;font-size:22px;color:white;margin-bottom:5px;">${v}</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;">${l}</div>
+      <div style="text-align:center;padding:16px;border-right:1px solid var(--border-soft);">
+        <div style="font-family:'Poppins',sans-serif;font-size:22px;color:var(--ink);margin-bottom:5px;">${v}</div>
+        <div style="font-size:11px;color:var(--ink-light);line-height:1.4;">${l}</div>
       </div>`).join('')}
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;">
-    <div class="quote-card" style="height:100%;background:linear-gradient(135deg,var(--purple),var(--purple-dark));border:1px solid rgba(255,255,255,.18);box-shadow:0 16px 40px rgba(0,0,0,.35);">
-      <div class="quote-text">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
+    <div class="quote-card" style="height:100%;background:linear-gradient(135deg,var(--purple),var(--purple-dark));">
+      <div class="quote-text" style="margin-bottom:48px;">"Our partnership with Purple gives businesses, particularly those in the retail, on-trade, F&B and leisure sectors, the opportunity to take their WiFi service to the next level. These features help bricks-and-mortar businesses connect with their customers in the online world and turn insight data into smarter marketing and profitable customer communications."</div>
       <div class="quote-attr"><div class="quote-av">BT</div><div><div class="quote-name">BT Business</div><div class="quote-role">Technology partner</div></div></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px;">
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">No barriers to entry</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;">No minimum revenue commitments. No sales targets. No upfront investment. We pair you with the right partner manager based on your expected ARR in year one, and then we help you hit it.</p>
+      <div style="background:var(--warm-white);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px;">No barriers to entry</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">No minimum revenue commitments. No sales targets. No upfront investment. We pair you with the right partner manager based on your expected ARR in year one, and then we help you hit it.</p>
       </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">Hardware-agnostic</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;">Purple works as a cloud overlay on your customer's existing infrastructure. Cisco, Cisco Meraki, Aruba, Ruckus, Mist, Ubiquiti, it works with what they already have. No rip-and-replace conversations.</p>
+      <div style="background:var(--warm-white);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px;">Hardware-agnostic</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">Purple works as a cloud overlay on your customer's existing infrastructure. Cisco, Cisco Meraki, Aruba, Ruckus, Mist, Ubiquiti, it works with what they already have. No rip-and-replace conversations.</p>
       </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:24px;">
-        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">White-label available</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;">Sell Purple under your own brand, own the customer relationship, and build your managed service proposition on top.</p>
+      <div style="background:var(--warm-white);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:24px;">
+        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px;">White-label available</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.65;">Sell Purple under your own brand, own the customer relationship, and build your managed service proposition on top.</p>
       </div>
     </div>
   </div>
   ${renderNewsletterCTA()}
-</div></div>
+  </div>
+</div>
 `,
 
 // ═══════════════════════════════════════
@@ -2537,7 +2511,6 @@ function renderFooter() {
         <span class="brand-partners-text" style="color:white;">Partners</span>
       </div>
       <div class="footer-desc">Purple Partners, the channel program for resellers, MSPs, and systems integrators selling identity-based WiFi solutions.</div>
-      <div class="footer-social"><div class="s-btn">in</div><div class="s-btn">tw</div></div>
     </div>
     <div>
       <div class="footer-col-title">Products</div>
