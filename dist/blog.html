@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=e910ea05">
+<link rel="stylesheet" href="styles.css?v=13168501">
 </head>
 <body data-page="blog">
 <!-- NAV -->
@@ -183,7 +183,12 @@
     </div>
     <div class="newsletter-cta-form">
       <div class="newsletter-form-state">
-        <input type="email" class="newsletter-input" placeholder="you@company.com">
+        <div class="newsletter-input-grid">
+          <input type="text" class="newsletter-input" placeholder="First name">
+          <input type="text" class="newsletter-input" placeholder="Last name">
+          <input type="text" class="newsletter-input" placeholder="Company">
+          <input type="email" class="newsletter-input" placeholder="you@company.com">
+        </div>
         <button class="btn-primary" onclick="submitNewsletter(this)">Subscribe</button>
       </div>
       <div class="newsletter-success-state">

@@ -294,8 +294,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .newsletter-cta{background:var(--purple-light);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 .newsletter-cta-text{flex:1;min-width:240px;}
 .newsletter-cta-form{flex-shrink:0;}
-.newsletter-form-state{display:flex;gap:10px;}
-.newsletter-input{padding:11px 14px;font-size:13px;border:1px solid var(--border-soft);border-radius:var(--radius);min-width:220px;font-family:'Poppins',sans-serif;}
+.newsletter-form-state{display:flex;flex-direction:column;gap:10px;}
+.newsletter-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:320px;}
+.newsletter-input{padding:10px 12px;font-size:13px;border:1px solid var(--border-soft);border-radius:var(--radius);font-family:'Poppins',sans-serif;width:100%;box-sizing:border-box;}
+.newsletter-form-state .btn-primary{width:100%;}
 .newsletter-success-state{display:none;align-items:center;gap:8px;}
 .newsletter-cta.subscribed .newsletter-form-state{display:none;}
 .newsletter-cta.subscribed .newsletter-success-state{display:flex;}
