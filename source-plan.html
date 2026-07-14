@@ -1525,8 +1525,7 @@ home: () => `
   </div>
 </div>
 <div class="dark-section"><div class="container">
-  <div class="eyebrow">Who your customer's buyer is</div>
-  <h2 class="section-title" style="margin-bottom:16px;">Who your customer's buyer is.</h2>
+  <h2 class="section-title" style="margin-bottom:16px;">Who your buyer is.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
     ${[['IT & network managers','The primary contact. They own the shared-password problem, fear an audit, and are looking for a solution that doesn\'t create more work.'],['CISOs & security leads','Zero trust and identity-based access are already on their agenda. Staff WiFi gives them a quick, demonstrable win on network security posture.'],['HR & operations','Feel the JML pain directly. Every leaver is a manual process and a potential security risk, Staff WiFi removes it entirely.']].map(([t,d])=>`
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
@@ -1542,12 +1541,12 @@ ${productFaq(STAFF_WIFI_FAQS)}
 // GUEST WIFI
 // ═══════════════════════════════════════
 'guest-wifi': () => `
-<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+<div style="background:var(--purple-deep);">
   <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:56px;">
     <div>
       <div class="tag">Guest WiFi</div>
-      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Give your customers a WiFi that <em>works for them</em>, not just their guests.</h1>
-      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;color:white;">Give your customers a WiFi that <em style="font-style:italic;color:var(--purple-200);">works for them</em>, not just their guests.</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
       <button class="btn-primary" onclick="navigate('home')">Register as a partner</button>
     </div>
     <div style="align-self:end;">
