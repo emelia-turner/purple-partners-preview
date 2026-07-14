@@ -2332,7 +2332,6 @@ marketing: () => `
           <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
           <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
           <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
-          <div class="form-field"><label>Partner ID (optional)</label><input type="text" placeholder="PP-12345"></div>
           <div class="form-field full"><label>Type of support needed</label>
             <select>
               <option value="">Select...</option>
@@ -2348,7 +2347,7 @@ marketing: () => `
           </div>
           <div class="form-field full"><label>Target sector(s)</label>
             <div class="checkbox-group" style="margin-top:4px;">
-              ${['Hospitality','Retail','Healthcare','Education','Residential / MDU','Enterprise','Transport & venues'].map(s=>`<label class="check-item"><input type="checkbox"> ${s}</label>`).join('')}
+              ${['No specific sector','Hospitality','Retail','Healthcare','Education','Residential / MDU','Enterprise','Transport & venues'].map(s=>`<label class="check-item"><input type="checkbox"> ${s}</label>`).join('')}
             </div>
           </div>
           <div class="form-field full"><label>Timescale</label>
