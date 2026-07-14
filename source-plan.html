@@ -599,8 +599,7 @@ const MKTG_ICONS = {
 // rather than fixed IDs, so this can safely appear more than once per page.
 function renderNewsletterCTA() {
   return `
-<div class="container"><div class="section">
-  <div class="newsletter-cta">
+  <div class="newsletter-cta" style="margin-top:48px;">
     <div class="newsletter-cta-text">
       <div class="eyebrow" style="margin-bottom:6px;">Stay in the loop</div>
       <h3 style="font-family:'Poppins',sans-serif;font-size:22px;margin-bottom:6px;">Join our newsletter</h3>
@@ -616,8 +615,7 @@ function renderNewsletterCTA() {
         <span style="font-size:13px;color:var(--ink);">You're subscribed, watch your inbox.</span>
       </div>
     </div>
-  </div>
-</div></div>`;
+  </div>`;
 }
 
 // Reusable FAQ accordion for individual product pages, sharing the same
@@ -1817,8 +1815,8 @@ ${productFaq(GUEST_WIFI_FAQS)}
         <div style="font-size:12px;color:rgba(255,255,255,.45);">${l}</div>
       </div>`).join('')}
   </div>
+  ${renderNewsletterCTA()}
 </div></div>
-${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2088,8 +2086,8 @@ benefits: () => `
       </div>
     </div>
   </div>
+  ${renderNewsletterCTA()}
 </div></div>
-${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2133,8 +2131,8 @@ sectors: () => `
         <div class="sector-products"><span class="pill">${p1}</span><span class="pill">${p2}</span></div>
       </div>`).join('')}
   </div>
+  ${renderNewsletterCTA()}
 </div></div>
-${renderNewsletterCTA()}
 `,
 
 // ═══════════════════════════════════════
@@ -2511,8 +2509,8 @@ blog: () => `
       </div>`).join('')}
   </div>
   <p id="blog-empty" style="display:none;font-size:14px;color:var(--ink-light);">No posts in this category yet.</p>
+  ${renderNewsletterCTA()}
 </div></div>
-${renderNewsletterCTA()}
 `,
 
 };
