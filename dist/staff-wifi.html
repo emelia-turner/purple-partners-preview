@@ -89,8 +89,13 @@
       <div class="tag">Staff WiFi</div>
       <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Passwordless zero-trust access, <em>automated.</em></h1>
       <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Your customers are still managing shared WiFi passwords and manually offboarding leavers. Staff WiFi fixes all of that with the Purple app, without new hardware.</p>
-      <div style="display:flex;gap:12px;margin-bottom:0;">
+      <div style="display:flex;gap:12px;margin-bottom:28px;">
         <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Register as a partner</button>
+      </div>
+      <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
+        <div class="stat-cell"><div class="stat-num">80%</div><div class="stat-lbl">fewer IT tickets</div></div>
+        <div class="stat-cell"><div class="stat-num">99.999%</div><div class="stat-lbl">RADIUS uptime</div></div>
+        <div class="stat-cell"><div class="stat-num">440m</div><div class="stat-lbl">logins/year, 90+ countries</div></div>
       </div>
     </div>
     <div style="align-self:end;">
@@ -155,33 +160,10 @@
           </div>
       </div>
     </div>
-    <div class="prod-visual" style="position:sticky;top:80px;">
-      <div class="prod-vis-badge">
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#1D9E75" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg>
-        Zero trust active
-      </div>
-      <div class="prod-vis-title">Acme Corp, staff network</div>
-      <div class="prod-vis-sub">Connected via Entra ID · 247 active devices</div>
-      <div class="prod-vis-row">
-        <div class="prod-vis-stat"><div class="pvs-val">247</div><div class="pvs-lbl">Active devices</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">0</div><div class="pvs-lbl">Manual interventions (30d)</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">12</div><div class="pvs-lbl">Auto-revocations (30d)</div></div>
-      </div>
-      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">
-        <div style="font-weight:500;color:var(--ink);margin-bottom:8px;">Recent activity</div>
-        
-          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-soft);">
-            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">J. Smith, Marketing</div><div style="font-size:11px;">Device enrolled via Entra ID</div></div>
-            <div style="font-size:11px;color:var(--ink-light);">2m ago</div>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-soft);">
-            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">T. Patel, IT</div><div style="font-size:11px;">VLAN: Engineering assigned</div></div>
-            <div style="font-size:11px;color:var(--ink-light);">8m ago</div>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-soft);">
-            <div><div style="font-size:12px;font-weight:500;color:var(--ink);">C. Okafor, HR</div><div style="font-size:11px;">Access revoked (JML)</div></div>
-            <div style="font-size:11px;color:var(--ink-light);">1h ago</div>
-          </div>
+    <div style="position:sticky;top:80px;">
+      <div class="dash-wrap" style="border-radius:16px;">
+        <div class="dash-bar"><div class="dash-dots"><div class="dash-dot" style="background:#ff5f57"></div><div class="dash-dot" style="background:#febc2e"></div><div class="dash-dot" style="background:#28c840"></div></div><div class="dash-url">app.purple.ai/dashboard</div></div>
+        <img src="https://tfstmpunsngbqczbybwb.supabase.co/storage/v1/object/public/purple-assets/images/staff-wifi-analytics.png" alt="Purple Staff WiFi analytics dashboard" style="width:100%;display:block;">
       </div>
     </div>
   </div>
