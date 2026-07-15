@@ -418,8 +418,9 @@ textarea{resize:vertical;min-height:90px;}
 .sectors-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .sector-page-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:26px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
 .sector-page-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
-.sector-page-em{color:var(--purple);margin-bottom:14px;display:inline-flex;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
-.sector-page-card:hover .sector-page-em{transform:scale(1.15) rotate(-4deg);}
+.sector-page-em{color:var(--purple);margin-bottom:14px;display:inline-flex;}
+.sector-page-icon-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-page-card:hover .sector-page-icon-badge{transform:scale(1.1) rotate(-4deg);}
 .sector-page-name{font-family:'Poppins',sans-serif;font-size:20px;color:var(--ink);margin-bottom:6px;}
 .sector-page-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:16px;}
 .sector-products{display:flex;flex-wrap:wrap;gap:4px;}
