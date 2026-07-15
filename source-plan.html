@@ -158,6 +158,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-float-badge-accent{background:var(--purple);border-color:rgba(255,255,255,.25);}
 .hero-float-badge span{font-size:12.5px;font-weight:600;color:white;}
 .hero-float-badge-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hero-float-badge-detail{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:230px;background:white;color:var(--ink);font-size:12px;line-height:1.55;font-weight:400;padding:12px 14px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:10;white-space:normal;text-align:left;}
+.hero-float-badge-expandable:hover .hero-float-badge-detail{opacity:1;transform:translateX(-50%) translateY(0);}
 
 /* ── LOGO STRIP (sliding marquee) ── */
 .logo-strip{border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:26px 0;display:flex;align-items:center;gap:32px;}
@@ -1382,6 +1384,28 @@ home: () => `
     </div>
   </div>
 
+  <div class="container"><div class="section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div class="eyebrow">Partner voices</div>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Don't just take our word for it.</h2>
+        <p class="section-sub" style="margin-bottom:0;">We provide WiFi for over 80,000 venues worldwide, with some of the biggest brands choosing Purple.</p>
+      </div>
+      <div class="quote-carousel">
+        <div class="quote-slides">
+          ${TESTIMONIALS.map((q,i)=>`
+            <div class="quote-card${i===0?' active':''}">
+              <div class="quote-text">"${q.text}"</div>
+              <div class="quote-attr"><div class="quote-av">${q.initials}</div><div><div class="quote-name">${q.name}</div><div class="quote-role">${q.role}</div></div></div>
+            </div>`).join('')}
+        </div>
+        <div class="quote-dots">
+          ${TESTIMONIALS.map((_,i)=>`<button class="quote-dot${i===0?' active':''}" onclick="goToTestimonial(${i})" aria-label="Testimonial ${i+1}"></button>`).join('')}
+        </div>
+      </div>
+    </div>
+  </div></div>
+
   <div class="dark-section">
     <div class="container">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
@@ -1425,28 +1449,6 @@ home: () => `
       </div>
     </div>
   </div>
-
-  <div class="container"><div class="section">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
-      <div>
-        <div class="eyebrow">Partner voices</div>
-        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Don't just take our word for it.</h2>
-        <p class="section-sub" style="margin-bottom:0;">We provide WiFi for over 80,000 venues worldwide, with some of the biggest brands choosing Purple.</p>
-      </div>
-      <div class="quote-carousel">
-        <div class="quote-slides">
-          ${TESTIMONIALS.map((q,i)=>`
-            <div class="quote-card${i===0?' active':''}">
-              <div class="quote-text">"${q.text}"</div>
-              <div class="quote-attr"><div class="quote-av">${q.initials}</div><div><div class="quote-name">${q.name}</div><div class="quote-role">${q.role}</div></div></div>
-            </div>`).join('')}
-        </div>
-        <div class="quote-dots">
-          ${TESTIMONIALS.map((_,i)=>`<button class="quote-dot${i===0?' active':''}" onclick="goToTestimonial(${i})" aria-label="Testimonial ${i+1}"></button>`).join('')}
-        </div>
-      </div>
-    </div>
-  </div></div>
 
   <div class="container"><div class="section">
     <div class="eyebrow">FAQ</div>
@@ -1559,8 +1561,9 @@ home: () => `
       <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
       <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="A guest connected through the Purple app" style="width:100%;max-width:320px;display:block;">
+    <div style="display:flex;align-items:center;justify-content:center;position:relative;min-height:380px;">
+      <div style="position:absolute;width:360px;height:360px;background:radial-gradient(circle,rgba(124,92,255,.5),transparent 70%);filter:blur(24px);z-index:0;"></div>
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="A guest connected through the Purple app" style="width:100%;max-width:400px;display:block;position:relative;z-index:1;border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.4);">
     </div>
   </div>
 </div>
@@ -1588,10 +1591,6 @@ home: () => `
             </div>`).join('')}
         </div>
       </div>`).join('')}
-  </div>
-  <div style="margin-top:20px;display:flex;align-items:center;gap:14px;background:var(--warm-white);border-left:3px solid var(--purple);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:18px 22px;">
-    <div style="font-family:'Poppins',sans-serif;font-size:30px;color:var(--purple);line-height:1;">463%</div>
-    <div style="font-size:13px;color:var(--ink-mid);line-height:1.5;">ROI for Avanti West Coast after moving to Engage, driving 3,744 purchases through WiFi upsells.</div>
   </div>
 </div></div>
 <div class="dark-section"><div class="container">
@@ -1624,36 +1623,40 @@ home: () => `
   </div>
   <div style="position:relative;max-width:520px;margin:0 auto;padding:24px 0 8px;">
     <img src="brand/app-mockup.webp" alt="The Purple app" style="width:100%;max-width:220px;display:block;margin:0 auto;">
-    <div class="hero-float-badge" style="top:2%;left:-20px;">
+    <div class="hero-float-badge hero-float-badge-expandable" style="top:2%;left:-20px;">
       <div class="hero-float-badge-icon" style="background:var(--teal);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5 13.5 3.8v4.1c0 3.6-2.3 6.6-5.5 7.6-3.2-1-5.5-4-5.5-7.6V3.8L8 1.5Z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
       <span>Identity-verified access</span>
+      <div class="hero-float-badge-detail">No open SSIDs, no anonymous access. WPA2/3-Enterprise secures every connection before network access is granted.</div>
     </div>
-    <div class="hero-float-badge" style="top:22%;right:-20px;">
+    <div class="hero-float-badge hero-float-badge-expandable" style="top:22%;right:-20px;">
       <div class="hero-float-badge-icon" style="background:var(--coral);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 0 1 12 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M4.2 10.4a3.8 3.8 0 0 1 7.6 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="13" r="1" fill="white"/></svg></div>
       <span>Zero portal friction</span>
+      <div class="hero-float-badge-detail">Once opted in, the app recognizes the visitor automatically on every future visit, to any venue in the chain.</div>
     </div>
-    <div class="hero-float-badge hero-float-badge-accent" style="bottom:26%;left:-20px;">
+    <div class="hero-float-badge hero-float-badge-accent hero-float-badge-expandable" style="bottom:26%;left:-20px;">
       <div class="hero-float-badge-icon" style="background:white;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11.5 6 7.5 9 10 14 4" stroke="var(--purple)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 4h3.5v3.5" stroke="var(--purple)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <span>Still CRM-verified</span>
+      <div class="hero-float-badge-detail">Every identity-based connection is a verified, opted-in contact, feeding the same CRM sync and marketing automation.</div>
     </div>
-    <div class="hero-float-badge hero-float-badge-accent" style="bottom:2%;right:-20px;">
+    <div class="hero-float-badge hero-float-badge-accent hero-float-badge-expandable" style="bottom:2%;right:-20px;">
       <div class="hero-float-badge-icon" style="background:white;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="var(--purple)" stroke-width="1.4" stroke-linecap="round"/></svg></div>
       <span>80% fewer IT tickets</span>
+      <div class="hero-float-badge-detail">Eliminating captive-portal login issues removes one of the most common sources of on-site WiFi support requests.</div>
     </div>
   </div>
 </div></div>
-<div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
+<div class="dark-section" style="padding:80px 0;">
   <div class="container">
     <div class="eyebrow">Proof point</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
       <div>
-        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Harrods saw a 54X return on the original investment of improving and optimizing the guest WiFi experience.</h2>
-        <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">By improving and optimizing the guest WiFi experience, Harrods built a data and engagement layer that changed how the business understood and communicated with its visitors. <a href="https://www.purple.ai/en-gb/guest-wifi" style="color:var(--purple);" target="_blank">See the Guest WiFi platform behind it.</a></p>
+        <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;color:white;">Harrods saw a 54X return on the original investment of improving and optimizing the guest WiFi experience.</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:24px;">By improving and optimizing the guest WiFi experience, Harrods built a data and engagement layer that changed how the business understood and communicated with its visitors. <a href="https://www.purple.ai/en-gb/guest-wifi" style="color:var(--purple-200);" target="_blank">See the Guest WiFi platform behind it.</a></p>
         <button class="btn-primary" onclick="navigate('case-studies')">Read the case study</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         ${[['54X','ROI on the original investment'],['581k','unique users / yr'],['3.6m','contact database'],['4,453','new Rewards sign-ups']].map(([v,l])=>`
-          <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
+          <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:36px;color:var(--purple-mid);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:rgba(255,255,255,.5);">${l}</div></div>`).join('')}
       </div>
     </div>
   </div>

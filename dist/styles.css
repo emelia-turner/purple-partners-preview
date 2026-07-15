@@ -148,6 +148,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-float-badge-accent{background:var(--purple);border-color:rgba(255,255,255,.25);}
 .hero-float-badge span{font-size:12.5px;font-weight:600;color:white;}
 .hero-float-badge-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hero-float-badge-detail{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:230px;background:white;color:var(--ink);font-size:12px;line-height:1.55;font-weight:400;padding:12px 14px;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:10;white-space:normal;text-align:left;}
+.hero-float-badge-expandable:hover .hero-float-badge-detail{opacity:1;transform:translateX(-50%) translateY(0);}
 
 /* ── LOGO STRIP (sliding marquee) ── */
 .logo-strip{border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:26px 0;display:flex;align-items:center;gap:32px;}
