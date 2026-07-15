@@ -8,16 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7846ab99">
+<link rel="stylesheet" href="styles.css?v=c661c9b0">
 </head>
 <body data-page="speak-to-an-expert">
 <!-- NAV -->
 <nav id="main-nav">
  <div class="container nav-inner">
-  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
-    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
-    <span class="brand-divider"></span>
-    <span class="brand-partners-text">Partners</span>
+  <div class="nav-logo" onclick="navigate('home')">
+    <img src="brand/purple-partners-logo.png" alt="Purple Partners" class="brand-logo-lockup">
   </div>
 
   <div class="nav-links">
@@ -68,7 +66,6 @@
       <div class="dropdown">
         <div class="dd-item" onclick="navigate('home')">Login to portal</div>
         <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
-        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
       </div>
     </div>
 
@@ -95,23 +92,11 @@
         <div class="form-title">Talk to Purple</div>
         <div class="form-sub">We typically reply within one working day.</div>
         <div class="form-grid">
-          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>First name</label><input type="text" placeholder="Jane"></div>
+          <div class="form-field"><label>Last name</label><input type="text" placeholder="Smith"></div>
           <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
           <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
           <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="+44 7700 900000"></div>
-          <div class="form-field full"><label>What would you like to discuss?</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Becoming a partner</option>
-              <option>Guest WiFi</option>
-              <option>Staff WiFi</option>
-              <option>Multi-tenant WiFi</option>
-              <option>Verify</option>
-              <option>Shield</option>
-              <option>A specific customer opportunity</option>
-              <option>Other</option>
-            </select>
-          </div>
           <div class="form-field full"><label>Message</label>
             <textarea placeholder="Tell us a bit about what you're working on..."></textarea>
           </div>
