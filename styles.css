@@ -187,6 +187,19 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .dark-section .section-title,.dark-section .section-title-sm{color:white;}
 .dark-section .section-sub{color:rgba(255,255,255,.5);}
 
+/* ── DARK PAGE HEADER (product-hero variants on a dark background) ── */
+.prod-hero-dark .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:var(--purple-mid);}
+.prod-hero-dark h1{color:white;}
+.prod-hero-dark h1 em{color:var(--purple-200);}
+.prod-hero-dark .hero-sub{color:rgba(255,255,255,.55);}
+.prod-hero-dark .feature-text{color:rgba(255,255,255,.55);}
+.prod-hero-dark .feature-text strong{color:white;}
+.prod-hero-dark .feature-check{background:rgba(255,255,255,.12);}
+
+/* ── HOVER-LIFT (shared by inline dark-section card grids) ── */
+.dc-card{transition:transform .15s ease,box-shadow .15s ease;}
+.dc-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(1,22,56,.18);}
+
 /* ── SECTORS GRID ── */
 .sectors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .sector-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;cursor:pointer;transition:background .15s,transform .15s;}
