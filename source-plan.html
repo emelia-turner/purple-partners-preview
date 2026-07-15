@@ -1151,19 +1151,19 @@ app: () => `
   </div>
 </div></div>
 
-<div class="dark-section"><div class="container">
+<div class="container"><div class="section">
   <div class="eyebrow">Where the app shows up</div>
-  <h2 class="section-title" style="margin-bottom:32px;">The same engine, doing three different jobs.</h2>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The same engine, doing three different jobs.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[
       ['Staff WiFi','The authentication engine','Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.'],
       ['Guest WiFi','The friction remover','Captive portals still frustrate visitors with forms. The app replaces that with seamless connectivity and a conscious opt-in, done once. From then on, the app recognizes returning visitors automatically, and becomes a channel for offers and loyalty to people who are physically in the venue.'],
       ['Multi-tenant WiFi','The resident\'s remote control','Residents provision a network pass directly in the app. Devices auto-connect and isolate, and reconnect automatically on every future visit, to any property in the chain. The app doubles as an engagement channel: surveys, location-aware content, notifications, and rewards.']
     ].map(([n,t,d])=>`
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-mid);margin-bottom:10px;">${n}</div>
-        <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">${t}</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">${d}</div>
+      <div class="card">
+        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;">${n}</div>
+        <div class="card-title" style="font-size:15px;">${t}</div>
+        <p class="card-body" style="margin-bottom:0;">${d}</p>
       </div>`).join('')}
   </div>
 </div></div>
