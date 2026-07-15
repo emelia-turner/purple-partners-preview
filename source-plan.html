@@ -1483,14 +1483,22 @@ home: () => `
   </div>
 </div>
 <div class="container"><div class="section-sm">
-  <div class="eyebrow">How it works</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">One identity. One pass. Every device, every site.</h2>
-  <div class="step-flow">
-    ${['Authenticate','Generate a WiFi pass','Get online','Stay connected','Auto-revocation'].map((s,i)=>`
-      <div class="step-flow-item">
-        <div class="step-flow-num">${i+1}</div>
-        <div class="step-flow-label">${s}</div>
-      </div>`).join('')}
+  <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:center;">
+    <div>
+      <div class="eyebrow">How it works</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">One identity. One pass. Every device, every site.</h2>
+      <div class="step-flow">
+        ${['Authenticate','Generate a WiFi pass','Get online','Stay connected','Auto-revocation'].map((s,i)=>`
+          <div class="step-flow-item">
+            <div class="step-flow-num">${i+1}</div>
+            <div class="step-flow-label">${s}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2Fstaff-wifi-pass-phone.webp&w=1200&q=75" alt="Gavin's Purple Staff WiFi Pass, on a phone lock screen" style="width:100%;max-width:180px;display:block;margin:0 auto 10px;">
+      <div style="font-size:12px;color:var(--ink-light);">One pass, straight to the lock screen.</div>
+    </div>
   </div>
 </div></div>
 <div class="container">
@@ -1508,9 +1516,13 @@ home: () => `
       </div>
     </div>
     <div style="position:sticky;top:80px;">
-      <div class="dash-wrap" style="border-radius:16px;">
+      <div class="dash-wrap" style="border-radius:16px;margin-bottom:16px;">
         <div class="dash-bar"><div class="dash-dots"><div class="dash-dot" style="background:#ff5f57"></div><div class="dash-dot" style="background:#febc2e"></div><div class="dash-dot" style="background:#28c840"></div></div><div class="dash-url">app.purple.ai/dashboard</div></div>
         <img src="https://tfstmpunsngbqczbybwb.supabase.co/storage/v1/object/public/purple-assets/images/staff-wifi-analytics.png" alt="Purple Staff WiFi analytics dashboard" style="width:100%;display:block;">
+      </div>
+      <div class="dash-wrap" style="border-radius:16px;">
+        <div class="dash-bar"><div class="dash-dots"><div class="dash-dot" style="background:#ff5f57"></div><div class="dash-dot" style="background:#febc2e"></div><div class="dash-dot" style="background:#28c840"></div></div><div class="dash-url">app.purple.ai/analytics/ask</div></div>
+        <img src="https://www.purple.ai/_next/image?url=%2Fimages%2Fstaff-wifi-ask-ai-analytics.webp&w=1200&q=75" alt="Ask about your WiFi usage in plain English" style="width:100%;display:block;">
       </div>
     </div>
   </div>
@@ -1551,8 +1563,8 @@ home: () => `
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[
       ['Connect','Free','Get visitors online quickly, easily, and securely.',['Fully branded, secure captive portal','Deployed in hours, no infrastructure changes','Seamless login in 25+ languages','Built-in security via Verify and Shield'],false],
-      ['Capture','Most popular','Everything in Connect, plus WiFi analytics and a CRM connector.',['WiFi analytics: footfall, dwell, return visits','Native CRM connector','GDPR and CCPA compliant data capture','The foundation for first-party marketing data'],true],
-      ['Engage','Full platform','Everything in Capture, with the tools to automate tailored journeys.',['Marketing automation triggered by WiFi behavior','Personalized, tailored visitor journeys','In-app offers and loyalty for opted-in visitors','The Purple app as an ongoing engagement channel'],false],
+      ['Capture','Most popular','Collect data and drive revenue with Capture. Everything in Connect, plus WiFi analytics and a CRM connector that acts as the ultimate bouncer for your database, automatically detecting and tossing out incorrect or disposable emails.',['WiFi analytics: footfall, dwell, return visits','Native CRM connector','GDPR and CCPA compliant data capture','The foundation for first-party marketing data'],true],
+      ['Engage','Full platform','Connect, capture, and engage your visitors with Purple\'s most advanced Guest WiFi plan. Create automated journeys based on guest behavior, venue location, and presence, to turn engaged visitors into loyal customers.',['Marketing automation triggered by WiFi behavior','Personalized, tailored visitor journeys','In-app offers and loyalty for opted-in visitors','The Purple app as an ongoing engagement channel'],false],
     ].map(([n,badge,d,feats,pop])=>`
       <div class="card" style="${pop?'border-color:var(--purple);box-shadow:0 8px 24px rgba(116,88,253,0.12);':''}">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
@@ -1850,7 +1862,7 @@ home: () => `
     <div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
       <div class="feature-list">
-        ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Every user sits in their own micro-segment, so they can only ever see their own devices, essential for a student in Room 101 never seeing the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','Surveys, location-aware content, notifications, and rewards delivered directly to residents and guests through the app.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard.']].map(([t,d])=>`
+        ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.']].map(([t,d])=>`
           <div class="feature-item">
             <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div class="feature-text"><strong>${t}</strong>${d}</div>
