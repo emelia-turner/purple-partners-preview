@@ -1898,16 +1898,19 @@ verify: () => `
           </div>`).join('')}
       </div>
     </div>
-    <div class="prod-visual">
-      <div class="prod-vis-badge">Validation active</div>
-      <div class="prod-vis-title">Department store, London - guest WiFi login</div>
-      <div class="prod-vis-sub">Email validation enabled, last 30 days</div>
-      <div class="prod-vis-row">
-        <div class="prod-vis-stat"><div class="pvs-val">41.6k</div><div class="pvs-lbl">Logins checked</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">37%</div><div class="pvs-lbl">Emails flagged invalid</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Valid contacts to CRM</div></div>
+    <div>
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2F6_1.avif&w=1200&q=75" alt="Guest WiFi Verify" style="width:100%;max-width:320px;display:block;margin:0 auto 24px;">
+      <div class="prod-visual">
+        <div class="prod-vis-badge">Validation active</div>
+        <div class="prod-vis-title">Department store, London - guest WiFi login</div>
+        <div class="prod-vis-sub">Email validation enabled, last 30 days</div>
+        <div class="prod-vis-row">
+          <div class="prod-vis-stat"><div class="pvs-val">41.6k</div><div class="pvs-lbl">Logins checked</div></div>
+          <div class="prod-vis-stat"><div class="pvs-val">37%</div><div class="pvs-lbl">Emails flagged invalid</div></div>
+          <div class="prod-vis-stat"><div class="pvs-val">100%</div><div class="pvs-lbl">Valid contacts to CRM</div></div>
+        </div>
+        <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">Validation report available for download. Last exported: today</div>
       </div>
-      <div style="background:var(--warm-white);border-radius:8px;padding:14px;font-size:12px;color:var(--ink-mid);">Validation report available for download. Last exported: today</div>
     </div>
   </div>
 </div>
@@ -1947,25 +1950,38 @@ shield: () => `
           </div>`).join('')}
       </div>
     </div>
-    <div class="prod-visual">
-      <div class="prod-vis-badge" style="background:rgba(29,158,117,.1);color:var(--teal);">Shield active</div>
-      <div class="prod-vis-title">Northside Academy, network protection</div>
-      <div class="prod-vis-sub">Last 24 hours · Staff + student networks</div>
-      <div class="prod-vis-row">
-        <div class="prod-vis-stat"><div class="pvs-val">14.2k</div><div class="pvs-lbl">DNS queries</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">847</div><div class="pvs-lbl">Threats blocked</div></div>
-        <div class="prod-vis-stat"><div class="pvs-val">312</div><div class="pvs-lbl">Category blocks</div></div>
-      </div>
-      <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
-        <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top blocked categories</div>
-        ${[['Malware & phishing','847','var(--coral)'],['Adult content','199','var(--purple)'],['Social media (pupil VLAN)','113','var(--ink-light)']].map(([l,v,c])=>`
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border-soft);">
-            <span style="font-size:12px;">${l}</span><span style="font-size:12px;font-weight:500;color:${c};">${v}</span>
-          </div>`).join('')}
+    <div>
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FSheild-Website-Header.webp&w=1200&q=75" alt="Shield keeps browsing safe" style="width:100%;max-width:320px;display:block;margin:0 auto 24px;">
+      <div class="prod-visual">
+        <div class="prod-vis-badge" style="background:rgba(29,158,117,.1);color:var(--teal);">Shield active</div>
+        <div class="prod-vis-title">Northside Academy, network protection</div>
+        <div class="prod-vis-sub">Last 24 hours · Staff + student networks</div>
+        <div class="prod-vis-row">
+          <div class="prod-vis-stat"><div class="pvs-val">14.2k</div><div class="pvs-lbl">DNS queries</div></div>
+          <div class="prod-vis-stat"><div class="pvs-val">847</div><div class="pvs-lbl">Threats blocked</div></div>
+          <div class="prod-vis-stat"><div class="pvs-val">312</div><div class="pvs-lbl">Category blocks</div></div>
+        </div>
+        <div style="background:var(--warm-white);border-radius:8px;padding:14px;">
+          <div style="font-size:11px;color:var(--ink-light);margin-bottom:8px;">Top blocked categories</div>
+          ${[['Malware & phishing','847','var(--coral)'],['Adult content','199','var(--purple)'],['Social media (pupil VLAN)','113','var(--ink-light)']].map(([l,v,c])=>`
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border-soft);">
+              <span style="font-size:12px;">${l}</span><span style="font-size:12px;font-weight:500;color:${c};">${v}</span>
+            </div>`).join('')}
+        </div>
       </div>
     </div>
   </div>
 </div>
+<div class="container"><div class="section">
+  <div class="eyebrow">With vs without Shield</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">The measurable difference DNS-layer filtering makes.</h2>
+  <div class="stats-bar" style="grid-template-columns:repeat(4,1fr);">
+    <div class="stat-cell"><div class="stat-num">53%</div><div class="stat-lbl">faster page loads</div></div>
+    <div class="stat-cell"><div class="stat-num">44%</div><div class="stat-lbl">less data usage</div></div>
+    <div class="stat-cell"><div class="stat-num">62%</div><div class="stat-lbl">fewer DNS queries</div></div>
+    <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-lbl">family-safe browsing</div></div>
+  </div>
+</div></div>
 <div class="dark-section"><div class="container">
   <div class="eyebrow">Sectors</div>
   <h2 class="section-title" style="margin-bottom:32px;">Where Shield opens doors.</h2>
