@@ -428,8 +428,9 @@ textarea{resize:vertical;min-height:90px;}
 .sectors-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .sector-page-card{background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:26px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
 .sector-page-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(116,88,253,0.08);}
-.sector-page-em{color:var(--purple);margin-bottom:14px;display:inline-flex;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
-.sector-page-card:hover .sector-page-em{transform:scale(1.15) rotate(-4deg);}
+.sector-page-em{color:var(--purple);margin-bottom:14px;display:inline-flex;}
+.sector-page-icon-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.sector-page-card:hover .sector-page-icon-badge{transform:scale(1.1) rotate(-4deg);}
 .sector-page-name{font-family:'Poppins',sans-serif;font-size:20px;color:var(--ink);margin-bottom:6px;}
 .sector-page-desc{font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:16px;}
 .sector-products{display:flex;flex-wrap:wrap;gap:4px;}
@@ -454,8 +455,8 @@ textarea{resize:vertical;min-height:90px;}
     <div class="nav-item" id="dd-wifi">
       <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
         <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
+        <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
         <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
         <div class="dd-divider"></div>
         <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
@@ -1134,7 +1135,7 @@ app: () => `
       </div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FConneX-WiFi-details_1.webp&w=640&q=75" alt="The Purple app" style="width:100%;max-width:340px;display:block;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="The Purple app" style="width:100%;max-width:340px;display:block;">
     </div>
   </div>
 </div>
@@ -2088,16 +2089,16 @@ sectors: () => `
 <div class="container"><div class="section">
   <div class="sectors-page-grid">
     ${[
-      [icon('hospitality',26),'Hospitality','Hotels, restaurants, pubs, and cafes. Guest WiFi is the entry point, but the data capture and POS integration story is what makes it compelling.','Guest WiFi','Verify','sector-hospitality'],
-      [icon('retail',26),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail'],
-      [icon('healthcare',26),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare'],
-      [icon('education',26),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education'],
-      [icon('residential',26),'Residential & MDU','BTR, student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential'],
-      [icon('enterprise',26),'Enterprise','Office campuses and co-working spaces. The IBN platform pitch, zero trust, automated JML, NAC replacement, and identity-based access across every site.','Staff WiFi','Multi-tenant','sector-enterprise'],
-      [icon('transport',26),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport'],
-    ].map(([e,n,d,p1,p2,slug])=>`
+      [icon('hospitality',22),'Hospitality','Hotels, restaurants, pubs, and cafes. Guest WiFi is the entry point, but the data capture and POS integration story is what makes it compelling.','Guest WiFi','Verify','sector-hospitality',{bg:'var(--coral-light)',fg:'var(--coral)'}],
+      [icon('retail',22),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail',{bg:'#fef3e2',fg:'#d97706'}],
+      [icon('healthcare',22),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare',{bg:'var(--teal-light)',fg:'var(--teal)'}],
+      [icon('education',22),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education',{bg:'#eff6ff',fg:'#2563eb'}],
+      [icon('residential',22),'Residential & MDU','BTR, student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential',{bg:'var(--purple-light)',fg:'var(--purple)'}],
+      [icon('enterprise',22),'Enterprise','Office campuses and co-working spaces. The IBN platform pitch, zero trust, automated JML, NAC replacement, and identity-based access across every site.','Staff WiFi','Multi-tenant','sector-enterprise',{bg:'var(--purple-200)',fg:'var(--purple-dark)'}],
+      [icon('transport',22),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport',{bg:'#eef2ff',fg:'#4f46e5'}],
+    ].map(([e,n,d,p1,p2,slug,c])=>`
       <div class="sector-page-card" onclick="navigate('${slug}')">
-        <div class="sector-page-em">${e}</div>
+        <div class="sector-page-icon-badge" style="background:${c.bg};"><span class="sector-page-em" style="color:${c.fg};margin-bottom:0;">${e}</span></div>
         <div class="sector-page-name">${n}</div>
         <div class="sector-page-desc">${d}</div>
         <div class="sector-products"><span class="pill">${p1}</span><span class="pill">${p2}</span></div>
