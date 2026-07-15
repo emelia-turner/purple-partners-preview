@@ -1148,7 +1148,7 @@ app: () => `
       </div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="The Purple app" style="width:100%;max-width:340px;display:block;">
+      <img src="brand/app-mockup.webp" alt="The Purple app, showing the venue map and WiFi passes" style="width:100%;max-width:280px;display:block;">
     </div>
   </div>
 </div></div>
@@ -1170,12 +1170,12 @@ app: () => `
   </div>
 </div></div>
 
-<div class="container"><div class="section">
+<div class="dark-section"><div class="container">
   <div class="eyebrow">Why it matters to a sale</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">The upsell path is already built in.</h2>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;color:white;">The upsell path is already built in.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[['A familiar engine','A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn\'t change, just what the app is being used for.'],['Less for IT to manage','Nothing for a customer\'s IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.'],['A channel that keeps paying off','Every opted-in connection through the app is a contact a customer can message again, whether that\'s a loyalty offer to a guest or a notification to a resident.']].map(([t,d])=>`
-      <div class="card"><div class="card-title" style="font-size:16px;">${t}</div><p class="card-body">${d}</p></div>`).join('')}
+      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;"><div style="font-family:'Poppins',sans-serif;font-size:16px;color:white;margin-bottom:8px;">${t}</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;">${d}</p></div>`).join('')}
   </div>
 </div></div>
 `,
@@ -1481,10 +1481,12 @@ home: () => `
       <div style="display:flex;gap:12px;margin-bottom:28px;">
         <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
       </div>
-      <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
-        <div class="stat-cell"><div class="stat-num">80%</div><div class="stat-lbl">fewer IT tickets</div></div>
-        <div class="stat-cell"><div class="stat-num">99.999%</div><div class="stat-lbl">RADIUS uptime</div></div>
-        <div class="stat-cell"><div class="stat-num">440m</div><div class="stat-lbl">logins/year, 90+ countries</div></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        ${[['80%','fewer IT tickets','var(--teal)'],['99.999%','RADIUS uptime','var(--purple)'],['440m','logins/year, 90+ countries','var(--coral)']].map(([v,l,c])=>`
+          <div style="background:white;border-radius:var(--radius-lg);border-top:3px solid ${c};padding:18px 16px;box-shadow:0 10px 28px rgba(0,0,0,.2);">
+            <div class="stat-num" style="color:var(--ink);">${v}</div>
+            <div class="stat-lbl" style="color:var(--ink-light);">${l}</div>
+          </div>`).join('')}
       </div>
     </div>
     <div style="align-self:end;">
@@ -1865,23 +1867,16 @@ home: () => `
     </div>
   </div>
 </div>
-<div class="container">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:80px;padding-bottom:80px;">
-    <div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
-      <div class="feature-list">
-        ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.']].map(([t,d])=>`
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text"><strong>${t}</strong>${d}</div>
-          </div>`).join('')}
-      </div>
-    </div>
-    <div style="position:sticky;top:80px;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="A resident viewing their WiFi passes in the Purple app" style="width:100%;border-radius:var(--radius-xl);display:block;">
-    </div>
+<div class="container"><div class="section">
+  <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:32px;text-align:center;">What your customers get</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:920px;margin:0 auto;">
+    ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.']].map(([t,d],i)=>`
+      <div class="card" style="${i%2===1?'margin-top:36px;':''}${i===4?'grid-column:1 / -1;max-width:450px;margin-left:auto;margin-right:auto;':''}">
+        <div class="card-title" style="font-size:16px;">${t}</div>
+        <p class="card-body" style="margin-bottom:0;">${d}</p>
+      </div>`).join('')}
   </div>
-</div>
+</div></div>
 <div class="dark-section"><div class="container">
   <div class="eyebrow">Where to sell it</div>
   <h2 class="section-title" style="margin-bottom:32px;">Built for residential and extended-stay.</h2>

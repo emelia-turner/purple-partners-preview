@@ -89,10 +89,20 @@
       <div style="display:flex;gap:12px;margin-bottom:28px;">
         <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
       </div>
-      <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
-        <div class="stat-cell"><div class="stat-num">80%</div><div class="stat-lbl">fewer IT tickets</div></div>
-        <div class="stat-cell"><div class="stat-num">99.999%</div><div class="stat-lbl">RADIUS uptime</div></div>
-        <div class="stat-cell"><div class="stat-num">440m</div><div class="stat-lbl">logins/year, 90+ countries</div></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        
+          <div style="background:white;border-radius:var(--radius-lg);border-top:3px solid var(--teal);padding:18px 16px;box-shadow:0 10px 28px rgba(0,0,0,.2);">
+            <div class="stat-num" style="color:var(--ink);">80%</div>
+            <div class="stat-lbl" style="color:var(--ink-light);">fewer IT tickets</div>
+          </div>
+          <div style="background:white;border-radius:var(--radius-lg);border-top:3px solid var(--purple);padding:18px 16px;box-shadow:0 10px 28px rgba(0,0,0,.2);">
+            <div class="stat-num" style="color:var(--ink);">99.999%</div>
+            <div class="stat-lbl" style="color:var(--ink-light);">RADIUS uptime</div>
+          </div>
+          <div style="background:white;border-radius:var(--radius-lg);border-top:3px solid var(--coral);padding:18px 16px;box-shadow:0 10px 28px rgba(0,0,0,.2);">
+            <div class="stat-num" style="color:var(--ink);">440m</div>
+            <div class="stat-lbl" style="color:var(--ink-light);">logins/year, 90+ countries</div>
+          </div>
       </div>
     </div>
     <div style="align-self:end;">
