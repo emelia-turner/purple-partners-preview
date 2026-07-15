@@ -1023,7 +1023,7 @@ function renderSectorPage(slug) {
   const s = SECTOR_DATA[slug];
   return `
 <div style="background:var(--purple-deep);padding:72px 0 56px;position:relative;overflow:hidden;">
-  <img src="sectors/${SECTOR_IMAGES[slug]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;">
+  <img src="sectors/${SECTOR_IMAGES[slug]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;transform:scale(1.6);">
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,var(--purple-deep) 30%,rgba(1,22,56,.5));"></div>
   <div class="container" style="position:relative;">
     <div class="eyebrow" style="color:var(--purple-mid);">${s.icon} ${s.tag}</div>
@@ -1057,7 +1057,7 @@ function renderSectorPage(slug) {
   </div>
 </div></div>
 
-<div class="container"><div class="section">
+<div class="dark-section"><div class="container">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
     <div style="display:flex;justify-content:center;">
       <img src="brand/app-mockup.webp" alt="The Purple app" style="width:100%;max-width:220px;display:block;">
@@ -1065,7 +1065,7 @@ function renderSectorPage(slug) {
     <div>
       <div class="eyebrow">Powered by the Purple app</div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:12px;">Every login in ${s.tag.toLowerCase()} runs through the same app.</h2>
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">Whichever product opens the deal, staff sign-in, a guest's first connection, or a resident provisioning their network, it all happens in the same Purple app. That's one engine to explain, one experience to demo, and one channel that keeps paying off after the first login.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:0;">Whichever product opens the deal, staff sign-in, a guest's first connection, or a resident provisioning their network, it all happens in the same Purple app. That's one engine to explain, one experience to demo, and one channel that keeps paying off after the first login.</p>
     </div>
   </div>
 </div></div>
