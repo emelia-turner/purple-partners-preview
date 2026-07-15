@@ -51,14 +51,9 @@ const scriptPatches = [
    `<button class="btn-primary" onclick="${SIGNUP}">Become a partner</button>`],
   [`<button class="btn-white" onclick="navigate('home')">Become a partner</button>`,
    `<button class="btn-white" onclick="${SIGNUP}">Become a partner</button>`],
-  [`<button class="btn-white" onclick="navigate('home')">Register as a partner</button>`,
-   `<button class="btn-white" onclick="${SIGNUP}">Register as a partner</button>`],
   [`<span style="color:var(--purple);cursor:pointer;" onclick="navigate('home')">Apply here.</span>`,
    `<span style="color:var(--purple);cursor:pointer;" onclick="${SIGNUP}">Apply here.</span>`],
 ];
-// The 5 identical product-page "Register as a partner" buttons - replaceAll.
-const REGISTER_BTN = `<button class="btn-primary" onclick="navigate('home')">Register as a partner</button>`;
-scriptText = scriptText.split(REGISTER_BTN).join(`<button class="btn-primary" onclick="${SIGNUP}">Register as a partner</button>`);
 
 // Tools page: buttons that just re-navigated to the same page. Every one sits behind
 // "available to registered partners" copy, so routing them to the signup section is the

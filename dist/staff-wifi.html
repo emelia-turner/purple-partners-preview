@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7725adf3">
+<link rel="stylesheet" href="styles.css?v=7846ab99">
 </head>
 <body data-page="staff-wifi">
 <!-- NAV -->
@@ -83,14 +83,14 @@
 </nav>
 
 <div id="page-content">
-<div style="background:var(--warm-white);border-bottom:1px solid var(--border-soft);">
+<div style="background:var(--purple-deep);">
   <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:72px;padding-bottom:56px;">
     <div>
       <div class="tag">Staff WiFi</div>
-      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;">Passwordless zero-trust access, <em>automated.</em></h1>
-      <p style="font-size:16px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Your customers are still managing shared WiFi passwords and manually offboarding leavers. Staff WiFi fixes all of that with the Purple app, without new hardware.</p>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;color:white;">Passwordless zero-trust access, <em style="font-style:italic;color:var(--purple-200);">automated.</em></h1>
+      <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">Your customers are still managing shared WiFi passwords and manually offboarding leavers. Staff WiFi fixes all of that with the Purple app, without new hardware.</p>
       <div style="display:flex;gap:12px;margin-bottom:28px;">
-        <button class="btn-primary" onclick="location.href='https://onboarding.purple.ai/partner'">Register as a partner</button>
+        <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
       </div>
       <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
         <div class="stat-cell"><div class="stat-num">80%</div><div class="stat-lbl">fewer IT tickets</div></div>
@@ -184,15 +184,15 @@
   <h2 class="section-title" style="margin-bottom:16px;">Who your buyer is.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
     
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
+      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
         <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">IT & network managers</div>
         <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">The primary contact. They own the shared-password problem, fear an audit, and are looking for a solution that doesn't create more work.</div>
       </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
+      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
         <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">CISOs & security leads</div>
         <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">Zero trust and identity-based access are already on their agenda. Staff WiFi gives them a quick, demonstrable win on network security posture.</div>
       </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
+      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;">
         <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">HR & operations</div>
         <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">Feel the JML pain directly. Every leaver is a manual process and a potential security risk, Staff WiFi removes it entirely.</div>
       </div>
