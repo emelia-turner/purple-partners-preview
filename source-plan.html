@@ -38,6 +38,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .logo-text{font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;color:var(--ink);}
 .logo-text span{color:var(--purple);}
 .brand-logo{height:20px;width:auto;display:block;}
+.brand-logo-lockup{height:26px;width:auto;display:block;}
 .brand-divider{width:1px;height:20px;background:rgba(1,22,56,.15);}
 .brand-partners-text{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--ink);}
 .nav-links{display:flex;align-items:center;gap:2px;flex:1;}
@@ -280,9 +281,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .cs-slide-name{font-family:'Poppins',sans-serif;font-size:16px;color:var(--ink);margin-bottom:2px;}
 .cs-slide-cat{font-size:12px;color:var(--ink-light);margin-bottom:10px;}
 .cs-slide-snippet{font-size:13px;color:var(--ink-mid);line-height:1.6;}
-.cs-slide-stat{position:absolute;top:20px;right:20px;width:96px;height:96px;border-radius:50%;background:var(--purple);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(116,88,253,.35);}
-.cs-stat-val{font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;line-height:1;margin:0;}
-.cs-stat-lbl{font-size:10px;line-height:1;opacity:.85;margin-top:4px;}
+.cs-slide-stat{position:absolute;top:20px;right:20px;width:104px;height:104px;border-radius:50%;background:var(--purple);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(116,88,253,.35);}
+.cs-stat-val{font-family:'Poppins',sans-serif;font-size:24px;font-weight:600;line-height:1;margin:0;}
+.cs-stat-lbl{font-size:11px;line-height:1;opacity:.85;margin-top:5px;}
 .cs-dots{display:flex;gap:8px;justify-content:center;margin-top:16px;}
 .cs-dot{width:8px;height:8px;border-radius:50%;background:var(--purple-mid);border:none;padding:0;cursor:pointer;opacity:.4;transition:opacity .2s,transform .2s;}
 .cs-dot:hover{opacity:.7;}
@@ -320,7 +321,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .newsletter-cta-form{flex-shrink:0;}
 .newsletter-form-state{display:flex;flex-direction:column;gap:10px;}
 .newsletter-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:320px;}
-.newsletter-input{padding:10px 12px;font-size:13px;border:1px solid var(--border-soft);border-radius:var(--radius);font-family:'Poppins',sans-serif;width:100%;box-sizing:border-box;}
+.newsletter-input{padding:10px 12px;font-size:13px;text-align:center;border:1px solid var(--border-soft);border-radius:var(--radius);font-family:'Poppins',sans-serif;width:100%;box-sizing:border-box;}
 .newsletter-form-state .btn-primary{width:100%;}
 .newsletter-success-state{display:none;align-items:center;gap:8px;}
 .newsletter-cta.subscribed .newsletter-form-state{display:none;}
@@ -458,10 +459,8 @@ textarea{resize:vertical;min-height:90px;}
 <!-- NAV -->
 <nav id="main-nav">
  <div class="container nav-inner">
-  <div class="nav-logo" onclick="navigate('home')" style="gap:12px;">
-    <img src="brand/purple-logo.svg" alt="Purple" class="brand-logo">
-    <span class="brand-divider"></span>
-    <span class="brand-partners-text">Partners</span>
+  <div class="nav-logo" onclick="navigate('home')">
+    <img src="brand/purple-partners-logo.png" alt="Purple Partners" class="brand-logo-lockup">
   </div>
 
   <div class="nav-links">
@@ -512,7 +511,6 @@ textarea{resize:vertical;min-height:90px;}
       <div class="dropdown">
         <div class="dd-item" onclick="navigate('home')">Login to portal</div>
         <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
-        <div class="dd-item" onclick="navigate('home')">Register a deal</div>
       </div>
     </div>
 
@@ -923,8 +921,8 @@ const CASE_STUDY_DATA = {
     teaser: "Improved long-distance rail passenger connectivity.",
     challenge: "Avanti West Coast wanted to give passengers high-quality, free guest WiFi across its fleet and stations while using the connection to drive commercial value: loyalty sign-ups, upsell revenue, and passenger feedback.",
     solution: "Purple deployed its guest WiFi and Micro-Survey platform across the network, and Avanti used the resulting login and survey data to test at-seat ordering and premium-upgrade promotions.",
-    result: "The initiative delivered a large jump in survey response rates and a substantial measured return on investment.",
-    stats: [["463%","ROI"],["2.2m","unique visitors"],["10.5m","WiFi logins"],["95%","survey response rate"]]
+    result: "The initiative delivered a large jump in repeat travellers and a substantial measured return on investment.",
+    stats: [["463%","Return on investment"],["21k","Repeat travellers"],["3,744","Upsell purchases"]]
   },
   'c2c': {
     name: "c2c", tag: "Travel & transport", image: "images/case-studies/c2c.avif",
@@ -1367,26 +1365,22 @@ home: () => `
         <div><div class="why-num">20%</div><div class="why-lbl">Faster time to close</div><div class="why-desc">Our partner team supports every stage of your sales cycle.</div></div>
         <div><div class="why-num">18%</div><div class="why-lbl">Larger average deal size</div><div class="why-desc">Upsell opportunities at every renewal, across every product line.</div></div>
       </div>
+      <div style="margin-top:48px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--purple);opacity:.15;border-radius:50%;pointer-events:none;"></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;position:relative;">
+          <div style="width:30px;height:30px;background:var(--purple);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M4 8a7 7 0 0 1 10 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M6.2 10.4a3.8 3.8 0 0 1 5.6 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="white"/></svg>
+          </div>
+          <div class="eyebrow" style="margin-bottom:0;">Works with your customer's existing infrastructure</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;position:relative;">
+          ${['Cisco','Cisco Meraki','Aruba Networks (HPE)','Ruckus Wireless (CommScope)','Mist','Ubiquiti'].map(v=>`
+            <div class="hw-pill">${v}</div>`).join('')}
+        </div>
+        <div style="margin-top:20px;font-size:12px;color:rgba(255,255,255,.55);position:relative;">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple-mid);font-weight:500;" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware →</span></div>
+      </div>
     </div>
   </div>
-
-  <div class="container"><div class="section">
-    <!-- VISUAL BREAK: hardware logos -->
-    <div style="background:linear-gradient(135deg,var(--purple-light),white 65%);border:1px solid var(--purple-mid);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--purple);opacity:.07;border-radius:50%;pointer-events:none;"></div>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;position:relative;">
-        <div style="width:30px;height:30px;background:var(--purple);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M4 8a7 7 0 0 1 10 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><path d="M6.2 10.4a3.8 3.8 0 0 1 5.6 0" stroke="white" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="white"/></svg>
-        </div>
-        <div class="eyebrow" style="margin-bottom:0;">Works with your customer's existing infrastructure</div>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;position:relative;">
-        ${['Cisco','Cisco Meraki','Aruba Networks (HPE)','Ruckus Wireless (CommScope)','Mist','Ubiquiti'].map(v=>`
-          <div class="hw-pill">${v}</div>`).join('')}
-      </div>
-      <div style="margin-top:20px;font-size:12px;color:var(--ink-mid);position:relative;">Hardware-agnostic. No rip-and-replace. Purple deploys as a cloud overlay on whatever your customer already has. <span class="link-arrow" style="color:var(--purple);font-weight:500;" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Check compatible hardware →</span></div>
-    </div>
-  </div></div>
 
   <div class="dark-section">
     <div class="container">
@@ -1565,8 +1559,8 @@ home: () => `
       <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">Purple's Guest WiFi turns a cost center into a first-party data engine, without friction for guests and without complexity for you to deploy or manage. The Purple app removes captive-portal friction entirely for returning visitors.</p>
       <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
     </div>
-    <div style="align-self:end;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85" alt="Guest WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMulti-tenant-page-3.webp&w=1200&q=75" alt="A guest connected through the Purple app" style="width:100%;max-width:320px;display:block;">
     </div>
   </div>
 </div>
@@ -1715,8 +1709,8 @@ home: () => `
       <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;color:white;">Guest WiFi plans.</h1>
       <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;">Three plans on one platform. Start by connecting guests, then capture first-party data and engage them with personalized experiences, upgrading whenever a customer is ready.</p>
     </div>
-    <div style="align-self:end;">
-      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85" alt="Guest WiFi" style="width:100%;border-radius:16px 16px 0 0;display:block;object-fit:cover;max-height:340px;">
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <img src="https://www.purple.ai/_next/image?url=%2Fimages%2FB---Homepage_-_1.avif&w=1200&q=75" alt="A guest checking in via the Purple Guest WiFi portal" style="width:100%;max-width:320px;display:block;">
     </div>
   </div>
 </div>
@@ -1828,23 +1822,11 @@ home: () => `
         <div class="form-title">Talk to Purple</div>
         <div class="form-sub">We typically reply within one working day.</div>
         <div class="form-grid">
-          <div class="form-field"><label>Your name</label><input type="text" placeholder="Jane Smith"></div>
+          <div class="form-field"><label>First name</label><input type="text" placeholder="Jane"></div>
+          <div class="form-field"><label>Last name</label><input type="text" placeholder="Smith"></div>
           <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
           <div class="form-field"><label>Email</label><input type="email" placeholder="jane@acme.com"></div>
           <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="+44 7700 900000"></div>
-          <div class="form-field full"><label>What would you like to discuss?</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Becoming a partner</option>
-              <option>Guest WiFi</option>
-              <option>Staff WiFi</option>
-              <option>Multi-tenant WiFi</option>
-              <option>Verify</option>
-              <option>Shield</option>
-              <option>A specific customer opportunity</option>
-              <option>Other</option>
-            </select>
-          </div>
           <div class="form-field full"><label>Message</label>
             <textarea placeholder="Tell us a bit about what you're working on..."></textarea>
           </div>
