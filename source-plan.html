@@ -1996,10 +1996,15 @@ shield: () => `
 // ═══════════════════════════════════════
 benefits: () => `
 <div class="dark-section"><div class="container">
-  <div class="benefits-hero">
-    <div class="eyebrow">Partner benefits</div>
-    <h1 class="section-title">What's in it for you.</h1>
-    <p class="section-sub">Purple's dedicated partner team helps you stand out, win more, and close faster, with the numbers to prove it.</p>
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;padding:72px 0 64px;">
+    <div>
+      <div class="eyebrow">Partner benefits</div>
+      <h1 class="section-title" style="margin-bottom:14px;">What's in it for you.</h1>
+      <p class="section-sub" style="margin-bottom:0;">Purple's dedicated partner team helps you stand out, win more, and close faster, with the numbers to prove it.</p>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <img src="brand/benefits-signin-mockup.png" alt="Signing in to the Purple partner portal" style="width:100%;max-width:340px;display:block;">
+    </div>
   </div>
   <div class="benefits-grid">
     ${[['12%','Increased win rate','Partners consistently win more deals when Purple is in the mix. Our solution is easy to explain, easy to demo, and solves a problem every customer has.'],['15x','Return per £1 of Purple sold','For every pound of Purple software you sell, partners typically generate 15x in total deal value, hardware, installation, managed services, and ongoing support.'],['20%','Faster time to close','You\'re not doing this alone. Our partner team is on hand to join calls, support demos, and help you handle technical objections.'],['18%','Larger average deal size','Purple opens conversations about network identity that naturally expand scope. Upsell opportunities appear at every renewal across every product line.']].map(([n,t,d])=>`
