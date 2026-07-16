@@ -60,7 +60,7 @@ const scriptPatches = [
 // sensible placeholder rather than a no-op page reload - except hardware compatibility,
 // the guest WiFi checklist, integrations library, and case studies, which have real destinations.
 const toolsLabels = [
-  "Open calculator →", "Read the guide →",
+  "Read the guide →",
 ];
 for (const label of toolsLabels) {
   scriptPatches.push([
