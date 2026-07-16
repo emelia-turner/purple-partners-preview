@@ -1483,9 +1483,9 @@ home: () => `
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
         ${[['80%','fewer IT tickets'],['99.999%','RADIUS uptime'],['440m','logins/year, 90+ countries']].map(([v,l])=>`
-          <div class="dc-card" style="background:white;border-radius:var(--radius-lg);padding:18px 16px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.2);">
-            <div class="stat-num" style="color:var(--ink);">${v}</div>
-            <div class="stat-lbl" style="color:var(--ink-light);">${l}</div>
+          <div style="text-align:center;">
+            <div class="stat-num" style="color:white;">${v}</div>
+            <div class="stat-lbl" style="color:rgba(255,255,255,.5);">${l}</div>
           </div>`).join('')}
       </div>
     </div>
@@ -1867,8 +1867,9 @@ home: () => `
 <div class="container"><div class="section">
   <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:32px;text-align:center;">What your customers get</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:920px;margin:0 auto;">
-    ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.']].map(([t,d],i)=>`
+    ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.','<circle cx="8" cy="8" r="5" stroke="var(--purple)" stroke-width="1.3"/><circle cx="8" cy="8" r="1.5" fill="var(--purple)"/>'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.','<rect x="4" y="7" width="8" height="6" rx="1.3" stroke="var(--purple)" stroke-width="1.3"/><path d="M6 7V5a2 2 0 0 1 4 0v2" stroke="var(--purple)" stroke-width="1.3"/>'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.','<path d="M2 8.5 6 12l8-8" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.','<path d="M2 6.2v3.6h1.8l6 2.7V3.5l-6 2.7H2Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 6.3a2.1 2.1 0 0 1 0 3.4" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/>'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.','<rect x="2" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/>']].map(([t,d,svg],i)=>`
       <div class="card" style="${i%2===1?'margin-top:36px;':''}${i===4?'grid-column:1 / -1;max-width:450px;margin-left:auto;margin-right:auto;':''}">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">${svg}</svg></div>
         <div class="card-title" style="font-size:16px;">${t}</div>
         <p class="card-body" style="margin-bottom:0;">${d}</p>
       </div>`).join('')}
@@ -1900,19 +1901,28 @@ verify: () => `
       <p class="hero-sub">Fake and disposable email addresses dilute a customer's database, skew their metrics, and waste marketing budget on contacts that don't exist. Verify checks every email in real time at the point of guest WiFi login, so only genuine addresses ever reach the database.</p>
       <div class="prod-hero-actions">
         <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
-        
-      </div>
-      <div class="feature-list">
-        ${[['Real-time validation at login','Built into the captive portal flow, with no manual cleanup and no third-party tools.'],['Catches fake and disposable addresses','Misspelled, throwaway, and invalid emails are blocked before they ever reach the CRM.'],['Available with Capture and Engage','Layers directly onto Purple\'s existing data capture flows, no extra integration work.'],['A reliable first-party data engine','Every opt-in is valid, so every campaign your customer runs is built on contacts that are real.']].map(([t,d])=>`
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text"><strong>${t}</strong>${d}</div>
-          </div>`).join('')}
+
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;">
       <img src="https://www.purple.ai/_next/image?url=%2Fimages%2F6_1.avif&w=1200&q=75" alt="Guest WiFi Verify" style="width:100%;max-width:360px;display:block;">
     </div>
+  </div>
+</div></div>
+<div class="container"><div class="section">
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;text-align:center;margin-bottom:32px;">Why it works.</h2>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px;margin:0 auto;">
+    ${[
+      ['Real-time validation at login','Built into the captive portal flow, with no manual cleanup and no third-party tools.','<path d="M2 8.5 6 12l8-8" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'],
+      ['Catches fake and disposable addresses','Misspelled, throwaway, and invalid emails are blocked before they ever reach the CRM.','<path d="M8 1.5 13.5 3.8v4.1c0 3.6-2.3 6.6-5.5 7.6-3.2-1-5.5-4-5.5-7.6V3.8L8 1.5Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/>'],
+      ['Available with Capture and Engage','Layers directly onto Purple\'s existing data capture flows, no extra integration work.','<path d="M8 2 14 5.5 8 9 2 5.5 8 2Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/><path d="M2 9.5 8 13l6-3.5" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'],
+      ['A reliable first-party data engine','Every opt-in is valid, so every campaign your customer runs is built on contacts that are real.','<ellipse cx="8" cy="3.8" rx="5" ry="2" stroke="var(--purple)" stroke-width="1.3"/><path d="M3 3.8v8.4c0 1.1 2.2 2 5 2s5-.9 5-2V3.8" stroke="var(--purple)" stroke-width="1.3"/><path d="M3 8c0 1.1 2.2 2 5 2s5-.9 5-2" stroke="var(--purple)" stroke-width="1.3"/>'],
+    ].map(([t,d,svg])=>`
+      <div class="card">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">${svg}</svg></div>
+        <div class="card-title" style="font-size:16px;">${t}</div>
+        <p class="card-body" style="margin-bottom:0;">${d}</p>
+      </div>`).join('')}
   </div>
 </div></div>
 <div class="dark-section"><div class="container">
