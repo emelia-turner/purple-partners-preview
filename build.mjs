@@ -58,9 +58,8 @@ const scriptPatches = [
 // Tools page: buttons that just re-navigated to the same page. Every one sits behind
 // "available to registered partners" copy, so routing them to the signup section is the
 // sensible placeholder rather than a no-op page reload - except hardware compatibility,
-// the guest WiFi checklist, and case studies, which have real destinations.
+// the guest WiFi checklist, integrations library, and case studies, which have real destinations.
 const toolsLabels = [
-  "Browse integrations →",
   "Open calculator →", "Read the guide →",
 ];
 for (const label of toolsLabels) {
