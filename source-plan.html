@@ -1630,7 +1630,7 @@ home: () => `
     <div class="hero-float-badge hero-float-badge-accent hero-float-badge-expandable" style="bottom:26%;left:-20px;">
       <div class="hero-float-badge-icon" style="background:white;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5 13.5 3.8v4.1c0 3.6-2.3 6.6-5.5 7.6-3.2-1-5.5-4-5.5-7.6V3.8L8 1.5Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
       <span>A zero-trust security story</span>
-      <div class="hero-float-badge-detail">No open SSIDs, no anonymous access. Every connection is identity-verified before network access is granted, a compelling compliance story for security-conscious clients.</div>
+      <div class="hero-float-badge-detail">Every connection is identity-verified before network access is granted, a compelling compliance story for security-conscious clients.</div>
     </div>
     <div class="hero-float-badge hero-float-badge-accent hero-float-badge-expandable" style="bottom:2%;right:-20px;">
       <div class="hero-float-badge-icon" style="background:white;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 8.5 6 12l8-8" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -2062,11 +2062,7 @@ sectors: () => `
   <div class="container">
     <div class="eyebrow" style="color:var(--purple-mid);">Sectors</div>
     <h1 style="font-family:'Poppins',sans-serif;font-size:48px;color:white;margin-bottom:16px;max-width:600px;">Sell into the right <em style="font-style:italic;color:var(--purple-200);">conversation.</em></h1>
-    <p style="font-size:16px;color:rgba(255,255,255,.5);max-width:520px;line-height:1.7;margin-bottom:36px;">Every sector has a different buyer, a different pain point, and a different entry angle. Use these pages to qualify faster and pitch smarter.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      ${[['Hospitality','sector-hospitality'],['Retail','sector-retail'],['Healthcare','sector-healthcare'],['Education','sector-education'],['Residential & MDU','sector-residential'],['Enterprise','sector-enterprise'],['Transport & venues','sector-transport']].map(([s,p])=>`
-        <div style="padding:6px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;font-size:12px;color:rgba(255,255,255,.6);cursor:pointer;" onclick="navigate('${p}')">${s}</div>`).join('')}
-    </div>
+    <p style="font-size:16px;color:rgba(255,255,255,.5);max-width:520px;line-height:1.7;">Every sector has a different buyer, a different pain point, and a different entry angle. Use these pages to qualify faster and pitch smarter.</p>
   </div>
 </div>
 <div class="container"><div class="section">
@@ -2084,7 +2080,6 @@ sectors: () => `
         <div class="sector-page-icon-badge" style="background:${c.bg};"><span class="sector-page-em" style="color:${c.fg};margin-bottom:0;">${e}</span></div>
         <div class="sector-page-name">${n}</div>
         <div class="sector-page-desc">${d}</div>
-        <div class="sector-products"><span class="pill">${p1}</span><span class="pill">${p2}</span></div>
       </div>`).join('')}
   </div>
   ${renderNewsletterCTA()}
