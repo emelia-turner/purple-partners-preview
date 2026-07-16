@@ -743,13 +743,13 @@ const SECTOR_DATA = {
     tag: "Healthcare",
     hook: "Healthcare WiFi that improves patient experience and protects patient data.",
     sub: "Hospitals, GP surgeries, and care homes need staff and guest networks that satisfy auditors and don't create more tickets. Purple overlays onto existing infrastructure and proves itself in weeks, with the Purple app handling identity for staff and reconnection for patients and visitors.",
-    quickWins: ["Staff access tied to identity, revoked automatically on leaving","A branded guest network live for patients and visitors in weeks","Audit-ready filtering reports for governors and regulators"],
+    quickWins: ["Staff access tied to identity, revoked automatically on leaving","A branded guest network live for patients and visitors in weeks","Care home residents get their own private network bubble via the app"],
     challenges: [
       { title: "Slow, unreliable WiFi is hurting patient satisfaction scores", body: "A seamless and secure WiFi connection for patients and visitors is crucial for satisfaction, slow or unreliable internet leads to frustration and negative reviews. Guest WiFi offers easy onboarding, high-speed access, and content filtering to ensure a positive digital experience throughout a stay.", key: "guest-wifi" },
       { title: "Staff tablets and medical devices fighting for the same network", body: "Healthcare facilities rely on a multitude of connected devices, from staff tablets to critical medical equipment. Staff WiFi ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.", key: "staff-wifi" },
-      { title: "No demonstrable proof of network security for DSPT audits", body: "NHS Digital's Data Security and Protection Toolkit expects demonstrable network security measures. Shield gives a visible layer of protection with network segmentation and exportable reports built for exactly that conversation.", key: "shield" }
+      { title: "Long-stay wards and care homes with no private network for residents", body: "Long-term patients and care home residents need a network that feels like home, not a shared hospital WiFi. Multi-tenant WiFi gives each resident their own private network bubble, provisioned through the Purple app.", key: "multi-tenant" }
     ],
-    recommended: ["staff-wifi","guest-wifi","shield"],
+    recommended: ["staff-wifi","guest-wifi","multi-tenant"],
     proof: {
       stat: "2 wks", label: "to go live",
       title: "Queen Elizabeth Hospital took guest WiFi from a single coffee shop to every ward.",
@@ -772,9 +772,9 @@ const SECTOR_DATA = {
     challenges: [
       { title: "A flood of helpdesk tickets every move-in week", body: "Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.", key: "multi-tenant" },
       { title: "Staff and student networks that aren't properly separated", body: "Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.", key: "staff-wifi" },
-      { title: "No safeguarding evidence to show when it's asked for", body: "Governing bodies expect demonstrable internet safety measures. Shield is IWF and Friendly WiFi certified, giving schools and colleges the filtering evidence they need, with reporting built for exactly that purpose.", key: "shield" }
+      { title: "Open days and campus visitors with no easy way online", body: "Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.", key: "guest-wifi" }
     ],
-    recommended: ["multi-tenant","staff-wifi","shield"],
+    recommended: ["multi-tenant","staff-wifi","guest-wifi"],
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure already trusted by 80,000 venues.",
