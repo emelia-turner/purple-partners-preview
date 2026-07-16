@@ -723,7 +723,7 @@ const SECTOR_DATA = {
     quickWins: ["A consented, first-party database built from every login","Loyalty sign-up routed straight from the splash page","Repeat shoppers recognized automatically in-app"],
     challenges: [
       { title: "No visibility on who walks through the doors", body: "Purple captures opted-in profile and demographic data the moment shoppers connect, age, gender, interests, and visit behavior, so a customer can build a single customer view and market to it.", key: "guest-wifi" },
-      { title: "No idea how shoppers actually move through your stores", body: "Purple tracks the in-store journey from entrance to exit, footfall, dwell time, busiest zones, and visit frequency, so a customer can optimize layout, staffing, and promotions around real behavior.", key: "guest-wifi" },
+      { title: "Shop floor staff and POS devices sharing one WiFi password", body: "Till systems, handheld scanners, and staff devices all need reliable access, but a shared password that never rotates is a security gap waiting to happen. Staff WiFi ties access to identity, so leavers lose access automatically and every device authenticates on its own credential.", key: "staff-wifi" },
       { title: "No way to know if the emails you're capturing are even real", body: "Fake, misspelled, and disposable email addresses dilute the database and skew every campaign. Verify checks every address in real time at the point of login, so the database a retailer builds is one the marketing team can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
@@ -834,7 +834,7 @@ const SECTOR_DATA = {
     challenges: [
       { title: "Managing secure staff access across a sprawling terminal estate", body: "From check-in desks to baggage handling and retail, staff depend on secure, reliable connectivity across a large and complex estate, and every device and contractor needs the right level of access, with role-based access and clear visibility of usage across every terminal.", key: "staff-wifi" },
       { title: "Passenger WiFi that's a cost center, not a revenue line", body: "Passengers expect to connect in seconds and stay online through security, the lounge, and the gate. Purple connects passengers fast, builds rich passenger profiles from every login, and lets operators serve targeted, location-aware offers that lift concession and retail spend.", key: "guest-wifi" },
-      { title: "A WiFi experience passengers barely notice, or trust", body: "Passengers expect a seamless and connected journey, with high-speed WiFi, real-time travel information, and on-board entertainment. A branded captive portal can be used to share travel information and promotions, turning every journey into a revenue and engagement opportunity.", key: "guest-wifi" }
+      { title: "Passenger email capture that's mostly noise", body: "High footfall public WiFi means a flood of fake, misspelled, and disposable email addresses. Verify checks every address in real time at login, so passenger data actually feeds usable marketing campaigns.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
     proof: {
@@ -1057,14 +1057,12 @@ function renderSectorPage(slug) {
 <div class="container"><div class="section">
   <div class="eyebrow">The conversation</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">What your customer is dealing with right now.</h2>
-  <div style="display:flex;flex-direction:column;gap:0;">
-    ${s.challenges.map((c,i) => `
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;${i < s.challenges.length-1 ? 'border-bottom:1px solid var(--border-soft);' : ''}">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">${c.title}</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">${c.body}</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('${c.key}')">Learn about ${ALL_PRODUCTS[c.key].name} →</span>
-        </div>
+  <div style="display:grid;grid-template-columns:repeat(${s.challenges.length},1fr);gap:20px;">
+    ${s.challenges.map((c) => `
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">${c.title}</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">${c.body}</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('${c.key}')">View ${ALL_PRODUCTS[c.key].name} →</span>
       </div>`).join('')}
   </div>
 </div></div>

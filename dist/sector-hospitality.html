@@ -114,28 +114,22 @@
 <div class="container"><div class="section">
   <div class="eyebrow">The conversation</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">What your customer is dealing with right now.</h2>
-  <div style="display:flex;flex-direction:column;gap:0;">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--border-soft);">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">Staff turnover means old WiFi credentials are still floating around</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Housekeeping, F&B, front desk, when someone leaves, their hotel WiFi access goes with them. No IT ticket needed. Each role gets the right access from day one, and directory sync means leavers are locked out automatically, no manual process, no security gap.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('staff-wifi')">Learn about Staff WiFi <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Staff turnover means old WiFi credentials are still floating around</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">Housekeeping, F&B, front desk, when someone leaves, their hotel WiFi access goes with them. No IT ticket needed. Each role gets the right access from day one, and directory sync means leavers are locked out automatically, no manual process, no security gap.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('staff-wifi')">View Staff WiFi <span class="arr">→</span></span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--border-soft);">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">Guest WiFi that's just a login screen, not a loyalty tool</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">A branded portal isn't just a login screen. It's where guests join the rewards programme, leave a review, and get upsold on F&B, automatically, every stay. Business travellers and leisure guests connect once and stay connected throughout their stay.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('guest-wifi')">Learn about Guest WiFi <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Guest WiFi that's just a login screen, not a loyalty tool</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">A branded portal isn't just a login screen. It's where guests join the rewards programme, leave a review, and get upsold on F&B, automatically, every stay. Business travellers and leisure guests connect once and stay connected throughout their stay.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('guest-wifi')">View Guest WiFi <span class="arr">→</span></span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">Data that never reaches a usable database</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('verify')">Learn about Verify <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Data that never reaches a usable database</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('verify')">View Verify <span class="arr">→</span></span>
       </div>
   </div>
 </div></div>

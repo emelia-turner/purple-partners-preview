@@ -114,28 +114,22 @@
 <div class="container"><div class="section">
   <div class="eyebrow">The conversation</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">What your customer is dealing with right now.</h2>
-  <div style="display:flex;flex-direction:column;gap:0;">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--border-soft);">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">A flood of helpdesk tickets every move-in week</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('multi-tenant')">Learn about Multi-tenant WiFi <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">A flood of helpdesk tickets every move-in week</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('multi-tenant')">View Multi-tenant WiFi <span class="arr">→</span></span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--border-soft);">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">Staff and student networks that aren't properly separated</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('staff-wifi')">Learn about Staff WiFi <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Staff and student networks that aren't properly separated</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('staff-wifi')">View Staff WiFi <span class="arr">→</span></span>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:28px 0;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:21px;color:var(--ink);margin:0;">Open days and campus visitors with no easy way online</h3>
-        <div>
-          <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:10px;">Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.</p>
-          <span class="link-arrow" style="font-size:13px;color:var(--purple);" onclick="navigate('guest-wifi')">Learn about Guest WiFi <span class="arr">→</span></span>
-        </div>
+      <div class="card" style="display:flex;flex-direction:column;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Open days and campus visitors with no easy way online</h3>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.</p>
+        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('guest-wifi')">View Guest WiFi <span class="arr">→</span></span>
       </div>
   </div>
 </div></div>
