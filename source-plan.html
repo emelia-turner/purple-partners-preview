@@ -582,6 +582,36 @@ const ALL_PRODUCTS = {
 };
 const PRODUCT_ORDER = ["staff-wifi","guest-wifi","multi-tenant","verify","shield"];
 
+// Real per-product photos + copy for the "Where Purple fits" recommended-products
+// cards on sector pages (renderSectorPage). Reused across every sector that
+// recommends a given product, rather than authoring sector x product combinations.
+const RECOMMENDED_PRODUCT_CARDS = {
+  "staff-wifi": {
+    image: "https://www.purple.ai/_next/image?url=%2Fimages%2FStaff-Wifi-Image.webp&w=1200&q=85",
+    title: "Passwordless zero-trust access",
+    body: "WPA3-Enterprise with automatic device provisioning and revocation tied to your customer's identity provider, via the Purple app. No shared passwords, no manual IT overhead.",
+    bullet: "Works with Entra ID, Google & Okta"
+  },
+  "guest-wifi": {
+    image: "https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85",
+    title: "Frictionless visitor access",
+    body: "Branded portal or seamless connection via the Purple app, with built-in analytics, marketing automation, and first-party data capture. The layer that turns WiFi into a revenue tool.",
+    bullet: "Branded captive portal or seamless connection"
+  },
+  "multi-tenant": {
+    image: "https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85",
+    title: "Private, isolated networks",
+    body: "Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.",
+    bullet: "Per-unit network isolation, via iPSK"
+  },
+  "verify": {
+    image: "https://www.purple.ai/_next/image?url=%2Fimages%2F6_1.avif&w=1200&q=75",
+    title: "Real, reachable contacts",
+    body: "Fake and disposable email addresses dilute a customer's database and waste marketing budget. Verify checks every email in real time at the point of login, so only genuine addresses reach the database.",
+    bullet: "Real-time validation at login"
+  },
+};
+
 // Simple currentColor line icons replacing emoji glyphs - inherits whatever
 // text color the surrounding context sets, works on light and dark backgrounds alike.
 const ICON_PATHS = {
@@ -1061,9 +1091,31 @@ function renderSectorPage(slug) {
     ${s.challenges.map((c) => `
       <div class="card" style="display:flex;flex-direction:column;">
         <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">${c.title}</h3>
-        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;flex:1;">${c.body}</p>
-        <span class="link-arrow" style="font-size:13px;font-weight:500;color:var(--purple);" onclick="navigate('${c.key}')">View ${ALL_PRODUCTS[c.key].name} →</span>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:0;flex:1;">${c.body}</p>
       </div>`).join('')}
+  </div>
+</div></div>
+
+<div class="container"><div class="section">
+  <div class="eyebrow">Where Purple fits</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
+  <div style="display:grid;grid-template-columns:repeat(${s.recommended.length},1fr);gap:20px;">
+    ${s.recommended.map((key) => {
+      const p = RECOMMENDED_PRODUCT_CARDS[key];
+      return `
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('${key}')">
+        <img src="${p.image}" alt="${ALL_PRODUCTS[key].name}" style="width:100%;height:160px;object-fit:cover;display:block;">
+        <div style="padding:24px;">
+          <div class="tag" style="margin-bottom:14px;">${ALL_PRODUCTS[key].name.toUpperCase()}</div>
+          <div class="card-title" style="font-size:18px;">${p.title}</div>
+          <p class="card-body">${p.body}</p>
+          <div style="display:flex;gap:9px;align-items:flex-start;">
+            <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">${p.bullet}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('')}
   </div>
 </div></div>
 
@@ -2084,13 +2136,13 @@ sectors: () => `
 <div class="container"><div class="section">
   <div class="sectors-page-grid">
     ${[
-      [icon('hospitality',22),'Hospitality','Hotels, restaurants, pubs, and cafes. Guest WiFi is the entry point, but the data capture and POS integration story is what makes it compelling.','Guest WiFi','Verify','sector-hospitality',{bg:'var(--coral-light)',fg:'var(--coral)'}],
-      [icon('retail',22),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail',{bg:'#fef3e2',fg:'#d97706'}],
-      [icon('healthcare',22),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare',{bg:'var(--teal-light)',fg:'var(--teal)'}],
-      [icon('education',22),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education',{bg:'#eff6ff',fg:'#2563eb'}],
+      [icon('hospitality',22),'Hospitality','Hotels, restaurants, pubs, and cafes. Guest WiFi is the entry point, but the data capture and POS integration story is what makes it compelling.','Guest WiFi','Verify','sector-hospitality',{bg:'var(--purple-light)',fg:'var(--purple)'}],
+      [icon('retail',22),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail',{bg:'var(--purple-200)',fg:'var(--purple-dark)'}],
+      [icon('healthcare',22),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}],
+      [icon('education',22),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education',{bg:'var(--purple-200)',fg:'var(--purple)'}],
       [icon('residential',22),'Residential & MDU','BTR, student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential',{bg:'var(--purple-light)',fg:'var(--purple)'}],
       [icon('enterprise',22),'Enterprise','Office campuses and co-working spaces. The IBN platform pitch, zero trust, automated JML, NAC replacement, and identity-based access across every site.','Staff WiFi','Multi-tenant','sector-enterprise',{bg:'var(--purple-200)',fg:'var(--purple-dark)'}],
-      [icon('transport',22),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport',{bg:'#eef2ff',fg:'#4f46e5'}],
+      [icon('transport',22),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}],
     ].map(([e,n,d,p1,p2,slug,c])=>`
       <div class="sector-page-card" onclick="navigate('${slug}')">
         <div class="sector-page-icon-badge" style="background:${c.bg};"><span class="sector-page-em" style="color:${c.fg};margin-bottom:0;">${e}</span></div>
@@ -2193,26 +2245,8 @@ tools: () => `
     </div>
   </div>
 
-  <!-- TOOL 5: CASE STUDIES -->
-  <div id="case-studies" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
-    <div>
-      <div class="tool-tag existing" style="margin-bottom:14px;">Sales enablement</div>
-      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Case studies</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">End-customer proof points across hospitality, retail, education, healthcare, and more. Use these in proposals, on sales calls, or to help a prospect visualize the outcome, not just the product.</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">Browse case studies →</button>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      ${[['Harrods','Hospitality','57X ROI on the original guest WiFi investment','#F5F3EF'],['McDonald\'s','Hospitality','Data capture at scale across 1,300+ UK sites','#EEF4FF'],['AGS Airports','Transport','Passenger analytics across 3 Scottish airports','#EFF9F5'],['NHS Trust','Healthcare','Improved patient experience and engagement data','#FEF5EE']].map(([n,s,d,bg])=>`
-        <div style="background:${bg};border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:18px;">
-          <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--purple);margin-bottom:6px;">${s}</div>
-          <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;">${n}</div>
-          <div style="font-size:12px;color:var(--ink-mid);line-height:1.5;">${d}</div>
-        </div>`).join('')}
-    </div>
-  </div>
-
-  <!-- TOOL 6: PORTAL GUIDE -->
-  <div id="portal-guide" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+  <!-- TOOL 5: PORTAL GUIDE -->
+  <div id="portal-guide" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
     <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
       <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Partner portal, what's inside</div>
       ${[['Customer management','Create and manage every customer, with visibility into their licenses, addons, groups, venues, and users'],['Branded splash pages','Choose from templates or build your own to match each customer\'s brand'],['Analytics & reporting','Usage and performance reports for every customer'],['Guides & documentation','Step-by-step setup and reseller documentation'],['Dedicated support','Direct access to the Purple support team for any query']].map(([t,d])=>`
@@ -2226,6 +2260,24 @@ tools: () => `
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Portal setup guide</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Step-by-step guide to getting up and running in the partner portal: adding customers, building branded splash pages, and reading your analytics reports. Takes about 15 minutes to complete.</p>
       <button class="btn-primary" onclick="navigate('tools')">Read the guide →</button>
+    </div>
+  </div>
+
+  <!-- TOOL 6: CASE STUDIES -->
+  <div id="case-studies" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+    <div>
+      <div class="tool-tag existing" style="margin-bottom:14px;">Sales enablement</div>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Case studies</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">End-customer proof points across hospitality, retail, education, healthcare, and more. Use these in proposals, on sales calls, or to help a prospect visualize the outcome, not just the product.</p>
+      <button class="btn-primary" onclick="navigate('case-studies')">Browse case studies →</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      ${[['Harrods','Hospitality','57X ROI on the original guest WiFi investment','#F5F3EF'],['McDonald\'s','Hospitality','Data capture at scale across 1,300+ UK sites','#EEF4FF'],['AGS Airports','Transport','Passenger analytics across 3 Scottish airports','#EFF9F5'],['NHS Trust','Healthcare','Improved patient experience and engagement data','#FEF5EE']].map(([n,s,d,bg])=>`
+        <div style="background:${bg};border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:18px;">
+          <div style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--purple);margin-bottom:6px;">${s}</div>
+          <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:5px;">${n}</div>
+          <div style="font-size:12px;color:var(--ink-mid);line-height:1.5;">${d}</div>
+        </div>`).join('')}
     </div>
   </div>
 
