@@ -139,8 +139,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-dark-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:56px;}
 .hero-dark-actions .btn-secondary{color:white;border-color:rgba(255,255,255,.3);}
 .hero-dark-actions .btn-secondary:hover{background:rgba(255,255,255,.1);color:white;}
-.hero-dark-frame-wrap{position:relative;max-width:900px;margin:0 auto;}
-.hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;}
+.hero-dark-frame-wrap{position:relative;max-width:900px;margin:0 auto;perspective:1400px;}
+.hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;transform-style:preserve-3d;will-change:transform;transition:transform .15s ease-out;}
+@media (prefers-reduced-motion: reduce){.hero-dark-frame{transition:none;}}
 .hero-dark-frame-cam{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);margin:0 auto 16px;}
 .hero-dark-frame .dash-wrap{border-radius:10px;}
 .hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease;}
