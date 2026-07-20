@@ -733,6 +733,11 @@ const SECTOR_DATA = {
       { title: "Data that never reaches a usable database", body: "Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    productCards: {
+      "guest-wifi": { title: "A loyalty engine, not just a login screen", body: "Branded portal or seamless connection via the Purple app, with every login routed straight into the rewards programme and F&B upsells. The unseen marketing channel every venue already owns.", bullet: "Branded captive portal or seamless connection" },
+      "verify": { title: "Real, reachable guest data", body: "Even when a venue captures an email at login, a meaningful share are fake or mistyped. Verify checks every address in real time, so the database a venue builds is one it can actually use.", bullet: "Real-time validation at login" },
+      "staff-wifi": { title: "Zero-trust access for every shift", body: "WPA3-Enterprise with automatic provisioning and revocation tied to the venue's identity provider. Housekeeping, F&B, and front desk each get the right access from day one, no shared passwords, no manual IT overhead.", bullet: "Works with Entra ID, Google & Okta" }
+    },
     proof: {
       stat: "90%", label: "fewer on-site IT visits",
       title: "McDonald's Belgium turned guest WiFi into a data and app-growth engine.",
@@ -758,6 +763,11 @@ const SECTOR_DATA = {
       { title: "No way to know if the emails you're capturing are even real", body: "Fake, misspelled, and disposable email addresses dilute the database and skew every campaign. Verify checks every address in real time at the point of login, so the database a retailer builds is one the marketing team can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    productCards: {
+      "guest-wifi": { title: "Turn footfall into a first-party database", body: "Branded portal or seamless connection via the Purple app, capturing opted-in profile and demographic data the moment shoppers connect. Build a single customer view, and market to it.", bullet: "Branded captive portal or seamless connection" },
+      "verify": { title: "A customer database your marketing team can trust", body: "Fake, misspelled, and disposable email addresses dilute the database and skew every campaign. Verify checks every address in real time at login, so it's one the marketing team can actually use.", bullet: "Real-time validation at login" },
+      "staff-wifi": { title: "One shared password problem, solved", body: "WPA3-Enterprise ties till systems, handheld scanners, and staff devices to identity, so leavers lose access automatically and every device authenticates on its own credential.", bullet: "Works with Entra ID, Google & Okta" }
+    },
     proof: {
       stat: "57X", label: "ROI on the original investment",
       title: "Harrods saw a 57X return on the original investment of improving and optimizing the guest WiFi experience.",
@@ -780,6 +790,11 @@ const SECTOR_DATA = {
       { title: "Long-stay wards and care homes with no private network for residents", body: "Long-term patients and care home residents need a network that feels like home, not a shared hospital WiFi. Multi-tenant WiFi gives each resident their own private network bubble, provisioned through the Purple app.", key: "multi-tenant" }
     ],
     recommended: ["staff-wifi","guest-wifi","multi-tenant"],
+    productCards: {
+      "staff-wifi": { title: "Priority access for staff tablets and clinical devices", body: "WPA3-Enterprise ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.", bullet: "Works with Entra ID, Google & Okta" },
+      "guest-wifi": { title: "A better connected stay for patients and visitors", body: "Branded portal with easy onboarding, high-speed access, and content filtering, turning a compliance requirement into a visible, patient-facing amenity.", bullet: "Branded captive portal or seamless connection" },
+      "multi-tenant": { title: "A private network bubble for every resident", body: "Long-term patients and care home residents get their own private network bubble, provisioned through the Purple app, not a shared hospital WiFi.", bullet: "Per-unit network isolation, via iPSK" }
+    },
     proof: {
       stat: "2 wks", label: "to go live",
       title: "Queen Elizabeth Hospital took guest WiFi from a single coffee shop to every ward.",
@@ -805,6 +820,11 @@ const SECTOR_DATA = {
       { title: "Open days and campus visitors with no easy way online", body: "Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi","guest-wifi"],
+    productCards: {
+      "multi-tenant": { title: "Ready before move-in day, no ticket required", body: "iPSK and the Purple app give every student a private network bubble set up before they arrive, so consoles, TVs, and personal devices connect without a portal.", bullet: "Per-unit network isolation, via iPSK" },
+      "staff-wifi": { title: "Staff access, properly separated from student traffic", body: "WPA3-Enterprise ties faculty and administrative access to identity, kept separate from student traffic, with automated offboarding when contracts end.", bullet: "Works with Entra ID, Google & Okta" },
+      "guest-wifi": { title: "Campus visitors online in seconds", body: "Parents, prospective students, and conference guests get fast, branded WiFi without touching the student or staff network, capturing a verified, opted-in contact for admissions.", bullet: "Branded captive portal or seamless connection" }
+    },
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure already trusted by 80,000 venues.",
@@ -826,6 +846,10 @@ const SECTOR_DATA = {
       { title: "No separate, secure access for visitors in shared spaces", body: "Prospective tenants, contractors, and visitors in common areas like lobbies, gyms, and co-working spaces all require internet access. A separate, secure guest network is crucial for security and to ensure the resident experience isn't compromised.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi"],
+    productCards: {
+      "multi-tenant": { title: "A true private network, not a shared one", body: "iPSK and the Purple app give every resident a genuine private network bubble from day one, with browserless devices supported and no router to configure per unit.", bullet: "Per-unit network isolation, via iPSK" },
+      "staff-wifi": { title: "Staff access, kept separate from residents and guests", body: "WPA3-Enterprise ties property staff access to identity, fully separated from resident and guest networks, so leavers are locked out automatically.", bullet: "Works with Entra ID, Google & Okta" }
+    },
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure already trusted by 80,000 venues.",
@@ -847,6 +871,9 @@ const SECTOR_DATA = {
       { title: "Every starter and leaver means another manual access change", body: "Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.", key: "staff-wifi" }
     ],
     recommended: ["staff-wifi"],
+    productCards: {
+      "staff-wifi": { title: "The end of the shared office WiFi password", body: "WPA3-Enterprise ties every employee's access to Entra ID, Google Workspace, or Okta, so starters and leavers happen automatically, no manual IT ticket, no lingering access.", bullet: "Works with Entra ID, Google & Okta" }
+    },
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure trusted by 80,000 venues.",
@@ -868,6 +895,11 @@ const SECTOR_DATA = {
       { title: "Passenger email capture that's mostly noise", body: "High footfall public WiFi means a flood of fake, misspelled, and disposable email addresses. Verify checks every address in real time at login, so passenger data actually feeds usable marketing campaigns.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    productCards: {
+      "guest-wifi": { title: "Passenger WiFi as a revenue line, not a cost center", body: "Passengers connect in seconds and stay online through security, the lounge, and the gate, via the Purple app, building rich profiles that power targeted, location-aware offers.", bullet: "Branded captive portal or seamless connection" },
+      "verify": { title: "Passenger data that actually feeds your campaigns", body: "High footfall public WiFi means a flood of fake and disposable email addresses. Verify checks every address in real time at login, so passenger data isn't mostly noise.", bullet: "Real-time validation at login" },
+      "staff-wifi": { title: "Role-based access across a sprawling terminal estate", body: "WPA3-Enterprise gives every staff member and contractor the right level of access automatically, with clear visibility of usage across every terminal.", bullet: "Works with Entra ID, Google & Okta" }
+    },
     proof: {
       stat: "842%", label: "ROI",
       title: "AGS Airports turned WiFi into a revenue line and a clean, verified passenger database.",
@@ -1145,7 +1177,7 @@ function renderSectorPage(slug) {
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
   <div style="display:grid;grid-template-columns:repeat(${s.recommended.length},1fr);gap:20px;">
     ${s.recommended.map((key) => {
-      const p = RECOMMENDED_PRODUCT_CARDS[key];
+      const p = { ...RECOMMENDED_PRODUCT_CARDS[key], ...(s.productCards && s.productCards[key] || {}) };
       return `
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('${key}')">
         <img src="${p.image}" alt="${ALL_PRODUCTS[key].name}" style="width:100%;height:160px;object-fit:cover;display:block;">
