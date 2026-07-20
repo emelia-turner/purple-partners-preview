@@ -148,6 +148,16 @@ const ROUTES = [
   ["marketing", "marketing.html", "Marketing support | Purple Partners"],
   ["call-out-day", "call-out-day.html", "Partner Call-Out Days | Purple Partners"],
   ["blog", "blog.html", "Partner blog | Purple Partners"],
+  ["blog-airport-rfp", "blog-airport-rfp.html", "Turning WiFi into Revenue | Purple Partners"],
+  ["blog-faster-network", "blog-faster-network.html", "How to give your customers a faster network | Purple Partners"],
+  ["blog-open-to-secure", "blog-open-to-secure.html", "From open to secure | Purple Partners"],
+  ["blog-staff-wifi-education", "blog-staff-wifi-education.html", "Staff WiFi for schools and universities | Purple Partners"],
+  ["blog-auto-revocation", "blog-auto-revocation.html", "Auto-revocation | Purple Partners"],
+  ["blog-contractor-access", "blog-contractor-access.html", "Contractor and time-limited staff WiFi access | Purple Partners"],
+  ["blog-sceptical-it-manager", "blog-sceptical-it-manager.html", "Selling passwordless WiFi to a sceptical IT manager | Purple Partners"],
+  ["blog-zero-trust", "blog-zero-trust.html", "Zero Trust networking for WiFi | Purple Partners"],
+  ["blog-three-problems", "blog-three-problems.html", "The 3 problems Purple solves | Purple Partners"],
+  ["blog-client-meeting", "blog-client-meeting.html", "Introducing identity-based networks in a client meeting | Purple Partners"],
 ];
 
 // Wrap trailing arrow glyphs (" →", " ›") in a span so CSS can nudge just the icon

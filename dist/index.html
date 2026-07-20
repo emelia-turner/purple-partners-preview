@@ -63,7 +63,8 @@
     <div class="nav-item" id="dd-portal">
       <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://eu.wifi.purple.ai/services/auth/login?response_type=code&amp;client_id=beb6ddbb8ffbb65aa96d35bb30553a39&amp;redirect_uri=https%3A%2F%2Feu.wifi.purple.ai%2Foauth&amp;state=7b5b70eaf7e3def7b21ebf699eb21a783eac857ef831fcf4e7060e2e4c2850f7&amp;code_challenge=OlaDoz5w6xcCkiTw8BqaPCcCUmz8Js1h_WCzdG-s314&amp;code_challenge_method=S256&amp;partner-portal=1','_blank')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Register</div>
         <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
       </div>
     </div>
@@ -289,30 +290,6 @@
           <div class="sector-icon-badge-light"><span class="sector-em-light"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
           <div class="sector-name-light">Healthcare</div>
           <div class="sector-hint-light">GDPR compliance, staff WiFi, patient guest access.</div>
-          <div class="sector-arr-light">Explore <span class="arr">›</span></div>
-        </div>
-        <div class="sector-card-light" onclick="navigate('sector-education')">
-          <div class="sector-icon-badge-light"><span class="sector-em-light"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
-          <div class="sector-name-light">Education</div>
-          <div class="sector-hint-light">IdP sync, Shield for safeguarding, BYOD management.</div>
-          <div class="sector-arr-light">Explore <span class="arr">›</span></div>
-        </div>
-        <div class="sector-card-light" onclick="navigate('sector-residential')">
-          <div class="sector-icon-badge-light"><span class="sector-em-light"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></div>
-          <div class="sector-name-light">Residential & MDU</div>
-          <div class="sector-hint-light">BTR, student, aparthotels. Per-unit private networks.</div>
-          <div class="sector-arr-light">Explore <span class="arr">›</span></div>
-        </div>
-        <div class="sector-card-light" onclick="navigate('sector-enterprise')">
-          <div class="sector-icon-badge-light"><span class="sector-em-light"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg></span></div>
-          <div class="sector-name-light">Enterprise</div>
-          <div class="sector-hint-light">Zero trust, JML automation, NAC replacement.</div>
-          <div class="sector-arr-light">Explore <span class="arr">›</span></div>
-        </div>
-        <div class="sector-card-light" onclick="navigate('sector-transport')">
-          <div class="sector-icon-badge-light"><span class="sector-em-light"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></span></div>
-          <div class="sector-name-light">Transport & venues</div>
-          <div class="sector-hint-light">Airports, arenas, stations. Scale + compliance.</div>
           <div class="sector-arr-light">Explore <span class="arr">›</span></div>
         </div>
       <div class="sector-card-light" style="display:flex;align-items:center;justify-content:center;border-style:dashed;" onclick="navigate('sectors')">

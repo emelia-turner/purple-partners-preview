@@ -510,7 +510,8 @@ textarea{resize:vertical;min-height:90px;}
     <div class="nav-item" id="dd-portal">
       <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://eu.wifi.purple.ai/services/auth/login?response_type=code&amp;client_id=beb6ddbb8ffbb65aa96d35bb30553a39&amp;redirect_uri=https%3A%2F%2Feu.wifi.purple.ai%2Foauth&amp;state=7b5b70eaf7e3def7b21ebf699eb21a783eac857ef831fcf4e7060e2e4c2850f7&amp;code_challenge=OlaDoz5w6xcCkiTw8BqaPCcCUmz8Js1h_WCzdG-s314&amp;code_challenge_method=S256&amp;partner-portal=1','_blank')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Register</div>
         <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
       </div>
     </div>
@@ -1011,6 +1012,49 @@ const CASE_STUDY_DATA = {
   },
 };
 
+// Partner blog posts, keyed by slug. Shared by the blog listing page and
+// each post's own detail page (renderBlogPost).
+const BLOG_POSTS = {
+  'airport-rfp': { image: 'images/blog/airport-rfp.png', cat: 'Sales & marketing', date: 'Jun 2026', title: 'Turning WiFi into Revenue: How one partner won an airport RFP with Purple', excerpt: 'A VP of Customer Success breaks down the strategy behind a real airport RFP win, shifting the pitch from connectivity to data-driven business intelligence.' },
+  'faster-network': { image: 'images/blog/faster-network.png', cat: 'Sales & marketing', date: 'Apr 2026', title: 'How to give your customers a faster network without touching the hardware', excerpt: 'Three new Shield features, free in every licence, that strip ad and tracker traffic at the DNS level to reclaim bandwidth.' },
+  'open-to-secure': { image: 'images/blog/open-to-secure.png', cat: 'Sales & marketing', date: 'Mar 2026', title: 'From open to secure: Why your clients\' WiFi can be a huge risk', excerpt: 'A recap of Purple\'s Newcastle event on WiFi risk and compliance, with a live security demonstration and a look at what a properly secured network looks like.' },
+  'staff-wifi-education': { image: 'images/blog/staff-wifi-education.png', cat: 'Sector guide', date: 'Mar 2026', title: 'Staff WiFi for schools and universities: A partner\'s vertical guide', excerpt: 'A certificate-based WiFi pass tied to the individual, built for education sector deployments.' },
+  'auto-revocation': { image: 'images/blog/auto-revocation.png', cat: 'Sales & marketing', date: 'Mar 2026', title: 'Auto-revocation: The WiFi feature that closes the deal', excerpt: 'Automatic credential removal synced with identity provider changes eliminates manual offboarding.' },
+  'contractor-access': { image: 'images/blog/contractor-access.png', cat: 'Sales & marketing', date: 'Mar 2026', title: 'How Purple handles contractor and time-limited staff WiFi access', excerpt: 'Individual credentials for temporary workers, with automatic revocation at contract end.' },
+  'sceptical-it-manager': { image: 'images/blog/sceptical-it-manager.png', cat: 'Sales & marketing', date: 'Mar 2026', title: 'How to sell passwordless WiFi to a sceptical IT manager', excerpt: 'A sales framework for addressing IT concerns about identity-based network authentication.' },
+  'zero-trust': { image: 'images/blog/zero-trust.png', cat: 'Sales & marketing', date: 'Feb 2026', title: 'Zero Trust networking: What it actually means for WiFi', excerpt: 'A messaging guide for putting the zero-trust question to prospective customers: does your wireless network actually know who\'s on it?' },
+  'three-problems': { image: 'images/blog/three-problems.png', cat: 'Sales & marketing', date: 'Feb 2026', title: 'The 3 problems Purple solves across every vertical', excerpt: 'Shared passwords mean anonymous connections, and anonymous connections mean no control.' },
+  'client-meeting': { image: 'images/blog/client-meeting.png', cat: 'Sales & marketing', date: 'Feb 2026', title: 'How to introduce identity-based networks in a client meeting', excerpt: 'A client conversation framework covering three use cases: staff, guest, and multi-tenant WiFi.' },
+};
+
+function renderBlogPost(slug) {
+  const p = BLOG_POSTS[slug];
+  const related = Object.entries(BLOG_POSTS).filter(([s]) => s !== slug).slice(0, 3);
+  return `
+<div class="container"><div class="section">
+  <div class="eyebrow">${p.cat} · ${p.date}</div>
+  <h1 class="section-title" style="max-width:760px;">${p.title}</h1>
+  <img src="${p.image}" alt="${p.title}" style="width:100%;max-height:360px;object-fit:cover;border-radius:var(--radius-xl);display:block;margin:28px 0;">
+  <p style="font-size:17px;color:var(--ink-mid);line-height:1.8;max-width:720px;">${p.excerpt}</p>
+  <button class="btn-secondary" style="margin-top:8px;" onclick="navigate('blog')">← Back to all posts</button>
+  <div style="margin-top:56px;padding-top:40px;border-top:1px solid var(--border-soft);">
+    <div class="eyebrow">More from the blog</div>
+    <div class="blog-grid">
+      ${related.map(([s,r])=>`
+        <div class="blog-card" onclick="navigate('blog-${s}')">
+          <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="${r.image}" style="width:100%;height:160px;object-fit:cover;display:block;" alt="${r.cat}"></div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-cat">${r.cat}</span><span class="blog-date">${r.date}</span></div>
+            <div class="blog-title">${r.title}</div>
+            <div class="blog-excerpt">${r.excerpt}</div>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>
+</div></div>
+`;
+}
+
 function renderCaseStudyPage(slug) {
   const c = CASE_STUDY_DATA[slug];
   const related = Object.entries(CASE_STUDY_DATA)
@@ -1205,27 +1249,46 @@ app: () => `
 <div class="container"><div class="section">
   <div class="eyebrow">Where the app shows up</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">One login, three different jobs.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    ${[
-      ['Staff WiFi','The authentication layer','Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.', 'var(--teal)', '<path d="M8 1.5 13.5 3.8v4.1c0 3.6-2.3 6.6-5.5 7.6-3.2-1-5.5-4-5.5-7.6V3.8L8 1.5Z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/>'],
-      ['Guest WiFi','The friction remover','Captive portals still frustrate visitors with forms. The app replaces that with seamless connectivity and a conscious opt-in, done once. From then on, the app recognizes returning visitors automatically, and becomes a channel for offers and loyalty to people who are physically in the venue.', 'var(--coral)', '<path d="M2 6a8.5 8.5 0 0 1 12 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M4.2 8.6a5 5 0 0 1 7.6 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M6.4 11.1a2 2 0 0 1 3.2 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="13.3" r="1" fill="white"/>'],
-      ['Multi-tenant WiFi','The resident\'s remote control','Residents provision a network pass directly in the app. Devices auto-connect and isolate, and reconnect automatically on every future visit, to any property in the chain. The app doubles as an engagement channel: surveys, location-aware content, notifications, and rewards.', 'var(--purple)', '<path d="M3 14V6.5L8 3l5 3.5V14" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.5 14v-4h3v4" stroke="white" stroke-width="1.3" stroke-linejoin="round"/>']
-    ].map(([n,t,d,c,svg])=>`
-      <div class="card">
-        <div style="width:36px;height:36px;border-radius:10px;background:${c};display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">${svg}</svg></div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:${c};margin-bottom:8px;">${n}</div>
-        <div class="card-title" style="font-size:15px;">${t}</div>
-        <p class="card-body" style="margin-bottom:0;">${d}</p>
-      </div>`).join('')}
-  </div>
-</div></div>
-
-<div class="dark-section"><div class="container">
-  <div class="eyebrow">Why it matters to a sale</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;color:white;">The upsell path is already built in.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    ${[['A familiar engine','A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn\'t change, just what the app is being used for.'],['Less for IT to manage','Nothing for a customer\'s IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.'],['A channel that keeps paying off','Every opted-in connection through the app is a contact a customer can message again, whether that\'s a loyalty offer to a guest or a notification to a resident.']].map(([t,d])=>`
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;"><div style="font-family:'Poppins',sans-serif;font-size:16px;color:white;margin-bottom:8px;">${t}</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;">${d}</p></div>`).join('')}
+  <div class="sol-grid">
+    <div class="sol-card" onclick="navigate('staff-wifi')">
+      <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FStaff-Wifi-Image.webp&w=1200&q=85" alt="Staff WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Staff WiFi</div>
+        <div class="card-title">Passwordless zero-trust access</div>
+        <p class="card-body">WPA3-Enterprise with automatic device provisioning and revocation tied to your customer's identity provider, via the Purple app. No shared passwords, no manual IT overhead.</p>
+        <div class="sol-checklist">
+          ${['Works with Entra ID, Google & Okta','WPA3-Enterprise, 802.1X','Automated JML'].map(t=>`
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('staff-wifi')">Learn more</button>
+      </div>
+    </div>
+    <div class="sol-card" onclick="navigate('guest-wifi')">
+      <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FGuest-WiFi-image.webp&w=1200&q=85" alt="Guest WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Guest WiFi</div>
+        <div class="card-title">Frictionless visitor access</div>
+        <p class="card-body">Branded portal or seamless connection via the Purple app, with built-in analytics, marketing automation, and first-party data capture. The layer that turns WiFi into a revenue tool.</p>
+        <div class="sol-checklist">
+          ${['Branded captive portal or seamless connection','Visitor analytics & footfall','Marketing automation'].map(t=>`
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('guest-wifi')">Learn more</button>
+      </div>
+    </div>
+    <div class="sol-card" onclick="navigate('multi-tenant')">
+      <div class="sol-card-img"><img src="https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85" alt="Multi-tenant WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Multi-tenant WiFi</div>
+        <div class="card-title">Private at-home experience</div>
+        <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+        <div class="sol-checklist">
+          ${['Per-unit network isolation, via iPSK','Browserless device support','Engagement channel via the app'].map(t=>`
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('multi-tenant')">Learn more</button>
+      </div>
+    </div>
   </div>
 </div></div>
 `,
@@ -1393,7 +1456,7 @@ home: () => `
     <h2 class="section-title">Sell into the right conversation.</h2>
     <p class="section-sub">Every sector has a different buyer, a different pain point, and a different entry angle.</p>
     <div class="sectors-grid">
-      ${[[icon('hospitality',18),'Hospitality','Hotels, restaurants, pubs. Guest WiFi + POS integrations.','sector-hospitality'],[icon('retail',18),'Retail','Footfall analytics, return rates, first-party data.','sector-retail'],[icon('healthcare',18),'Healthcare','GDPR compliance, staff WiFi, patient guest access.','sector-healthcare'],[icon('education',18),'Education','IdP sync, Shield for safeguarding, BYOD management.','sector-education'],[icon('residential',18),'Residential & MDU','BTR, student, aparthotels. Per-unit private networks.','sector-residential'],[icon('enterprise',18),'Enterprise','Zero trust, JML automation, NAC replacement.','sector-enterprise'],[icon('transport',18),'Transport & venues','Airports, arenas, stations. Scale + compliance.','sector-transport']].map(([e,n,h,slug])=>`
+      ${[[icon('hospitality',18),'Hospitality','Hotels, restaurants, pubs. Guest WiFi + POS integrations.','sector-hospitality'],[icon('retail',18),'Retail','Footfall analytics, return rates, first-party data.','sector-retail'],[icon('healthcare',18),'Healthcare','GDPR compliance, staff WiFi, patient guest access.','sector-healthcare']].map(([e,n,h,slug])=>`
         <div class="sector-card-light" onclick="navigate('${slug}')">
           <div class="sector-icon-badge-light"><span class="sector-em-light">${e}</span></div>
           <div class="sector-name-light">${n}</div>
@@ -1820,6 +1883,17 @@ home: () => `
 'case-study-mcdonalds-belgium': () => renderCaseStudyPage('mcdonalds-belgium'),
 'case-study-brussels-south-charleroi-airport': () => renderCaseStudyPage('brussels-south-charleroi-airport'),
 
+'blog-airport-rfp': () => renderBlogPost('airport-rfp'),
+'blog-faster-network': () => renderBlogPost('faster-network'),
+'blog-open-to-secure': () => renderBlogPost('open-to-secure'),
+'blog-staff-wifi-education': () => renderBlogPost('staff-wifi-education'),
+'blog-auto-revocation': () => renderBlogPost('auto-revocation'),
+'blog-contractor-access': () => renderBlogPost('contractor-access'),
+'blog-sceptical-it-manager': () => renderBlogPost('sceptical-it-manager'),
+'blog-zero-trust': () => renderBlogPost('zero-trust'),
+'blog-three-problems': () => renderBlogPost('three-problems'),
+'blog-client-meeting': () => renderBlogPost('client-meeting'),
+
 'case-studies': () => `
 <div style="background:var(--purple-deep);padding:72px 0 56px;">
   <div class="container">
@@ -2189,7 +2263,7 @@ tools: () => `
       ${[
         ['Platform Management', 'Support category-based content filtering across multiple SSIDs'],
         ['Technical Architecture', 'Compatible with all standards of WiFi, including 5, 6 & 6e'],
-        ['Captive Portal', 'Design landing pages with your own logo, imagery, and branding'],
+        ['Captive Portal', 'Ability to design landing pages with your own logo, imagery, and branding'],
         ['Data Protection & Security', 'Accredited certification to ISO 27001 and 9001'],
       ].map(([cat,item])=>`
         <div style="display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border-soft);">
@@ -2473,20 +2547,9 @@ blog: () => `
     ${[['All','All'],['Product update','Product updates'],['Sales & marketing','Sales & marketing'],['Sector guide','Sector guides'],['Partner news','Partner news']].map(([c,l],i)=>`<button class="blog-filter-btn${i===0?' active':''}" data-cat="${c}" onclick="filterBlog('${c}',this)">${l}</button>`).join('')}
   </div>
   <div class="blog-grid" id="blog-grid">
-    ${[
-      ['images/blog/airport-rfp.png','Sales & marketing','Jun 2026','Turning WiFi into Revenue: How one partner won an airport RFP with Purple','A VP of Customer Success breaks down the strategy behind a real airport RFP win, shifting the pitch from connectivity to data-driven business intelligence.'],
-      ['images/blog/faster-network.png','Sales & marketing','Apr 2026','How to give your customers a faster network without touching the hardware','Three new Shield features, free in every licence, that strip ad and tracker traffic at the DNS level to reclaim bandwidth.'],
-      ['images/blog/open-to-secure.png','Sales & marketing','Mar 2026','From open to secure: Why your clients\' WiFi can be a huge risk','A recap of Purple\'s Newcastle event on WiFi risk and compliance, with a live security demonstration and a look at what a properly secured network looks like.'],
-      ['images/blog/staff-wifi-education.png','Sector guide','Mar 2026','Staff WiFi for schools and universities: A partner\'s vertical guide','A certificate-based WiFi pass tied to the individual, built for education sector deployments.'],
-      ['images/blog/auto-revocation.png','Sales & marketing','Mar 2026','Auto-revocation: The WiFi feature that closes the deal','Automatic credential removal synced with identity provider changes eliminates manual offboarding.'],
-      ['images/blog/contractor-access.png','Sales & marketing','Mar 2026','How Purple handles contractor and time-limited staff WiFi access','Individual credentials for temporary workers, with automatic revocation at contract end.'],
-      ['images/blog/sceptical-it-manager.png','Sales & marketing','Mar 2026','How to sell passwordless WiFi to a sceptical IT manager','A sales framework for addressing IT concerns about identity-based network authentication.'],
-      ['images/blog/zero-trust.png','Sales & marketing','Feb 2026','Zero Trust networking: What it actually means for WiFi','A messaging guide for putting the zero-trust question to prospective customers: does your wireless network actually know who\'s on it?'],
-      ['images/blog/three-problems.png','Sales & marketing','Feb 2026','The 3 problems Purple solves across every vertical','Shared passwords mean anonymous connections, and anonymous connections mean no control.'],
-      ['images/blog/client-meeting.png','Sales & marketing','Feb 2026','How to introduce identity-based networks in a client meeting','A client conversation framework covering three use cases: staff, guest, and multi-tenant WiFi.'],
-    ].map(([img,cat,date,title,excerpt])=>`
-      <div class="blog-card" data-cat="${cat}">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="${img}" style="width:100%;height:160px;object-fit:cover;display:block;" alt="${cat}"></div>
+    ${Object.entries(BLOG_POSTS).map(([slug,{image,cat,date,title,excerpt}])=>`
+      <div class="blog-card" data-cat="${cat}" onclick="navigate('blog-${slug}')">
+        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="${image}" style="width:100%;height:160px;object-fit:cover;display:block;" alt="${cat}"></div>
         <div class="blog-content">
           <div class="blog-meta"><span class="blog-cat">${cat}</span><span class="blog-date">${date}</span></div>
           <div class="blog-title">${title}</div>
