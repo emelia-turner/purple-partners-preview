@@ -201,6 +201,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .dark-section .section-title,.dark-section .section-title-sm{color:white;}
 .dark-section .section-sub{color:rgba(255,255,255,.5);}
 
+/* ── SCROLL-TRIGGERED SECTION REVEAL ── */
+/* .reveal is a padding-free variant for ad-hoc blocks that already carry
+   their own spacing (so the reveal treatment doesn't add extra padding). */
+.section,.section-sm,.dark-section,.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+.section.in-view,.section-sm.in-view,.dark-section.in-view,.reveal.in-view{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){.section,.section-sm,.dark-section,.reveal{opacity:1;transform:none;transition:none;}}
+
 /* ── DARK PAGE HEADER (product-hero variants on a dark background) ── */
 .prod-hero-dark .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:var(--purple-mid);}
 .prod-hero-dark h1{color:white;}
@@ -734,6 +741,7 @@ const SECTOR_DATA = {
       { title: "Data that never reaches a usable database", body: "Even when a venue captures an email at login, a meaningful share of those addresses are fake or mistyped. Verify checks every email in real time so the database a customer builds is one they can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    caseStudyTags: ["Hospitality & leisure"],
     productCards: {
       "guest-wifi": { title: "A loyalty engine, not just a login screen", body: "Branded portal or seamless connection via the Purple app, with every login routed straight into the rewards programme and F&B upsells. The unseen marketing channel every venue already owns.", bullet: "Branded captive portal or seamless connection" },
       "verify": { title: "Real, reachable guest data", body: "Even when a venue captures an email at login, a meaningful share are fake or mistyped. Verify checks every address in real time, so the database a venue builds is one it can actually use.", bullet: "Real-time validation at login" },
@@ -764,6 +772,7 @@ const SECTOR_DATA = {
       { title: "No way to know if the emails you're capturing are even real", body: "Fake, misspelled, and disposable email addresses dilute the database and skew every campaign. Verify checks every address in real time at the point of login, so the database a retailer builds is one the marketing team can actually use.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    caseStudyTags: ["Retail & commercial"],
     productCards: {
       "guest-wifi": { title: "Turn footfall into a first-party database", body: "Branded portal or seamless connection via the Purple app, capturing opted-in profile and demographic data the moment shoppers connect. Build a single customer view, and market to it.", bullet: "Branded captive portal or seamless connection" },
       "verify": { title: "A customer database your marketing team can trust", body: "Fake, misspelled, and disposable email addresses dilute the database and skew every campaign. Verify checks every address in real time at login, so it's one the marketing team can actually use.", bullet: "Real-time validation at login" },
@@ -791,6 +800,7 @@ const SECTOR_DATA = {
       { title: "Long-stay wards and care homes with no private network for residents", body: "Long-term patients and care home residents need a network that feels like home, not a shared hospital WiFi. Multi-tenant WiFi gives each resident their own private network bubble, provisioned through the Purple app.", key: "multi-tenant" }
     ],
     recommended: ["staff-wifi","guest-wifi","multi-tenant"],
+    caseStudyTags: ["Healthcare"],
     productCards: {
       "staff-wifi": { title: "Priority access for staff tablets and clinical devices", body: "WPA3-Enterprise ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.", bullet: "Works with Entra ID, Google & Okta" },
       "guest-wifi": { title: "A better connected stay for patients and visitors", body: "Branded portal with easy onboarding, high-speed access, and content filtering, turning a compliance requirement into a visible, patient-facing amenity.", bullet: "Branded captive portal or seamless connection" },
@@ -812,7 +822,7 @@ const SECTOR_DATA = {
     icon: icon('education', 14),
     name: "Education",
     tag: "Education",
-    hook: "Guest WiFi for education, without flooding the helpdesk on move-in day.",
+    hook: "WiFi for education, without flooding the helpdesk on move-in day.",
     sub: "Schools, colleges, and universities need staff access that's identity-led and student accommodation that doesn't generate a queue of tickets. A branded captive portal covers campus visitors, while the Purple app provisions staff sign-in and a student's private network bubble.",
     quickWins: ["Staff sign-in tied to the identity provider, not a shared password","A private network bubble per student, set up in the app","Browserless devices, consoles, TVs, connect without a portal"],
     challenges: [
@@ -821,6 +831,7 @@ const SECTOR_DATA = {
       { title: "Open days and campus visitors with no easy way online", body: "Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi","guest-wifi"],
+    caseStudyTags: [],
     productCards: {
       "multi-tenant": { title: "Ready before move-in day, no ticket required", body: "iPSK and the Purple app give every student a private network bubble set up before they arrive, so consoles, TVs, and personal devices connect without a portal.", bullet: "Per-unit network isolation, via iPSK" },
       "staff-wifi": { title: "Staff access, properly separated from student traffic", body: "WPA3-Enterprise ties faculty and administrative access to identity, kept separate from student traffic, with automated offboarding when contracts end.", bullet: "Works with Entra ID, Google & Okta" },
@@ -847,6 +858,7 @@ const SECTOR_DATA = {
       { title: "No separate, secure access for visitors in shared spaces", body: "Prospective tenants, contractors, and visitors in common areas like lobbies, gyms, and co-working spaces all require internet access. A separate, secure guest network is crucial for security and to ensure the resident experience isn't compromised.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi"],
+    caseStudyTags: [],
     productCards: {
       "multi-tenant": { title: "A true private network, not a shared one", body: "iPSK and the Purple app give every resident a genuine private network bubble from day one, with browserless devices supported and no router to configure per unit.", bullet: "Per-unit network isolation, via iPSK" },
       "staff-wifi": { title: "Staff access, kept separate from residents and guests", body: "WPA3-Enterprise ties property staff access to identity, fully separated from resident and guest networks, so leavers are locked out automatically.", bullet: "Works with Entra ID, Google & Okta" }
@@ -872,6 +884,7 @@ const SECTOR_DATA = {
       { title: "Every starter and leaver means another manual access change", body: "Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.", key: "staff-wifi" }
     ],
     recommended: ["staff-wifi"],
+    caseStudyTags: [],
     productCards: {
       "staff-wifi": { title: "The end of the shared office WiFi password", body: "WPA3-Enterprise ties every employee's access to Entra ID, Google Workspace, or Okta, so starters and leavers happen automatically, no manual IT ticket, no lingering access.", bullet: "Works with Entra ID, Google & Okta" }
     },
@@ -896,6 +909,7 @@ const SECTOR_DATA = {
       { title: "Passenger email capture that's mostly noise", body: "High footfall public WiFi means a flood of fake, misspelled, and disposable email addresses. Verify checks every address in real time at login, so passenger data actually feeds usable marketing campaigns.", key: "verify" }
     ],
     recommended: ["guest-wifi","verify","staff-wifi"],
+    caseStudyTags: ["Travel & transport","Events & attractions"],
     productCards: {
       "guest-wifi": { title: "Passenger WiFi as a revenue line, not a cost center", body: "Passengers connect in seconds and stay online through security, the lounge, and the gate, via the Purple app, building rich profiles that power targeted, location-aware offers.", bullet: "Branded captive portal or seamless connection" },
       "verify": { title: "Passenger data that actually feeds your campaigns", body: "High footfall public WiFi means a flood of fake and disposable email addresses. Verify checks every address in real time at login, so passenger data isn't mostly noise.", bullet: "Real-time validation at login" },
@@ -1140,6 +1154,7 @@ function renderCaseStudyPage(slug) {
 
 function renderSectorPage(slug) {
   const s = SECTOR_DATA[slug];
+  const sectorCS = Object.entries(CASE_STUDY_DATA).filter(([,c]) => (s.caseStudyTags || []).includes(c.tag));
   return `
 <div style="background:var(--purple-deep);padding:72px 0 56px;position:relative;overflow:hidden;">
   <img src="sectors/${SECTOR_IMAGES[slug]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;transform:scale(1.6);">
@@ -1186,10 +1201,11 @@ function renderSectorPage(slug) {
           <div class="tag" style="margin-bottom:14px;">${ALL_PRODUCTS[key].name.toUpperCase()}</div>
           <div class="card-title" style="font-size:18px;">${p.title}</div>
           <p class="card-body">${p.body}</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">${p.bullet}</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('${key}')">Explore ${ALL_PRODUCTS[key].name} →</button>
         </div>
       </div>`;
     }).join('')}
@@ -1210,8 +1226,33 @@ function renderSectorPage(slug) {
 </div></div>
 
 <div class="container"><div class="section">
-  <div class="eyebrow">Proof point</div>
+  <div class="eyebrow">Proof point${sectorCS.length > 1 ? 's' : ''}</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    ${sectorCS.length > 0 ? `
+    <div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in ${s.tag.toLowerCase()}.</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">${sectorCS.length > 1 ? `${sectorCS.length} case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
+      <button class="btn-primary" onclick="navigate('case-studies')">${sectorCS.length > 1 ? 'Read the case studies' : 'Read the case study'}</button>
+    </div>
+    <div class="cs-carousel">
+      <div class="cs-slides">
+        ${sectorCS.map(([cslug,c],i) => `
+        <div class="cs-slide${i===0?' active':''}">
+          <img class="cs-slide-img" src="${c.image}" alt="${c.name}">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">${c.name}</div>
+            <div class="cs-slide-cat">${c.tag}</div>
+            <div class="cs-slide-snippet">${c.result}</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">${c.stats[0][0]}</div><div class="cs-stat-lbl">${c.stats[0][1]}</div></div>
+        </div>`).join('')}
+      </div>
+      ${sectorCS.length > 1 ? `
+      <div class="cs-dots">
+        ${sectorCS.map((_,i)=>`<button class="cs-dot${i===0?' active':''}" onclick="goToCaseStudy(${i})" aria-label="Go to slide ${i+1}"></button>`).join('')}
+      </div>` : ''}
+    </div>` : `
     <div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">${s.proof.title}</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:${s.proof.hasCaseStudy?'24px':'0'};">${s.proof.body}</p>
@@ -1219,7 +1260,7 @@ function renderSectorPage(slug) {
     </div>
     <div style="display:grid;grid-template-columns:repeat(${s.proof.stats.length},1fr);gap:14px;">
       ${s.proof.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
-    </div>
+    </div>`}
   </div>
 </div></div>
 
@@ -1232,7 +1273,7 @@ ${s.quote ? `
 </div></div>` : ''}
 
 <div style="background:white;border-top:1px solid var(--border-soft);padding:64px 0;">
-  <div class="container">
+  <div class="container reveal">
     <div style="background:var(--warm-white);border-radius:var(--radius-xl);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;">
       <div>
         <div class="eyebrow">Marketing support</div>
@@ -1463,7 +1504,7 @@ home: () => `
   </div></div>
 
   <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
-    <div class="container">
+    <div class="container reveal">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
         <div>
           <div class="eyebrow">The Purple app</div>
@@ -1650,7 +1691,7 @@ home: () => `
       </div>`).join('')}
   </div>
 </div></div>
-<div class="container">
+<div class="container reveal">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding-top:0;padding-bottom:80px;">
     <div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:20px;">What your customers get</h2>
@@ -2185,7 +2226,7 @@ benefits: () => `
   </div>
 </div></div>
 <div style="background:white;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);padding:80px 0;">
-  <div class="container">
+  <div class="container reveal">
   <div class="eyebrow">Trusted at scale</div>
   <h2 class="section-title" style="margin-bottom:32px;">The certifications and guardrails already in place.</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px;align-items:center;margin-bottom:56px;">
@@ -2275,7 +2316,7 @@ tools: () => `
 <div class="container" style="padding-top:80px;padding-bottom:80px;">
 
   <!-- TOOL 1: CHECKLIST -->
-  <div id="checklist" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+  <div id="checklist" class="reveal" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Qualification tool</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Guest WiFi feature checklist</h2>
@@ -2312,7 +2353,7 @@ tools: () => `
   </div>
 
   <!-- TOOL 2: INTEGRATIONS -->
-  <div id="integrations" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+  <div id="integrations" class="reveal" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
     <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
       <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Integration categories</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
@@ -2333,7 +2374,7 @@ tools: () => `
   </div>
 
   <!-- TOOL 3: HARDWARE -->
-  <div id="hardware" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+  <div id="hardware" class="reveal" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Technical resource</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Compatible hardware</h2>
@@ -2352,7 +2393,7 @@ tools: () => `
   </div>
 
   <!-- TOOL 5: PORTAL GUIDE -->
-  <div id="portal-guide" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
+  <div id="portal-guide" class="reveal" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid var(--border-soft);margin-bottom:64px;">
     <div style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-xl);padding:28px;">
       <div style="font-size:12px;font-weight:500;color:var(--ink);margin-bottom:16px;">Partner portal, what's inside</div>
       ${[['Customer management','Create and manage every customer, with visibility into their licenses, addons, groups, venues, and users'],['Branded splash pages','Choose from templates or build your own to match each customer\'s brand'],['Analytics & reporting','Usage and performance reports for every customer'],['Guides & documentation','Step-by-step setup and reseller documentation'],['Dedicated support','Direct access to the Purple support team for any query']].map(([t,d])=>`
@@ -2370,7 +2411,7 @@ tools: () => `
   </div>
 
   <!-- TOOL 6: CASE STUDIES -->
-  <div id="case-studies" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+  <div id="case-studies" class="reveal" style="scroll-margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
     <div>
       <div class="tool-tag existing" style="margin-bottom:14px;">Sales enablement</div>
       <h2 style="font-family:'Poppins',sans-serif;font-size:30px;margin-bottom:12px;">Case studies</h2>
@@ -2436,7 +2477,7 @@ marketing: () => `
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container reveal">
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:64px;margin-top:56px;">
     ${[['Asset library','Logos, product imagery, one-pagers, and presentation templates, all ready to co-brand.','folder',{bg:'var(--purple-light)',fg:'var(--purple)'}],['Co-branded templates','Email, social, digital ads, and print templates with your logo alongside Purple.','template',{bg:'var(--teal-light)',fg:'var(--teal)'}],['Campaign-in-a-box','Sector-specific campaign packs for hospitality, retail, education, healthcare, and more.','megaphone',{bg:'var(--coral-light)',fg:'var(--coral)'}],['Bespoke support','Need something specific? Request custom creative, landing pages, or event collateral.','gear',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}]].map(([t,d,iconKey,c])=>`
       <div class="mktg-asset-card" style="background:white;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:22px;">
@@ -2528,7 +2569,6 @@ marketing: () => `
     <div class="form-wrap" id="call-out-day-form-wrap">
       <div id="call-out-day-form">
         <div class="form-title">Book a Call-Out Day</div>
-        <div class="form-sub">For registered partners only. Not yet a partner? <span style="color:var(--purple);cursor:pointer;" onclick="navigate('home')">Apply here.</span></div>
         <div class="form-grid">
           <div class="form-field"><label>First name</label><input type="text" placeholder="Jane"></div>
           <div class="form-field"><label>Last name</label><input type="text" placeholder="Smith"></div>
@@ -2547,24 +2587,6 @@ marketing: () => `
     </div>
   </div>
 </div>
-<div class="dark-section"><div class="container">
-  <div class="eyebrow">On the day</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">Built-in incentives to keep the energy up.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;">
-      <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">"The Firsts": instant vouchers</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong style="color:rgba(255,255,255,.8);">The Icebreaker</strong> - first conversation lasting longer than 5 minutes.<br><strong style="color:rgba(255,255,255,.8);">The Suite Success</strong> - first hospitality meeting booked.<br><strong style="color:rgba(255,255,255,.8);">The Rebound</strong> - first person to turn a "no" into a meeting.</div>
-    </div>
-    <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;">
-      <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">Mini-games & motivation</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;"><strong style="color:rgba(255,255,255,.8);">Objection Bingo</strong> - reps cross off common pushbacks like "We already have WiFi."<br><strong style="color:rgba(255,255,255,.8);">Pass the Parcel</strong> - a "hot potato" voucher stays on a desk until stolen by the next booked meeting.<br><strong style="color:rgba(255,255,255,.8);">Golden Envelope</strong> - mystery prizes for hitting milestones.</div>
-    </div>
-    <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;">
-      <div style="font-size:15px;font-weight:500;color:white;margin-bottom:12px;">Battle cards & objection handling</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;">Vertical-specific hooks (Retail: closing the offline gap. Hospitality: owning the relationship) plus ready responses to common objections like "We already have WiFi" and "IT handles that."</div>
-    </div>
-  </div>
-</div></div>
 `,
 
 // ═══════════════════════════════════════

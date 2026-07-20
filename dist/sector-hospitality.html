@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=d6c366f9">
+<link rel="stylesheet" href="styles.css?v=e01599c9">
 </head>
 <body data-page="sector-hospitality">
 <!-- NAV -->
@@ -143,10 +143,11 @@
           <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
           <div class="card-title" style="font-size:18px;">A loyalty engine, not just a login screen</div>
           <p class="card-body">Branded portal or seamless connection via the Purple app, with every login routed straight into the rewards programme and F&B upsells. The unseen marketing channel every venue already owns.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('verify')">
@@ -155,10 +156,11 @@
           <div class="tag" style="margin-bottom:14px;">VERIFY</div>
           <div class="card-title" style="font-size:18px;">Real, reachable guest data</div>
           <p class="card-body">Even when a venue captures an email at login, a meaningful share are fake or mistyped. Verify checks every address in real time, so the database a venue builds is one it can actually use.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Real-time validation at login</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('verify')">Explore Verify <span class="arr">→</span></button>
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
@@ -167,10 +169,11 @@
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">Zero-trust access for every shift</div>
           <p class="card-body">WPA3-Enterprise with automatic provisioning and revocation tied to the venue's identity provider. Housekeeping, F&B, and front desk each get the right access from day one, no shared passwords, no manual IT overhead.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -190,15 +193,52 @@
 </div></div>
 
 <div class="container"><div class="section">
-  <div class="eyebrow">Proof point</div>
+  <div class="eyebrow">Proof points</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    
     <div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">McDonald's Belgium turned guest WiFi into a data and app-growth engine.</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Purple was deployed alongside Cisco Meraki and Socialspot, with OneClick and Facebook login and language-specific splash pages built in LogicFlow. The result: 8 million visits, 2.5 million unique records, and a jump in campaign-linked app downloads, with 90% fewer on-site IT visits.</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">Read the case study</button>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in hospitality.</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">3 case studies from real hospitality deployments, each with its own numbers.</p>
+      <button class="btn-primary" onclick="navigate('case-studies')">Read the case studies</button>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-      <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">8m</div><div style="font-size:12px;color:var(--ink-light);">visits</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">2.5m</div><div style="font-size:12px;color:var(--ink-light);">unique records</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">90%</div><div style="font-size:12px;color:var(--ink-light);">fewer IT visits</div></div>
+    <div class="cs-carousel">
+      <div class="cs-slides">
+        
+        <div class="cs-slide active">
+          <img class="cs-slide-img" src="images/case-studies/pizza-express.png" alt="Pizza Express UAE">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">Pizza Express UAE</div>
+            <div class="cs-slide-cat">Hospitality & leisure</div>
+            <div class="cs-slide-snippet">The rollout let the marketing team collect real customer data and social logins, driving measurable engagement and revenue gains.</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">52%</div><div class="cs-stat-lbl">increase in Facebook likes in a month</div></div>
+        </div>
+        <div class="cs-slide">
+          <img class="cs-slide-img" src="images/case-studies/pizza-express.png" alt="Pizza Express">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">Pizza Express</div>
+            <div class="cs-slide-cat">Hospitality & leisure</div>
+            <div class="cs-slide-snippet">The network captured demographic and behavioural data and supported marketing campaigns, including prize draws, app-download promos, and free-pizza offers.</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">470+</div><div class="cs-stat-lbl">restaurants</div></div>
+        </div>
+        <div class="cs-slide">
+          <img class="cs-slide-img" src="images/case-studies/mcdonalds.png" alt="McDonald's Belgium">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">McDonald's Belgium</div>
+            <div class="cs-slide-cat">Hospitality & leisure</div>
+            <div class="cs-slide-snippet">The rollout captured millions of unique users in the CRM and sharply cut the need for IT engineers to visit sites physically.</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">80</div><div class="cs-stat-lbl">restaurants</div></div>
+        </div>
+      </div>
+      
+      <div class="cs-dots">
+        <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button><button class="cs-dot" onclick="goToCaseStudy(2)" aria-label="Go to slide 3"></button>
+      </div>
     </div>
   </div>
 </div></div>
@@ -212,7 +252,7 @@
 </div></div>
 
 <div style="background:white;border-top:1px solid var(--border-soft);padding:64px 0;">
-  <div class="container">
+  <div class="container reveal">
     <div style="background:var(--warm-white);border-radius:var(--radius-xl);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;">
       <div>
         <div class="eyebrow">Marketing support</div>
@@ -266,6 +306,6 @@
   </div>
 </footer></div>
 
-<script src="site.js?v=f96d9916"></script>
+<script src="site.js?v=8b9b8faf"></script>
 </body>
 </html>

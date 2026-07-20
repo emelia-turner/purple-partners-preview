@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=d6c366f9">
+<link rel="stylesheet" href="styles.css?v=e01599c9">
 </head>
 <body data-page="sector-healthcare">
 <!-- NAV -->
@@ -143,10 +143,11 @@
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">Priority access for staff tablets and clinical devices</div>
           <p class="card-body">WPA3-Enterprise ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('guest-wifi')">
@@ -155,10 +156,11 @@
           <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
           <div class="card-title" style="font-size:18px;">A better connected stay for patients and visitors</div>
           <p class="card-body">Branded portal with easy onboarding, high-speed access, and content filtering, turning a compliance requirement into a visible, patient-facing amenity.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('multi-tenant')">
@@ -167,10 +169,11 @@
           <div class="tag" style="margin-bottom:14px;">MULTI-TENANT WIFI</div>
           <div class="card-title" style="font-size:18px;">A private network bubble for every resident</div>
           <p class="card-body">Long-term patients and care home residents get their own private network bubble, provisioned through the Purple app, not a shared hospital WiFi.</p>
-          <div style="display:flex;gap:9px;align-items:flex-start;">
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Per-unit network isolation, via iPSK</span>
           </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('multi-tenant')">Explore Multi-tenant WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -190,15 +193,42 @@
 </div></div>
 
 <div class="container"><div class="section">
-  <div class="eyebrow">Proof point</div>
+  <div class="eyebrow">Proof points</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    
     <div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Queen Elizabeth Hospital took guest WiFi from a single coffee shop to every ward.</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">Purple overlaid onto existing kit and went live in two weeks. The branded splash page is now used to distribute health communications across the hospital.</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">Read the case study</button>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in healthcare.</h2>
+      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">2 case studies from real healthcare deployments, each with its own numbers.</p>
+      <button class="btn-primary" onclick="navigate('case-studies')">Read the case studies</button>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-      <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">250k</div><div style="font-size:12px;color:var(--ink-light);">sessions / yr</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">60k</div><div style="font-size:12px;color:var(--ink-light);">users to CRM / yr</div></div><div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">2 wks</div><div style="font-size:12px;color:var(--ink-light);">to go live</div></div>
+    <div class="cs-carousel">
+      <div class="cs-slides">
+        
+        <div class="cs-slide active">
+          <img class="cs-slide-img" src="images/case-studies/st-georges.avif" alt="St George's Healthcare NHS Trust">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">St George's Healthcare NHS Trust</div>
+            <div class="cs-slide-cat">Healthcare</div>
+            <div class="cs-slide-snippet">The Trust met the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">783k</div><div class="cs-stat-lbl">WiFi sessions in year one</div></div>
+        </div>
+        <div class="cs-slide">
+          <img class="cs-slide-img" src="images/case-studies/queen-elizabeth-hospital.avif" alt="The Queen Elizabeth Hospital">
+          <div class="cs-slide-overlay"></div>
+          <div class="cs-slide-card">
+            <div class="cs-slide-name">The Queen Elizabeth Hospital</div>
+            <div class="cs-slide-cat">Healthcare</div>
+            <div class="cs-slide-snippet">Patients and visitors gained free guest WiFi across the hospital, while the trust gained rich visitor analytics.</div>
+          </div>
+          <div class="cs-slide-stat"><div class="cs-stat-val">250k</div><div class="cs-stat-lbl">visitors annually</div></div>
+        </div>
+      </div>
+      
+      <div class="cs-dots">
+        <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button>
+      </div>
     </div>
   </div>
 </div></div>
@@ -212,7 +242,7 @@
 </div></div>
 
 <div style="background:white;border-top:1px solid var(--border-soft);padding:64px 0;">
-  <div class="container">
+  <div class="container reveal">
     <div style="background:var(--warm-white);border-radius:var(--radius-xl);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;">
       <div>
         <div class="eyebrow">Marketing support</div>
@@ -266,6 +296,6 @@
   </div>
 </footer></div>
 
-<script src="site.js?v=f96d9916"></script>
+<script src="site.js?v=8b9b8faf"></script>
 </body>
 </html>
