@@ -46,11 +46,30 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .dd-item strong{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:1px;}
 .dd-item span{font-size:11px;color:var(--ink-light);}
 .dd-divider{height:1px;background:var(--border);margin:5px 0;}
-.nav-actions{margin-left:auto;display:flex;gap:8px;align-items:center;}
-.btn-ghost{padding:7px 15px;font-size:13px;color:var(--purple);background:transparent;border:1px solid var(--purple-mid);border-radius:var(--radius);transition:background .12s,transform .12s;}
+.nav-actions{margin-left:auto;display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.btn-ghost{padding:7px 15px;font-size:13px;color:var(--purple);background:transparent;border:1px solid var(--purple-mid);border-radius:var(--radius);transition:background .12s,transform .12s;white-space:nowrap;}
 .btn-ghost:hover{background:var(--purple-light);transform:translateY(-1px);}
-.btn-solid{padding:7px 15px;font-size:13px;color:white;background:var(--purple);border:1px solid var(--purple);border-radius:var(--radius);transition:background .12s,transform .12s;}
+.btn-solid{padding:7px 15px;font-size:13px;color:white;background:var(--purple);border:1px solid var(--purple);border-radius:var(--radius);transition:background .12s,transform .12s;white-space:nowrap;}
 .btn-solid:hover{background:var(--purple-dark);transform:translateY(-1px);}
+
+/* ── RESPONSIVE (narrow / split-screen viewports) ── */
+@media (max-width:1000px){
+  .container{padding:0 24px;}
+  .nav-logo{margin-right:16px;}
+  .nav-links{gap:0;}
+  .nav-link{padding:6px 8px;font-size:12.5px;}
+  .nav-actions{gap:6px;}
+  .btn-ghost{display:none;}
+}
+@media (max-width:900px){
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr) !important;}
+}
+@media (max-width:680px){
+  [style*="grid-template-columns"]{grid-template-columns:1fr !important;}
+  .section-title{font-size:32px;}
+  .section-title-sm{font-size:26px;}
+}
 
 /* ── SHARED LAYOUT ── */
 .container{max-width:1160px;margin:0 auto;padding:0 48px;}

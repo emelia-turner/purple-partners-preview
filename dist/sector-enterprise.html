@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=e01599c9">
+<link rel="stylesheet" href="styles.css?v=514a03b3">
 </head>
 <body data-page="sector-enterprise">
 <!-- NAV -->
@@ -118,14 +118,17 @@
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
       <div class="card" style="display:flex;flex-direction:column;">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Slow WiFi and unauthorized devices dragging down productivity</h3>
         <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:0;flex:1;">Employees need a secure, fast network that just works: reliable speeds even on busy floors, unauthorized devices blocked with locked-down access, and clear visibility and central control of network usage.</p>
       </div>
       <div class="card" style="display:flex;flex-direction:column;">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12.2h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5.3 9.7a4 4 0 0 1 5.4 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M3 7.3a7.5 7.5 0 0 1 10 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Visitors and contractors need access, without touching the corporate network</h3>
         <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:0;flex:1;">Visitors, clients, and contractors need easy access that never touches the corporate network. Guests onboard in seconds with a simple branded login, with guest traffic fully isolated from corporate systems.</p>
       </div>
       <div class="card" style="display:flex;flex-direction:column;">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3.5" y="7" width="9" height="6.5" rx="1.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <h3 style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--ink);margin:0 0 10px;">Every starter and leaver means another manual access change</h3>
         <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:0;flex:1;">Every starter and leaver is a manual IT task. Tying access to Entra ID, Google Workspace, or Okta means it happens automatically, with zero manual intervention.</p>
       </div>
@@ -135,7 +138,7 @@
 <div class="container"><div class="section">
   <div class="eyebrow">Where Purple fits</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
-  <div style="display:grid;grid-template-columns:repeat(1,1fr);gap:20px;">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
     
       <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
         <img src="images/staff-wifi-image.webp" alt="Staff WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
@@ -148,6 +151,19 @@
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
           <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('guest-wifi')">
+        <img src="images/guest-wifi-image.webp" alt="Guest WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
+        <div style="padding:24px;">
+          <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
+          <div class="card-title" style="font-size:18px;">Visitor access that never touches the corporate network</div>
+          <p class="card-body">Clients, contractors, and interviewees onboard in seconds with a simple branded login via the Purple app, with guest traffic fully isolated from corporate systems.</p>
+          <div style="display:flex;gap:9px;align-items:flex-start;margin-bottom:20px;">
+            <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
+          </div>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
