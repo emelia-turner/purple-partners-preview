@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Partner blog | Purple Partners</title>
+<title>Introducing identity-based networks in a client meeting | Purple Partners</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=bfce507a">
 </head>
-<body data-page="blog">
+<body data-page="blog-client-meeting">
 <!-- NAV -->
 <nav id="main-nav">
  <div class="container nav-inner">
@@ -81,117 +81,39 @@
 
 <div id="page-content">
 <div class="container"><div class="section">
-  <div class="eyebrow">Partner blog</div>
-  <h1 class="section-title">Insights for partners.</h1>
-  <p class="section-sub">Sales tips, product updates, sector guides, and partner news.</p>
-  <div style="display:flex;gap:8px;margin-bottom:36px;flex-wrap:wrap;" id="blog-filters">
-    <button class="blog-filter-btn active" data-cat="All" onclick="filterBlog('All',this)">All</button><button class="blog-filter-btn" data-cat="Product update" onclick="filterBlog('Product update',this)">Product updates</button><button class="blog-filter-btn" data-cat="Sales & marketing" onclick="filterBlog('Sales & marketing',this)">Sales & marketing</button><button class="blog-filter-btn" data-cat="Sector guide" onclick="filterBlog('Sector guide',this)">Sector guides</button><button class="blog-filter-btn" data-cat="Partner news" onclick="filterBlog('Partner news',this)">Partner news</button>
-  </div>
-  <div class="blog-grid" id="blog-grid">
-    
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-airport-rfp')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/airport-rfp.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Jun 2026</span></div>
-          <div class="blog-title">Turning WiFi into Revenue: How one partner won an airport RFP with Purple</div>
-          <div class="blog-excerpt">A VP of Customer Success breaks down the strategy behind a real airport RFP win, shifting the pitch from connectivity to data-driven business intelligence.</div>
+  <div class="eyebrow">Sales & marketing · Feb 2026</div>
+  <h1 class="section-title" style="max-width:760px;">How to introduce identity-based networks in a client meeting</h1>
+  <img src="images/blog/client-meeting.png" alt="How to introduce identity-based networks in a client meeting" style="width:100%;max-height:360px;object-fit:cover;border-radius:var(--radius-xl);display:block;margin:28px 0;">
+  <p style="font-size:17px;color:var(--ink-mid);line-height:1.8;max-width:720px;">A client conversation framework covering three use cases: staff, guest, and multi-tenant WiFi.</p>
+  <button class="btn-secondary" style="margin-top:8px;" onclick="navigate('blog')">← Back to all posts</button>
+  <div style="margin-top:56px;padding-top:40px;border-top:1px solid var(--border-soft);">
+    <div class="eyebrow">More from the blog</div>
+    <div class="blog-grid">
+      
+        <div class="blog-card" onclick="navigate('blog-airport-rfp')">
+          <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/airport-rfp.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Jun 2026</span></div>
+            <div class="blog-title">Turning WiFi into Revenue: How one partner won an airport RFP with Purple</div>
+            <div class="blog-excerpt">A VP of Customer Success breaks down the strategy behind a real airport RFP win, shifting the pitch from connectivity to data-driven business intelligence.</div>
+          </div>
         </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-faster-network')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/faster-network.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Apr 2026</span></div>
-          <div class="blog-title">How to give your customers a faster network without touching the hardware</div>
-          <div class="blog-excerpt">Three new Shield features, free in every licence, that strip ad and tracker traffic at the DNS level to reclaim bandwidth.</div>
+        <div class="blog-card" onclick="navigate('blog-faster-network')">
+          <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/faster-network.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Apr 2026</span></div>
+            <div class="blog-title">How to give your customers a faster network without touching the hardware</div>
+            <div class="blog-excerpt">Three new Shield features, free in every licence, that strip ad and tracker traffic at the DNS level to reclaim bandwidth.</div>
+          </div>
         </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-open-to-secure')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/open-to-secure.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Mar 2026</span></div>
-          <div class="blog-title">From open to secure: Why your clients' WiFi can be a huge risk</div>
-          <div class="blog-excerpt">A recap of Purple's Newcastle event on WiFi risk and compliance, with a live security demonstration and a look at what a properly secured network looks like.</div>
+        <div class="blog-card" onclick="navigate('blog-open-to-secure')">
+          <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/open-to-secure.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Mar 2026</span></div>
+            <div class="blog-title">From open to secure: Why your clients' WiFi can be a huge risk</div>
+            <div class="blog-excerpt">A recap of Purple's Newcastle event on WiFi risk and compliance, with a live security demonstration and a look at what a properly secured network looks like.</div>
+          </div>
         </div>
-      </div>
-      <div class="blog-card" data-cat="Sector guide" onclick="navigate('blog-staff-wifi-education')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/staff-wifi-education.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sector guide"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sector guide</span><span class="blog-date">Mar 2026</span></div>
-          <div class="blog-title">Staff WiFi for schools and universities: A partner's vertical guide</div>
-          <div class="blog-excerpt">A certificate-based WiFi pass tied to the individual, built for education sector deployments.</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-auto-revocation')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/auto-revocation.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Mar 2026</span></div>
-          <div class="blog-title">Auto-revocation: The WiFi feature that closes the deal</div>
-          <div class="blog-excerpt">Automatic credential removal synced with identity provider changes eliminates manual offboarding.</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-contractor-access')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/contractor-access.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Mar 2026</span></div>
-          <div class="blog-title">How Purple handles contractor and time-limited staff WiFi access</div>
-          <div class="blog-excerpt">Individual credentials for temporary workers, with automatic revocation at contract end.</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-sceptical-it-manager')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/sceptical-it-manager.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Mar 2026</span></div>
-          <div class="blog-title">How to sell passwordless WiFi to a sceptical IT manager</div>
-          <div class="blog-excerpt">A sales framework for addressing IT concerns about identity-based network authentication.</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-zero-trust')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/zero-trust.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Feb 2026</span></div>
-          <div class="blog-title">Zero Trust networking: What it actually means for WiFi</div>
-          <div class="blog-excerpt">A messaging guide for putting the zero-trust question to prospective customers: does your wireless network actually know who's on it?</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-three-problems')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/three-problems.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Feb 2026</span></div>
-          <div class="blog-title">The 3 problems Purple solves across every vertical</div>
-          <div class="blog-excerpt">Shared passwords mean anonymous connections, and anonymous connections mean no control.</div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="Sales & marketing" onclick="navigate('blog-client-meeting')">
-        <div class="blog-img" style="background:#eee;overflow:hidden;padding:0;"><img src="images/blog/client-meeting.png" style="width:100%;height:160px;object-fit:cover;display:block;" alt="Sales & marketing"></div>
-        <div class="blog-content">
-          <div class="blog-meta"><span class="blog-cat">Sales & marketing</span><span class="blog-date">Feb 2026</span></div>
-          <div class="blog-title">How to introduce identity-based networks in a client meeting</div>
-          <div class="blog-excerpt">A client conversation framework covering three use cases: staff, guest, and multi-tenant WiFi.</div>
-        </div>
-      </div>
-  </div>
-  <p id="blog-empty" style="display:none;font-size:14px;color:var(--ink-light);">No posts in this category yet.</p>
-  
-  <div class="newsletter-cta" style="margin-top:48px;">
-    <div class="newsletter-cta-text">
-      <div class="eyebrow" style="margin-bottom:6px;">Stay in the loop</div>
-      <h3 style="font-family:'Poppins',sans-serif;font-size:22px;margin-bottom:6px;">Join our newsletter</h3>
-      <p style="font-size:13px;color:var(--ink-mid);margin-bottom:0;">Product announcements, new features, and partner updates, straight to your inbox.</p>
-    </div>
-    <div class="newsletter-cta-form">
-      <div class="newsletter-form-state">
-        <div class="newsletter-input-grid">
-          <input type="text" class="newsletter-input" placeholder="First name">
-          <input type="text" class="newsletter-input" placeholder="Last name">
-          <input type="text" class="newsletter-input" placeholder="Company">
-          <input type="email" class="newsletter-input" placeholder="Email">
-        </div>
-        <button class="btn-primary" onclick="submitNewsletter(this)">Subscribe</button>
-      </div>
-      <div class="newsletter-success-state">
-        <svg width="18" height="18" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span style="font-size:13px;color:var(--ink);">You're subscribed, watch your inbox.</span>
-      </div>
     </div>
   </div>
 </div></div>

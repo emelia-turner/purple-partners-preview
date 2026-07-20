@@ -63,7 +63,8 @@
     <div class="nav-item" id="dd-portal">
       <div class="nav-link" onclick="toggleDD('dd-portal')">Partner portal <span class="chev">▾</span></div>
       <div class="dropdown">
-        <div class="dd-item" onclick="navigate('home')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://eu.wifi.purple.ai/services/auth/login?response_type=code&amp;client_id=beb6ddbb8ffbb65aa96d35bb30553a39&amp;redirect_uri=https%3A%2F%2Feu.wifi.purple.ai%2Foauth&amp;state=7b5b70eaf7e3def7b21ebf699eb21a783eac857ef831fcf4e7060e2e4c2850f7&amp;code_challenge=OlaDoz5w6xcCkiTw8BqaPCcCUmz8Js1h_WCzdG-s314&amp;code_challenge_method=S256&amp;partner-portal=1','_blank')">Login to portal</div>
+        <div class="dd-item" onclick="window.open('https://onboarding.purple.ai/partner','_blank')">Register</div>
         <div class="dd-item" onclick="location.href='tools.html#portal-guide'">Portal setup guide</div>
       </div>
     </div>
@@ -110,37 +111,52 @@
 <div class="container"><div class="section">
   <div class="eyebrow">Where the app shows up</div>
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">One login, three different jobs.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    
-      <div class="card">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5 13.5 3.8v4.1c0 3.6-2.3 6.6-5.5 7.6-3.2-1-5.5-4-5.5-7.6V3.8L8 1.5Z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">Staff WiFi</div>
-        <div class="card-title" style="font-size:15px;">The authentication layer</div>
-        <p class="card-body" style="margin-bottom:0;">Staff authenticate once with existing SSO credentials, Entra ID, Google Workspace, or Okta, and receive a unique, unshareable certificate-based profile. The app then grants access across the entire estate, on every device: Windows, macOS, Linux, iOS, and Android. When someone leaves the identity provider, the app revokes their access automatically.</p>
+  <div class="sol-grid">
+    <div class="sol-card" onclick="navigate('staff-wifi')">
+      <div class="sol-card-img"><img src="images/staff-wifi-image.webp" alt="Staff WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Staff WiFi</div>
+        <div class="card-title">Passwordless zero-trust access</div>
+        <p class="card-body">WPA3-Enterprise with automatic device provisioning and revocation tied to your customer's identity provider, via the Purple app. No shared passwords, no manual IT overhead.</p>
+        <div class="sol-checklist">
+          
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Works with Entra ID, Google & Okta</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">WPA3-Enterprise, 802.1X</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Automated JML</div></div>
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('staff-wifi')">Learn more</button>
       </div>
-      <div class="card">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 6a8.5 8.5 0 0 1 12 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M4.2 8.6a5 5 0 0 1 7.6 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><path d="M6.4 11.1a2 2 0 0 1 3.2 0" stroke="white" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="13.3" r="1" fill="white"/></svg></div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;">Guest WiFi</div>
-        <div class="card-title" style="font-size:15px;">The friction remover</div>
-        <p class="card-body" style="margin-bottom:0;">Captive portals still frustrate visitors with forms. The app replaces that with seamless connectivity and a conscious opt-in, done once. From then on, the app recognizes returning visitors automatically, and becomes a channel for offers and loyalty to people who are physically in the venue.</p>
+    </div>
+    <div class="sol-card" onclick="navigate('guest-wifi')">
+      <div class="sol-card-img"><img src="images/guest-wifi-image.webp" alt="Guest WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Guest WiFi</div>
+        <div class="card-title">Frictionless visitor access</div>
+        <p class="card-body">Branded portal or seamless connection via the Purple app, with built-in analytics, marketing automation, and first-party data capture. The layer that turns WiFi into a revenue tool.</p>
+        <div class="sol-checklist">
+          
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Branded captive portal or seamless connection</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Visitor analytics & footfall</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Marketing automation</div></div>
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('guest-wifi')">Learn more</button>
       </div>
-      <div class="card">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--purple);display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 14V6.5L8 3l5 3.5V14" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.5 14v-4h3v4" stroke="white" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:8px;">Multi-tenant WiFi</div>
-        <div class="card-title" style="font-size:15px;">The resident's remote control</div>
-        <p class="card-body" style="margin-bottom:0;">Residents provision a network pass directly in the app. Devices auto-connect and isolate, and reconnect automatically on every future visit, to any property in the chain. The app doubles as an engagement channel: surveys, location-aware content, notifications, and rewards.</p>
+    </div>
+    <div class="sol-card" onclick="navigate('multi-tenant')">
+      <div class="sol-card-img"><img src="images/mtn-image.webp" alt="Multi-tenant WiFi"></div>
+      <div class="sol-card-body">
+        <div class="card-tag">Multi-tenant WiFi</div>
+        <div class="card-title">Private at-home experience</div>
+        <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+        <div class="sol-checklist">
+          
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Per-unit network isolation, via iPSK</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Browserless device support</div></div>
+            <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">Engagement channel via the app</div></div>
+        </div>
+        <button class="sol-card-cta" onclick="event.stopPropagation();navigate('multi-tenant')">Learn more</button>
       </div>
-  </div>
-</div></div>
-
-<div class="dark-section"><div class="container">
-  <div class="eyebrow">Why it matters to a sale</div>
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;color:white;">The upsell path is already built in.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;"><div style="font-family:'Poppins',sans-serif;font-size:16px;color:white;margin-bottom:8px;">A familiar engine</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;">A customer already running Guest WiFi through the app has a shorter path to Staff WiFi or Multi-tenant. The end-user experience doesn't change, just what the app is being used for.</p></div>
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;"><div style="font-family:'Poppins',sans-serif;font-size:16px;color:white;margin-bottom:8px;">Less for IT to manage</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;">Nothing for a customer's IT team to install or patch. The app lives on end-user devices, and the identity infrastructure behind it is the same platform already trusted by 80,000+ venues.</p></div>
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px;"><div style="font-family:'Poppins',sans-serif;font-size:16px;color:white;margin-bottom:8px;">A channel that keeps paying off</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;margin:0;">Every opted-in connection through the app is a contact a customer can message again, whether that's a loyalty offer to a guest or a notification to a resident.</p></div>
+    </div>
   </div>
 </div></div>
 
