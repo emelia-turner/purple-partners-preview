@@ -201,3 +201,29 @@ function initHeroTilt() {
 }
 
 document.addEventListener('DOMContentLoaded', initHeroTilt);
+
+// ── SCROLL-TRIGGERED SECTION REVEAL ───────────────────────────────
+// Fades and lifts each major section (.section, .section-sm, .dark-section)
+// into place the first time it scrolls into view, rather than a flat,
+// all-at-once page load.
+function initScrollReveal() {
+  const els = document.querySelectorAll('.section, .section-sm, .dark-section, .reveal');
+  if (!els.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  els.forEach(el => io.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', initScrollReveal);
