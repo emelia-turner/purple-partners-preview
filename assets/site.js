@@ -176,3 +176,28 @@ function initCountUp() {
 }
 
 document.addEventListener('DOMContentLoaded', initCountUp);
+
+// ── HERO PORTAL MOCKUP PARALLAX TILT ─────────────────────────────
+// Soft rotateX tilt on the home hero's portal screenshot mockup, tied to
+// its position in the viewport: tilted back before it's scrolled to,
+// flattens as it centers, tilts the other way as it scrolls past. The
+// CSS transition on .hero-dark-frame smooths out the per-event jumps.
+function initHeroTilt() {
+  const frame = document.querySelector('.hero-dark-frame');
+  if (!frame) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function update() {
+    const rect = frame.getBoundingClientRect();
+    const viewportMid = window.innerHeight / 2;
+    const elMid = rect.top + rect.height / 2;
+    const progress = (viewportMid - elMid) / window.innerHeight;
+    const tilt = Math.max(-5, Math.min(5, progress * 9));
+    frame.style.transform = `rotateX(${tilt}deg)`;
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+}
+
+document.addEventListener('DOMContentLoaded', initHeroTilt);

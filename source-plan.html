@@ -149,8 +149,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .hero-dark-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:56px;}
 .hero-dark-actions .btn-secondary{color:white;border-color:rgba(255,255,255,.3);}
 .hero-dark-actions .btn-secondary:hover{background:rgba(255,255,255,.1);color:white;}
-.hero-dark-frame-wrap{position:relative;max-width:900px;margin:0 auto;}
-.hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;}
+.hero-dark-frame-wrap{position:relative;max-width:900px;margin:0 auto;perspective:1400px;}
+.hero-dark-frame{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;transform-style:preserve-3d;will-change:transform;transition:transform .15s ease-out;}
+@media (prefers-reduced-motion: reduce){.hero-dark-frame{transition:none;}}
 .hero-dark-frame-cam{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);margin:0 auto 16px;}
 .hero-dark-frame .dash-wrap{border-radius:10px;}
 .hero-float-badge{position:absolute;display:flex;align-items:center;gap:8px;background:var(--purple-deep);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:8px 16px 8px 8px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease;}
@@ -948,7 +949,7 @@ const CASE_STUDY_DATA = {
     url: "https://www.purple.ai/en-gb/case-studies/paignton-zoo",
     teaser: "Discovered valuable customer insights through WiFi analytics, live since late 2016.",
     challenge: "Paignton Zoo, Newquay Zoo, and Living Coasts wanted to improve the visitor experience with free WiFi and gather visitor data for marketing.",
-    solution: "Purple, deployed via local partner Acronyms, rolled out guest WiFi and a captive portal across all three venues, going live at Paignton Zoo in late 2016. The platform captures email addresses and demographics, age, gender, interests, location, and how often and how long visitors stay, at login.",
+    solution: "Purple rolled out guest WiFi and a captive portal across all three venues, going live at Paignton Zoo in late 2016, with content filtering delivered alongside local partner Acronyms. The platform captures email addresses and demographics, age, gender, interests, location, and how often and how long visitors stay, at login.",
     result: "The data feeds an existing CRM for automated, targeted campaigns including vouchers and rewards.",
     stats: [["26k","lines of active customer data"],["45k","schoolchildren visiting annually"],["~1hr","average WiFi session"]]
   },
@@ -1040,7 +1041,7 @@ const CASE_STUDY_DATA = {
     challenge: "Brussels South Charleroi Airport needed a better way to understand passenger demographics and travel preferences so it could expand its flight route network and sharpen marketing, without relying on slow, costly manual survey methods.",
     solution: "Purple deployed its Guest WiFi captive portal along with MicroSurvey and LogicFlow, enabling automated, real-time, multi-language passenger surveys delivered at no extra cost on top of the WiFi platform.",
     result: "The insights let the airport identify its top 5 most-wanted new destinations directly from passenger feedback, feeding into airline partnership discussions and new commercial routes.",
-    stats: [["10,630%","ROI"],["€2.7m","saved vs traditional surveys"],["689k","unique users over 2 years"],["86%","survey open rate"]]
+    stats: [["10,630%","ROI"],["€2.6m","saved vs traditional surveys"],["689k","unique users over 2 years"],["86%","survey open rate"]]
   },
 };
 
