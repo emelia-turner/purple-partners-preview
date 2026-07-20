@@ -166,8 +166,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 /* Dark-background variant of the logo strip */
 .logo-strip-dark{border-color:rgba(255,255,255,.12);}
 .logo-strip-dark .ls-label{color:rgba(255,255,255,.4);}
-.logo-strip-dark .ls-logo-img{filter:grayscale(1) brightness(0) invert(1);opacity:.45;}
-.logo-strip-dark .ls-logo-item:hover .ls-logo-img{filter:none;opacity:1;}
+.logo-strip-dark .ls-logo-img{filter:grayscale(1) brightness(0) invert(1);opacity:.45;transition:opacity .15s;}
+.logo-strip-dark .ls-logo-item:hover .ls-logo-img{opacity:1;}
 .logo-strip-dark .ls-logo-text{color:rgba(255,255,255,.4);}
 .logo-strip-dark .ls-logo-item:hover .ls-logo-text{color:white;opacity:1;}
 @media (prefers-reduced-motion: reduce){.ls-track{animation:none;}}
