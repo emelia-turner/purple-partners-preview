@@ -52,6 +52,53 @@ function startCaseStudyAutoplay() {
 }
 document.addEventListener('DOMContentLoaded', startCaseStudyAutoplay);
 
+// ── MULTI-CARD CASE STUDY CAROUSEL (sector pages) ─────────────────
+// Native horizontal scroll with snap, so it also responds to trackpad/touch
+// swipes directly, not just the arrow buttons and dots.
+let csmTimer = null;
+function csmCardStep() {
+  const viewport = document.querySelector('.csm-viewport');
+  const card = viewport && viewport.querySelector('.csm-card');
+  if (!card) return 0;
+  return card.getBoundingClientRect().width + 20;
+}
+function csmGoTo(i) {
+  const viewport = document.querySelector('.csm-viewport');
+  const step = csmCardStep();
+  if (!viewport || !step) return;
+  viewport.scrollTo({ left: i * step, behavior: 'smooth' });
+}
+function csmStep(delta) {
+  const viewport = document.querySelector('.csm-viewport');
+  const step = csmCardStep();
+  if (!viewport || !step) return;
+  const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+  let target = viewport.scrollLeft + delta * step;
+  if (target > maxScroll - 2) target = 0;
+  if (target < 0) target = maxScroll;
+  viewport.scrollTo({ left: target, behavior: 'smooth' });
+}
+function csmUpdateDots() {
+  const viewport = document.querySelector('.csm-viewport');
+  const dots = document.querySelectorAll('.csm-carousel .cs-dot');
+  const step = csmCardStep();
+  if (!viewport || !dots.length || !step) return;
+  const idx = Math.round(viewport.scrollLeft / step);
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+function startCsmAutoplay() {
+  const viewport = document.querySelector('.csm-viewport');
+  if (!viewport || viewport.querySelectorAll('.csm-card').length <= 1) return;
+  clearInterval(csmTimer);
+  csmTimer = setInterval(() => csmStep(1), 4500);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const viewport = document.querySelector('.csm-viewport');
+  if (!viewport) return;
+  viewport.addEventListener('scroll', csmUpdateDots);
+  startCsmAutoplay();
+});
+
 function navigate(page) {
   closeAllDD();
   location.href = (page === 'home' ? 'index' : page) + '.html';
