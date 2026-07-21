@@ -324,7 +324,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .csm-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.25);}
 .csm-card-logo{position:absolute;top:24px;left:24px;right:24px;height:210px;background-repeat:no-repeat;background-position:center;background-size:contain;filter:brightness(0) invert(1);opacity:.25;z-index:0;pointer-events:none;}
 .csm-card-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
-.csm-card-stat-group{margin-top:auto;}
+.csm-card-spacer{height:210px;flex-shrink:0;}
 .csm-card-stat-val{font-family:'Poppins',sans-serif;font-size:36px;font-weight:600;line-height:1;}
 .csm-card-stat-lbl{font-size:12px;color:rgba(255,255,255,.55);margin-top:6px;}
 .csm-card-cat{font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--purple-mid);margin-top:20px;margin-bottom:8px;}
@@ -1293,6 +1293,7 @@ function renderSectorPage(slug) {
     <div class="csm-card" onclick="navigate('case-study-${cslug}')">
       <div class="csm-card-logo" style="background-image:url('${c.image}')"></div>
       <div class="csm-card-body">
+        <div class="csm-card-spacer"></div>
         <div class="csm-card-stat-group">
           <div class="csm-card-stat-val">${c.stats[0][0]}</div>
           <div class="csm-card-stat-lbl">${c.stats[0][1]}</div>
