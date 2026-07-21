@@ -130,6 +130,7 @@ const ROUTES = [
   ["benefits", "benefits.html", "Partner benefits | Purple Partners"],
   ["sectors", "sectors.html", "Sectors | Purple Partners"],
   ["sector-hospitality", "sector-hospitality.html", "Hospitality | Purple Partners"],
+  ["sector-hotels", "sector-hotels.html", "Hotels | Purple Partners"],
   ["sector-retail", "sector-retail.html", "Retail | Purple Partners"],
   ["sector-healthcare", "sector-healthcare.html", "Healthcare | Purple Partners"],
   ["sector-education", "sector-education.html", "Education | Purple Partners"],
