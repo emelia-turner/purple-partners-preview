@@ -1286,7 +1286,7 @@ function renderSectorPage(slug) {
 
 <div class="container"><div class="section">
   ${sectorCS.length > 0 ? `
-  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in ${s.tag.toLowerCase()}.</h2>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from ${s.tag.toLowerCase()} customers.</h2>
   <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">${sectorCS.length > 1 ? `Real case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
   <div class="csm-grid" style="display:grid;grid-template-columns:repeat(${sectorCS.length},1fr);gap:20px;">
     ${sectorCS.map(([cslug,c]) => `
