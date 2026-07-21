@@ -33,6 +33,13 @@ function goToCaseStudy(i) {
   dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
   startCaseStudyAutoplay();
 }
+function stepCaseStudy(delta) {
+  const slides = document.querySelectorAll('.cs-slides .cs-slide');
+  if (!slides.length) return;
+  const current = document.querySelector('.cs-slides .cs-slide.active');
+  const idx = [...slides].indexOf(current);
+  goToCaseStudy((idx + delta + slides.length) % slides.length);
+}
 function startCaseStudyAutoplay() {
   const slides = document.querySelectorAll('.cs-slides .cs-slide');
   if (slides.length <= 1) return;
