@@ -58,16 +58,8 @@ const scriptPatches = [
 // Tools page: buttons that just re-navigated to the same page. Every one sits behind
 // "available to registered partners" copy, so routing them to the signup section is the
 // sensible placeholder rather than a no-op page reload - except hardware compatibility,
-// the guest WiFi checklist, integrations library, and case studies, which have real destinations.
-const toolsLabels = [
-  "Read the guide →",
-];
-for (const label of toolsLabels) {
-  scriptPatches.push([
-    `<button class="btn-primary" onclick="navigate('tools')">${label}</button>`,
-    `<button class="btn-primary" onclick="${SIGNUP}">${label}</button>`,
-  ]);
-}
+// the guest WiFi checklist, integrations library, case studies, and the portal setup guide,
+// which have real destinations.
 const HARDWARE_DOCS = "https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware";
 scriptPatches.push([
   `<button class="btn-primary" onclick="navigate('tools')">Check hardware compatibility →</button>`,
