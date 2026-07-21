@@ -170,7 +170,7 @@ function filterBlog(cat, btnEl) {
 const NAV_MAP = {
   'app': 'WiFi', 'staff-wifi': 'WiFi', 'guest-wifi': 'WiFi', 'guest-wifi-plans': 'WiFi', 'multi-tenant': 'WiFi', 'verify': 'WiFi', 'shield': 'WiFi',
   'benefits': 'Benefits',
-  'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
+  'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-hotels': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
   'sector-education': 'Sectors', 'sector-residential': 'Sectors', 'sector-enterprise': 'Sectors', 'sector-transport': 'Sectors',
   'tools': 'Tools', 'marketing': 'Tools', 'call-out-day': 'Tools', 'blog': 'Blog',
 };
