@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=edec412d">
+<link rel="stylesheet" href="styles.css?v=236c4697">
 </head>
 <body data-page="sector-healthcare">
 <!-- NAV -->
@@ -187,41 +187,31 @@
   
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in healthcare.</h2>
   <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">Real case studies from real healthcare deployments, each with its own numbers.</p>
-  <div class="csm-carousel">
-    <button class="cs-arrow cs-arrow-prev" onclick="csmStep(-1)" aria-label="Previous case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <button class="cs-arrow cs-arrow-next" onclick="csmStep(1)" aria-label="Next case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3 11 8l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="csm-viewport">
-      <div class="csm-track">
-        
-        <div class="csm-card" onclick="navigate('case-study-st-georges')">
-          <div class="csm-card-logo" style="background-image:url('images/case-studies/st-georges.avif')"></div>
-          <div class="csm-card-body">
-            <div class="csm-card-stat-group">
-              <div class="csm-card-stat-val">783k</div>
-              <div class="csm-card-stat-lbl">WiFi sessions in year one</div>
-            </div>
-            <div class="csm-card-cat">Healthcare</div>
-            <div class="csm-card-name">St George's Healthcare NHS Trust</div>
-            <div class="csm-card-snippet">The Trust met the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.</div>
-          </div>
+  <div class="csm-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+    
+    <div class="csm-card" onclick="navigate('case-study-st-georges')">
+      <div class="csm-card-logo" style="background-image:url('images/case-studies/st-georges.avif')"></div>
+      <div class="csm-card-body">
+        <div class="csm-card-stat-group">
+          <div class="csm-card-stat-val">783k</div>
+          <div class="csm-card-stat-lbl">WiFi sessions in year one</div>
         </div>
-        <div class="csm-card" onclick="navigate('case-study-queen-elizabeth-hospital')">
-          <div class="csm-card-logo" style="background-image:url('images/case-studies/queen-elizabeth-hospital.avif')"></div>
-          <div class="csm-card-body">
-            <div class="csm-card-stat-group">
-              <div class="csm-card-stat-val">250k</div>
-              <div class="csm-card-stat-lbl">visitors annually</div>
-            </div>
-            <div class="csm-card-cat">Healthcare</div>
-            <div class="csm-card-name">The Queen Elizabeth Hospital</div>
-            <div class="csm-card-snippet">Patients and visitors gained free guest WiFi across the hospital, while the trust gained rich visitor analytics.</div>
-          </div>
-        </div>
+        <div class="csm-card-cat">Healthcare</div>
+        <div class="csm-card-name">St George's Healthcare NHS Trust</div>
+        <div class="csm-card-snippet">The Trust met the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.</div>
       </div>
     </div>
-    
-    <div class="cs-dots">
-      <button class="cs-dot active" onclick="csmGoTo(0)" aria-label="Go to case study 1"></button><button class="cs-dot" onclick="csmGoTo(1)" aria-label="Go to case study 2"></button>
+    <div class="csm-card" onclick="navigate('case-study-queen-elizabeth-hospital')">
+      <div class="csm-card-logo" style="background-image:url('images/case-studies/queen-elizabeth-hospital.avif')"></div>
+      <div class="csm-card-body">
+        <div class="csm-card-stat-group">
+          <div class="csm-card-stat-val">250k</div>
+          <div class="csm-card-stat-lbl">visitors annually</div>
+        </div>
+        <div class="csm-card-cat">Healthcare</div>
+        <div class="csm-card-name">The Queen Elizabeth Hospital</div>
+        <div class="csm-card-snippet">Patients and visitors gained free guest WiFi across the hospital, while the trust gained rich visitor analytics.</div>
+      </div>
     </div>
   </div>
   <button class="btn-primary" style="margin-top:32px;" onclick="navigate('case-studies')">View all case studies</button>
@@ -282,6 +272,6 @@
   </div>
 </footer></div>
 
-<script src="site.js?v=914efe64"></script>
+<script src="site.js?v=fa1a8e27"></script>
 </body>
 </html>
