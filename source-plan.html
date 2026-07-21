@@ -323,6 +323,21 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .cs-arrow:hover{background:var(--purple-light);transform:translateY(-50%) scale(1.06);}
 .cs-arrow-prev{left:-20px;}
 .cs-arrow-next{right:-20px;}
+
+/* ── MULTI-CARD CASE STUDY CAROUSEL (sector pages) ── */
+.csm-carousel{position:relative;}
+.csm-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.csm-viewport::-webkit-scrollbar{display:none;}
+.csm-track{display:flex;gap:20px;padding-bottom:2px;}
+.csm-card{scroll-snap-align:start;flex:0 0 320px;width:320px;height:420px;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--purple-deep),var(--purple-dark));padding:26px;cursor:pointer;color:white;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;}
+.csm-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.25);}
+.csm-card-icon{position:absolute;top:22px;right:22px;color:rgba(255,255,255,.14);z-index:0;}
+.csm-card-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
+.csm-card-stat-val{font-family:'Poppins',sans-serif;font-size:36px;font-weight:600;line-height:1;}
+.csm-card-stat-lbl{font-size:12px;color:rgba(255,255,255,.55);margin-top:6px;}
+.csm-card-cat{font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--purple-mid);margin-top:auto;padding-top:20px;margin-bottom:8px;}
+.csm-card-name{font-family:'Poppins',sans-serif;font-size:19px;margin-bottom:10px;}
+.csm-card-snippet{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;}
 .quote-role{font-size:11px;color:rgba(255,255,255,.4);}
 .quote-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);}
 .qs-val{font-family:'Poppins',sans-serif;font-size:28px;color:white;line-height:1;}
@@ -1264,24 +1279,27 @@ function renderSectorPage(slug) {
   ${sectorCS.length > 0 ? `
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in ${s.tag.toLowerCase()}.</h2>
   <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">${sectorCS.length > 1 ? `Real case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
-  <div class="cs-carousel">
-    ${sectorCS.length > 1 ? `<button class="cs-arrow cs-arrow-prev" onclick="stepCaseStudy(-1)" aria-label="Previous case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <button class="cs-arrow cs-arrow-next" onclick="stepCaseStudy(1)" aria-label="Next case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3 11 8l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : ''}
-    <div class="cs-slides">
-      ${sectorCS.map(([cslug,c],i) => `
-      <div class="cs-slide cs-slide-icon${i===0?' active':''}" style="cursor:pointer;" onclick="navigate('case-study-${cslug}')">
-        <div class="cs-slide-icon-bg">${icon(CASE_STUDY_TAG_ICON[c.tag] || 'enterprise', 120)}</div>
-        <div class="cs-slide-card">
-          <div class="cs-slide-name">${c.name}</div>
-          <div class="cs-slide-cat">${c.tag}</div>
-          <div class="cs-slide-snippet">${c.result}</div>
-        </div>
-        <div class="cs-slide-stat"><div class="cs-stat-val">${c.stats[0][0]}</div><div class="cs-stat-lbl">${c.stats[0][1]}</div></div>
-      </div>`).join('')}
+  <div class="csm-carousel">
+    ${sectorCS.length > 1 ? `<button class="cs-arrow cs-arrow-prev" onclick="csmStep(-1)" aria-label="Previous case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="cs-arrow cs-arrow-next" onclick="csmStep(1)" aria-label="Next case study"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3 11 8l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : ''}
+    <div class="csm-viewport">
+      <div class="csm-track">
+        ${sectorCS.map(([cslug,c]) => `
+        <div class="csm-card" onclick="navigate('case-study-${cslug}')">
+          <div class="csm-card-icon">${icon(CASE_STUDY_TAG_ICON[c.tag] || 'enterprise', 90)}</div>
+          <div class="csm-card-body">
+            <div class="csm-card-stat-val">${c.stats[0][0]}</div>
+            <div class="csm-card-stat-lbl">${c.stats[0][1]}</div>
+            <div class="csm-card-cat">${c.tag}</div>
+            <div class="csm-card-name">${c.name}</div>
+            <div class="csm-card-snippet">${c.result}</div>
+          </div>
+        </div>`).join('')}
+      </div>
     </div>
     ${sectorCS.length > 1 ? `
     <div class="cs-dots">
-      ${sectorCS.map((_,i)=>`<button class="cs-dot${i===0?' active':''}" onclick="goToCaseStudy(${i})" aria-label="Go to slide ${i+1}"></button>`).join('')}
+      ${sectorCS.map((_,i)=>`<button class="cs-dot${i===0?' active':''}" onclick="csmGoTo(${i})" aria-label="Go to case study ${i+1}"></button>`).join('')}
     </div>` : ''}
   </div>
   <button class="btn-primary" style="margin-top:32px;" onclick="navigate('case-studies')">View all case studies</button>` : `
