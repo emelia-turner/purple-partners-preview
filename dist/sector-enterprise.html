@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=514a03b3">
+<link rel="stylesheet" href="styles.css?v=b610ab80">
 </head>
 <body data-page="sector-enterprise">
 <!-- NAV -->
@@ -140,9 +140,9 @@
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
     
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('staff-wifi')">
         <img src="images/staff-wifi-image.webp" alt="Staff WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">The end of the shared office WiFi password</div>
           <p class="card-body">WPA3-Enterprise ties every employee's access to Entra ID, Google Workspace, or Okta, so starters and leavers happen automatically, no manual IT ticket, no lingering access.</p>
@@ -150,12 +150,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('guest-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('guest-wifi')">
         <img src="images/guest-wifi-image.webp" alt="Guest WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
           <div class="card-title" style="font-size:18px;">Visitor access that never touches the corporate network</div>
           <p class="card-body">Clients, contractors, and interviewees onboard in seconds with a simple branded login via the Purple app, with guest traffic fully isolated from corporate systems.</p>
@@ -163,7 +163,7 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -184,8 +184,8 @@
 
 <div class="container"><div class="section">
   <div class="eyebrow">Proof point</div>
+  
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    
     <div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Built on the same identity infrastructure trusted by 80,000 venues.</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">Staff WiFi is new, but the platform underneath it isn't. The identity infrastructure is proven at scale already, ISO 27001 and GDPR and CCPA compliant, with a 99.999% cloud RADIUS uptime SLA, so the credibility conversation starts from a strong position.</p>

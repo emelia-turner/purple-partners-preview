@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=514a03b3">
+<link rel="stylesheet" href="styles.css?v=b610ab80">
 </head>
 <body data-page="sector-healthcare">
 <!-- NAV -->
@@ -140,9 +140,9 @@
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('staff-wifi')">
         <img src="images/staff-wifi-image.webp" alt="Staff WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">Priority access for staff tablets and clinical devices</div>
           <p class="card-body">WPA3-Enterprise ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.</p>
@@ -150,12 +150,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('guest-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('guest-wifi')">
         <img src="images/guest-wifi-image.webp" alt="Guest WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
           <div class="card-title" style="font-size:18px;">A better connected stay for patients and visitors</div>
           <p class="card-body">Branded portal with easy onboarding, high-speed access, and content filtering, turning a compliance requirement into a visible, patient-facing amenity.</p>
@@ -163,12 +163,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('multi-tenant')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('multi-tenant')">
         <img src="images/mtn-image.webp" alt="Multi-tenant WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">MULTI-TENANT WIFI</div>
           <div class="card-title" style="font-size:18px;">A private network bubble for every resident</div>
           <p class="card-body">Long-term patients and care home residents get their own private network bubble, provisioned through the Purple app, not a shared hospital WiFi.</p>
@@ -176,7 +176,7 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Per-unit network isolation, via iPSK</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('multi-tenant')">Explore Multi-tenant WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('multi-tenant')">Explore Multi-tenant WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -197,41 +197,35 @@
 
 <div class="container"><div class="section">
   <div class="eyebrow">Proof points</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    
-    <div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in healthcare.</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">2 case studies from real healthcare deployments, each with its own numbers.</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">Read the case studies</button>
-    </div>
-    <div class="cs-carousel">
-      <div class="cs-slides">
-        
-        <div class="cs-slide active">
-          <img class="cs-slide-img" src="images/case-studies/st-georges.avif" alt="St George's Healthcare NHS Trust">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">St George's Healthcare NHS Trust</div>
-            <div class="cs-slide-cat">Healthcare</div>
-            <div class="cs-slide-snippet">The Trust met the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">783k</div><div class="cs-stat-lbl">WiFi sessions in year one</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/queen-elizabeth-hospital.avif" alt="The Queen Elizabeth Hospital">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">The Queen Elizabeth Hospital</div>
-            <div class="cs-slide-cat">Healthcare</div>
-            <div class="cs-slide-snippet">Patients and visitors gained free guest WiFi across the hospital, while the trust gained rich visitor analytics.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">250k</div><div class="cs-stat-lbl">visitors annually</div></div>
-        </div>
-      </div>
+  
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in healthcare.</h2>
+  <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;max-width:640px;">Real case studies from real healthcare deployments, each with its own numbers.</p>
+  <button class="btn-primary" style="margin-bottom:32px;" onclick="navigate('case-studies')">Read the case studies</button>
+  <div class="cs-carousel">
+    <div class="cs-slides">
       
-      <div class="cs-dots">
-        <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button>
+      <div class="cs-slide cs-slide-icon active">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">St George's Healthcare NHS Trust</div>
+          <div class="cs-slide-cat">Healthcare</div>
+          <div class="cs-slide-snippet">The Trust met the mandate cheaply, as a software overlay rather than a hardware replacement, while capturing patient feedback and promoting the hospital charity through the splash screens.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">783k</div><div class="cs-stat-lbl">WiFi sessions in year one</div></div>
       </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">The Queen Elizabeth Hospital</div>
+          <div class="cs-slide-cat">Healthcare</div>
+          <div class="cs-slide-snippet">Patients and visitors gained free guest WiFi across the hospital, while the trust gained rich visitor analytics.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">250k</div><div class="cs-stat-lbl">visitors annually</div></div>
+      </div>
+    </div>
+    
+    <div class="cs-dots">
+      <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button>
     </div>
   </div>
 </div></div>

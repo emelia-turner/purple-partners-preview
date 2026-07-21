@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=514a03b3">
+<link rel="stylesheet" href="styles.css?v=b610ab80">
 </head>
 <body data-page="sector-transport">
 <!-- NAV -->
@@ -140,9 +140,9 @@
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('guest-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('guest-wifi')">
         <img src="images/guest-wifi-image.webp" alt="Guest WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">GUEST WIFI</div>
           <div class="card-title" style="font-size:18px;">Passenger WiFi as a revenue line, not a cost center</div>
           <p class="card-body">Passengers connect in seconds and stay online through security, the lounge, and the gate, via the Purple app, building rich profiles that power targeted, location-aware offers.</p>
@@ -150,12 +150,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Branded captive portal or seamless connection</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('guest-wifi')">Explore Guest WiFi <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('verify')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('verify')">
         <img src="brand/verify-cafe-multidevice.png" alt="Verify" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">VERIFY</div>
           <div class="card-title" style="font-size:18px;">Passenger data that actually feeds your campaigns</div>
           <p class="card-body">High footfall public WiFi means a flood of fake and disposable email addresses. Verify checks every address in real time at login, so passenger data isn't mostly noise.</p>
@@ -163,12 +163,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Real-time validation at login</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('verify')">Explore Verify <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('verify')">Explore Verify <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('staff-wifi')">
         <img src="images/staff-wifi-image.webp" alt="Staff WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">Role-based access across a sprawling terminal estate</div>
           <p class="card-body">WPA3-Enterprise gives every staff member and contractor the right level of access automatically, with clear visibility of usage across every terminal.</p>
@@ -176,7 +176,7 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -197,81 +197,71 @@
 
 <div class="container"><div class="section">
   <div class="eyebrow">Proof points</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    
-    <div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in transport & venues.</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">6 case studies from real transport & venues deployments, each with its own numbers.</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">Read the case studies</button>
-    </div>
-    <div class="cs-carousel">
-      <div class="cs-slides">
-        
-        <div class="cs-slide active">
-          <img class="cs-slide-img" src="images/case-studies/resorts-world-birmingham.webp" alt="Resorts World Birmingham">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">Resorts World Birmingham</div>
-            <div class="cs-slide-cat">Events & attractions</div>
-            <div class="cs-slide-snippet">Since the July 2022 launch, guest connectivity complaints have been virtually eliminated, and the marketing team saves days of manual effort per campaign.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">1.7m</div><div class="cs-stat-lbl">logins since launch</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/paignton-zoo.png" alt="Paignton Zoo">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">Paignton Zoo</div>
-            <div class="cs-slide-cat">Events & attractions</div>
-            <div class="cs-slide-snippet">The data feeds an existing CRM for automated, targeted campaigns including vouchers and rewards.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">26k</div><div class="cs-stat-lbl">lines of active customer data</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/avanti-west-coast.avif" alt="Avanti West Coast">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">Avanti West Coast</div>
-            <div class="cs-slide-cat">Travel & transport</div>
-            <div class="cs-slide-snippet">The initiative delivered a large jump in repeat travellers and a substantial measured return on investment.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">463%</div><div class="cs-stat-lbl">Return on investment</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/c2c.avif" alt="c2c">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">c2c</div>
-            <div class="cs-slide-cat">Travel & transport</div>
-            <div class="cs-slide-snippet">Over the first 9 months, 81,601 unique users logged into the WiFi 343,340 times, and the passenger data let c2c validate a high share of emails and drive strong marketing opt-ins, projecting meaningful savings on OTA fees over a full year.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">151%</div><div class="cs-stat-lbl">projected ROI</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/ags-airports.png" alt="AGS Airports">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">AGS Airports</div>
-            <div class="cs-slide-cat">Travel & transport</div>
-            <div class="cs-slide-snippet">The tiered model generated significant additional revenue and a clean, verified passenger database.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">842%</div><div class="cs-stat-lbl">ROI</div></div>
-        </div>
-        <div class="cs-slide">
-          <img class="cs-slide-img" src="images/case-studies/brussels-south-charleroi.png" alt="Brussels South Charleroi Airport">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">Brussels South Charleroi Airport</div>
-            <div class="cs-slide-cat">Travel & transport</div>
-            <div class="cs-slide-snippet">The insights let the airport identify its top 5 most-wanted new destinations directly from passenger feedback, feeding into airline partnership discussions and new commercial routes.</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">10,630%</div><div class="cs-stat-lbl">ROI</div></div>
-        </div>
-      </div>
+  
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in transport & venues.</h2>
+  <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;max-width:640px;">Real case studies from real transport & venues deployments, each with its own numbers.</p>
+  <button class="btn-primary" style="margin-bottom:32px;" onclick="navigate('case-studies')">Read the case studies</button>
+  <div class="cs-carousel">
+    <div class="cs-slides">
       
-      <div class="cs-dots">
-        <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button><button class="cs-dot" onclick="goToCaseStudy(2)" aria-label="Go to slide 3"></button><button class="cs-dot" onclick="goToCaseStudy(3)" aria-label="Go to slide 4"></button><button class="cs-dot" onclick="goToCaseStudy(4)" aria-label="Go to slide 5"></button><button class="cs-dot" onclick="goToCaseStudy(5)" aria-label="Go to slide 6"></button>
+      <div class="cs-slide cs-slide-icon active">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">Resorts World Birmingham</div>
+          <div class="cs-slide-cat">Events & attractions</div>
+          <div class="cs-slide-snippet">Since the July 2022 launch, guest connectivity complaints have been virtually eliminated, and the marketing team saves days of manual effort per campaign.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">1.7m</div><div class="cs-stat-lbl">logins since launch</div></div>
       </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">Paignton Zoo</div>
+          <div class="cs-slide-cat">Events & attractions</div>
+          <div class="cs-slide-snippet">The data feeds an existing CRM for automated, targeted campaigns including vouchers and rewards.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">26k</div><div class="cs-stat-lbl">lines of active customer data</div></div>
+      </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">Avanti West Coast</div>
+          <div class="cs-slide-cat">Travel & transport</div>
+          <div class="cs-slide-snippet">The initiative delivered a large jump in repeat travellers and a substantial measured return on investment.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">463%</div><div class="cs-stat-lbl">Return on investment</div></div>
+      </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">c2c</div>
+          <div class="cs-slide-cat">Travel & transport</div>
+          <div class="cs-slide-snippet">Over the first 9 months, 81,601 unique users logged into the WiFi 343,340 times, and the passenger data let c2c validate a high share of emails and drive strong marketing opt-ins, projecting meaningful savings on OTA fees over a full year.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">151%</div><div class="cs-stat-lbl">projected ROI</div></div>
+      </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">AGS Airports</div>
+          <div class="cs-slide-cat">Travel & transport</div>
+          <div class="cs-slide-snippet">The tiered model generated significant additional revenue and a clean, verified passenger database.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">842%</div><div class="cs-stat-lbl">ROI</div></div>
+      </div>
+      <div class="cs-slide cs-slide-icon">
+        <div class="cs-slide-icon-bg"><svg width="120" height="120" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">Brussels South Charleroi Airport</div>
+          <div class="cs-slide-cat">Travel & transport</div>
+          <div class="cs-slide-snippet">The insights let the airport identify its top 5 most-wanted new destinations directly from passenger feedback, feeding into airline partnership discussions and new commercial routes.</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">10,630%</div><div class="cs-stat-lbl">ROI</div></div>
+      </div>
+    </div>
+    
+    <div class="cs-dots">
+      <button class="cs-dot active" onclick="goToCaseStudy(0)" aria-label="Go to slide 1"></button><button class="cs-dot" onclick="goToCaseStudy(1)" aria-label="Go to slide 2"></button><button class="cs-dot" onclick="goToCaseStudy(2)" aria-label="Go to slide 3"></button><button class="cs-dot" onclick="goToCaseStudy(3)" aria-label="Go to slide 4"></button><button class="cs-dot" onclick="goToCaseStudy(4)" aria-label="Go to slide 5"></button><button class="cs-dot" onclick="goToCaseStudy(5)" aria-label="Go to slide 6"></button>
     </div>
   </div>
 </div></div>

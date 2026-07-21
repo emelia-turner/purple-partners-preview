@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=514a03b3">
+<link rel="stylesheet" href="styles.css?v=b610ab80">
 </head>
 <body data-page="sector-residential">
 <!-- NAV -->
@@ -140,9 +140,9 @@
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:32px;">The products that solve it.</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
     
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('multi-tenant')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('multi-tenant')">
         <img src="images/mtn-image.webp" alt="Multi-tenant WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">MULTI-TENANT WIFI</div>
           <div class="card-title" style="font-size:18px;">A true private network, not a shared one</div>
           <p class="card-body">iPSK and the Purple app give every resident a genuine private network bubble from day one, with browserless devices supported and no router to configure per unit.</p>
@@ -150,12 +150,12 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Per-unit network isolation, via iPSK</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('multi-tenant')">Explore Multi-tenant WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('multi-tenant')">Explore Multi-tenant WiFi <span class="arr">→</span></button>
         </div>
       </div>
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('staff-wifi')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('staff-wifi')">
         <img src="images/staff-wifi-image.webp" alt="Staff WiFi" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">STAFF WIFI</div>
           <div class="card-title" style="font-size:18px;">Staff access, kept separate from residents and guests</div>
           <p class="card-body">WPA3-Enterprise ties property staff access to identity, fully separated from resident and guest networks, so leavers are locked out automatically.</p>
@@ -163,7 +163,7 @@
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">Works with Entra ID, Google & Okta</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('staff-wifi')">Explore Staff WiFi <span class="arr">→</span></button>
         </div>
       </div>
   </div>
@@ -184,8 +184,8 @@
 
 <div class="container"><div class="section">
   <div class="eyebrow">Proof point</div>
+  
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    
     <div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Built on the same identity infrastructure already trusted by 80,000 venues.</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:0;">iPSK gives every resident a genuine Private Area Network from day one, without a single router to configure, on the same platform already proven at scale: ISO 27001 and GDPR/CCPA compliant, with a 99.999% cloud RADIUS uptime SLA.</p>

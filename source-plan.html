@@ -286,7 +286,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .why-grid-dark .why-desc{color:rgba(255,255,255,.5);}
 
 /* ── QUOTE CARD ── */
-.quote-card{background:linear-gradient(135deg,var(--purple),var(--purple-deep) 75%);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
+.quote-card{background:linear-gradient(135deg,var(--purple),var(--purple-dark) 85%);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 50px rgba(0,0,0,.35);border-radius:var(--radius-xl);padding:36px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
 .quote-slides{position:relative;}
 .quote-slides .quote-card{display:none;animation:quoteFade .4s ease;}
 .quote-slides .quote-card.active{display:flex;}
@@ -306,6 +306,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .cs-slide.active{display:block;animation:quoteFade .4s ease;}
 .cs-slide-img{width:100%;height:100%;object-fit:cover;display:block;}
 .cs-slide-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%);}
+.cs-slide-icon{height:240px;background:linear-gradient(135deg,var(--purple-deep),var(--purple-dark));}
+.cs-slide-icon-bg{position:absolute;top:24px;left:24px;color:rgba(255,255,255,.16);}
 .cs-slide-card{position:absolute;left:20px;right:20px;bottom:20px;background:white;border-radius:var(--radius-lg);padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.18);}
 .cs-slide-name{font-family:'Poppins',sans-serif;font-size:16px;color:var(--ink);margin-bottom:2px;}
 .cs-slide-cat{font-size:12px;color:var(--ink-light);margin-bottom:10px;}
@@ -1089,6 +1091,17 @@ const CASE_STUDY_DATA = {
   },
 };
 
+// Maps a case study's tag to the sector icon shown as its slide's
+// background watermark on sector-page case-study slideshows.
+const CASE_STUDY_TAG_ICON = {
+  "Hospitality & leisure": "hospitality",
+  "Retail & commercial": "retail",
+  "Healthcare": "healthcare",
+  "Travel & transport": "transport",
+  "Events & attractions": "transport",
+  "Public sector": "enterprise",
+};
+
 // Partner blog posts, keyed by slug. Shared by the blog listing page and
 // each post's own detail page (renderBlogPost).
 const BLOG_POSTS = {
@@ -1226,9 +1239,9 @@ function renderSectorPage(slug) {
     ${s.recommended.map((key) => {
       const p = { ...RECOMMENDED_PRODUCT_CARDS[key], ...(s.productCards && s.productCards[key] || {}) };
       return `
-      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" onclick="navigate('${key}')">
+      <div class="card" style="padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;" onclick="navigate('${key}')">
         <img src="${p.image}" alt="${ALL_PRODUCTS[key].name}" style="width:100%;height:160px;object-fit:cover;display:block;">
-        <div style="padding:24px;">
+        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
           <div class="tag" style="margin-bottom:14px;">${ALL_PRODUCTS[key].name.toUpperCase()}</div>
           <div class="card-title" style="font-size:18px;">${p.title}</div>
           <p class="card-body">${p.body}</p>
@@ -1236,7 +1249,7 @@ function renderSectorPage(slug) {
             <div class="feature-check" style="margin-top:1px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span style="font-size:13px;color:var(--ink-mid);line-height:1.5;">${p.bullet}</span>
           </div>
-          <button class="btn-primary" style="padding:9px 18px;font-size:13px;" onclick="event.stopPropagation();navigate('${key}')">Explore ${ALL_PRODUCTS[key].name} →</button>
+          <button class="btn-primary" style="padding:9px 18px;font-size:13px;margin-top:auto;align-self:flex-start;" onclick="event.stopPropagation();navigate('${key}')">Explore ${ALL_PRODUCTS[key].name} →</button>
         </div>
       </div>`;
     }).join('')}
@@ -1258,32 +1271,29 @@ function renderSectorPage(slug) {
 
 <div class="container"><div class="section">
   <div class="eyebrow">Proof point${sectorCS.length > 1 ? 's' : ''}</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    ${sectorCS.length > 0 ? `
-    <div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in ${s.tag.toLowerCase()}.</h2>
-      <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;">${sectorCS.length > 1 ? `${sectorCS.length} case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
-      <button class="btn-primary" onclick="navigate('case-studies')">${sectorCS.length > 1 ? 'Read the case studies' : 'Read the case study'}</button>
+  ${sectorCS.length > 0 ? `
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from partners in ${s.tag.toLowerCase()}.</h2>
+  <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;max-width:640px;">${sectorCS.length > 1 ? `Real case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
+  <button class="btn-primary" style="margin-bottom:32px;" onclick="navigate('case-studies')">${sectorCS.length > 1 ? 'Read the case studies' : 'Read the case study'}</button>
+  <div class="cs-carousel">
+    <div class="cs-slides">
+      ${sectorCS.map(([cslug,c],i) => `
+      <div class="cs-slide cs-slide-icon${i===0?' active':''}">
+        <div class="cs-slide-icon-bg">${icon(CASE_STUDY_TAG_ICON[c.tag] || 'enterprise', 120)}</div>
+        <div class="cs-slide-card">
+          <div class="cs-slide-name">${c.name}</div>
+          <div class="cs-slide-cat">${c.tag}</div>
+          <div class="cs-slide-snippet">${c.result}</div>
+        </div>
+        <div class="cs-slide-stat"><div class="cs-stat-val">${c.stats[0][0]}</div><div class="cs-stat-lbl">${c.stats[0][1]}</div></div>
+      </div>`).join('')}
     </div>
-    <div class="cs-carousel">
-      <div class="cs-slides">
-        ${sectorCS.map(([cslug,c],i) => `
-        <div class="cs-slide${i===0?' active':''}">
-          <img class="cs-slide-img" src="${c.image}" alt="${c.name}">
-          <div class="cs-slide-overlay"></div>
-          <div class="cs-slide-card">
-            <div class="cs-slide-name">${c.name}</div>
-            <div class="cs-slide-cat">${c.tag}</div>
-            <div class="cs-slide-snippet">${c.result}</div>
-          </div>
-          <div class="cs-slide-stat"><div class="cs-stat-val">${c.stats[0][0]}</div><div class="cs-stat-lbl">${c.stats[0][1]}</div></div>
-        </div>`).join('')}
-      </div>
-      ${sectorCS.length > 1 ? `
-      <div class="cs-dots">
-        ${sectorCS.map((_,i)=>`<button class="cs-dot${i===0?' active':''}" onclick="goToCaseStudy(${i})" aria-label="Go to slide ${i+1}"></button>`).join('')}
-      </div>` : ''}
-    </div>` : `
+    ${sectorCS.length > 1 ? `
+    <div class="cs-dots">
+      ${sectorCS.map((_,i)=>`<button class="cs-dot${i===0?' active':''}" onclick="goToCaseStudy(${i})" aria-label="Go to slide ${i+1}"></button>`).join('')}
+    </div>` : ''}
+  </div>` : `
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
     <div>
       <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">${s.proof.title}</h2>
       <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:${s.proof.hasCaseStudy?'24px':'0'};">${s.proof.body}</p>
@@ -1291,8 +1301,8 @@ function renderSectorPage(slug) {
     </div>
     <div style="display:grid;grid-template-columns:repeat(${s.proof.stats.length},1fr);gap:14px;">
       ${s.proof.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
-    </div>`}
-  </div>
+    </div>
+  </div>`}
 </div></div>
 
 ${s.quote ? `
