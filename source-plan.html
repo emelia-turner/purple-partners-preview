@@ -645,7 +645,7 @@ const RECOMMENDED_PRODUCT_CARDS = {
     image: "https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85",
     title: "Private, isolated networks",
     body: "Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.",
-    bullet: "Per-unit network isolation, via iPSK"
+    bullet: "Per-unit network isolation, via xPSK"
   },
   "verify": {
     image: "brand/verify-cafe-multidevice.png",
@@ -769,7 +769,7 @@ const MULTI_TENANT_FAQS = [
   ["What is Multi-Tenant WiFi?",
    "In multi-tenant environments like student housing, hotels, or care homes, Purple creates a personal Private Area Network for each user. They log in once, and all their devices sit inside a secure, private bubble that follows them around the venue, so residents get a home-like experience with enterprise security."],
   ["How does tenant isolation work?",
-   "Tenant isolation uses technologies like VLANs, Dynamic PSK (iPSK), and 802.1X to ensure that even though tenants share the same physical access points, their traffic is completely separated. Devices on one tenant's network cannot see or communicate with devices on another's."],
+   "Tenant isolation uses technologies like VLANs, Dynamic PSK (xPSK), and 802.1X to ensure that even though tenants share the same physical access points, their traffic is completely separated. Devices on one tenant's network cannot see or communicate with devices on another's."],
 ];
 
 const SECTOR_DATA = {
@@ -875,7 +875,7 @@ const SECTOR_DATA = {
     productCards: {
       "staff-wifi": { title: "Priority access for staff tablets and clinical devices", body: "WPA3-Enterprise ties access to identity through the Purple app, prioritizing traffic for essential devices and keeping clinical applications and communication tools reliably connected.", bullet: "Works with Entra ID, Google & Okta" },
       "guest-wifi": { title: "A better connected stay for patients and visitors", body: "Branded portal with easy onboarding, high-speed access, and content filtering, turning a compliance requirement into a visible, patient-facing amenity.", bullet: "Branded captive portal or seamless connection" },
-      "multi-tenant": { title: "A private network bubble for every resident", body: "Long-term patients and care home residents get their own private network bubble, provisioned through the Purple app, not a shared hospital WiFi.", bullet: "Per-unit network isolation, via iPSK" }
+      "multi-tenant": { title: "A private network bubble for every resident", body: "Long-term patients and care home residents get their own private network bubble, provisioned through the Purple app, not a shared hospital WiFi.", bullet: "Per-unit network isolation, via xPSK" }
     },
     proof: {
       stat: "2 wks", label: "to go live",
@@ -897,22 +897,22 @@ const SECTOR_DATA = {
     sub: "Schools, colleges, and universities need staff access that's identity-led and student accommodation that doesn't generate a queue of tickets. A branded captive portal covers campus visitors, while the Purple app provisions staff sign-in and a student's private network bubble.",
     quickWins: ["Staff sign-in tied to the identity provider, not a shared password","A private network bubble per student, set up in the app","Browserless devices, consoles, TVs, connect without a portal"],
     challenges: [
-      { title: "A flood of helpdesk tickets every move-in week", body: "Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. iPSK and the Purple app give every student a private bubble that's ready before they arrive.", key: "multi-tenant" },
+      { title: "A flood of helpdesk tickets every move-in week", body: "Students arrive with personal devices, consoles, TVs, printers, that can't authenticate to the enterprise network through a captive portal. xPSK and the Purple app give every student a private bubble that's ready before they arrive.", key: "multi-tenant" },
       { title: "Staff and student networks that aren't properly separated", body: "Faculty and administrative staff need identity-based access that's separate from student traffic, with automated offboarding when contracts end or staff move on.", key: "staff-wifi" },
       { title: "Open days and campus visitors with no easy way online", body: "Parents, prospective students, and conference guests need fast, branded WiFi without touching the student or staff network. Guest WiFi gets visitors online in seconds while capturing a verified, opted-in contact for admissions and marketing.", key: "guest-wifi" }
     ],
     recommended: ["multi-tenant","staff-wifi","guest-wifi"],
     caseStudyTags: [],
     productCards: {
-      "multi-tenant": { title: "Ready before move-in day, no ticket required", body: "iPSK and the Purple app give every student a private network bubble set up before they arrive, so consoles, TVs, and personal devices connect without a portal.", bullet: "Per-unit network isolation, via iPSK" },
+      "multi-tenant": { title: "Ready before move-in day, no ticket required", body: "xPSK and the Purple app give every student a private network bubble set up before they arrive, so consoles, TVs, and personal devices connect without a portal.", bullet: "Per-unit network isolation, via xPSK" },
       "staff-wifi": { title: "Staff access, properly separated from student traffic", body: "WPA3-Enterprise ties faculty and administrative access to identity, kept separate from student traffic, with automated offboarding when contracts end.", bullet: "Works with Entra ID, Google & Okta" },
       "guest-wifi": { title: "Campus visitors online in seconds", body: "Parents, prospective students, and conference guests get fast, branded WiFi without touching the student or staff network, capturing a verified, opted-in contact for admissions.", bullet: "Branded captive portal or seamless connection" }
     },
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure already trusted by 80,000 venues.",
-      body: "iPSK gives every student a private bubble that's ready before move-in, without a single support ticket, on the same platform already proven at scale: ISO 27001 and GDPR/CCPA compliant, with a 99.999% cloud RADIUS uptime SLA.",
-      stats: [["80k+","venues worldwide"],["iPSK","browserless device support"]]
+      body: "xPSK gives every student a private bubble that's ready before move-in, without a single support ticket, on the same platform already proven at scale: ISO 27001 and GDPR/CCPA compliant, with a 99.999% cloud RADIUS uptime SLA.",
+      stats: [["80k+","venues worldwide"],["xPSK","browserless device support"]]
     },
     quote: null
   },
@@ -922,7 +922,7 @@ const SECTOR_DATA = {
     tag: "Residential & MDU",
     hook: "Build to Rent and student accommodation WiFi that residents expect from day one.",
     sub: "BTR developments, student halls, and aparthotels need WiFi that feels like home broadband and is ready the day residents move in. A branded captive portal covers visitors in shared spaces, while residents provision and manage their own connection through the Purple app, with no operator having to manage a router per unit.",
-    quickWins: ["Every resident gets a true private network, not a shared one","Browserless devices supported via iPSK, no portal needed","A new ancillary revenue stream from tiered, paid access"],
+    quickWins: ["Every resident gets a true private network, not a shared one","Browserless devices supported via xPSK, no portal needed","A new ancillary revenue stream from tiered, paid access"],
     challenges: [
       { title: "No fast, reliable WiFi ready for move-in day", body: "Residents expect fast, reliable WiFi as a standard utility. Providing a high-quality, secure, and easy-to-use internet service across an entire property can be complex and costly to manage, especially at peak move-in times in high-density halls.", key: "multi-tenant" },
       { title: "Staff sharing the same network as residents and guests", body: "Staff need a secure and reliable WiFi network to manage the property efficiently, from maintenance requests to resident communication. This network must be separate from resident and guest networks to ensure security and performance.", key: "staff-wifi" },
@@ -931,14 +931,14 @@ const SECTOR_DATA = {
     recommended: ["multi-tenant","staff-wifi"],
     caseStudyTags: [],
     productCards: {
-      "multi-tenant": { title: "A true private network, not a shared one", body: "iPSK and the Purple app give every resident a genuine private network bubble from day one, with browserless devices supported and no router to configure per unit.", bullet: "Per-unit network isolation, via iPSK" },
+      "multi-tenant": { title: "A true private network, not a shared one", body: "xPSK and the Purple app give every resident a genuine private network bubble from day one, with browserless devices supported and no router to configure per unit.", bullet: "Per-unit network isolation, via xPSK" },
       "staff-wifi": { title: "Staff access, kept separate from residents and guests", body: "WPA3-Enterprise ties property staff access to identity, fully separated from resident and guest networks, so leavers are locked out automatically.", bullet: "Works with Entra ID, Google & Okta" }
     },
     proof: {
       stat: "80k+", label: "venues already on the platform",
       title: "Built on the same identity infrastructure already trusted by 80,000 venues.",
-      body: "iPSK gives every resident a genuine Private Area Network from day one, without a single router to configure, on the same platform already proven at scale: ISO 27001 and GDPR/CCPA compliant, with a 99.999% cloud RADIUS uptime SLA.",
-      stats: [["80k+","venues worldwide"],["iPSK","browserless device support"]]
+      body: "xPSK gives every resident a genuine Private Area Network from day one, without a single router to configure, on the same platform already proven at scale: ISO 27001 and GDPR/CCPA compliant, with a 99.999% cloud RADIUS uptime SLA.",
+      stats: [["80k+","venues worldwide"],["xPSK","browserless device support"]]
     },
     quote: null
   },
@@ -1285,10 +1285,11 @@ function renderSectorPage(slug) {
   </div>
 </div></div>
 
+${sectorCS.length === 1 ? '' : `
 <div class="container"><div class="section">
-  ${sectorCS.length > 0 ? `
+  ${sectorCS.length > 1 ? `
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from ${s.tag.toLowerCase()} customers.</h2>
-  <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">${sectorCS.length > 1 ? `Real case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.` : sectorCS[0][1].teaser}</p>
+  <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">Real case studies from real ${s.tag.toLowerCase()} deployments, each with its own numbers.</p>
   <div class="csm-grid" style="display:grid;grid-template-columns:repeat(${sectorCS.length},1fr);gap:20px;">
     ${sectorCS.map(([cslug,c]) => `
     <div class="csm-card" onclick="navigate('case-study-${cslug}')">
@@ -1316,7 +1317,7 @@ function renderSectorPage(slug) {
       ${s.proof.stats.map(([v,l]) => `<div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:32px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:12px;color:var(--ink-light);">${l}</div></div>`).join('')}
     </div>
   </div>`}
-</div></div>
+</div></div>`}
 
 <div style="background:white;border-top:1px solid var(--border-soft);padding:64px 0;">
   <div class="container reveal">
@@ -1403,7 +1404,7 @@ app: () => `
         <div class="card-title">Private at-home experience</div>
         <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
         <div class="sol-checklist">
-          ${['Per-unit network isolation, via iPSK','Browserless device support','Engagement channel via the app'].map(t=>`
+          ${['Per-unit network isolation, via xPSK','Browserless device support','Engagement channel via the app'].map(t=>`
             <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
         </div>
         <button class="sol-card-cta" onclick="event.stopPropagation();navigate('multi-tenant')">Learn more</button>
@@ -2105,7 +2106,7 @@ home: () => `
 <div class="container"><div class="section">
   <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:32px;text-align:center;">What your customers get</h2>
   <div style="display:flex;flex-direction:column;gap:16px;max-width:820px;margin:0 auto;">
-    ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.','<circle cx="8" cy="8" r="5" stroke="var(--purple)" stroke-width="1.3"/><circle cx="8" cy="8" r="1.5" fill="var(--purple)"/>'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (iPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.','<rect x="4" y="7" width="8" height="6" rx="1.3" stroke="var(--purple)" stroke-width="1.3"/><path d="M6 7V5a2 2 0 0 1 4 0v2" stroke="var(--purple)" stroke-width="1.3"/>'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique iPSK passcode, and everything reconnects automatically on return.','<path d="M2 8.5 6 12l8-8" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.','<path d="M2 6.2v3.6h1.8l6 2.7V3.5l-6 2.7H2Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 6.3a2.1 2.1 0 0 1 0 3.4" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/>'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.','<rect x="2" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/>']].map(([t,d,svg],i)=>`
+    ${[['The device isolation problem, solved','Purple creates a personal Private Area Network (PAN) for each user. They log in once, and all their devices are placed inside a secure, private bubble that follows them around the venue.','<circle cx="8" cy="8" r="5" stroke="var(--purple)" stroke-width="1.3"/><circle cx="8" cy="8" r="1.5" fill="var(--purple)"/>'],['True privacy in shared environments','Tenant isolation uses VLANs, Dynamic PSK (xPSK), and 802.1X, so even though tenants share the same physical access points, their traffic is completely separated. A student in Room 101 can never see the devices of the student in Room 102.','<rect x="4" y="7" width="8" height="6" rx="1.3" stroke="var(--purple)" stroke-width="1.3"/><path d="M6 7V5a2 2 0 0 1 4 0v2" stroke="var(--purple)" stroke-width="1.3"/>'],['Seamless setup for all devices','Users authenticate once via the Purple app. Browserless devices like consoles and smart TVs connect with a unique xPSK passcode, and everything reconnects automatically on return.','<path d="M2 8.5 6 12l8-8" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'],['The app as an engagement channel','The required network authentication step doubles as a two-way communication platform, surveys, location-aware content, notifications, and rewards, delivered directly to residents and guests.','<path d="M2 6.2v3.6h1.8l6 2.7V3.5l-6 2.7H2Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 6.3a2.1 2.1 0 0 1 0 3.4" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/>'],['Operator dashboard','Manage every unit, building, and development from a single cloud dashboard, with insights into building utilization, see which wings or blocks are most active.','<rect x="2" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="var(--purple)" stroke-width="1.3"/>']].map(([t,d,svg],i)=>`
       <div class="card" style="display:flex;gap:20px;align-items:flex-start;background:${['#f3f1ff','#e6e1ff','#d9d1ff','#ccc2fe','#bfb2fe'][i]};border:none;">
         <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 16 16" fill="none">${svg}</svg></div>
         <div>
@@ -2119,7 +2120,7 @@ home: () => `
   <div class="eyebrow">Where to sell it</div>
   <h2 class="section-title" style="margin-bottom:32px;">Built for residential and extended-stay.</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
-    ${[[icon('residential',20),'Built to rent','Developers and operators who want WiFi as an amenity, not an afterthought.'],[icon('education',20),'Student accommodation','High-density, high-turnover. iPSK makes move-in day frictionless.'],[icon('hospitality',20),'Aparthotels','Extended-stay guests need a proper home connection, not hotel WiFi.'],[icon('residential',20),'Social housing','Managed connectivity for local authorities and housing associations.']].map(([e,n,d])=>`
+    ${[[icon('residential',20),'Built to rent','Developers and operators who want WiFi as an amenity, not an afterthought.'],[icon('education',20),'Student accommodation','High-density, high-turnover. xPSK makes move-in day frictionless.'],[icon('hospitality',20),'Aparthotels','Extended-stay guests need a proper home connection, not hotel WiFi.'],[icon('residential',20),'Social housing','Managed connectivity for local authorities and housing associations.']].map(([e,n,d])=>`
       <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;">
         <div style="color:white;margin-bottom:10px;">${e}</div>
         <div style="font-size:13px;font-weight:500;color:white;margin-bottom:6px;">${n}</div>
