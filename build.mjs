@@ -254,7 +254,6 @@ const CASE_STUDY_IMAGES = {
   "paignton-zoo.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c72f9e16892136ecf2e_paignton-zoo.png",
   "pizza-express.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6f84ecd8912fe9d96b_pizzaexpressblack.png",
   "st-georges.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c702c47f6f72d625151_st-georges-hosp-charity.avif",
-  "queen-elizabeth-hospital.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c7031b6c17b9964fa71_the-queen-elizabeth-hospital.avif",
   "avanti-west-coast.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6fb683316babd53cfd_avanti_west_coast_logo.svg_-1.avif",
   "c2c.avif": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6f3f82a39b8a0a3923_c2c_logo.avif",
   "ags-airports.png": "https://cdn.prod.website-files.com/67e7d06f4e3f231ee5df2b76/67ee7c6e99613b001ade9b02_ags-airports.png",

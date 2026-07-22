@@ -322,7 +322,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .csm-card-logo{position:absolute;top:24px;left:24px;right:24px;height:210px;background-repeat:no-repeat;background-position:center;background-size:contain;filter:brightness(0) invert(1);opacity:.25;z-index:0;pointer-events:none;}
 .csm-card-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
 .csm-card-spacer{height:60px;flex-shrink:0;}
-.csm-card-stat-group{display:inline-block;background:rgba(255,255,255,.1);border-radius:12px;padding:10px 16px;}
+.csm-card-stat-group{align-self:flex-start;background:rgba(255,255,255,.15);border-radius:12px;padding:10px 16px;}
 .csm-card-stat-val{font-family:'Poppins',sans-serif;font-size:32px;font-weight:600;line-height:1;}
 .csm-card-stat-lbl{font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;}
 .csm-card-cat{font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--purple-mid);margin-top:16px;margin-bottom:6px;}

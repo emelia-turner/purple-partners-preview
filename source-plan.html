@@ -332,7 +332,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .csm-card-logo{position:absolute;top:24px;left:24px;right:24px;height:210px;background-repeat:no-repeat;background-position:center;background-size:contain;filter:brightness(0) invert(1);opacity:.25;z-index:0;pointer-events:none;}
 .csm-card-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
 .csm-card-spacer{height:60px;flex-shrink:0;}
-.csm-card-stat-group{display:inline-block;background:rgba(255,255,255,.1);border-radius:12px;padding:10px 16px;}
+.csm-card-stat-group{align-self:flex-start;background:rgba(255,255,255,.15);border-radius:12px;padding:10px 16px;}
 .csm-card-stat-val{font-family:'Poppins',sans-serif;font-size:32px;font-weight:600;line-height:1;}
 .csm-card-stat-lbl{font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;}
 .csm-card-cat{font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--purple-mid);margin-top:16px;margin-bottom:6px;}
@@ -548,7 +548,7 @@ textarea{resize:vertical;min-height:90px;}
       <div class="nav-link" onclick="navigate('tools')">Tools <span class="chev" onclick="event.stopPropagation();toggleDD('dd-tools')">▾</span></div>
       <div class="dropdown">
         <div class="dd-item" onclick="window.open('https://www.purple.ai/en-gb/tools/guest-wifi-feature-checklist','_blank')">Guest WiFi checklist</div>
-        <div class="dd-item" onclick="location.href='tools.html#integrations'">WiFi integrations</div>
+        <div class="dd-item" onclick="window.open('https://www.purple.ai/en-gb/connectors-library','_blank')">WiFi integrations</div>
         <div class="dd-item" onclick="window.open('https://support.purple.ai/hc/en-gb/articles/7330787441693-Supported-Hardware','_blank')">Compatible hardware</div>
         <div class="dd-item" onclick="navigate('case-studies')">Case studies</div>
         <div class="dd-item" onclick="navigate('marketing')">Marketing support</div>
@@ -1065,7 +1065,7 @@ const CASE_STUDY_DATA = {
     stats: [["783k","WiFi sessions in year one"],["348k","unique patients added to CRM"],["5","custom splash pages"]]
   },
   'queen-elizabeth-hospital': {
-    name: "The Queen Elizabeth Hospital", tag: "Healthcare", image: "images/case-studies/queen-elizabeth-hospital.avif",
+    name: "The Queen Elizabeth Hospital", tag: "Healthcare", image: "brand/qehkl-trust-logo.png",
     url: "https://www.purple.ai/en-gb/case-studies/the-queen-elizabeth-hospital",
     teaser: "Took guest WiFi from a single coffee shop to every ward, live in two weeks.",
     challenge: "The Queen Elizabeth Hospital, part of The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust, previously only offered WiFi in a privately run coffee shop at the front entrance, leaving wards and waiting rooms unconnected.",
