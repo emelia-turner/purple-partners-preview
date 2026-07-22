@@ -234,3 +234,39 @@ function initScrollReveal() {
 }
 
 document.addEventListener('DOMContentLoaded', initScrollReveal);
+
+// ── STAGGERED CARD REVEAL ─────────────────────────────────────────
+// Cards sharing a parent fade in one after another instead of all at
+// once, using each card's position among its siblings to set the delay.
+function initStaggerReveal() {
+  const cards = document.querySelectorAll('.stagger-card');
+  if (!cards.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cards.forEach(c => c.classList.add('in-view'));
+    return;
+  }
+
+  const groups = new Map();
+  cards.forEach(card => {
+    const parent = card.parentElement;
+    if (!groups.has(parent)) groups.set(parent, []);
+    groups.get(parent).push(card);
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const card = entry.target;
+      const siblings = groups.get(card.parentElement) || [card];
+      const idx = siblings.indexOf(card);
+      card.style.transitionDelay = `${idx * 90}ms`;
+      card.classList.add('in-view');
+      io.unobserve(card);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  cards.forEach(c => io.observe(c));
+}
+
+document.addEventListener('DOMContentLoaded', initStaggerReveal);

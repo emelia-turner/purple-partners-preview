@@ -217,6 +217,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,249,247,0.94);backdrop
 .section.in-view,.section-sm.in-view,.dark-section.in-view,.reveal.in-view{opacity:1;transform:translateY(0);}
 @media (prefers-reduced-motion: reduce){.section,.section-sm,.dark-section,.reveal{opacity:1;transform:none;transition:none;}}
 
+/* ── STAGGERED CARD REVEAL ── */
+/* Cards within a group fade/lift in one after another (delay set via JS
+   based on position among siblings), rather than all at once. */
+.stagger-card{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.stagger-card.in-view{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){.stagger-card{opacity:1;transform:none;transition:none;}}
+
 /* ── DARK PAGE HEADER (product-hero variants on a dark background) ── */
 .prod-hero-dark .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:var(--purple-mid);}
 .prod-hero-dark h1{color:white;}
