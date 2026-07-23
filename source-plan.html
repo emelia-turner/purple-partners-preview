@@ -1915,17 +1915,19 @@ home: () => `
     </div>
   </div>
 </div></div>
-<div class="container"><div class="section">
+<div class="dark-section"><div class="container">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
     <div>
-      <div class="eyebrow">Paid WiFi</div>
-      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Drive revenue with Paid WiFi.</h2>
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:20px;">Activate Paid WiFi for free with any plan, including Connect, and open a new revenue stream alongside the free network.</p>
-      <div class="feature-list">
-        ${["Offer tiered bandwidth packages to suit visitors' needs","Drive revenue with the option to purchase longer or faster WiFi","Included on Connect, Capture, and Engage, no separate plan required"].map(t=>`
-          <div class="feature-item">
-            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="feature-text">${t}</div>
+      <div class="eyebrow" style="color:var(--purple-mid);">Paid WiFi</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;color:white;">Drive revenue with Paid WiFi.</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px;">Activate Paid WiFi for free with any plan, including Connect, and open a new revenue stream alongside the free network.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        ${["Offer tiered bandwidth packages to suit visitors' needs","Drive revenue with the option to purchase longer or faster WiFi","Included on Connect, Capture, and Engage, no separate plan required"].map(w => `
+          <div style="display:flex;gap:10px;align-items:flex-start;">
+            <div style="width:16px;height:16px;background:rgba(255,255,255,.1);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+              <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span style="font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;">${w}</span>
           </div>`).join('')}
       </div>
     </div>
@@ -1934,10 +1936,10 @@ home: () => `
         ${[["842%","ROI"],["£284k","revenue from Paid WiFi"],["2.5%","conversion rate"]].map(([v,l])=>`
           <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;"><div style="font-family:'Poppins',sans-serif;font-size:28px;color:var(--purple);line-height:1;margin-bottom:6px;">${v}</div><div style="font-size:11px;color:var(--ink-light);">${l}</div></div>`).join('')}
       </div>
-      <p style="font-size:12px;color:var(--ink-light);">AGS Airports introduced a premium, Paid WiFi tier alongside its free network across three airports.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.5);">AGS Airports introduced a premium, Paid WiFi tier alongside its free network across three airports.</p>
       <div style="display:flex;gap:12px;align-items:center;margin-top:16px;flex-wrap:wrap;">
         <button class="btn-primary" onclick="navigate('case-study-ags-airports')">Read the case study</button>
-        <button class="btn-purple-outline" onclick="navigate('paid-wifi')">Learn more about Paid WiFi</button>
+        <button class="btn-outline-w" onclick="navigate('paid-wifi')">Learn more about Paid WiFi</button>
       </div>
     </div>
   </div>
