@@ -73,9 +73,9 @@ document.addEventListener('click', e => {
 });
 
 // ── FORMS (client-side only - no backend wired up yet) ──────────────
-function submitMDF() {
-  document.getElementById('mdf-form').style.display = 'none';
-  document.getElementById('mdf-success').style.display = 'block';
+function submitMarketingRequest() {
+  document.getElementById('marketing-request-form').style.display = 'none';
+  document.getElementById('marketing-request-success').style.display = 'block';
 }
 
 function submitPartnerSignup() {
