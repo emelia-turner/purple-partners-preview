@@ -116,7 +116,7 @@ function filterBlog(cat, btnEl) {
 
 // ── ACTIVE NAV HIGHLIGHT ──────────────────────────────────────────
 const NAV_MAP = {
-  'app': 'Products', 'staff-wifi': 'Products', 'guest-wifi': 'Products', 'guest-wifi-plans': 'Products', 'multi-tenant': 'Products', 'paid-wifi': 'Products', 'verify': 'Products', 'shield': 'Products',
+  'app': 'Products', 'staff-wifi': 'Products', 'guest-wifi': 'Products', 'guest-wifi-plans': 'Products', 'multi-tenant': 'Products', 'paid-wifi': 'Products', 'securepass': 'Products', 'verify': 'Products', 'shield': 'Products',
   'benefits': 'Benefits',
   'sectors': 'Sectors', 'sector-hospitality': 'Sectors', 'sector-retail': 'Sectors', 'sector-healthcare': 'Sectors',
   'sector-education': 'Sectors', 'sector-residential': 'Sectors', 'sector-enterprise': 'Sectors', 'sector-transport': 'Sectors', 'sector-sports-entertainment': 'Sectors',

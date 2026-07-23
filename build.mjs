@@ -126,6 +126,7 @@ const ROUTES = [
   ["speak-to-an-expert", "speak-to-an-expert.html", "Speak to an expert | Purple Partners"],
   ["multi-tenant", "multi-tenant.html", "Multi-tenant WiFi | Purple Partners"],
   ["paid-wifi", "paid-wifi.html", "Paid WiFi | Purple Partners"],
+  ["securepass", "securepass.html", "SecurePass | Purple Partners"],
   ["verify", "verify.html", "Verify | Purple Partners"],
   ["shield", "shield.html", "Shield | Purple Partners"],
   ["benefits", "benefits.html", "Partner benefits | Purple Partners"],
