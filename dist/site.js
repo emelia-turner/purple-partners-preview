@@ -92,11 +92,6 @@ function submitNewsletter(btnEl) {
   btnEl.closest('.newsletter-cta').classList.add('subscribed');
 }
 
-function submitCallOutDay() {
-  document.getElementById('call-out-day-form').style.display = 'none';
-  document.getElementById('call-out-day-success').style.display = 'block';
-}
-
 // ── FAQ ACCORDION ─────────────────────────────────────────────────
 function toggleFaq(btnEl) {
   const item = btnEl.closest('.faq-item');

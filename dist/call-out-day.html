@@ -107,36 +107,14 @@
           </div>
       </div>
     </div>
-    <div class="form-wrap" id="call-out-day-form-wrap">
-      <div id="call-out-day-form">
-        <div class="form-title">Book a Call-Out Day</div>
-        <div class="form-grid">
-          <div class="form-field"><label>First name</label><input type="text" placeholder="Jane"></div>
-          <div class="form-field"><label>Last name</label><input type="text" placeholder="Smith"></div>
-          <div class="form-field"><label>Company</label><input type="text" placeholder="Acme Technology Ltd"></div>
-          <div class="form-field"><label>Email address</label><input type="email" placeholder="jane@acme.com"></div>
-        </div>
-        <button class="form-submit" onclick="submitCallOutDay()">Request a Call-Out Day</button>
-      </div>
-      <div class="form-success" id="call-out-day-success">
-        <div class="form-success-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 11l4 4 8-8" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Request received</h3>
-        <p>Your partner manager will follow up to confirm details and lock in a date.</p>
-      </div>
+    <div class="form-wrap" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+      <div class="form-title">Book a Call-Out Day</div>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:8px 0 24px;">Ready to get a day on the calendar? Your partner manager will help you pick a date and lock in the details.</p>
+      <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Chat to the partner team</button>
     </div>
   </div>
 </div>
-
-<div class="cta-band">
-  <h2>Ready to add Purple to your portfolio?</h2>
-  <p>Join 80,000+ venues already running on Purple. No targets, no minimums, just bigger deals.</p>
-  <div class="cta-band-btns">
-    <button class="btn-white" onclick="location.href='https://onboarding.purple.ai/partner'">Become a partner</button>
-    <button class="btn-outline-w" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
-  </div>
-</div></div>
+</div>
 <div id="footer-wrap">
 <footer>
   <div class="container footer-inner">
@@ -169,6 +147,6 @@
   </div>
 </footer></div>
 
-<script src="site.js?v=9959b6ca"></script>
+<script src="site.js?v=37ff46a1"></script>
 </body>
 </html>

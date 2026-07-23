@@ -164,7 +164,7 @@ function wrapArrows(html) {
 function page(slug, title) {
   if (!PAGES[slug]) throw new Error("Missing PAGES entry for " + slug);
   let content = wrapArrows(PAGES[slug]());
-  content += renderCTA();
+  if (slug !== "call-out-day") content += renderCTA();
   const footer = renderFooter();
   return `<!DOCTYPE html>
 <html lang="en">
