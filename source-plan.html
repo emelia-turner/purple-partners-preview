@@ -1002,17 +1002,11 @@ const SECTOR_DATA = {
     ],
     recommended: ["guest-wifi","staff-wifi"],
     caseStudyTags: [],
+    hideCaseStudySection: true,
     productCards: {
       "guest-wifi": { title: "Turn match-day fans into a marketing database", body: "Branded captive portal or seamless connection via the Purple app, with fan data captured on every login and segmented straight into CRM and sponsorship activations.", bullet: "Branded captive portal or seamless connection" },
       "verify": { title: "Fan data that actually feeds the CRM", body: "High footfall public WiFi means a flood of fake and disposable email addresses. Verify checks every address in real time at login, so fan data isn't mostly noise.", bullet: "Real-time validation at login" },
       "staff-wifi": { title: "Reliable connectivity for every gate and concession", body: "A secure, separate network for staff, POS, and production, so operations keep running at full capacity without touching the fan network.", bullet: "Works with Entra ID, Google & Okta" }
-    },
-    proof: {
-      stat: "750m", label: "fans attending live sporting events annually in the US",
-      title: "Minnesota United FC used Purple to capture fan data at one of Allianz Field's highest-attended matches.",
-      body: "Deployed in time for a sold-out match against Inter Miami CF, Purple's Capture Guest WiFi fed opted-in fan data straight into MNUFC's existing database, giving the club's digital and BI teams a blueprint for more personalized offers and ticket promotions. \"It's a smart way to build fan loyalty one WiFi connection at a time,\" said Evan Entler, VP of Digital Media at MNUFC.",
-      stats: [["750m","fans/yr in the US"],["80%","use phones during a game"],["25%","of venues offer public WiFi"]],
-      hasCaseStudy: false
     },
     quote: null
   }
@@ -1326,7 +1320,7 @@ ${s.paidWifi ? `
   </div>
 </div></div>` : ''}
 
-${sectorCS.length === 1 ? '' : `
+${(sectorCS.length === 1 || s.hideCaseStudySection) ? '' : `
 <div class="container"><div class="section">
   ${sectorCS.length > 1 ? `
   <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">Real results from ${s.tag.toLowerCase()} customers.</h2>
