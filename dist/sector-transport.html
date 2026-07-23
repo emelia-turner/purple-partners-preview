@@ -20,12 +20,13 @@
 
   <div class="nav-links">
     <div class="nav-item" id="dd-wifi">
-      <div class="nav-link" onclick="toggleDD('dd-wifi')">WiFi <span class="chev">▾</span></div>
+      <div class="nav-link" onclick="toggleDD('dd-wifi')">Products <span class="chev">▾</span></div>
       <div class="dropdown">
         <div class="dd-item" onclick="navigate('guest-wifi')"><strong>Guest WiFi</strong><span>Frictionless visitor access + data capture</span></div>
         <div class="dd-item" onclick="navigate('staff-wifi')"><strong>Staff WiFi</strong><span>Passwordless zero-trust access via the Purple app</span></div>
         <div class="dd-item" onclick="navigate('multi-tenant')"><strong>Multi-tenant WiFi</strong><span>Private at-home experience, managed in-app</span></div>
         <div class="dd-divider"></div>
+        <div class="dd-item" onclick="navigate('paid-wifi')"><strong>Paid WiFi</strong><span>A premium tier that pays for itself</span></div>
         <div class="dd-item" onclick="navigate('verify')"><strong>Verify</strong><span>Real-time email validation at login</span></div>
         <div class="dd-item" onclick="navigate('shield')"><strong>Shield</strong><span>Content filtering &amp; threat protection</span></div>
         <div class="dd-divider"></div>
@@ -45,6 +46,7 @@
         <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; Multi-Dwelling Units</div>
         <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
         <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport</div>
+        <div class="dd-item" onclick="navigate('sector-sports-entertainment')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><ellipse cx="8" cy="8" rx="6.5" ry="4" stroke="currentColor" stroke-width="1.3"/><path d="M2.3 6.3C3 8 5.2 9 8 9s5-1 5.7-2.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M8 4v8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>Sports &amp; Entertainment</div>
       </div>
     </div>
 
@@ -86,7 +88,7 @@
   <div class="container" style="position:relative;">
     <div class="eyebrow" style="color:var(--purple-mid);"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;flex-shrink:0;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg> Transport</div>
     <h1 style="font-family:'Poppins',sans-serif;font-size:44px;color:white;margin-bottom:16px;max-width:660px;">Airport and onboard train WiFi that lifts revenue and passenger satisfaction.</h1>
-    <p style="font-size:16px;color:rgba(255,255,255,.55);max-width:580px;line-height:1.7;margin-bottom:24px;">Airports, train operators, arenas, and stadiums need WiFi that handles huge passenger and fan volumes while still delivering clean, usable data, with a branded captive portal for one-time visitors and the Purple app keeping frequent travelers reconnecting without friction.</p>
+    <p style="font-size:16px;color:rgba(255,255,255,.55);max-width:580px;line-height:1.7;margin-bottom:24px;">Airports and train operators need WiFi that handles huge passenger volumes while still delivering clean, usable data, with a branded captive portal for one-time visitors and the Purple app keeping frequent travelers reconnecting without friction.</p>
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px;max-width:480px;">
       
         <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -176,32 +178,6 @@
   <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;max-width:640px;">Real case studies from real transport deployments, each with its own numbers.</p>
   <div class="csm-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     
-    <div class="csm-card" onclick="navigate('case-study-resorts-world-birmingham')">
-      <div class="csm-card-logo" style="background-image:url('images/case-studies/resorts-world-birmingham.webp')"></div>
-      <div class="csm-card-body">
-        <div class="csm-card-spacer"></div>
-        <div class="csm-card-stat-group">
-          <div class="csm-card-stat-val">1.7m</div>
-          <div class="csm-card-stat-lbl">logins since launch</div>
-        </div>
-        <div class="csm-card-cat">Events & attractions</div>
-        <div class="csm-card-name">Resorts World Birmingham</div>
-        <div class="csm-card-snippet">Since the July 2022 launch, guest connectivity complaints have been virtually eliminated, and the marketing team saves days of manual effort per campaign.</div>
-      </div>
-    </div>
-    <div class="csm-card" onclick="navigate('case-study-paignton-zoo')">
-      <div class="csm-card-logo" style="background-image:url('images/case-studies/paignton-zoo.png')"></div>
-      <div class="csm-card-body">
-        <div class="csm-card-spacer"></div>
-        <div class="csm-card-stat-group">
-          <div class="csm-card-stat-val">26k</div>
-          <div class="csm-card-stat-lbl">lines of active customer data</div>
-        </div>
-        <div class="csm-card-cat">Events & attractions</div>
-        <div class="csm-card-name">Paignton Zoo</div>
-        <div class="csm-card-snippet">The data feeds an existing CRM for automated, targeted campaigns including vouchers and rewards.</div>
-      </div>
-    </div>
     <div class="csm-card" onclick="navigate('case-study-avanti-west-coast')">
       <div class="csm-card-logo" style="background-image:url('images/case-studies/avanti-west-coast.avif')"></div>
       <div class="csm-card-body">
@@ -213,6 +189,32 @@
         <div class="csm-card-cat">Travel & transport</div>
         <div class="csm-card-name">Avanti West Coast</div>
         <div class="csm-card-snippet">The initiative delivered a large jump in repeat travellers and a substantial measured return on investment.</div>
+      </div>
+    </div>
+    <div class="csm-card" onclick="navigate('case-study-c2c')">
+      <div class="csm-card-logo" style="background-image:url('images/case-studies/c2c.avif')"></div>
+      <div class="csm-card-body">
+        <div class="csm-card-spacer"></div>
+        <div class="csm-card-stat-group">
+          <div class="csm-card-stat-val">151%</div>
+          <div class="csm-card-stat-lbl">projected ROI</div>
+        </div>
+        <div class="csm-card-cat">Travel & transport</div>
+        <div class="csm-card-name">c2c</div>
+        <div class="csm-card-snippet">Over the first 9 months, 81,601 unique users logged into the WiFi 343,340 times, and the passenger data let c2c validate a high share of emails and drive strong marketing opt-ins, projecting meaningful savings on OTA fees over a full year.</div>
+      </div>
+    </div>
+    <div class="csm-card" onclick="navigate('case-study-ags-airports')">
+      <div class="csm-card-logo" style="background-image:url('images/case-studies/ags-airports.png')"></div>
+      <div class="csm-card-body">
+        <div class="csm-card-spacer"></div>
+        <div class="csm-card-stat-group">
+          <div class="csm-card-stat-val">842%</div>
+          <div class="csm-card-stat-lbl">ROI</div>
+        </div>
+        <div class="csm-card-cat">Travel & transport</div>
+        <div class="csm-card-name">AGS Airports</div>
+        <div class="csm-card-snippet">The tiered model generated significant additional revenue and a clean, verified passenger database.</div>
       </div>
     </div>
   </div>
@@ -274,6 +276,6 @@
   </div>
 </footer></div>
 
-<script src="site.js?v=c62ad510"></script>
+<script src="site.js?v=a853f760"></script>
 </body>
 </html>
