@@ -787,8 +787,8 @@ const SECTOR_DATA = {
     name: "Hospitality",
     tag: "Hospitality",
     hook: "Hotel guest WiFi that builds loyalty from the first login.",
-    sub: "Hotels, restaurants, pubs, and cafes already pay for WiFi. Purple turns it into a branded loyalty engine and a zero-risk staff network, with room-level analytics and multi-property management for hotel groups, a branded captive portal capturing every first-time guest, and the Purple app keeping returning guests reconnecting without friction. Paid WiFi lets a venue offer a free tier alongside a premium upgrade, the same free-plus-Ultimate model Premier Inn runs across its estate.",
-    quickWins: ["Branded captive portal live in days, not months","Every login becomes a consented, reachable contact","Returning guests reconnect automatically through the app","Room-level analytics and multi-property management for hotel groups"],
+    sub: "Hotels, restaurants, pubs, and cafes already pay for WiFi. Purple turns it into a branded loyalty engine and a zero-risk staff network, with room-level analytics and multi-property management for hotel groups, a branded captive portal capturing every first-time guest, and the Purple app keeping returning guests reconnecting without friction.",
+    quickWins: ["Branded captive portal live in days, not months","Every login becomes a consented, reachable contact","Returning guests reconnect automatically through the app","Room-level analytics and multi-property management for hotel groups","Paid WiFi opens an additional revenue stream alongside the free network"],
     challenges: [
       { title: "Staff turnover means old WiFi credentials are still floating around", body: "Housekeeping, F&B, front desk, when someone leaves, their hotel WiFi access goes with them. No IT ticket needed. Each role gets the right access from day one, and directory sync means leavers are locked out automatically, no manual process, no security gap.", key: "staff-wifi" },
       { title: "Guest WiFi that's just a login screen, not a loyalty tool", body: "A branded portal isn't just a login screen. It's where guests join the rewards programme, leave a review, and get upsold on F&B, automatically, every stay. Business travellers and leisure guests connect once and stay connected throughout their stay.", key: "guest-wifi" },
@@ -811,6 +811,12 @@ const SECTOR_DATA = {
     quote: {
       text: "Purple's solution is integral to our overall business strategies. It lets us tailor the user's journey by venue and collect valuable, rich data that would otherwise have been unknown to the business, driving visits with tailored communications and an ROI that pays for the software itself, and then some.",
       name: "Stonegate Pub Company", role: "CRM Manager"
+    },
+    paidWifi: {
+      title: "Turn free WiFi into a premium upgrade guests choose to pay for.",
+      body: "Paid WiFi sits alongside the free network already live at a venue, letting guests upgrade to a faster or longer session and turning WiFi from a pure cost line into an additional revenue stream. Premier Inn runs exactly this model across its estate: guests connect to Free WiFi by default, with the option to upgrade to Ultimate WiFi for a faster, multi-device connection.",
+      bullets: ["Offer tiered bandwidth packages to suit guests' needs","Included on Connect, Capture, and Engage, no separate plan required","The same free-plus-premium model Premier Inn runs across its estate"],
+      plans: [["Free WiFi","Guests connect at no cost by default, on every stay."],["Ultimate WiFi","A faster, multi-device upgrade guests can purchase directly, Premier Inn's model for turning WiFi into incremental revenue."]]
     }
   },
   retail: {
@@ -1295,6 +1301,32 @@ function renderSectorPage(slug) {
     }).join('')}
   </div>
 </div></div>
+
+${s.paidWifi ? `
+<div class="container"><div class="section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <div class="eyebrow">Paid WiFi</div>
+      <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;">${s.paidWifi.title}</h2>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin-bottom:20px;">${s.paidWifi.body}</p>
+      <div class="feature-list" style="margin-bottom:20px;">
+        ${s.paidWifi.bullets.map(t=>`
+          <div class="feature-item">
+            <div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="feature-text">${t}</div>
+          </div>`).join('')}
+      </div>
+      <button class="btn-purple-outline" onclick="navigate('paid-wifi')">Learn more about Paid WiFi</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      ${s.paidWifi.plans.map(([t,d])=>`
+        <div style="background:var(--warm-white);border-radius:var(--radius-lg);padding:22px;">
+          <div style="font-family:'Poppins',sans-serif;font-size:17px;color:var(--purple);margin-bottom:6px;">${t}</div>
+          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;">${d}</div>
+        </div>`).join('')}
+    </div>
+  </div>
+</div></div>` : ''}
 
 ${sectorCS.length === 1 ? '' : `
 <div class="container"><div class="section">
@@ -2766,7 +2798,7 @@ marketing: () => `
     </div>
     <div class="form-wrap" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
       <div class="form-title">Book a Call-Out Day</div>
-      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:8px 0 24px;">Ready to get a day on the calendar? Your partner manager will help you pick a date and lock in the details.</p>
+      <p style="font-size:14px;color:var(--ink-mid);line-height:1.7;margin:8px 0 24px;">Ready to get a day on the calendar? We'll help you pick a date and lock in the details.</p>
       <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Chat to the partner team</button>
     </div>
   </div>
@@ -2775,7 +2807,7 @@ marketing: () => `
   <h2 style="font-family:'Poppins',sans-serif;font-size:26px;margin-bottom:32px;text-align:center;">What happens on the day.</h2>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto;">
     ${[
-      ['The Purple team joins you','A dedicated Purple rep works the floor alongside your sales team all day, running live coaching, answering objections in real time, and jumping on calls when a deal needs an extra voice.','<path d="M6 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="var(--purple)" stroke-width="1.3"/><path d="M2 14c0-2.5 1.8-4.5 4-4.5s4 2 4 4.5" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/><path d="M11 4.3a2.2 2.2 0 0 1 0 4.2M13 14c0-2.1-1.3-3.9-3-4.4" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/>'],
+      ['The Purple team joins you','We\'ll work the floor alongside your sales team all day, running live coaching, answering objections in real time, and jumping on calls when a deal needs an extra voice.','<path d="M6 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="var(--purple)" stroke-width="1.3"/><path d="M2 14c0-2.5 1.8-4.5 4-4.5s4 2 4 4.5" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/><path d="M11 4.3a2.2 2.2 0 0 1 0 4.2M13 14c0-2.1-1.3-3.9-3-4.4" stroke="var(--purple)" stroke-width="1.3" stroke-linecap="round"/>'],
       ['Battlecards and talk tracks','Sector-specific battlecards, objection-handling cheat sheets, and call scripts land with your reps before the day starts, so every conversation has the right proof points to hand.','<rect x="2" y="2" width="12" height="12" rx="2" stroke="var(--purple)" stroke-width="1.3"/><path d="M4.5 5.5h7M4.5 8h7M4.5 10.5h4" stroke="var(--purple)" stroke-width="1.2" stroke-linecap="round"/>'],
       ['Prizes and friendly competition','Vouchers, sweets, and small prizes for hitting milestones keep the energy up and turn a normal outbound day into a friendly competition between reps.','<path d="M8 2 9.5 5.3 13 5.8l-2.5 2.4.6 3.5L8 9.9l-3.1 1.8.6-3.5L3 5.8l3.5-.5L8 2Z" stroke="var(--purple)" stroke-width="1.3" stroke-linejoin="round"/>'],
       ['Results, celebrated','A post-event performance report shows what the day achieved, calls made, meetings booked, pipeline generated, and the team celebrates the numbers together before it wraps.','<path d="M3 13V9M8 13V5M13 13V7" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round"/>'],
