@@ -1857,6 +1857,9 @@ home: () => `
         </div>
       </div>`).join('')}
   </div>
+  <div style="text-align:center;margin-top:32px;">
+    <button class="btn-purple-outline" onclick="navigate('guest-wifi-plans')">Compare plans</button>
+  </div>
 </div></div>
 <div class="dark-section"><div class="container">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
@@ -2980,7 +2983,7 @@ function renderFooter() {
     <div>
       <div class="footer-col-title">Products</div>
       <div class="footer-links">
-        ${['Staff WiFi','Guest WiFi','Multi-tenant WiFi','Paid WiFi','SecurePass','Verify','Shield'].map((p,i)=>`<div class="footer-link" onclick="navigate('${['staff-wifi','guest-wifi','multi-tenant','paid-wifi','securepass','verify','shield'][i]}')">${p}</div>`).join('')}
+        ${['Staff WiFi','Guest WiFi','Multi-tenant WiFi','Paid WiFi','Verify','Shield'].map((p,i)=>`<div class="footer-link" onclick="navigate('${['staff-wifi','guest-wifi','multi-tenant','paid-wifi','verify','shield'][i]}')">${p}</div>`).join('')}
       </div>
     </div>
     <div>
