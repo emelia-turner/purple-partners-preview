@@ -134,7 +134,7 @@ const ROUTES = [
   ["sector-retail", "sector-retail.html", "Retail | Purple Partners"],
   ["sector-healthcare", "sector-healthcare.html", "Healthcare | Purple Partners"],
   ["sector-education", "sector-education.html", "Education | Purple Partners"],
-  ["sector-residential", "sector-residential.html", "Residential & MDU | Purple Partners"],
+  ["sector-residential", "sector-residential.html", "Residential & Multi-Dwelling Units | Purple Partners"],
   ["sector-enterprise", "sector-enterprise.html", "Enterprise | Purple Partners"],
   ["sector-transport", "sector-transport.html", "Transport & venues | Purple Partners"],
   ["tools", "tools.html", "Partner tools | Purple Partners"],

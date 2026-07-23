@@ -538,7 +538,7 @@ textarea{resize:vertical;min-height:90px;}
         <div class="dd-item" onclick="navigate('sector-retail')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M4 5h8l-.6 8.2a1 1 0 0 1-1 .8H5.6a1 1 0 0 1-1-.8L4 5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 5V4a2 2 0 0 1 4 0v1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Retail</div>
         <div class="dd-item" onclick="navigate('sector-healthcare')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5.3v5.4M5.3 8h5.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Healthcare</div>
         <div class="dd-item" onclick="navigate('sector-education')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M8 3 14 6l-6 3-6-3 6-3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7.5V11c0 .8 1.6 1.5 3.5 1.5s3.5-.7 3.5-1.5V7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Education</div>
-        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; MDU</div>
+        <div class="dd-item" onclick="navigate('sector-residential')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5.3 4.5h1.1M9.6 4.5h1.1M5.3 7.5h1.1M9.6 7.5h1.1M5.3 10.5h1.1M9.6 10.5h1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Residential &amp; Multi-Dwelling Units</div>
         <div class="dd-item" onclick="navigate('sector-enterprise')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><rect x="1.5" y="5" width="13" height="8.5" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5V3.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h13" stroke="currentColor" stroke-width="1.3"/></svg>Enterprise</div>
         <div class="dd-item" onclick="navigate('sector-transport')"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:-3px;margin-right:4px;"><path d="M14.5 1.5 1.5 7l4.5 1.8L14.5 1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.5 1.5 8.7 14l-2.7-5.2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Transport &amp; venues</div>
       </div>
@@ -651,7 +651,7 @@ const RECOMMENDED_PRODUCT_CARDS = {
   "multi-tenant": {
     image: "https://www.purple.ai/_next/image?url=%2Fimages%2FMTN-Image.webp&w=1200&q=85",
     title: "Private, isolated networks",
-    body: "Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.",
+    body: "Secure per-unit isolation for residents and guests across Build-to-Rent (BTR), student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.",
     bullet: "Per-unit network isolation, via xPSK"
   },
   "verify": {
@@ -925,10 +925,10 @@ const SECTOR_DATA = {
   },
   residential: {
     icon: icon('residential', 14),
-    name: "Residential & MDU",
-    tag: "Residential & MDU",
+    name: "Residential & Multi-Dwelling Units",
+    tag: "Residential & Multi-Dwelling Units",
     hook: "Build to Rent and student accommodation WiFi that residents expect from day one.",
-    sub: "BTR developments, student halls, and aparthotels need WiFi that feels like home broadband and is ready the day residents move in. A branded captive portal covers visitors in shared spaces, while residents provision and manage their own connection through the Purple app, with no operator having to manage a router per unit.",
+    sub: "Build-to-Rent (BTR) developments, student halls, and aparthotels need WiFi that feels like home broadband and is ready the day residents move in. A branded captive portal covers visitors in shared spaces, while residents provision and manage their own connection through the Purple app, with no operator having to manage a router per unit.",
     quickWins: ["Every resident gets a true private network, not a shared one","Browserless devices supported via xPSK, no portal needed","A new ancillary revenue stream from tiered, paid access"],
     challenges: [
       { title: "No fast, reliable WiFi ready for move-in day", body: "Residents expect fast, reliable WiFi as a standard utility. Providing a high-quality, secure, and easy-to-use internet service across an entire property can be complex and costly to manage, especially at peak move-in times in high-density halls.", key: "multi-tenant" },
@@ -1409,7 +1409,7 @@ app: () => `
       <div class="sol-card-body">
         <div class="card-tag">Multi-tenant WiFi</div>
         <div class="card-title">Private at-home experience</div>
-        <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+        <p class="card-body">Secure per-unit isolation for residents and guests across Build-to-Rent (BTR), student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
         <div class="sol-checklist">
           ${['Per-unit network isolation, via xPSK','Browserless device support','Engagement channel via the app'].map(t=>`
             <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
@@ -1546,7 +1546,7 @@ home: () => `
         <div class="sol-card-body">
           <div class="card-tag">Multi-tenant WiFi</div>
           <div class="card-title">Private at-home experience</div>
-          <p class="card-body">Secure per-unit isolation for residents and guests across BTR, student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
+          <p class="card-body">Secure per-unit isolation for residents and guests across Build-to-Rent (BTR), student accommodation, and multi-dwelling units. Every tenant gets their own private network bubble, provisioned and managed through the Purple app.</p>
           <div class="sol-checklist">
             ${['Per-unit network isolation','A network pass in the Purple app','Browserless device support'].map(t=>`
               <div class="feature-item"><div class="feature-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#7458fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="feature-text">${t}</div></div>`).join('')}
@@ -2125,7 +2125,7 @@ home: () => `
     <div>
       <div class="tag">Multi-tenant WiFi</div>
       <h1 style="font-family:'Poppins',sans-serif;font-size:44px;margin-bottom:16px;color:white;">Every resident. Their own private <em style="font-style:italic;color:var(--purple-200);">network.</em></h1>
-      <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">From BTR developments to student accommodation and aparthotels, Purple's multi-tenant WiFi gives every occupant a secure, isolated connection that feels like home broadband, provisioned through the Purple app.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px;">From Build-to-Rent (BTR) developments to student accommodation and aparthotels, Purple's multi-tenant WiFi gives every occupant a secure, isolated connection that feels like home broadband, provisioned through the Purple app.</p>
       <button class="btn-primary" onclick="navigate('speak-to-an-expert')">Speak to an expert</button>
     </div>
     <div style="align-self:end;position:relative;">
@@ -2359,7 +2359,7 @@ sectors: () => `
       [icon('retail',22),'Retail','Shopping centers, high street, and leisure venues. Footfall analytics, return rates, and first-party data capture turn WiFi into a marketing asset.','Guest WiFi','Verify','sector-retail',{bg:'var(--purple-200)',fg:'var(--purple-dark)'}],
       [icon('healthcare',22),'Healthcare','Hospitals, GP surgeries, and care homes. Staff WiFi compliance (ISO 27001, GDPR) plus Shield for network protection and patient guest access.','Staff WiFi','Shield','sector-healthcare',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}],
       [icon('education',22),'Education','Schools, colleges, and universities. IdP sync for staff, Shield for safeguarding, and role-based VLANs for students and BYOD.','Staff WiFi','Shield','sector-education',{bg:'var(--purple-200)',fg:'var(--purple)'}],
-      [icon('residential',22),'Residential & MDU','BTR, student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential',{bg:'var(--purple-light)',fg:'var(--purple)'}],
+      [icon('residential',22),'Residential & Multi-Dwelling Units','Build-to-Rent (BTR), student accommodation, and aparthotels. Multi-tenant gives every resident a private, isolated network, no shared passwords, no shared risk.','Multi-tenant','Guest WiFi','sector-residential',{bg:'var(--purple-light)',fg:'var(--purple)'}],
       [icon('enterprise',22),'Enterprise','Office campuses and co-working spaces. The IBN platform pitch, zero trust, automated JML, NAC replacement, and identity-based access across every site.','Staff WiFi','Multi-tenant','sector-enterprise',{bg:'var(--purple-200)',fg:'var(--purple-dark)'}],
       [icon('transport',22),'Transport & venues','Airports, train stations, arenas, and stadiums. Scale, compliance, and guest experience at volume, with the analytics to prove value.','Guest WiFi','Verify','sector-transport',{bg:'var(--purple-light)',fg:'var(--purple-dark)'}],
     ].map(([e,n,d,p1,p2,slug,c])=>`
@@ -2595,7 +2595,7 @@ marketing: () => `
           </div>
           <div class="form-field full"><label>Target sector(s)</label>
             <div class="checkbox-group" style="margin-top:4px;">
-              ${['No specific sector','Hospitality','Retail','Healthcare','Education','Residential / MDU','Enterprise','Transport & venues'].map(s=>`<label class="check-item"><input type="checkbox"> ${s}</label>`).join('')}
+              ${['No specific sector','Hospitality','Retail','Healthcare','Education','Residential & Multi-Dwelling Units','Enterprise','Transport & venues'].map(s=>`<label class="check-item"><input type="checkbox"> ${s}</label>`).join('')}
             </div>
           </div>
           <div class="form-field full"><label>Timescale</label>
