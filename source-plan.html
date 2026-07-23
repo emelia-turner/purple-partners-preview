@@ -2063,6 +2063,46 @@ home: () => `
       </div>`).join('')}
   </div>
 </div></div>
+<div class="container"><div class="section">
+  <div class="eyebrow">Feature comparison</div>
+  <h2 class="section-title-sm" style="font-family:'Poppins',sans-serif;margin-bottom:28px;">Compare plans in detail.</h2>
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;min-width:640px;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border-soft);">
+          <th style="text-align:left;padding:14px 12px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);">Feature</th>
+          <th style="text-align:center;padding:14px 12px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);">Connect</th>
+          <th style="text-align:center;padding:14px 12px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);">Capture</th>
+          <th style="text-align:center;padding:14px 12px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);">Engage</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${[
+          ['Global data protection',true,true,true],
+          ['Network insights',true,true,true],
+          ['Customizable splash pages',true,true,true],
+          ['SecurePass authentication',true,true,true],
+          ['Contact & demographics',false,true,true],
+          ['CRM integration',false,true,true],
+          ['Email verification',false,true,true],
+          ['Branded access journey',false,true,true],
+          ['Turnkey deployment',false,true,true],
+          ['Targeted communications',false,false,true],
+          ['Physical space analytics',false,false,true],
+          ['Loyalty program integration',false,false,true],
+          ['Pre-Built connectors',false,false,true],
+          ['Managed services',false,false,true],
+        ].map(([f,c,ca,e])=>`
+          <tr style="border-bottom:1px solid var(--border-soft);">
+            <td style="padding:14px 12px;font-size:14px;color:var(--ink-mid);">${f}</td>
+            <td style="text-align:center;padding:14px 12px;">${c?`<span style="display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--purple);align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}</td>
+            <td style="text-align:center;padding:14px 12px;">${ca?`<span style="display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--purple);align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}</td>
+            <td style="text-align:center;padding:14px 12px;">${e?`<span style="display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--purple);align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+</div></div>
 <div class="dark-section"><div class="container">
   <div class="eyebrow">All plans include</div>
   <h2 class="section-title-sm" style="margin-bottom:28px;">Global data protection, wherever a customer deploys.</h2>
