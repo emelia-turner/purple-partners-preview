@@ -2310,21 +2310,6 @@ home: () => `
     </div>
   </div>
 </div></div>
-<div class="dark-section"><div class="container">
-  <div class="eyebrow">Explore more Guest WiFi features</div>
-  <h2 class="section-title" style="margin-bottom:32px;">Unlock results with reliable Guest WiFi.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-    ${[
-      ['Verify details','Keep invalid contacts out of your customer\'s database with Verify.','verify'],
-      ['Shield content','Shield your customer\'s guests from harmful content and malware.','shield'],
-      ['Professional Services support','Our team can handle everything from setup to processing fees and payments, helping your customer save valuable time.',null],
-    ].map(([t,d,slug])=>`
-      <div class="dc-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px;${slug?'cursor:pointer;':''}"${slug?` onclick="navigate('${slug}')"`:''}>
-        <div style="font-size:14px;font-weight:500;color:white;margin-bottom:8px;">${t}</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;">${d}</div>
-      </div>`).join('')}
-  </div>
-</div></div>
 `,
 
 // ═══════════════════════════════════════
@@ -2868,7 +2853,7 @@ function renderFooter() {
     <div>
       <div class="footer-col-title">Products</div>
       <div class="footer-links">
-        ${['Staff WiFi','Guest WiFi','Multi-tenant WiFi','Verify','Shield'].map((p,i)=>`<div class="footer-link" onclick="navigate('${['staff-wifi','guest-wifi','multi-tenant','verify','shield'][i]}')">${p}</div>`).join('')}
+        ${['Staff WiFi','Guest WiFi','Multi-tenant WiFi','Paid WiFi','Verify','Shield'].map((p,i)=>`<div class="footer-link" onclick="navigate('${['staff-wifi','guest-wifi','multi-tenant','paid-wifi','verify','shield'][i]}')">${p}</div>`).join('')}
       </div>
     </div>
     <div>
